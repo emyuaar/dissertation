@@ -1,0 +1,207 @@
+{
+  "name": "kit",
+  "title": "kit",
+  "description": "",
+  "author": "ochcpwjcgo",
+  "version": "2.0",
+  "elementor_version": "3.33.2",
+  "created": "2025-11-24 09:10:28",
+  "thumbnail": false,
+  "site": "https://hcpwjcgo.elementor.cloud",
+  "theme": {
+    "name": "Hello Elementor",
+    "theme_uri": "https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash",
+    "version": "3.4.5",
+    "slug": "hello-elementor"
+  },
+  "experiments": [
+    "e_font_icon_svg",
+    "additional_custom_breakpoints",
+    "container",
+    "e_optimized_markup",
+    "theme_builder_v2",
+    "hello-theme-header-footer",
+    "e_pro_free_trial_popup",
+    "nested-elements",
+    "pages_panel",
+    "home_screen",
+    "e_atomic_elements",
+    "e_classes",
+    "global_classes_should_enforce_capabilities",
+    "e_variables",
+    "cloud-library",
+    "e_opt_in_v4_page",
+    "e_opt_in_v4",
+    "e_components",
+    "import-export-customization",
+    "improved_page_actions_layout",
+    "mega-menu",
+    "e_pro_variables",
+    "editor_events"
+  ],
+  "site-settings": [
+    "global-colors",
+    "global-typography",
+    "theme-style-typography",
+    "theme-style-buttons",
+    "theme-style-images",
+    "theme-style-form-fields",
+    "settings-background",
+    "settings-layout",
+    "settings-lightbox",
+    "settings-page-transitions",
+    "settings-custom-css",
+    "settings-woocommerce",
+    "hello-settings-header",
+    "hello-settings-footer"
+  ],
+  "plugins": [
+    {
+      "name": "Elementor",
+      "plugin": "elementor/elementor.php",
+      "pluginUri": "https://elementor.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash",
+      "version": "3.33.2"
+    },
+    {
+      "name": "Elementor Pro",
+      "plugin": "elementor-pro/elementor-pro.php",
+      "pluginUri": "https://go.elementor.com/wp-dash-wp-plugins-author-uri/",
+      "version": "3.33.0-beta2"
+    }
+  ],
+  "templates": {
+    "128692": {
+      "title": "Single Post",
+      "doc_type": "single-post",
+      "thumbnail": false,
+      "location": "single",
+      "conditions": [
+        {
+          "type": "include",
+          "name": "singular",
+          "sub_name": "post",
+          "sub_id": ""
+        }
+      ]
+    },
+    "128693": {
+      "title": "Footer",
+      "doc_type": "footer",
+      "thumbnail": false,
+      "location": "footer",
+      "conditions": [
+        {
+          "type": "include",
+          "name": "general",
+          "sub_name": "",
+          "sub_id": ""
+        }
+      ]
+    },
+    "128694": {
+      "title": "Header",
+      "doc_type": "header",
+      "thumbnail": false,
+      "location": "header",
+      "conditions": [
+        {
+          "type": "include",
+          "name": "general",
+          "sub_name": "",
+          "sub_id": ""
+        }
+      ]
+    },
+    "128701": {
+      "title": "404",
+      "doc_type": "error-404",
+      "thumbnail": false,
+      "location": "single",
+      "conditions": [
+        {
+          "type": "include",
+          "name": "singular",
+          "sub_name": "not_found404",
+          "sub_id": ""
+        }
+      ]
+    }
+  },
+  "taxonomies": {
+    "post": [
+      "category"
+    ],
+    "nav_menu_item": [
+      "nav_menu"
+    ],
+    "product": [
+      "product_type",
+      "product_visibility",
+      "product_cat"
+    ]
+  },
+  "content": {
+    "post": [],
+    "page": {
+      "128698": {
+        "title": "About Us",
+        "excerpt": "",
+        "doc_type": "wp-page",
+        "thumbnail": false,
+        "url": "https://hcpwjcgo.elementor.cloud/about-us/",
+        "terms": []
+      },
+      "128699": {
+        "title": "Home",
+        "excerpt": "",
+        "doc_type": "wp-page",
+        "thumbnail": false,
+        "url": "https://hcpwjcgo.elementor.cloud/",
+        "terms": [],
+        "show_on_front": true
+      },
+      "128700": {
+        "title": "Contact",
+        "excerpt": "",
+        "doc_type": "wp-page",
+        "thumbnail": false,
+        "url": "https://hcpwjcgo.elementor.cloud/contact/",
+        "terms": []
+      },
+      "128702": {
+        "title": "Services",
+        "excerpt": "",
+        "doc_type": "wp-page",
+        "thumbnail": false,
+        "url": "https://hcpwjcgo.elementor.cloud/services/",
+        "terms": []
+      }
+    },
+    "e-floating-buttons": []
+  },
+  "wp-content": {
+    "post": [
+      "128695",
+      "128696",
+      "128697"
+    ],
+    "page": [],
+    "nav_menu_item": [
+      "128716",
+      "128717",
+      "128718",
+      "128719",
+      "128721",
+      "128722",
+      "128723",
+      "128724"
+    ],
+    "product": []
+  },
+  "custom-post-type-title": {
+    "product": {
+      "name": "product",
+      "label": "Products"
+    }
+  }
+}

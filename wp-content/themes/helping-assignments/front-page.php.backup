@@ -1,0 +1,284 @@
+<?php
+/**
+ * Front Page Template
+ */
+
+get_header();
+?>
+
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+<div class="ha-home">
+
+    <!-- HERO Section -->
+    <section class="ha-hero">
+        <div class="container">
+            <div class="ha-hero-inner">
+                <!-- LEFT CONTENT -->
+                <div>
+                    <div class="ha-hero-kicker">
+                        <span></span> Dissertation Proposal Writing Services in the UK
+                    </div>
+                    <h1>Dissertation Proposal & Assignment Writing Services</h1>
+                    <h2>Get Quick Help by 650+ PhD Experts</h2>
+
+                    <p class="ha-hero-lead">
+                        Struggling with topic selection, proposal approval or tight deadlines?
+                        Our UK-based academic specialists craft plagiarism-free proposals and assignments
+                        that meet university standards and supervisor expectations.
+                    </p>
+
+                    <div class="ha-hero-badges">
+                        <div class="ha-badge">
+                            ⭐ <strong>4.9/5</strong> True Student Reviews
+                        </div>
+                        <div class="ha-badge">
+                            🔒 100% Data Confidentiality
+                        </div>
+                        <div class="ha-badge">
+                            🎓 UK PhD Qualified Writers
+                        </div>
+                    </div>
+
+                    <ul class="ha-hero-list">
+                        <li>Custom dissertation proposals for all subjects & levels</li>
+                        <li>Free topic suggestions & outline before you pay</li>
+                        <li>Turnitin report & proper referencing included</li>
+                        <li>On-time delivery with direct writer communication</li>
+                    </ul>
+
+                    <div class="ha-hero-cta-row">
+                        <a href="<?php echo home_url('/order'); ?>" class="ha-hero-big-cta">
+                            Order Full Proposal
+                            <span>→</span>
+                        </a>
+                        <span class="ha-hero-small-note">
+                            Or request a quick call-back using the form.
+                        </span>
+                    </div>
+                </div>
+
+                <!-- RIGHT: FORM -->
+                <div>
+                    <div class="ha-hero-form-wrap">
+                        <h3 class="ha-hero-form-title">Get Quick Help by 650+ PhD Experts</h3>
+                        <p class="ha-hero-form-sub">Share your details for a free consultation & price quote.</p>
+
+                        <?php if ( isset( $_GET['enquiry_success'] ) ) : ?>
+                            <div class="ha-alert-success">
+                                Thank you! Your enquiry has been submitted. We will contact you shortly.
+                            </div>
+                        <?php endif; ?>
+
+                        <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST">
+                            <input type="hidden" name="action" value="ha_submit_order">
+                            <input type="hidden" name="ha_type" value="enquiry">
+
+                            <input type="text" name="name" class="ha-form-input" placeholder="Enter Full Name" required>
+                            <input type="email" name="email" class="ha-form-input" placeholder="Enter Email Address" required>
+                            <input type="tel" name="phone" class="ha-form-input" placeholder="Phone Number" required>
+
+                            <button type="submit" class="ha-form-btn">
+                                Request Free Consultation
+                            </button>
+
+                            <div class="ha-form-footnote">
+                                No upfront payment for enquiries. We’ll share options & discounts first.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES Ribbon -->
+    <section class="ha-features">
+        <div class="container">
+            <div class="ha-feature-grid">
+                <div class="ha-feature-card">
+                    <h3>True Reviews</h3>
+                    <div class="ha-feature-rating">4.9/5 based on student feedback</div>
+                    <p>Trusted by students worldwide from UK, EU and GCC universities.</p>
+                </div>
+                <div class="ha-feature-card">
+                    <h3>100% Data Confidentiality</h3>
+                    <p>Your data is never reused, resold or shared with third parties. NDA available on request.</p>
+                </div>
+                <div class="ha-feature-card">
+                    <h3>UK Assignment Specialists</h3>
+                    <p>Subject experts with 8+ years’ experience and degrees from top UK universities.</p>
+                </div>
+                <div class="ha-feature-card">
+                    <h3>100% Plagiarism-Free</h3>
+                    <p>Every order is written from scratch and checked on Turnitin before delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US + STATS -->
+    <section class="ha-section" id="about">
+        <div class="container">
+            <div class="ha-section-header">
+                <h2>Why Choose Helping Assignments?</h2>
+                <p>Not just writers &mdash; a complete research partner from proposal to final dissertation.</p>
+            </div>
+
+            <div class="ha-why-grid">
+                <div>
+                    <ul class="ha-why-list">
+                        <li>
+                            <span>✓</span>
+                            <div>
+                                <strong>PhD writers with subject expertise</strong><br>
+                                Work with specialists in Business, Nursing, Law, Psychology, IT and more to match
+                                your module and university requirements.
+                            </div>
+                        </li>
+                        <li>
+                            <span>✓</span>
+                            <div>
+                                <strong>Turnitin-checked & properly referenced work</strong><br>
+                                We follow your required referencing style (Harvard, APA, MLA, OSCOLA etc.) and
+                                provide a free Turnitin similarity report on request.
+                            </div>
+                        </li>
+                        <li>
+                            <span>✓</span>
+                            <div>
+                                <strong>Fast support & milestone-based delivery</strong><br>
+                                Get drafts for supervisor review, unlimited revisions for agreed scope, and
+                                a dedicated coordinator for updates.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="ha-stats-grid">
+                    <div class="ha-stat-card">
+                        <div class="ha-stat-number">+21</div>
+                        <div class="ha-stat-label">Dissertation Heads / Subject Leads</div>
+                    </div>
+                    <div class="ha-stat-card">
+                        <div class="ha-stat-number">+650</div>
+                        <div class="ha-stat-label">PhD Qualified Experts</div>
+                    </div>
+                    <div class="ha-stat-card">
+                        <div class="ha-stat-number">99.9%</div>
+                        <div class="ha-stat-label">Satisfied Students</div>
+                    </div>
+                    <div class="ha-stat-card">
+                        <div class="ha-stat-number">+5000</div>
+                        <div class="ha-stat-label">Students Supported Globally</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUARANTEED FEATURES / SERVICES LIST -->
+    <section class="ha-section" id="services">
+        <div class="container">
+            <div class="ha-section-header">
+                <h2>Online Services For All Your Academic Blues!</h2>
+                <p>From proposal to final draft, enjoy complete support under one roof.</p>
+            </div>
+
+            <div class="ha-guaranteed-wrap">
+                <div>
+                    <h3 style="font-size:18px; margin-bottom:10px;">Guaranteed Features</h3>
+                    <p style="font-size:14px; color:#4b5563; margin-bottom:12px;">
+                        Every order from Helping Assignments comes with these value-added features &ndash; at no
+                        extra cost:
+                    </p>
+                    <ul class="ha-feature-list">
+                        <li>Limitless amendments (within agreed scope)</li>
+                        <li>Free bibliography / reference list</li>
+                        <li>Well-structured outline</li>
+                        <li>Title page & formatting</li>
+                        <li>Plagiarism report (Turnitin on request)</li>
+                        <li>Chapter-wise delivery for longer projects</li>
+                        <li>24/7 WhatsApp & email support</li>
+                        <li>Strict deadline commitment</li>
+                    </ul>
+
+                    <div style="margin-top:16px;">
+                        <a href="<?php echo home_url('/order'); ?>" class="ha-hero-big-cta">
+                            Get All These Features
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ha-price-card">
+                    <h3>Enjoy Up To 50% Off On Your First Order</h3>
+                    <p>Talk to our team for customised packages based on word count, level and deadline.</p>
+                    <div class="ha-price-compare">Typical UK market from £32.14</div>
+                    <div class="ha-price-tag">From just £16.07*</div>
+                    <p style="font-size:12px; color:#9ca3af;">*Prices vary by level, subject and urgency.</p>
+
+                    <a href="<?php echo home_url('/order'); ?>" class="ha-price-cta">
+                        Get Free Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="ha-section" id="faq">
+        <div class="container">
+            <div class="ha-section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Still confused? Here are answers to common questions students ask.</p>
+            </div>
+
+            <div class="ha-faq-accordion">
+                <div class="ha-faq-item">
+                    <button class="ha-faq-question" type="button">
+                        How do you write a dissertation proposal question?
+                    </button>
+                    <div class="ha-faq-answer">
+                        A strong question comes from a clear problem statement. We help you define a focused,
+                        researchable question based on your subject, methods and available literature so that
+                        your proposal is realistic and approvable.
+                    </div>
+                </div>
+
+                <div class="ha-faq-item">
+                    <button class="ha-faq-question" type="button">
+                        What are the 3 main types of research questions?
+                    </button>
+                    <div class="ha-faq-answer">
+                        Broadly, students work with <strong>descriptive</strong>, <strong>comparative</strong> and
+                        <strong>causal</strong> research questions. We guide you to pick the most suitable type
+                        based on your methodology (qualitative, quantitative or mixed methods).
+                    </div>
+                </div>
+
+                <div class="ha-faq-item">
+                    <button class="ha-faq-question" type="button">
+                        Can you write my proposal in 15 days or less?
+                    </button>
+                    <div class="ha-faq-answer">
+                        Yes. We regularly handle urgent orders. Depending on word count and complexity, we can
+                        deliver your proposal in as little as 3&ndash;15 days, along with revisions after
+                        supervisor feedback.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔹 Elementor editable area -->
+    <div class="ha-elementor-wrap">
+        <?php the_content(); ?>
+    </div>
+
+</div><!-- /.ha-home -->
+
+<?php
+endwhile; endif;
+
+get_footer();
+?>

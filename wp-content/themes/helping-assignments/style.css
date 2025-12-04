@@ -1,0 +1,1313 @@
+/* ==========================================================
+   GLOBAL BASE
+   ========================================================== */
+
+:root {
+    --primary-color: #0056b3;
+    --primary-dark: #004494;
+    --accent-color: #facc15;
+    --text-color: #111827;
+    --light-text: #6b7280;
+    --white: #ffffff;
+    --dark-bg: #0f172a;
+    --border-radius: 8px;
+    --shadow-soft: 0 4px 6px rgba(15, 23, 42, 0.12);
+    --transition: all 0.25s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================
+   TOPBAR
+   ========================================================== */
+
+.ha-topbar {
+    background: #0f172a;
+    color: #f1f5f9;
+    font-size: 0.85rem;
+}
+
+.ha-topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+}
+
+.ha-topbar-left span {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.ha-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ha-top-link {
+    color: #e2e8f0;
+    transition: 0.25s;
+    white-space: nowrap;
+}
+
+.ha-top-link:hover {
+    color: #ffffff;
+}
+
+.ha-top-whatsapp {
+    background: #22c55e;
+    padding: 4px 10px;
+    border-radius: 999px;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* ==========================================================
+   HEADER / NAVIGATION – MODERN
+   ========================================================== */
+
+.ha-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: saturate(180%) blur(18px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.ha-header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    gap: 28px;
+}
+
+.ha-logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* nav wrapper */
+.ha-nav {
+    position: relative;
+}
+
+/* main nav list */
+.ha-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(248, 250, 252, 0.9);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.03);
+}
+
+.ha-nav-list li {
+    position: relative;
+}
+
+/* base link style */
+.ha-nav-list > li > a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #0f172a;
+    padding: 7px 12px;
+    border-radius: 999px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition:
+        color 0.22s ease,
+        background-color 0.22s ease,
+        transform 0.1s ease;
+}
+
+/* subtle underline only for desktop hover */
+.ha-nav-list > li > a::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 5px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--accent-color);
+    opacity: 0;
+    transform: scaleX(0.4);
+    transform-origin: center;
+    transition:
+        opacity 0.22s ease,
+        transform 0.22s ease;
+}
+
+/* hover state */
+.ha-nav-list > li > a:hover {
+    background: rgba(248, 250, 252, 1);
+    color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.ha-nav-list > li > a:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* current/active page (WordPress adds .current-menu-item) */
+.ha-nav-list > li.current-menu-item > a,
+.ha-nav-list > li.current_page_item > a {
+    background: #0f172a;
+    color: #f9fafb;
+}
+
+.ha-nav-list > li.current-menu-item > a::after,
+.ha-nav-list > li.current_page_item > a::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* ORDER NOW button – keep hero vibe but tighter */
+.ha-cta-clean {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    background: linear-gradient(135deg,#facc15,#fbbf24); /* softer yellow-orange */
+    color: #111 !important;
+    border: 1px solid rgba(250, 204, 21, 0.5);
+    transition: all 0.22s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* SOFT shadow */
+}
+
+/* Hover */
+.ha-cta-clean:hover {
+    background: linear-gradient(135deg,#fde047,#f59e0b);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12); /* light + clean */
+}
+
+/* ==========================================================
+   DROPDOWN NAV – MODERN
+   ========================================================== */
+
+.ha-has-dropdown {
+    position: relative;
+}
+
+.ha-has-dropdown > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* small caret triangle */
+.ha-caret {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #94a3b8;
+    margin-top: 1px;
+    transition: transform 0.18s ease, border-top-color 0.18s ease;
+}
+
+.ha-has-dropdown:hover .ha-caret {
+    border-top-color: #1d4ed8;
+}
+
+/* dropdown menu base */
+.ha-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 12px;
+    min-width: 230px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.18),
+        0 0 0 1px rgba(226, 232, 240, 0.9);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease,
+        visibility 0.18s ease;
+    z-index: 9990;
+}
+
+/* little top accent line */
+.ha-dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 16px;
+    right: 16px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,#f97316,#facc15);
+}
+
+/* dropdown items */
+.ha-dropdown-menu li + li {
+    margin-top: 2px;
+}
+
+.ha-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 7px 9px;
+    border-radius: 10px;
+    color: #111827;
+    transition: background 0.16s ease, color 0.16s ease, transform 0.1s ease;
+}
+
+/* disable underline from main rule */
+.ha-dropdown-menu a::after {
+    content: none;
+}
+
+.ha-dropdown-menu a:hover {
+    background: #f3f4f6;
+    color: #1d4ed8;
+    transform: translateX(1px);
+}
+
+/* Desktop: open on hover */
+@media (min-width: 901px) {
+    .ha-has-dropdown:hover > .ha-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .ha-has-dropdown:hover .ha-caret {
+        transform: rotate(180deg);
+    }
+}
+
+/* ==========================================================
+   MOBILE NAV – MODERN
+   ========================================================== */
+
+.ha-mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 6px 4px;
+    border-radius: 999px;
+}
+
+.ha-mobile-toggle span {
+    width: 24px;
+    height: 2px;
+    background: #0f172a;
+    border-radius: 999px;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+/* when nav open, animate to X */
+body.ha-nav-open .ha-mobile-toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+body.ha-nav-open .ha-mobile-toggle span:nth-child(2) {
+    opacity: 0;
+}
+body.ha-nav-open .ha-mobile-toggle span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+
+    .ha-header-main {
+        padding: 10px 0;
+    }
+
+    /* nav panel */
+    .ha-nav-list {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 10px);
+        width: 90vw;
+        max-width: 360px;
+        background: #ffffff;
+        padding: 14px 14px 16px;
+        border-radius: 18px;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+        border: 1px solid #e5e7eb;
+        flex-direction: column;
+        gap: 6px;
+        display: none;
+        align-items: stretch;
+    }
+
+    .ha-nav.is-open .ha-nav-list {
+        display: flex;
+    }
+
+    /* hamburger button */
+    .ha-mobile-toggle {
+        display: flex;
+    }
+
+    .ha-dropdown-menu::before {
+        content: none !important;
+        display: none !important;
+    }
+
+    /* safety: mobile items ke neeche koi underline na ho */
+    .ha-nav-list > li > a::after {
+        content: none !important;
+    }
+
+    /* main items: full width, left aligned, NO underline */
+    .ha-nav-list > li {
+        width: 100%;
+    }
+
+    .ha-nav-list > li > a {
+        width: 100%;
+        justify-content: space-between;
+        text-align: left;
+        border-radius: 10px;
+        padding: 9px 10px;
+        background: transparent;
+    }
+
+    .ha-nav-list > li > a::after {
+        /* desktop underline off on mobile */
+        content: none !important;
+    }
+
+    .ha-nav-list > li > a:hover {
+        background: #f3f4f6;
+        transform: translateY(0); /* no jump on mobile */
+    }
+
+    /* dropdown containers */
+    .ha-has-dropdown {
+        width: 100%;
+    }
+
+    .ha-dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin-top: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    /* open state (JS se .is-open-sub add hota hai) */
+    .ha-has-dropdown.is-open-sub .ha-dropdown-menu {
+        max-height: 500px;
+        padding-top: 4px;
+    }
+
+    .ha-has-dropdown.is-open-sub .ha-caret {
+        transform: rotate(180deg);
+    }
+
+    /* dropdown links: thoda indent */
+    .ha-dropdown-menu a {
+        padding: 6px 6px 6px 18px;
+        font-size: 0.88rem;
+        border-radius: 8px;
+    }
+
+    /* Order Now bottom full-width */
+    .ha-nav-list > li:last-child {
+        margin-top: 8px;
+    }
+
+    .ha-nav-list > li:last-child .ha-cta-clean {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+    }
+}
+
+/* ==========================================================
+   FOOTER (premium)
+   ========================================================== */
+
+.main-footer {
+    background: radial-gradient(circle at 0% 0%, #111827 0, #020617 45%, #000 100%);
+    color: #ffffff;
+    padding: 60px 0 24px;
+    position: relative;
+}
+
+.main-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 0%, rgba(37, 99, 235, 0.35), transparent 55%);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.main-footer .container {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 992px) {
+    .footer-top {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 640px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer-col h3 {
+    margin-bottom: 16px;
+    color: var(--accent-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.footer-col ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.footer-col a {
+    color: #e5e7eb;
+    transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+}
+
+/* brand */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    background: #facc15;
+    color: #111827;
+    font-weight: 800;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    color: #cbd5f5;
+    margin: 8px 0 16px;
+}
+
+.footer-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.footer-badge {
+    font-size: 0.78rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.footer-contact ul li {
+    font-size: 0.9rem;
+}
+
+.footer-whatsapp-pill {
+    margin-top: 12px;
+    background: rgba(22, 163, 74, 0.12);
+    border-radius: 999px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(22, 163, 74, 0.4);
+    font-size: 0.78rem;
+}
+
+.footer-whatsapp-pill .wa-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #16a34a;
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+}
+
+.footer-whatsapp-pill span {
+    display: block;
+    color: #bbf7d0;
+}
+
+.footer-social {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social a {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #e5e7eb;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.footer-social a:hover {
+    background: #facc15;
+    color: #111827;
+    transform: translateY(-1px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(15, 23, 42, 0.9);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: #9ca3af;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-bottom-links a {
+    color: #9ca3af;
+}
+
+.footer-bottom-links a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================
+   HOMEPAGE WRAPPER
+   ========================================================== */
+
+.ha-home-v2 {
+    background: #ffffff;
+}
+
+/* ==========================================================
+   HERO SECTION
+   ========================================================== */
+
+.ha-hero-v2 {
+    position: relative;
+    padding: 80px 0 50px;
+    color: #f9fafb;
+    overflow: hidden;
+    background: none;
+}
+
+.ha-hero-v2 .container {
+    max-width: 1350px;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    z-index: 3;
+}
+
+/* background image */
+.ha-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.ha-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45) contrast(1.1);
+    transform: scale(1.03);
+}
+
+/* overlay */
+.ha-hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,0.65), rgba(0,0,0,0.2), rgba(0,0,0,0)),
+        radial-gradient(circle at 0% 0%, rgba(255,255,255,0.10), transparent 70%);
+    pointer-events: none;
+}
+
+/* inner grid */
+.ha-hero-inner-v2 {
+    position: relative;
+    z-index: 4;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+}
+
+@media (max-width: 960px) {
+    .ha-hero-inner-v2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* hero left */
+.ha-hero-left h1 {
+    font-size: 2.6rem;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.ha-hero-subtitle {
+    font-size: 1rem;
+    color: #e5e7eb;
+    max-width: 560px;
+    margin-bottom: 18px;
+}
+
+.ha-hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #c7d2fe;
+    margin-bottom: 8px;
+}
+
+.ha-hero-kicker::before {
+    content: "";
+    width: 34px;
+    height: 2px;
+    border-radius: 999px;
+    background: #facc15;
+}
+
+/* small highlight pills */
+.ha-hero-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.ha-hero-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+.ha-hero-highlight strong {
+    color: #facc15;
+}
+
+/* bullet grid */
+.ha-hero-bullets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 6px 16px;
+    margin-bottom: 18px;
+    font-size: 0.88rem;
+}
+
+.ha-hero-bullets li {
+    position: relative;
+    padding-left: 18px;
+}
+
+.ha-hero-bullets li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #22c55e;
+    font-weight: 700;
+}
+
+/* CTA row */
+.ha-hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.ha-hero-big-cta {
+    background: #facc15;
+    color: #111827;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.ha-hero-big-cta span {
+    font-size: 1rem;
+}
+
+.ha-hero-big-cta:hover {
+    background: #eab308;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
+}
+
+.ha-hero-trust {
+    font-size: 0.8rem;
+    color: #e5e7eb;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ha-hero-trust .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: #22c55e;
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+}
+
+/* hero form right */
+.ha-hero-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ha-hero-form-wrap {
+    background: rgba(15, 23, 42, 0.96);
+    border-radius: 16px;
+    padding: 22px 22px 24px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    max-width: 380px;
+    width: 100%;
+}
+
+.ha-hero-form-title {
+    color: #f9fafb;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.ha-hero-form-sub {
+    font-size: 0.8rem;
+    color: #e5e7eb;
+    margin-bottom: 12px;
+}
+
+.ha-alert-success {
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    border: 1px solid #bbf7d0;
+}
+
+.ha-hero-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ha-form-input {
+    width: 100%;
+    padding: 9px 10px;
+    margin-bottom: 9px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    font-size: 0.85rem;
+    font-family: inherit;
+    background: #f9fafb;
+}
+
+.ha-form-input:focus {
+    outline: none;
+    border-color: #facc15;
+    box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.8);
+    background: #ffffff;
+}
+
+.ha-form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.ha-form-btn {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: none;
+    background: #facc15;
+    color: #111827;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 2px;
+    transition: var(--transition);
+}
+
+.ha-form-btn:hover {
+    background: #eab308;
+    transform: translateY(-1px);
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.6);
+}
+
+.ha-form-footnote {
+    font-size: 0.7rem;
+    color: #cbd5f5;
+    margin-top: 6px;
+    text-align: center;
+}
+
+/* ==========================================================
+   STEPS STRIP UNDER HERO
+   ========================================================== */
+
+.ha-steps-strip {
+    margin-top: 26px;
+    background: rgba(15, 23, 42, 0.93);
+    border-radius: 999px;
+    padding: 10px 18px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    color: #e5e7eb;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.6);
+}
+
+@media (max-width: 900px) {
+    .ha-steps-strip {
+        border-radius: 18px;
+        grid-template-columns: 1fr;
+        padding: 14px 14px 10px;
+    }
+}
+
+.ha-step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.ha-step-number {
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    background: #facc15;
+    color: #111827;
+    font-size: 0.82rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.ha-step-item h4 {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.ha-step-item p {
+    font-size: 0.78rem;
+    color: #cbd5f5;
+}
+
+/* ==========================================================
+   TRUST RIBBON
+   ========================================================== */
+
+.ha-trust-ribbon {
+    background: #f9fafb;
+    padding: 40px 0 32px;
+}
+
+.ha-trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+@media (max-width: 900px) {
+    .ha-trust-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    .ha-trust-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ha-trust-item {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 12px 13px 10px;
+    display: flex;
+    gap: 10px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.03);
+}
+
+.ha-trust-item span {
+    flex-shrink: 0;
+    color: #22c55e;
+    margin-top: 4px;
+}
+
+.ha-trust-item strong {
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.ha-trust-item p {
+    font-size: 0.8rem;
+    color: #4b5563;
+}
+
+/* ==========================================================
+   SERVICES SECTION (HORIZONTAL CARDS)
+   ========================================================== */
+
+.ha-section {
+    padding: 55px 0;
+}
+
+.ha-section-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.ha-section-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.ha-section-header p {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+/* background behind services */
+.ha-services-section {
+    background: #f3f5fb;
+}
+
+/* vertical stack of horizontal cards */
+.ha-services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* each card: image + content */
+.ha-service-card {
+    background: #ffffff;
+    border-radius: 22px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+/* even = image right */
+.ha-service-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* gradient strip top */
+.ha-service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18px;
+    right: 18px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f97316, #facc15);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+/* image block */
+.ha-service-img {
+    flex: 0 0 32%;
+    max-width: 32%;
+    position: relative;
+    overflow: hidden;
+}
+
+.ha-service-img img {
+    width: 100%;
+    height: 100%;
+    min-height: 210px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* content block */
+.ha-service-body {
+    flex: 1;
+    padding: 20px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ha-service-body h3 {
+    font-size: 1.18rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 4px;
+}
+
+.ha-service-body p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0 0 4px;
+}
+
+/* list */
+.ha-service-body ul {
+    margin: 4px 0 4px;
+    padding-left: 18px;
+    font-size: 0.88rem;
+    color: #374151;
+}
+
+.ha-service-body li {
+    list-style: disc;
+    margin-bottom: 3px;
+}
+
+/* CTA link */
+.ha-service-link {
+    align-self: flex-start;
+    margin-top: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f97316;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(226, 232, 240, 0.9);
+    transition:
+        color 0.2s ease,
+        gap 0.2s ease;
+}
+
+.ha-service-link::after {
+    content: "→";
+    font-size: 0.9rem;
+}
+
+/* hover effects */
+.ha-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
+    border-color: rgba(248, 180, 0, 0.7);
+}
+
+.ha-service-card:hover .ha-service-img img {
+    transform: scale(1.04);
+}
+
+.ha-service-card:hover .ha-service-link {
+    color: #ea580c;
+    gap: 6px;
+}
+
+/* ==========================================================
+   ELEMENTOR WRAP (so inner content fits nicely)
+   ========================================================== */
+
+.ha-elementor-wrap .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 1200px !important;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* ==========================================================
+   RESPONSIVE TWEAKS
+   ========================================================== */
+
+@media (max-width: 992px) {
+    .ha-hero-v2 .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .ha-trust-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .ha-hero-v2 {
+        padding: 70px 0 40px;
+    }
+
+    .ha-section {
+        padding: 45px 0;
+    }
+
+    .ha-section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .ha-trust-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ha-service-card,
+    .ha-service-card:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .ha-service-img {
+        max-width: 100%;
+        flex-basis: auto;
+    }
+
+    .ha-service-img img {
+        height: 190px;
+        min-height: 190px;
+    }
+
+    .ha-service-body {
+        padding: 18px 18px 20px;
+    }
+}

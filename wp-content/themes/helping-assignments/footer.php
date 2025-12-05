@@ -50,7 +50,7 @@
             <div class="footer-col footer-contact">
                 <h3>Contact</h3>
                 <ul>
-                    <li>Email: <a href="mailto:support@helpingassignments.com">support@helpingassignments.com</a></li>
+                    <li>Email: <a href="mailto:info@onlinedissertationadvisors.co.uk">info@onlinedissertationadvisors.co.uk</a></li>
                     <li>WhatsApp: <a href="https://wa.me/447782200976" target="_blank">+44 7782 200976</a></li>
                 </ul>
 

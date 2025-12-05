@@ -20,7 +20,7 @@
         <div class="ha-topbar-right">
             <a href="tel:+447782200976" class="ha-top-link">📞 +44 7782 200976</a>
             <span class="ha-top-sep">•</span>
-            <a href="mailto:info@helpingassignments.com" class="ha-top-link">✉ info@helpingassignments.com</a>
+            <a href="mailto:info@onlinedissertationadvisors.co.uk" class="ha-top-link">✉ info@onlinedissertationadvisors.co.uk</a>
             <a href="https://wa.me/447782200976" class="ha-top-whatsapp" target="_blank">
                 WhatsApp Chat
             </a>

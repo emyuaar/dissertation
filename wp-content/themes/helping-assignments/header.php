@@ -76,18 +76,18 @@
                     <ul class="ha-dropdown-menu">
                         <li><a href="<?php echo home_url('/dissertation/'); ?>">Dissertation</a></li>
                         <li><a href="<?php echo home_url('/assignments'); ?>">Assignments</a></li>
+                        <li><a href="<?php echo home_url('/essay'); ?>">Essay</a></li>
                         <li><a href="<?php echo home_url('/case-study'); ?>">Case study</a></li>
-                        <li><a href="<?php echo home_url('/research-proposal'); ?>">Research Proposal</a></li>
-                        <li><a href="<?php echo home_url('/assignments'); ?>">Online Exam</a></li>
-                        <li><a href="<?php echo home_url('/assignments'); ?>">SPSS</a></li>
-                        <li><a href="<?php echo home_url('/assignments'); ?>">MAT-LAB</a></li>
-                        <li><a href="<?php echo home_url('/assignments'); ?>">Essay</a></li>
-                        <li><a href="<?php echo home_url('/assignments'); ?>">Research Data Collection</a></li>
-                        <li><a href="<?php echo home_url('/assignments'); ?>">Presentation Service</a></li>
-                        <li><a href="<?php echo home_url('/assignments'); ?>">Academic Poster Desiging Services</a></li>
-                        <li><a href="<?php echo home_url('/assignments'); ?>">Power Point File</a></li>
                         <li><a href="<?php echo home_url('/coursework'); ?>">Coursework</a></li>
-                        <li><a href="<?php echo home_url('/presentations'); ?>">Presentations</a></li>
+                        <li><a href="<?php echo home_url('/presentation-writing'); ?>">Presentation Writing</a></li>
+                        <li><a href="<?php echo home_url('/mat-lab'); ?>">MAT-LAB</a></li>
+                        <li><a href="<?php echo home_url('/spss'); ?>">SPSS</a></li>
+                        <!-- <li><a href="<?php echo home_url('/research-proposal'); ?>">Research Proposal</a></li>
+                        <li><a href="<?php echo home_url('/research-data-collection'); ?>">Research Data Collection</a></li>
+                        <li><a href="<?php echo home_url('/presentation-service'); ?>">Presentation Service</a></li>
+                        <li><a href="<?php echo home_url('/academic-poster-designing-services'); ?>">Academic Poster Desiging Services</a></li>
+                        <li><a href="<?php echo home_url('/powerpoint-file'); ?>">Power Point File</a></li> -->
+                        
                     </ul>
                 </li>
 

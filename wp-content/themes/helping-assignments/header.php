@@ -74,10 +74,10 @@
                         Other Services <span class="ha-caret"></span>
                     </a>
                     <ul class="ha-dropdown-menu">
-                        <li><a href="<?php echo home_url('/assignments'); ?>">Dissertation</a></li>
+                        <li><a href="<?php echo home_url('/dissertation'); ?>">Dissertation</a></li>
                         <li><a href="<?php echo home_url('/assignments'); ?>">Assignments</a></li>
-                        <li><a href="<?php echo home_url('/assignments'); ?>">Case study</a></li>
-                        <li><a href="<?php echo home_url('/assignments'); ?>">Research Proposal</a></li>
+                        <li><a href="<?php echo home_url('/case-study'); ?>">Case study</a></li>
+                        <li><a href="<?php echo home_url('/research-proposal'); ?>">Research Proposal</a></li>
                         <li><a href="<?php echo home_url('/assignments'); ?>">Online Exam</a></li>
                         <li><a href="<?php echo home_url('/assignments'); ?>">SPSS</a></li>
                         <li><a href="<?php echo home_url('/assignments'); ?>">MAT-LAB</a></li>

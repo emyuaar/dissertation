@@ -74,7 +74,7 @@
                         Other Services <span class="ha-caret"></span>
                     </a>
                     <ul class="ha-dropdown-menu">
-                        <li><a href="<?php echo home_url('/dissertation'); ?>">Dissertation</a></li>
+                        <li><a href="<?php echo home_url('/dissertation/'); ?>">Dissertation</a></li>
                         <li><a href="<?php echo home_url('/assignments'); ?>">Assignments</a></li>
                         <li><a href="<?php echo home_url('/case-study'); ?>">Case study</a></li>
                         <li><a href="<?php echo home_url('/research-proposal'); ?>">Research Proposal</a></li>
@@ -103,7 +103,7 @@
                 </li>
 
                 <!-- Simple links -->
-                <li><a href="<?php echo home_url('/topics'); ?>">Topics</a></li>
+                <li><a href="<?php echo home_url('/reviews'); ?>">Reviews</a></li>
                 <li><a href="<?php echo home_url('/about'); ?>">About</a></li>
 
                 <!-- Order CTA -->

@@ -158,7 +158,7 @@ function ha_handle_submit_order()
         $message .= "Phone: {$phone}\n\n";
 
         if ($type === 'order') {
-            // Order ka detailed email
+            // Order detailed email
             $message .= "Education: {$education}\n";
             $message .= "Subject: {$subject}\n";
             $message .= "Paper Type: {$paperType}\n";
@@ -170,7 +170,7 @@ function ha_handle_submit_order()
             $message .= "Topic: {$topic}\n\n";
             $message .= "Instructions:\n{$instructions}\n";
         } else {
-            // Enquiry ka simple email
+            // Enquiry simple email
             $message .= "Service Type: {$service_type}\n\n";
             $message .= "Requirements:\n{$requirements}\n";
         }

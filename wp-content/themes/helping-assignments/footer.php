@@ -51,7 +51,7 @@
                 <h3>Contact</h3>
                 <ul>
                     <li>Email: <a href="mailto:support@helpingassignments.com">support@helpingassignments.com</a></li>
-                    <li>WhatsApp: <a href="https://wa.me/447000000000" target="_blank">+44 7000 000000</a></li>
+                    <li>WhatsApp: <a href="https://wa.me/447782200976" target="_blank">+44 7782 200976</a></li>
                 </ul>
 
                 <div class="footer-whatsapp-pill">

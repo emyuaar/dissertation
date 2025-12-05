@@ -18,10 +18,10 @@
         </div>
 
         <div class="ha-topbar-right">
-            <a href="tel:+441234567890" class="ha-top-link">📞 +44 1234 567890</a>
+            <a href="tel:+447782200976" class="ha-top-link">📞 +44 7782 200976</a>
             <span class="ha-top-sep">•</span>
             <a href="mailto:info@helpingassignments.com" class="ha-top-link">✉ info@helpingassignments.com</a>
-            <a href="https://wa.me/441234567890" class="ha-top-whatsapp" target="_blank">
+            <a href="https://wa.me/447782200976" class="ha-top-whatsapp" target="_blank">
                 WhatsApp Chat
             </a>
         </div>

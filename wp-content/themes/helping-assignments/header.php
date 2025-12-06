@@ -35,7 +35,7 @@
         <!-- LOGO -->
         <div class="ha-logo">
             <a href="<?php echo home_url(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/logo (2).png?v=<?php echo time(); ?>" alt="Helping Assignments">
+                <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2025/12/Online-Dissertation-Final-01-scaled.png" alt="Helping Assignments">
             </a>
         </div>
 

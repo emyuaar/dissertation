@@ -103,7 +103,7 @@
                 </li>
 
                 <!-- Simple links -->
-                <li><a href="<?php echo home_url('/reviews'); ?>">Reviews</a></li>
+                
                 <li><a href="<?php echo home_url('/about'); ?>">About</a></li>
 
                 <!-- Order CTA -->

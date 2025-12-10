@@ -547,10 +547,40 @@ body.ha-nav-open .ha-mobile-toggle span:nth-child(3) {
 
 /* Payment logos alignment */
 .footer-payment-logos {
-    margin-top: 16px;
+    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px 14px;
+}
+
+.footer-pay-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-pay-row img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    /* filter: brightness(0) invert(1); optional: makes them white on dark background */
+}
+
+.footer-pay-row .payoneer-logo {
+    height: 22px;   /* now perfectly sized */
+}
+
+.footer-security-row {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-security-row img {
+    height: 34px;
+    width: auto;
+    object-fit: contain;
 }
 
 .footer-payment-logos img {

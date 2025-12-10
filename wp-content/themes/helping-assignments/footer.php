@@ -21,6 +21,18 @@
                         🔒 100% Confidential
                     </span>
                 </div>
+
+                <!-- NEW: Payment / Security Logos -->
+                <div class="footer-payment-logos">
+                    <!-- TODO: replace src="" with your uploaded image URLs -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-U8tK4EfgFz0FAX0yYoXfE05yWfq2tqNLQw&s" alt="American Express">
+                    <img src="https://1000logos.net/wp-content/uploads/2020/11/Discover-Logo.jpg" alt="Discover Network">
+                    <img src="https://cdn-cdpnp.nitrocdn.com/SNOFeNYPIxZonfFntjsPCGvTKMutfaxp/assets/images/optimized/rev-3465da3/images.dmca.com/Badges/8417e0d3b64d191ef76888e17045e6e9.dmca_protected_sml_120aa.png" alt="DMCA Protected">
+                    <img src="https://cdn-cdpnp.nitrocdn.com/SNOFeNYPIxZonfFntjsPCGvTKMutfaxp/assets/images/optimized/rev-3465da3/www.dissertationproposal.co.uk/wp-content/uploads/2023/03/100-scure.webp" alt="100% Security Guarantee">
+                </div>
+                <!-- END NEW -->
             </div>
 
             <!-- Quick Links -->
@@ -29,20 +41,24 @@
                 <ul>
                     <li><a href="<?php echo home_url(); ?>">Home</a></li>
                     <li><a href="<?php echo home_url('/order'); ?>">Order Now</a></li>
-                    <li><a href="<?php echo home_url(); ?>/#about">About Us</a></li>
+                    <li><a href="<?php echo home_url('/about'); ?>">About Us</a></li>
                     <li><a href="<?php echo home_url(); ?>/#services">Services</a></li>
                     <li><a href="<?php echo home_url(); ?>/#faq">FAQ</a></li>
                 </ul>
             </div>
 
-            <!-- Services -->
-            <div class="footer-col">
+            <!-- Our Services (short, important list only) -->
+            <div class="footer-col footer-services">
                 <h3>Our Services</h3>
-                <ul>
-                    <li>Dissertation Proposal Writing</li>
-                    <li>Full Dissertation Help</li>
-                    <li>Assignment & Coursework Help</li>
-                    <li>Editing & Proofreading</li>
+                <ul class="footer-services-list">
+                    <li><a href="<?php echo home_url('/dissertation-writing'); ?>">Dissertation Writing</a></li>
+                    <li><a href="<?php echo home_url('/dissertation-proposal-help'); ?>">Dissertation Proposal</a></li>
+                    <li><a href="<?php echo home_url('/full-dissertation-writing'); ?>">Full Dissertation Help</a></li>
+                    <li><a href="<?php echo home_url('/dissertation-editing'); ?>">Dissertation Editing</a></li>
+                    <li><a href="<?php echo home_url('/assignments'); ?>">Assignment Help</a></li>
+                    <li><a href="<?php echo home_url('/essay'); ?>">Essay Writing</a></li>
+                    <li><a href="<?php echo home_url('/online-exam-help'); ?>">Online Exam Help</a></li>
+                    <li><a href="<?php echo home_url('/quiz-help'); ?>">Quiz / Test Help</a></li>
                 </ul>
             </div>
 
@@ -79,7 +95,7 @@
             <div class="footer-bottom-links">
                 <a href="#">Privacy Policy</a>
                 <span>•</span>
-                <a href="#">Terms & Conditions</a>
+                <a href="#">Terms &amp; Conditions</a>
             </div>
         </div>
     </div>

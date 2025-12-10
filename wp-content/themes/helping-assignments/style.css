@@ -514,9 +514,52 @@ body.ha-nav-open .ha-mobile-toggle span:nth-child(3) {
 
 .footer-top {
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
-    gap: 40px;
-    margin-bottom: 32px;
+    grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+    gap: 40px; /* reduce huge spacing */
+    align-items: flex-start;
+}
+
+/* Services – two columns */
+.footer-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 40px;
+}
+
+.footer-services-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-services-grid li {
+    margin-bottom: 6px;
+}
+
+.footer-services-grid a {
+    color: #d1d5db;
+    text-decoration: none;
+}
+
+.footer-services-grid a:hover {
+    color: #ffffff;
+}
+
+/* Payment logos alignment */
+.footer-payment-logos {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+}
+
+.footer-payment-logos img {
+    height: 28px;
+    opacity: 0.9;
+}
+
+.footer-payment-logos img:hover {
+    opacity: 1;
 }
 
 @media (max-width: 992px) {

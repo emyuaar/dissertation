@@ -810,6 +810,20 @@ body.ha-nav-open .ha-mobile-toggle span:nth-child(3) {
     color: #ffffff;
 }
 
+.footer-address{
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #cbd5f5;
+    line-height: 1.45;
+}
+
+.footer-address strong{
+    display: block;
+    color: #e5e7eb;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
 /* ==========================================================
    HOMEPAGE WRAPPER
    ========================================================== */

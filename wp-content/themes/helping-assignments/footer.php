@@ -77,6 +77,11 @@
                     <li>WhatsApp: <a href="https://wa.me/447782200976" target="_blank">+44 7782 200976</a></li>
                 </ul>
 
+                <div class="footer-address">
+                    <strong>Address:</strong>
+                    <span>16-Grand Arcade, Industrial House, London, N12 0EH</span>
+                </div>
+                
                 <div class="footer-whatsapp-pill">
                     <span class="wa-dot"></span>
                     <div>
@@ -92,6 +97,8 @@
                     <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                     <a href="#" aria-label="Reddit"><i class="fab fa-reddit-alien"></i></a>
                 </div>
+
+                
             </div>
         </div>
 

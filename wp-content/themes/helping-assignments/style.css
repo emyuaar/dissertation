@@ -57,7 +57,7 @@ img {
 }
 
 /* ==========================================================
-   TOPBAR
+   TOPBAR (UPDATED)
    ========================================================== */
 
 .ha-topbar {
@@ -84,12 +84,14 @@ img {
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .ha-top-link {
     color: #e2e8f0;
     transition: 0.25s;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .ha-top-link:hover {
@@ -102,6 +104,56 @@ img {
     border-radius: 999px;
     color: #0f172a;
     font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 900px) {
+
+    .ha-topbar {
+        font-size: 0.78rem;
+    }
+
+    .ha-topbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 12px;
+    }
+
+    .ha-topbar-left {
+        text-align: center;
+        line-height: 1.35;
+    }
+
+    .ha-topbar-right {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    /* Dot separator hide on mobile */
+    .ha-top-sep {
+        display: none;
+    }
+
+    /* Phone + email neat wrap-friendly */
+    .ha-top-link {
+        font-size: 0.78rem;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* WhatsApp button full width row */
+    .ha-top-whatsapp {
+        flex: 1 0 100%;
+        width: 100%;
+        text-align: center;
+        padding: 10px 14px;
+        margin-top: 2px;
+    }
 }
 
 /* ==========================================================

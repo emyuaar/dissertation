@@ -19,7 +19,7 @@
     src="https://www.facebook.com/tr?id=1182261844043022&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-     
+
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?v=<?php echo time(); ?>">
@@ -30,7 +30,7 @@
 
 <!-- TOP INFO BAR -->
 <div class="ha-topbar">
-    <div class="container ha-topbar-inner"><!-- NOTE: container, not ha-container -->
+    <div class="container ha-topbar-inner">
         <div class="ha-topbar-left">
             🎓 Trusted UK Dissertation & Assignment Writers — <span>24/7 Support</span>
         </div>
@@ -48,7 +48,7 @@
 
 <!-- MAIN HEADER -->
 <header class="ha-header">
-    <div class="container ha-header-main"><!-- NOTE: container here as well -->
+    <div class="container ha-header-main">
 
         <!-- LOGO -->
         <div class="ha-logo">
@@ -70,7 +70,7 @@
                     <ul class="ha-dropdown-menu">
                         <li><a href="<?php echo home_url('/dissertation-proposal-help'); ?>">Dissertation Proposal</a></li>
                         <li><a href="<?php echo home_url('/full-dissertation-writing'); ?>">Full Dissertation</a></li>
-                        <li><a href="<?php echo home_url('/dissertation-chapters'); ?>">Individual Chapters</a></li>
+                        <!-- <li><a href="<?php echo home_url('/dissertation-chapters'); ?>">Individual Chapters</a></li> -->
                     </ul>
                 </li>
 

@@ -22,7 +22,7 @@ get_header();
                         #1 Assignment Writing Help in the UK
                     </span>
 
-                    <h1>Expert UK Assignment & Dissertation Help</h1>
+                    <h1>Expert UK Dissertation & Assignment Help</h1>
                     <p class="ha-hero-subtitle">
                         Get your topic approved, your proposal accepted, your assignment completed on time with the help of our team of Master, PhD-qualified academic writers based in the UK. 
                         We will enable you to score better grades through well-structured and fully original academic work in line with the UK university standards.

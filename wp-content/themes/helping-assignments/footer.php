@@ -107,9 +107,9 @@
                 &copy; <?php echo date('Y'); ?> Online Dissertation Advisor. All Rights Reserved.
             </p>
             <div class="footer-bottom-links">
-                <a href="#">Privacy Policy</a>
+                <a href="/privacy-policy">Privacy Policy</a>
                 <span>•</span>
-                <a href="#">Terms &amp; Conditions</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
             </div>
         </div>
     </div>

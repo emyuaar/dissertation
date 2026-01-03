@@ -28,14 +28,15 @@
                     <div class="footer-pay-row">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-U8tK4EfgFz0FAX0yYoXfE05yWfq2tqNLQw&s" alt="American Express">
-                        <img src="https://1000logos.net/wp-content/uploads/2020/11/Discover-Logo.jpg" alt="Discover Network">
+                        <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-U8tK4EfgFz0FAX0yYoXfE05yWfq2tqNLQw&s" alt="American Express"> -->
+                        <!-- <img src="https://1000logos.net/wp-content/uploads/2020/11/Discover-Logo.jpg" alt="Discover Network"> -->
+                        <img src="https://wp.logos-download.com/wp-content/uploads/2022/01/Wise_Logo-700x210.png" alt="Discover Network">
                         <img src="https://www.payoneer.com/wp-content/themes/payo/assets/img/payoneer-white-logo.svg" class="payoneer-logo" alt="Payoneer">
                     </div>
 
                     <div class="footer-security-row">
                         <img src="https://cdn-cdpnp.nitrocdn.com/SNOFeNYPIxZonfFntjsPCGvTKMutfaxp/assets/images/optimized/rev-3465da3/images.dmca.com/Badges/8417e0d3b64d191ef76888e17045e6e9.dmca_protected_sml_120aa.png" alt="DMCA Protected">
-                        <img src="https://cdn-cdpnp.nitrocdn.com/SNOFeNYPIxZonfFntjsPCGvTKMutfaxp/assets/images/optimized/rev-3465da3/www.dissertationproposal.co.uk/wp-content/uploads/2023/03/100-scure.webp" alt="100% Security Guarantee">
+                        <img src="https://cdn-cdpnp.nitrocdn.com/SNOFeNYPIxZonfFntjsPCGvTKMutfaxp/assets/images/optimized/rev-2ea009f/www.dissertationproposal.co.uk/wp-content/uploads/2023/03/100-scure.webp" alt="100% Security Guarantee">
                     </div>
 
                 </div>
@@ -73,7 +74,10 @@
             <div class="footer-col footer-contact">
                 <h3>Contact</h3>
                 <ul>
-                    <li>Email: <a href="mailto:info@onlinedissertationadvisors.co.uk">info@onlinedissertationadvisors.co.uk</a></li>
+                    <li>Email: 
+                        <a href="mailto:info@onlinedissertationadvisors.co.uk">info@onlinedissertationadvisors.co.uk</a><br>
+                        <a href="mailto:inquiries@onlinedissertationadvisors.co.uk">inquiries@onlinedissertationadvisors.co.uk</a>
+                    </li>
                     <li>WhatsApp: <a href="https://wa.me/447782200976" target="_blank">+44 7782 200976</a></li>
                 </ul>
 

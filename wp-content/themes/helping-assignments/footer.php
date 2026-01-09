@@ -30,7 +30,7 @@
                         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
                         <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-U8tK4EfgFz0FAX0yYoXfE05yWfq2tqNLQw&s" alt="American Express"> -->
                         <!-- <img src="https://1000logos.net/wp-content/uploads/2020/11/Discover-Logo.jpg" alt="Discover Network"> -->
-                        <img src="https://wp.logos-download.com/wp-content/uploads/2022/01/Wise_Logo-700x210.png" alt="Discover Network">
+                        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/8c58652d-2c99-4957-ab0f-eaf54d6963ba" alt="Wise">
                         <img src="https://www.payoneer.com/wp-content/themes/payo/assets/img/payoneer-white-logo.svg" class="payoneer-logo" alt="Payoneer">
                     </div>
 

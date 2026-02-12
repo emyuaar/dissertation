@@ -69,4 +69,3 @@ class ElementsKit_Widget_Mail_Chimp_Api extends Core\Handler_Api {
 		return $return;
     }
 }
-//https://us20.api.mailchimp.com/3.0/lists?apikey=24550c8cb06076781d51a80274a52878-us20

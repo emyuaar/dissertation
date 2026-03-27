@@ -26,7 +26,7 @@
                 <div class="footer-payment-logos">
 
                     <div class="footer-pay-row">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+                        <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2026/03/visa.png" alt="Visa">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
                         <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-U8tK4EfgFz0FAX0yYoXfE05yWfq2tqNLQw&s" alt="American Express"> -->
                         <!-- <img src="https://1000logos.net/wp-content/uploads/2020/11/Discover-Logo.jpg" alt="Discover Network"> -->
@@ -35,8 +35,8 @@
                     </div>
 
                     <div class="footer-security-row">
-                        <img src="https://cdn-cdpnp.nitrocdn.com/SNOFeNYPIxZonfFntjsPCGvTKMutfaxp/assets/images/optimized/rev-3465da3/images.dmca.com/Badges/8417e0d3b64d191ef76888e17045e6e9.dmca_protected_sml_120aa.png" alt="DMCA Protected">
-                        <img src="https://cdn-cdpnp.nitrocdn.com/SNOFeNYPIxZonfFntjsPCGvTKMutfaxp/assets/images/optimized/rev-2ea009f/www.dissertationproposal.co.uk/wp-content/uploads/2023/03/100-scure.webp" alt="100% Security Guarantee">
+                        <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2026/03/dmca.png" alt="DMCA Protected">
+                        <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2026/03/100-scure.png" alt="100% Security Guarantee">
                     </div>
 
                 </div>

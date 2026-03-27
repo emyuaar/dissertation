@@ -170,7 +170,7 @@ else {
 
                 <!-- Trusted Badge -->
                 <div class="widget widget-trust">
-                    <img src="https://cdn-cdpnp.nitrocdn.com/SNOFeNYPIxZonfFntjsPCGvTKMutfaxp/assets/images/optimized/rev-3465da3/images.dmca.com/Badges/8417e0d3b64d191ef76888e17045e6e9.dmca_protected_sml_120aa.png" alt="DMCA">
+                    <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2026/03/dmca.png" alt="DMCA">
                     <p>Your academic data is 100% secured and encrypted.</p>
                 </div>
 

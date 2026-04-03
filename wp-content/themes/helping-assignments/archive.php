@@ -41,33 +41,38 @@ $current_cat_id = is_category() ? get_queried_object_id() : 0;
                         $cat_name = !empty($post_categories) ? esc_html($post_categories[0]->name) : 'Article';
                 ?>
                     <div class="blog-card">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php if ( has_post_thumbnail() ) : ?>
-                                <?php the_post_thumbnail('medium_large', ['class' => 'blog-card-img', 'alt' => get_the_title()]); ?>
-                            <?php else: ?>
-                                <div class="blog-card-img" style="background: #f8fafc; display:flex; align-items:center; justify-content:center; color:#94a3b8;">
-                                    <span>No Image Found</span>
-                                </div>
-                            <?php endif; ?>
-                        </a>
+                        <div class="blog-card-header">
+                            <h2 class="blog-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                            <div class="blog-card-badges">
+                                <span class="badge-info"><?php echo $cat_name; ?></span>
+                                <?php if (has_tag('featured') || get_the_time('U') > (time() - 604800)): ?>
+                                    <span class="badge-update">Latest Update</span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                         
-                        <div class="blog-card-content">
-                            <div class="blog-card-meta">
-                                <span class="category"><?php echo $cat_name; ?></span>
-                            </div>
-                            
-                            <h2 class="blog-card-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            </h2>
-                            
-                            <div class="blog-card-excerpt">
-                                <?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?>
-                            </div>
-                            
-                            <div class="blog-card-footer">
-                                <a href="<?php the_permalink(); ?>" class="read-more-btn">
-                                    Read Full Story &rarr;
+                        <div class="blog-card-body">
+                            <div class="blog-card-img-box">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('medium_large', ['class' => 'blog-card-img', 'alt' => get_the_title()]); ?>
+                                    <?php else: ?>
+                                        <div class="blog-card-img placeholder">
+                                            <span>No Image Found</span>
+                                        </div>
+                                    <?php endif; ?>
                                 </a>
+                            </div>
+                            
+                            <div class="blog-card-right">
+                                <div class="blog-card-excerpt">
+                                    <?php echo wp_trim_words( get_the_excerpt(), 22, '...' ); ?>
+                                </div>
+                                <div class="blog-card-footer">
+                                    <a href="<?php the_permalink(); ?>" class="read-more-btn">
+                                        Read Full Article &rarr;
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

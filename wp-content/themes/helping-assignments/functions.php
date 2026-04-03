@@ -28,6 +28,44 @@ function theme_setup_features()
 add_action('after_setup_theme', 'theme_setup_features');
 
 /**
+ * Robust virtual routing for specific functional pages.
+ * This ensures /order and /blog shortcuts work with exact matches,
+ * preventing they fall through to a 404 or catch-all template.
+ */
+add_action('template_redirect', function () {
+    // Get the current path relative to the home URL
+    $home_path = parse_url(home_url(), PHP_URL_PATH);
+    $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    
+    $relative_path = $request_uri;
+    if ($home_path && $home_path !== '/' && strpos($request_uri, $home_path) === 0) {
+        $relative_path = substr($request_uri, strlen($home_path));
+    }
+    
+    $clean_path = trim($relative_path, '/');
+
+    // Case 1: Exact match for "order"
+    if ($clean_path === 'order') {
+        $template = locate_template('page-order.php');
+        if ($template) {
+            status_header(200);
+            include($template);
+            exit;
+        }
+    }
+
+    // Case 2: Exact match for "blog"
+    if ($clean_path === 'blog') {
+        $template = locate_template('home.php');
+        if ($template) {
+            status_header(200);
+            include($template);
+            exit;
+        }
+    }
+}, 5);
+
+/**
  * Tell Elementor not to override some theme locations
  */
 add_filter('elementor_theme_do_location', function ($bool, $location) {

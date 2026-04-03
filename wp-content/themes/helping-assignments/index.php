@@ -1,22 +1,32 @@
 <?php
-// Fallback routing for Order page
-if (strpos($_SERVER['REQUEST_URI'], '/order') !== false) {
-    include(locate_template('page-order.php'));
-    exit;
-}
-
-// Fallback routing for Blog page
-if (strpos($_SERVER['REQUEST_URI'], '/blog') !== false) {
-    include(locate_template('home.php'));
-    exit;
-}
+/**
+ * The main template file.
+ * This is the most generic template file in a WordPress theme and one of the two 
+ * required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ */
 
 get_header();
-?>
 
-<div class="container" style="padding: 60px 0;">
-    <h1>Welcome to Online Dissertation Advisors</h1>
-    <p>This is the default index template. If you are seeing this on the Order page, the template is not loading correctly.</p>
-</div>
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        ?>
+        <div class="container" style="padding: 60px 0;">
+            <h1><?php the_title(); ?></h1>
+            <div class="entry-content">
+                <?php the_content(); ?>
+            </div>
+        </div>
+        <?php
+    endwhile;
+else :
+    ?>
+    <div class="container" style="padding: 100px 0; text-align: center;">
+        <h1>No Content Found</h1>
+        <p>Sorry, the content you are looking for does not exist on our servers.</p>
+        <a href="<?php echo home_url('/'); ?>" class="ha-cta-clean">Back Home</a>
+    </div>
+    <?php
+endif;
 
-<?php get_footer(); ?>
+get_footer();

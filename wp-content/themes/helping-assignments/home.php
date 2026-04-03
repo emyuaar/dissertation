@@ -76,22 +76,32 @@ foreach ($categories as $cat) {
         $cat_name = !empty($post_categories) ? esc_html($post_categories[0]->name) : 'Article';
 ?>
                         <div class="blog-card">
-                            <a href="<?php the_permalink(); ?>" class="blog-card-img-link">
-                                <?php if (has_post_thumbnail()): ?>
-                                    <?php the_post_thumbnail('medium_large', ['class' => 'blog-card-img']); ?>
-                                <?php
-        else: ?>
-                                    <div class="blog-card-img placeholder"><span>No Image</span></div>
-                                <?php
-        endif; ?>
-                            </a>
-                            
-                            <div class="blog-card-content">
-                                <span class="category"><?php echo $cat_name; ?></span>
+                            <div class="blog-card-header">
                                 <h3 class="blog-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                <div class="blog-card-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 18); ?></div>
-                                <div class="blog-card-footer">
-                                    <a href="<?php the_permalink(); ?>" class="read-more-btn">Read More &rarr;</a>
+                                <div class="blog-card-badges">
+                                    <span class="badge-info"><?php echo $cat_name; ?></span>
+                                    <?php if (has_tag('featured') || get_the_time('U') > (time() - 604800)): // If tagged featured or less than 7 days old ?>
+                                        <span class="badge-update">Latest Update</span>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            
+                            <div class="blog-card-body">
+                                <div class="blog-card-img-box">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <?php if (has_post_thumbnail()): ?>
+                                            <?php the_post_thumbnail('medium_large', ['class' => 'blog-card-img']); ?>
+                                        <?php else: ?>
+                                            <div class="blog-card-img placeholder"><span>No Image</span></div>
+                                        <?php endif; ?>
+                                    </a>
+                                </div>
+                                
+                                <div class="blog-card-right">
+                                    <div class="blog-card-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 22); ?></div>
+                                    <div class="blog-card-footer">
+                                        <a href="<?php the_permalink(); ?>" class="read-more-btn">Read Full Article &rarr;</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

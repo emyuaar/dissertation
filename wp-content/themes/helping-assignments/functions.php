@@ -6,6 +6,12 @@
 /* -------------------------------------------------------
  * Elementor basic support
  * ------------------------------------------------------*/
+
+function oda_theme_setup() {
+    add_theme_support('title-tag');
+}
+add_action('after_setup_theme', 'oda_theme_setup');
+
 function ha_elementor_support()
 {
     add_theme_support('elementor');

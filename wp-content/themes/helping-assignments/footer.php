@@ -6,7 +6,7 @@
             <div class="footer-col footer-brand">
                 <div class="footer-logo">
                     <span class="footer-logo-mark">ODA</span>
-                    <span class="footer-logo-text">Online Dissertation Advisor</span>
+                    <span class="footer-logo-text">Online Dissertation Advisors</span>
                 </div>
                 <p class="footer-tagline">
                     UK-based academic writing support for dissertation proposals, full dissertations
@@ -109,7 +109,7 @@
 
         <div class="footer-bottom">
             <p class="footer-copy">
-                &copy; <?php echo date('Y'); ?> Online Dissertation Advisor. All Rights Reserved.
+                &copy; <?php echo date('Y'); ?> Online Dissertation Advisors. All Rights Reserved.
             </p>
             <div class="footer-bottom-links">
                 <a href="/privacy-policy">Privacy Policy</a>

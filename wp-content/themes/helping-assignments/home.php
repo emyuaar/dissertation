@@ -1,16 +1,22 @@
 <?php
 get_header();
 
-// 1. DYNAMIC QUERY FIX:
-// Ensure posts load even if this template is included manually from index.php router fallback
-$paged = (get_query_var('paged')) ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page') : 1);
-$args = array(
-    'post_type' => 'post',
-    'post_status' => 'publish',
-    'paged' => $paged,
-    'posts_per_page' => 10
-);
-$blog_query = new WP_Query($args);
+// Keep pagination stable across /blog/page/N/ and any fallback usage.
+$paged = max(1, (int) get_query_var('paged'), (int) get_query_var('page'));
+
+// Prefer the main query on the real Posts page; fallback to a dedicated query if included manually.
+global $wp_query;
+if (is_home() && $wp_query instanceof WP_Query) {
+    $blog_query = $wp_query;
+} else {
+    $args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'paged' => $paged,
+        'posts_per_page' => 10,
+    );
+    $blog_query = new WP_Query($args);
+}
 ?>
 
 <div class="blog-listing-header">
@@ -112,15 +118,26 @@ foreach ($categories as $cat) {
                 <!-- Dynamic Pagination -->
                 <div class="pagination-wrapper">
                     <?php
-    echo paginate_links(array(
-        'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-        'format' => '?paged=%#%',
-        'current' => max(1, $paged),
-        'total' => $blog_query->max_num_pages,
-        'prev_text' => __('&laquo; Prev'),
-        'next_text' => __('Next &raquo;'),
-        'type' => 'list'
-    ));
+    $posts_page_id = (int) get_option('page_for_posts');
+    $big = 999999999;
+
+    $base = $posts_page_id
+        ? trailingslashit(get_permalink($posts_page_id)) . '%_%'
+        : str_replace($big, '%#%', esc_url(get_pagenum_link($big)));
+
+    $format = get_option('permalink_structure') ? 'page/%#%/' : '?paged=%#%';
+
+    echo paginate_links(
+        array(
+            'base' => $base,
+            'format' => $format,
+            'current' => $paged,
+            'total' => (int) $blog_query->max_num_pages,
+            'prev_text' => __('&laquo; Prev'),
+            'next_text' => __('Next &raquo;'),
+            'type' => 'list',
+        )
+    );
 ?>
                 </div>
 

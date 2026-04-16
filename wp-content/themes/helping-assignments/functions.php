@@ -35,8 +35,8 @@ add_action('after_setup_theme', 'theme_setup_features');
 
 /**
  * Robust virtual routing for specific functional pages.
- * This ensures /order and /blog shortcuts work with exact matches,
- * preventing they fall through to a 404 or catch-all template.
+ * This ensures /order shortcut works with an exact match,
+ * preventing it from falling through to a 404 or catch-all template.
  */
 add_action('template_redirect', function () {
     // Get the current path relative to the home URL
@@ -53,16 +53,6 @@ add_action('template_redirect', function () {
     // Case 1: Exact match for "order"
     if ($clean_path === 'order') {
         $template = locate_template('page-order.php');
-        if ($template) {
-            status_header(200);
-            include($template);
-            exit;
-        }
-    }
-
-    // Case 2: Exact match for "blog"
-    if ($clean_path === 'blog') {
-        $template = locate_template('home.php');
         if ($template) {
             status_header(200);
             include($template);

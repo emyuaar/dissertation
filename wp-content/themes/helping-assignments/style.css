@@ -319,9 +319,12 @@ img {
 
 /* dropdown menu base */
 .ha-dropdown-menu {
+    /* dropdown positioning + hover gap */
+    --ha-dropdown-gap: 8px;
+    --ha-dropdown-offset-x: 12px;
     position: absolute;
-    top: calc(100% + 12px);
-    left: 12px;
+    top: calc(100% + var(--ha-dropdown-gap));
+    left: var(--ha-dropdown-offset-x);
     min-width: 230px;
     background: #ffffff;
     border-radius: 16px;
@@ -338,6 +341,21 @@ img {
         transform 0.18s ease,
         visibility 0.18s ease;
     z-index: 9990;
+}
+
+/* Desktop-only: invisible hover bridge to prevent hover-gap flicker */
+@media (min-width: 901px) {
+    .ha-dropdown-menu::after {
+        content: "";
+        position: absolute;
+        /* cover the vertical gap (plus a tiny safety buffer) */
+        --ha-dropdown-bridge: calc(var(--ha-dropdown-gap) + 8px);
+        top: calc(-1 * var(--ha-dropdown-bridge));
+        height: var(--ha-dropdown-bridge);
+        left: calc(-1 * var(--ha-dropdown-offset-x));
+        right: 0;
+        background: transparent;
+    }
 }
 
 /* little top accent line */
@@ -459,6 +477,11 @@ body.ha-nav-open .ha-mobile-toggle span:nth-child(3) {
     }
 
     .ha-dropdown-menu::before {
+        content: none !important;
+        display: none !important;
+    }
+
+    .ha-dropdown-menu::after {
         content: none !important;
         display: none !important;
     }

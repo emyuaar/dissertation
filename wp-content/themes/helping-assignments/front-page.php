@@ -9,7 +9,7 @@ get_header();
     <!-- ================= HERO SECTION ================= -->
     <section class="ha-hero-v2">
         <div class="ha-hero-bg">
-            <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2025/11/smiling-african-student-pointing-with-pencil-laptop-screen-concentrated-blonde-woman-glasses-propping-chin-with-hand-while-working-with-computer-office-scaled.jpg"
+            <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2026/05/Dissertation-Help-and-Assignment-Writing.webp"
                 alt="Student writing Assignment on laptop"
                 loading="lazy">
         </div>

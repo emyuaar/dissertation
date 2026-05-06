@@ -55,7 +55,7 @@
         <!-- LOGO -->
         <div class="ha-logo">
             <a href="<?php echo home_url(); ?>">
-                <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2026/05/Online-Dissertation-Advisors-Logo-Png.webp" alt="Online Dissertation Advisors">
+                <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2026/05/Online-Dissertation-Advisors-Logo-Png.webp" style="height: 100px; width: 220px;" alt="Online Dissertation Advisors">
             </a>
         </div>
 

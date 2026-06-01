@@ -78,6 +78,8 @@ get_header();
                             <input type="email" name="email" class="ha-form-input" placeholder="Enter Email Address" required>
                             <input type="tel" name="phone" class="ha-form-input" placeholder="Phone Number" required>
 
+                            <?php ha_render_recaptcha_and_honeypot(); ?>
+
                             <button type="submit" class="ha-form-btn">
                                 Request Free Consultation
                             </button>

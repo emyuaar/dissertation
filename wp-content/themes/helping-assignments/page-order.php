@@ -149,6 +149,8 @@ get_header();
 
             <!-- Submit (no payment) -->
             <div class="ha-order-summary">
+                <?php ha_render_recaptcha_and_honeypot(); ?>
+
                 <button type="submit" class="ha-order-submit-btn">
                     Submit Order
                 </button>

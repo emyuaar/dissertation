@@ -1,4 +1,54 @@
 <?php
+if (!defined('HA_RECAPTCHA_SITE_KEY')) {
+    define('HA_RECAPTCHA_SITE_KEY', '6LclaQctAAAAAIonwhXg0IxV7WgL4DNe4BFoXfUo');
+}
+
+if (!defined('HA_RECAPTCHA_SECRET_KEY')) {
+    define('HA_RECAPTCHA_SECRET_KEY', '6LclaQctAAAAAE8AqZgyDt0e7ZRf9xIORnLdCj7H');
+}
+
+add_action('wp_enqueue_scripts', function () {
+    if (!is_admin()) {
+        wp_enqueue_script(
+            'google-recaptcha',
+            'https://www.google.com/recaptcha/api.js',
+            array(),
+            null,
+            true
+        );
+    }
+});
+
+function ha_render_recaptcha_and_honeypot()
+{
+    ?>
+    <div class="ha-recaptcha-wrap">
+        <div class="g-recaptcha" data-sitekey="<?php echo esc_attr(HA_RECAPTCHA_SITE_KEY); ?>"></div>
+    </div>
+
+    <div class="ha-honeypot-field" style="display:none !important;">
+        <label>Website</label>
+        <input type="text" name="ha_website" value="" autocomplete="off" tabindex="-1">
+    </div>
+    <?php
+}
+
+add_action('wp_head', function () {
+    ?>
+    <style>
+        .ha-recaptcha-wrap {
+            margin: 16px 0;
+        }
+        .ha-honeypot-field {
+            position: absolute !important;
+            left: -9999px !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+    </style>
+    <?php
+});
+
 /**
  * Theme Functions
  */
@@ -181,6 +231,54 @@ add_action('admin_post_ha_submit_order', 'ha_handle_submit_order');
 
 function ha_handle_submit_order()
 {
+    // Emergency spam keyword block
+    $all_input = strtolower(wp_json_encode($_POST));
+
+    if (
+        strpos($all_input, 'graph.org') !== false ||
+        strpos($all_input, 'balance') !== false ||
+        strpos($all_input, 'transfer is') !== false ||
+        strpos($all_input, 'transfer of funds') !== false ||
+        strpos($all_input, 'receive a funds transfer') !== false ||
+        strpos($all_input, 'transaction') !== false
+    ) {
+        wp_die('Spam detected.');
+    }
+
+    // Honeypot check
+    if (!empty($_POST['ha_website'])) {
+        wp_die('Spam detected.');
+    }
+
+    // Google reCAPTCHA check
+    if (empty($_POST['g-recaptcha-response'])) {
+        wp_die('Please complete the reCAPTCHA verification.');
+    }
+
+    $recaptcha_response = sanitize_text_field($_POST['g-recaptcha-response']);
+
+    $verify_response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', array(
+        'body' => array(
+            'secret'   => HA_RECAPTCHA_SECRET_KEY,
+            'response' => $recaptcha_response,
+            'remoteip' => isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field($_SERVER['REMOTE_ADDR']) : '',
+        ),
+        'timeout' => 15,
+    ));
+
+    if (is_wp_error($verify_response)) {
+        wp_die('reCAPTCHA verification failed. Please try again.');
+    }
+
+    $verify_body = wp_remote_retrieve_body($verify_response);
+    $captcha_success = json_decode($verify_body, true);
+
+    if (empty($captcha_success['success'])) {
+        wp_die('reCAPTCHA verification failed. Please try again.');
+    }
+
+    // Existing validation should continue below this point
+
     // Basic validation
     if (!isset($_POST['name'])) {
         wp_die('Invalid submission.');

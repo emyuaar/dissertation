@@ -90,6 +90,8 @@ get_header();
                             <textarea name="requirements" class="ha-form-input ha-form-textarea" rows="3"
                                       placeholder="Briefly describe your topic / requirements"></textarea>
 
+                            <?php ha_render_recaptcha_and_honeypot(); ?>
+
                             <button type="submit" class="ha-form-btn">
                                 Request Free Consultation
                             </button>

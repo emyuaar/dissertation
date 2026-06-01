@@ -55,7 +55,7 @@
         <!-- LOGO -->
         <div class="ha-logo">
             <a href="<?php echo home_url(); ?>">
-                <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2026/05/Online-Dissertation-Advisors-Logo-Png.webp" style="height: 90px; width: 200px;" alt="Online Dissertation Advisors">
+                <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2026/05/Online-Dissertation-Advisors-Logo-Png.webp" alt="Online Dissertation Advisors">
             </a>
         </div>
 
@@ -72,7 +72,6 @@
                     <ul class="ha-dropdown-menu">
                         <li><a href="<?php echo home_url('/dissertation-proposal-help'); ?>">Dissertation Proposal</a></li>
                         <li><a href="<?php echo home_url('/full-dissertation-writing'); ?>">Full Dissertation</a></li>
-                        <!-- <li><a href="<?php echo home_url('/dissertation-chapters'); ?>">Individual Chapters</a></li> -->
                     </ul>
                 </li>
 
@@ -102,12 +101,6 @@
                         <li><a href="<?php echo home_url('/presentation-writing'); ?>">Presentation Writing</a></li>
                         <li><a href="<?php echo home_url('/mat-lab'); ?>">MAT-LAB</a></li>
                         <li><a href="<?php echo home_url('/spss'); ?>">SPSS</a></li>
-                        <!-- <li><a href="<?php echo home_url('/research-proposal'); ?>">Research Proposal</a></li>
-                        <li><a href="<?php echo home_url('/research-data-collection'); ?>">Research Data Collection</a></li>
-                        <li><a href="<?php echo home_url('/presentation-service'); ?>">Presentation Service</a></li>
-                        <li><a href="<?php echo home_url('/academic-poster-designing-services'); ?>">Academic Poster Desiging Services</a></li>
-                        <li><a href="<?php echo home_url('/powerpoint-file'); ?>">Power Point File</a></li> -->
-                        
                     </ul>
                 </li>
 
@@ -122,21 +115,19 @@
                     </ul>
                 </li>
 
-                <!-- Simple links -->
-                
                 <li><a href="<?php echo home_url('/about'); ?>">About</a></li>
 
-                <!-- Order CTA -->
-                <li>
+                <!-- Order CTA (Included in list for mobile consistency) -->
+                <li class="ha-nav-cta">
                     <a href="<?php echo home_url('/order'); ?>" class="ha-cta-clean">Order Now</a>
                 </li>
             </ul>
-
-            <!-- MOBILE MENU BUTTON -->
-            <button class="ha-mobile-toggle" aria-label="Toggle Menu">
-                <span></span><span></span><span></span>
-            </button>
         </nav>
+
+        <!-- MOBILE MENU BUTTON -->
+        <button class="ha-mobile-toggle" aria-label="Toggle Menu">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </header>
 
@@ -161,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!link) return;
 
         link.addEventListener("click", function (e) {
-            if (window.innerWidth <= 900) {
+            if (window.innerWidth <= 1100) {
                 e.preventDefault(); // stop navigation on mobile
                 parent.classList.toggle("is-open-sub");
             }

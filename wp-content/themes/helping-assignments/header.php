@@ -22,6 +22,7 @@
 
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="p:domain_verify" content="a4f5ddb3ca8bdcebbea95bcdfc774927" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/blog.css?v=<?php echo time(); ?>">
     <?php wp_head(); ?>

@@ -84,7 +84,7 @@
 
                 <div class="footer-address">
                     <strong>Address:</strong>
-                    <span>16-Grand Arcade, Industrial House, London, N12 0EH</span>
+                    <span>185 High Road, Chadwell Heath, Essex, RM6 6NR</span>
                 </div>
                 
                 <div class="footer-whatsapp-pill">

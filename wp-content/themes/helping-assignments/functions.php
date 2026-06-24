@@ -8,22 +8,36 @@ if (!defined('HA_RECAPTCHA_SECRET_KEY')) {
 }
 
 add_action('wp_enqueue_scripts', function () {
-    if (!is_admin()) {
-        wp_enqueue_script(
-            'google-recaptcha',
-            'https://www.google.com/recaptcha/api.js',
-            array(),
-            null,
-            true
+    $theme_version = wp_get_theme()->get('Version');
+    $style_path = get_theme_file_path('style.css');
+    $blog_path = get_theme_file_path('blog.css');
+
+    wp_enqueue_style(
+        'helping-assignments',
+        get_theme_file_uri('style.css'),
+        array(),
+        file_exists($style_path) ? (string) filemtime($style_path) : $theme_version
+    );
+
+    if (is_home() || is_archive() || is_search() || is_singular('post')) {
+        wp_enqueue_style(
+            'helping-assignments-blog',
+            get_theme_file_uri('blog.css'),
+            array('helping-assignments'),
+            file_exists($blog_path) ? (string) filemtime($blog_path) : $theme_version
         );
     }
-});
+}, 5);
 
 function ha_render_recaptcha_and_honeypot()
 {
     ?>
     <div class="ha-recaptcha-wrap">
-        <div class="g-recaptcha" data-sitekey="<?php echo esc_attr(HA_RECAPTCHA_SITE_KEY); ?>"></div>
+        <div
+            class="g-recaptcha"
+            data-sitekey="<?php echo esc_attr(HA_RECAPTCHA_SITE_KEY); ?>"
+            data-ha-recaptcha
+        ></div>
     </div>
 
     <div class="ha-honeypot-field" style="display:none !important;">
@@ -32,6 +46,41 @@ function ha_render_recaptcha_and_honeypot()
     </div>
     <?php
 }
+
+/**
+ * Load reCAPTCHA only when a visitor is about to use a protected form.
+ */
+add_action('wp_footer', function () {
+    $request_path = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    if (!is_front_page() && basename($request_path) !== 'order') {
+        return;
+    }
+    ?>
+    <script>
+    (function () {
+        var loaded = false;
+        var forms = document.querySelectorAll('form:has([data-ha-recaptcha])');
+        if (!forms.length) return;
+
+        function loadRecaptcha() {
+            if (loaded) return;
+            loaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.google.com/recaptcha/api.js';
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+        }
+
+        forms.forEach(function (form) {
+            ['focusin', 'pointerenter', 'touchstart'].forEach(function (eventName) {
+                form.addEventListener(eventName, loadRecaptcha, { once: true, passive: true });
+            });
+        });
+    }());
+    </script>
+    <?php
+}, 20);
 
 add_action('wp_head', function () {
     ?>

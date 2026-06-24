@@ -9,8 +9,15 @@ get_header();
     <!-- ================= HERO SECTION ================= -->
     <section class="ha-hero-v2">
         <div class="ha-hero-bg">
-            <img src="https://onlinedissertationadvisors.co.uk/wp-content/uploads/2026/05/Dissertation-Help-and-Assignment-Writing.webp"
-                alt="Student writing Assignment on laptop">
+            <img
+                src="<?php echo esc_url(get_theme_file_uri('images/hero-writing.webp')); ?>"
+                width="1200"
+                height="628"
+                alt="Student writing assignment on laptop"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+            >
         </div>
 
         <div class="container">

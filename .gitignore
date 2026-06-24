@@ -1,3 +1,4 @@
 wp-config.php
 static_backup
 .htaccess
+wp-content/cache/ha-page-cache/

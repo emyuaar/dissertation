@@ -96,11 +96,11 @@
                 </div>
 
                 <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" aria-label="Reddit"><i class="fab fa-reddit-alien"></i></a>
+                    <a href="#" aria-label="Facebook"><span aria-hidden="true">f</span></a>
+                    <a href="#" aria-label="Instagram"><span aria-hidden="true">◎</span></a>
+                    <a href="#" aria-label="LinkedIn"><span aria-hidden="true">in</span></a>
+                    <a href="#" aria-label="TikTok"><span aria-hidden="true">♪</span></a>
+                    <a href="#" aria-label="Reddit"><span aria-hidden="true">r</span></a>
                 </div>
 
                 

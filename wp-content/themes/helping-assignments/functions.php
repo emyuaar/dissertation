@@ -41,8 +41,8 @@ function ha_render_recaptcha_and_honeypot()
     </div>
 
     <div class="ha-honeypot-field" style="display:none !important;">
-        <label>Website</label>
-        <input type="text" name="ha_website" value="" autocomplete="off" tabindex="-1">
+        <label for="ha-website">Website</label>
+        <input id="ha-website" type="text" name="ha_website" value="" autocomplete="off" tabindex="-1">
     </div>
     <?php
 }

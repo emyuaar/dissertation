@@ -126,6 +126,35 @@ add_filter('the_content', function ($content) {
         $content
     );
 
+    // Keep repeated destinations consistently named for assistive technology.
+    $content = preg_replace(
+        '#<a(?![^>]*\baria-label=)([^>]*\bhref=(["\'])[^"\']*/order/?\2[^>]*)>#i',
+        '<a aria-label="Order academic writing support"$1>',
+        $content
+    );
+    $content = preg_replace(
+        '#<a(?![^>]*\baria-label=)([^>]*\bhref=(["\'])tel:[^"\']+\2[^>]*)>#i',
+        '<a aria-label="Call Online Dissertation Advisors"$1>',
+        $content
+    );
+    $content = preg_replace(
+        '#<a(?![^>]*\baria-label=)([^>]*\bhref=(["\'])mailto:[^"\']+\2[^>]*)>#i',
+        '<a aria-label="Email Online Dissertation Advisors"$1>',
+        $content
+    );
+    $content = preg_replace(
+        '#<a(?![^>]*\baria-label=)([^>]*\bclass=(["\'])[^"\']*\bdp4-value\b[^"\']*\2[^>]*\bhref=(["\'])\#\3[^>]*)>#i',
+        '<a aria-label="Open live chat"$1>',
+        $content
+    );
+
+    // Correct the one known heading skip inside the long-form sidebar.
+    $content = str_replace(
+        array('<h4>Still Unsure?</h4>', '<h4 class="ha-side-card-title">Still Unsure?</h4>'),
+        array('<h3>Still Unsure?</h3>', '<h3 class="ha-side-card-title">Still Unsure?</h3>'),
+        $content
+    );
+
     return $content;
 }, 20);
 

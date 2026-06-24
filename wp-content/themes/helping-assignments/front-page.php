@@ -4,7 +4,7 @@ get_header();
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<div class="ha-home ha-home-v2">
+<main id="main-content" class="ha-home ha-home-v2">
 
     <!-- ================= HERO SECTION ================= -->
     <section class="ha-hero-v2">
@@ -54,7 +54,7 @@ get_header();
                     </ul>
 
                     <div class="ha-hero-cta-row">
-                        <a href="<?php echo home_url('/order'); ?>" class="ha-hero-big-cta">
+                        <a href="<?php echo home_url('/order'); ?>" class="ha-hero-big-cta" aria-label="Order academic writing support">
                             Get Free Proposal Quote
                             <span>→</span>
                         </a>
@@ -67,7 +67,7 @@ get_header();
                 <!-- RIGHT: LEAD FORM -->
                 <div class="ha-hero-right">
                     <div class="ha-hero-form-wrap">
-                        <h3 class="ha-hero-form-title">Get Quick Help by 650+ PhD Experts</h3>
+                        <h2 class="ha-hero-form-title">Get Quick Help by 650+ PhD Experts</h2>
                         <p class="ha-hero-form-sub">
                             Share your requirements and receive a personalised price quote within minutes.
                         </p>
@@ -82,11 +82,17 @@ get_header();
                             <input type="hidden" name="action" value="ha_submit_order">
                             <input type="hidden" name="ha_type" value="enquiry">
 
-                            <input type="text" name="name" class="ha-form-input" placeholder="Full Name" required>
-                            <input type="email" name="email" class="ha-form-input" placeholder="Email Address" required>
-                            <input type="tel" name="phone" class="ha-form-input" placeholder="WhatsApp / Phone" required>
+                            <label class="ha-sr-only" for="ha-enquiry-name">Full Name</label>
+                            <input id="ha-enquiry-name" type="text" name="name" class="ha-form-input" placeholder="Full Name" autocomplete="name" required>
 
-                            <select name="service_type" class="ha-form-input">
+                            <label class="ha-sr-only" for="ha-enquiry-email">Email Address</label>
+                            <input id="ha-enquiry-email" type="email" name="email" class="ha-form-input" placeholder="Email Address" autocomplete="email" required>
+
+                            <label class="ha-sr-only" for="ha-enquiry-phone">WhatsApp or Phone Number</label>
+                            <input id="ha-enquiry-phone" type="tel" name="phone" class="ha-form-input" placeholder="WhatsApp / Phone" autocomplete="tel" required>
+
+                            <label class="ha-sr-only" for="ha-enquiry-service">Service Type</label>
+                            <select id="ha-enquiry-service" name="service_type" class="ha-form-input">
                                 <option value="">Select Service Type</option>
                                 <option value="dissertation_proposal">Assignment</option>
                                 <option value="full_dissertation">Full Dissertation</option>
@@ -94,7 +100,8 @@ get_header();
                                 <option value="editing">Editing & Proofreading</option>
                             </select>
 
-                            <textarea name="requirements" class="ha-form-input ha-form-textarea" rows="3"
+                            <label class="ha-sr-only" for="ha-enquiry-requirements">Topic or Requirements</label>
+                            <textarea id="ha-enquiry-requirements" name="requirements" class="ha-form-input ha-form-textarea" rows="3"
                                       placeholder="Briefly describe your topic / requirements"></textarea>
 
                             <?php ha_render_recaptcha_and_honeypot(); ?>
@@ -115,17 +122,17 @@ get_header();
             <div class="ha-steps-strip">
                 <div class="ha-step-item">
                     <div class="ha-step-number">01</div>
-                    <h4>Share Your Requirements</h4>
+                    <h3>Share Your Requirements</h3>
                     <p>Submit your topic, level, word count and deadline using the form above.</p>
                 </div>
                 <div class="ha-step-item">
                     <div class="ha-step-number">02</div>
-                    <h4>Get a Custom Price & Plan</h4>
+                    <h3>Get a Custom Price & Plan</h3>
                     <p>We send a tailored quote along with chapter-wise delivery milestones.</p>
                 </div>
                 <div class="ha-step-item">
                     <div class="ha-step-number">03</div>
-                    <h4>Writer Starts Your Proposal</h4>
+                    <h3>Writer Starts Your Proposal</h3>
                     <p>Once confirmed, a subject expert begins working and shares draft updates.</p>
                 </div>
             </div>
@@ -173,7 +180,7 @@ get_header();
         <?php the_content(); ?>
     </div>
 
-</div><!-- /.ha-home -->
+</main><!-- /.ha-home -->
 
 <?php
 endwhile; endif;

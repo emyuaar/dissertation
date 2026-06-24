@@ -48,8 +48,8 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="<?php echo home_url(); ?>">Home</a></li>
-                    <li><a href="<?php echo home_url('/order'); ?>">Order Now</a></li>
-                    <li><a href="<?php echo home_url('/about'); ?>">About Us</a></li>
+                    <li><a href="<?php echo home_url('/order'); ?>" aria-label="Order academic writing support">Order Now</a></li>
+                    <li><a href="<?php echo home_url('/about'); ?>" aria-label="About Online Dissertation Advisors">About Us</a></li>
                     <li><a href="<?php echo home_url('/blog'); ?>">Blogs</a></li>
                     <li><a href="<?php echo home_url(); ?>/#services">Services</a></li>
                     <li><a href="<?php echo home_url(); ?>/#faq">FAQ</a></li>
@@ -76,10 +76,10 @@
                 <h3>Contact</h3>
                 <ul>
                     <li>Email: 
-                        <a href="mailto:info@onlinedissertationadvisors.co.uk">info@onlinedissertationadvisors.co.uk</a><br>
+                        <a href="mailto:info@onlinedissertationadvisors.co.uk" aria-label="Email Online Dissertation Advisors">info@onlinedissertationadvisors.co.uk</a><br>
                         <a href="mailto:inquiries@onlinedissertationadvisors.co.uk">inquiries@onlinedissertationadvisors.co.uk</a>
                     </li>
-                    <li>WhatsApp: <a href="https://wa.me/447782200976" target="_blank">+44 7782 200976</a></li>
+                    <li>WhatsApp: <a href="https://wa.me/447782200976" target="_blank" rel="noopener noreferrer" aria-label="Chat with Online Dissertation Advisors on WhatsApp">+44 7782 200976</a></li>
                 </ul>
 
                 <div class="footer-address">
@@ -96,11 +96,11 @@
                 </div>
 
                 <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><span aria-hidden="true">f</span></a>
-                    <a href="#" aria-label="Instagram"><span aria-hidden="true">◎</span></a>
-                    <a href="#" aria-label="LinkedIn"><span aria-hidden="true">in</span></a>
-                    <a href="#" aria-label="TikTok"><span aria-hidden="true">♪</span></a>
-                    <a href="#" aria-label="Reddit"><span aria-hidden="true">r</span></a>
+                    <span class="footer-social-placeholder" aria-hidden="true">f</span>
+                    <span class="footer-social-placeholder" aria-hidden="true">◎</span>
+                    <span class="footer-social-placeholder" aria-hidden="true">in</span>
+                    <span class="footer-social-placeholder" aria-hidden="true">♪</span>
+                    <span class="footer-social-placeholder" aria-hidden="true">r</span>
                 </div>
 
                 

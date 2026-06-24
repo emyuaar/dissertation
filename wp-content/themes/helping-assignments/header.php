@@ -9,6 +9,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+
+<a class="ha-skip-link" href="#main-content">Skip to main content</a>
 
 <!-- TOP INFO BAR -->
 <div class="ha-topbar">
@@ -18,11 +21,11 @@
         </div>
 
         <div class="ha-topbar-right">
-            <a href="tel:+447782200976" class="ha-top-link">📞 +44 7782 200976</a>
+            <a href="tel:+447782200976" class="ha-top-link" aria-label="Call Online Dissertation Advisors">📞 +44 7782 200976</a>
             <span class="ha-top-sep">•</span>
-            <a href="mailto:info@onlinedissertationadvisors.co.uk" class="ha-top-link">✉ info@onlinedissertationadvisors.co.uk</a>
+            <a href="mailto:info@onlinedissertationadvisors.co.uk" class="ha-top-link" aria-label="Email Online Dissertation Advisors">✉ info@onlinedissertationadvisors.co.uk</a>
             <!-- <a href="mailto:inquiries@onlinedissertationadvisors.co.uk" class="ha-top-link">✉ inquiries@onlinedissertationadvisors.co.uk</a> -->
-            <a href="https://wa.me/447782200976" class="ha-top-whatsapp" target="_blank">
+            <a href="https://wa.me/447782200976" class="ha-top-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with Online Dissertation Advisors on WhatsApp">
                 WhatsApp Chat
             </a>
         </div>
@@ -35,7 +38,7 @@
 
         <!-- LOGO -->
         <div class="ha-logo">
-            <a href="<?php echo home_url(); ?>">
+            <a href="<?php echo home_url(); ?>" aria-label="Home">
                 <img
                     src="<?php echo esc_url(get_theme_file_uri('images/oda-logo.webp')); ?>"
                     width="1200"
@@ -47,7 +50,7 @@
         </div>
 
         <!-- NAVIGATION -->
-        <nav class="ha-nav">
+        <nav id="primary-navigation" class="ha-nav" aria-label="Primary navigation">
             <ul class="ha-nav-list">
                 <li><a href="<?php echo home_url(); ?>">Home</a></li>
 
@@ -58,7 +61,7 @@
                     </a>
                     <ul class="ha-dropdown-menu">
                         <li><a href="<?php echo home_url('/dissertation-proposal-help'); ?>">Dissertation Proposal</a></li>
-                        <li><a href="<?php echo home_url('/full-dissertation-writing'); ?>">Full Dissertation</a></li>
+                        <li><a href="<?php echo home_url('/full-dissertation-writing'); ?>" aria-label="Full Dissertation Help">Full Dissertation</a></li>
                     </ul>
                 </li>
 
@@ -81,8 +84,8 @@
                     </a>
                     <ul class="ha-dropdown-menu">
                         <li><a href="<?php echo home_url('/dissertation/'); ?>">Dissertation</a></li>
-                        <li><a href="<?php echo home_url('/assignments'); ?>">Assignments</a></li>
-                        <li><a href="<?php echo home_url('/essay'); ?>">Essay</a></li>
+                        <li><a href="<?php echo home_url('/assignments'); ?>" aria-label="Assignment Help">Assignments</a></li>
+                        <li><a href="<?php echo home_url('/essay'); ?>" aria-label="Essay Writing">Essay</a></li>
                         <li><a href="<?php echo home_url('/case-study'); ?>">Case study</a></li>
                         <li><a href="<?php echo home_url('/coursework'); ?>">Coursework</a></li>
                         <li><a href="<?php echo home_url('/presentation-writing'); ?>">Presentation Writing</a></li>
@@ -102,17 +105,17 @@
                     </ul>
                 </li>
 
-                <li><a href="<?php echo home_url('/about'); ?>">About</a></li>
+                <li><a href="<?php echo home_url('/about'); ?>" aria-label="About Online Dissertation Advisors">About</a></li>
 
                 <!-- Order CTA (Included in list for mobile consistency) -->
                 <li class="ha-nav-cta">
-                    <a href="<?php echo home_url('/order'); ?>" class="ha-cta-clean">Order Now</a>
+                    <a href="<?php echo home_url('/order'); ?>" class="ha-cta-clean" aria-label="Order academic writing support">Order Now</a>
                 </li>
             </ul>
         </nav>
 
         <!-- MOBILE MENU BUTTON -->
-        <button class="ha-mobile-toggle" aria-label="Toggle Menu">
+        <button class="ha-mobile-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
     </div>
@@ -127,6 +130,9 @@ document.addEventListener("DOMContentLoaded", function () {
         toggle.addEventListener("click", () => {
             nav.classList.toggle("is-open");
             document.body.classList.toggle("ha-nav-open");
+            const isOpen = nav.classList.contains("is-open");
+            toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            toggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
         });
     }
 

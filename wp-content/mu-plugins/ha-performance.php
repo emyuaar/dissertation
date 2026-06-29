@@ -6,6 +6,83 @@
 
 defined('ABSPATH') || exit;
 
+function ha_performance_should_bypass()
+{
+    if (is_admin()) {
+        return true;
+    }
+
+    if (function_exists('wp_doing_ajax') && wp_doing_ajax()) {
+        return true;
+    }
+
+    if (defined('REST_REQUEST') && REST_REQUEST) {
+        return true;
+    }
+
+    $request_uri = isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '';
+    $request_path = $request_uri ? (string) parse_url($request_uri, PHP_URL_PATH) : '';
+
+    if (
+        stripos($request_path, '/wp-json') === 0
+        || isset($_GET['rest_route'])
+    ) {
+        return true;
+    }
+
+    if (
+        isset($_GET['elementor-preview'])
+        || isset($_GET['elementor_library'])
+        || isset($_GET['preview'])
+    ) {
+        return true;
+    }
+
+    if (isset($_GET['action']) && $_GET['action'] === 'elementor') {
+        return true;
+    }
+
+    if (
+        isset($_GET['customize_changeset_uuid'])
+        || isset($_GET['customize_theme'])
+        || isset($_GET['customize_messenger_channel'])
+        || (isset($_GET['wp_customize']) && $_GET['wp_customize'] === 'on')
+        || (function_exists('is_customize_preview') && is_customize_preview())
+    ) {
+        return true;
+    }
+
+    if (
+        stripos($request_uri, 'elementor') !== false
+        && (
+            stripos($request_uri, 'wp-admin') !== false
+            || stripos($request_uri, 'elementor-preview') !== false
+            || stripos($request_uri, 'elementor_library') !== false
+        )
+    ) {
+        return true;
+    }
+
+    if (
+        function_exists('is_user_logged_in')
+        && is_user_logged_in()
+        && function_exists('current_user_can')
+        && (
+            current_user_can('manage_options')
+            || current_user_can('edit_pages')
+            || current_user_can('edit_posts')
+        )
+    ) {
+        return true;
+    }
+
+    return false;
+}
+
+if (ha_performance_should_bypass()) {
+    return;
+}
+
 /**
  * Avoid loading ElementsKit's global bundle when the current Elementor document
  * contains no ElementsKit widgets.
@@ -237,36 +314,6 @@ add_action('wp_footer', function () {
     </script>
     <?php endif;
 }, 90);
-
-/**
- * Populate the early page cache for anonymous HTML requests.
- */
-if (defined('HA_PAGE_CACHE_FILE') && !is_admin()) {
-    add_action('template_redirect', function () {
-        if (is_user_logged_in() || is_feed() || is_robots() || is_trackback()) {
-            return;
-        }
-
-        header('X-HA-Cache: MISS');
-        ob_start(function ($html) {
-            if (
-                http_response_code() === 200
-                && strlen($html) > 1000
-                && stripos($html, '</html>') !== false
-            ) {
-                $directory = dirname(HA_PAGE_CACHE_FILE);
-                if (!is_dir($directory)) {
-                    wp_mkdir_p($directory);
-                }
-                $temporary = HA_PAGE_CACHE_FILE . '.' . getmypid() . '.tmp';
-                if (file_put_contents($temporary, $html, LOCK_EX) !== false) {
-                    @rename($temporary, HA_PAGE_CACHE_FILE);
-                }
-            }
-            return $html;
-        });
-    }, -999);
-}
 
 function ha_purge_page_cache()
 {

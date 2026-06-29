@@ -9,15 +9,6 @@ if (PHP_SAPI === 'cli' || empty($_SERVER['REQUEST_METHOD'])) {
     return;
 }
 
-if (
-    extension_loaded('zlib')
-    && stripos($_SERVER['HTTP_ACCEPT_ENCODING'] ?? '', 'gzip') !== false
-    && !ini_get('zlib.output_compression')
-) {
-    ini_set('zlib.output_compression', 'On');
-    ini_set('zlib.output_compression_level', '6');
-}
-
 $method = strtoupper($_SERVER['REQUEST_METHOD']);
 if ($method !== 'GET' && $method !== 'HEAD') {
     return;

@@ -1006,6 +1006,53 @@ body.ha-nav-open .ha-mobile-toggle span:nth-child(3) { transform: translateY(-7p
     text-align: center;
 }
 
+/* Google Material Symbols for saved Elementor/contact-strip content. */
+.dp4-contact-icon .dp4-google-icon,
+.dp4-contact-icon .fa,
+.dp4-contact-icon .fas,
+.dp4-contact-icon .far,
+.dp4-contact-icon .fab,
+.dp4-contact-icon [class*="fa-"] {
+    font-family: 'Material Symbols Outlined' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    color: currentColor;
+    font-feature-settings: 'liga';
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+.dp4-contact-icon .fa::before,
+.dp4-contact-icon .fas::before,
+.dp4-contact-icon .far::before,
+.dp4-contact-icon .fab::before,
+.dp4-contact-icon [class*="fa-"]::before {
+    content: "call";
+}
+
+.dp4-contact-icon .fa-comment::before,
+.dp4-contact-icon .fa-comments::before,
+.dp4-contact-icon .fa-comment-dots::before,
+.dp4-contact-icon .fa-message::before,
+.dp4-contact-icon .fa-headset::before {
+    content: "chat";
+}
+
+.dp4-contact-icon .fa-envelope::before,
+.dp4-contact-icon .fa-mail::before,
+.dp4-contact-icon .fa-paper-plane::before {
+    content: "mail";
+}
+
 /* ==========================================================
    STEPS STRIP UNDER HERO
    ========================================================== */

@@ -13,9 +13,16 @@ add_action('wp_enqueue_scripts', function () {
     $blog_path = get_theme_file_path('blog.css');
 
     wp_enqueue_style(
+        'google-material-symbols-outlined',
+        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0',
+        array(),
+        null
+    );
+
+    wp_enqueue_style(
         'helping-assignments',
         get_theme_file_uri('style.css'),
-        array(),
+        array('google-material-symbols-outlined'),
         file_exists($style_path) ? (string) filemtime($style_path) : $theme_version
     );
 
@@ -28,6 +35,30 @@ add_action('wp_enqueue_scripts', function () {
         );
     }
 }, 5);
+
+add_filter('the_content', function ($content) {
+    if (stripos($content, 'dp4-contact-icon') === false) {
+        return $content;
+    }
+
+    $icon = static function ($name) {
+        return '<span class="material-symbols-outlined dp4-google-icon" aria-hidden="true">' . $name . '</span>';
+    };
+
+    $content = preg_replace(
+        '#<link[^>]+cdnjs\.cloudflare\.com/ajax/libs/font-awesome/[^>]+>\s*#i',
+        '',
+        $content
+    );
+
+    $replacements = array(
+        '#<i\s+class=(["\'])(?=[^"\']*\bfa[srbld]?\b)(?=[^"\']*\bfa-(?:phone|phone-alt|phone-volume)\b)[^"\']*\1\s*></i>#i' => $icon('call'),
+        '#<i\s+class=(["\'])(?=[^"\']*\bfa[srbld]?\b)(?=[^"\']*\bfa-(?:comment|comments|comment-dots|message|headset)\b)[^"\']*\1\s*></i>#i' => $icon('chat'),
+        '#<i\s+class=(["\'])(?=[^"\']*\bfa[srbld]?\b)(?=[^"\']*\bfa-(?:envelope|mail|paper-plane)\b)[^"\']*\1\s*></i>#i' => $icon('mail'),
+    );
+
+    return preg_replace(array_keys($replacements), array_values($replacements), $content);
+}, 20);
 
 function ha_render_recaptcha_and_honeypot()
 {

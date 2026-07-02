@@ -292,9 +292,13 @@ add_action('wp_footer', function () {
     <script>
     (function () {
         var loaded = false;
+
         function loadChat() {
             if (loaded) return;
             loaded = true;
+
+            // Keep the custom override, but load Tawk.to quickly so the launcher
+            // appears even when visitors do not interact immediately.
             window.Tawk_API = window.Tawk_API || {};
             window.Tawk_LoadStart = new Date();
             var script = document.createElement('script');
@@ -302,13 +306,15 @@ add_action('wp_footer', function () {
             script.src = <?php echo wp_json_encode('https://embed.tawk.to/' . $tawk_page . '/' . $tawk_widget); ?>;
             script.charset = 'UTF-8';
             script.setAttribute('crossorigin', '*');
-            document.head.appendChild(script);
+            (document.head || document.body || document.documentElement).appendChild(script);
         }
+
+        window.setTimeout(loadChat, 500);
         ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (eventName) {
             window.addEventListener(eventName, loadChat, { once: true, passive: true });
         });
         window.addEventListener('load', function () {
-            window.setTimeout(loadChat, 8000);
+            window.setTimeout(loadChat, 1000);
         }, { once: true });
     }());
     </script>

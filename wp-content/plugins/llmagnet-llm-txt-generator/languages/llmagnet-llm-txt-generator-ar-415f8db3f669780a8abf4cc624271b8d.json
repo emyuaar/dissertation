@@ -1,0 +1,3129 @@
+{
+  "translation-revision-date": "2026-06-23 00:54+0300",
+  "generator": "LLMagnet bin/build-locale-files.py",
+  "source": "assets/react-build/js/admin-shell.js",
+  "domain": "llmagnet-llm-txt-generator",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "llmagnet-llm-txt-generator",
+        "lang": "ar",
+        "plural-forms": "nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);"
+      },
+      "Pages": [
+        "الصفحات"
+      ],
+      "Bot Analytics": [
+        "تحليلات بوت"
+      ],
+      "Products": [
+        "منتجات"
+      ],
+      "Reports": [
+        "التقارير"
+      ],
+      "LLMs.txt": [
+        "LLMs.txt"
+      ],
+      "Schema JSON-LD": [
+        "Schema JSON-LD"
+      ],
+      "Agent Ready": [
+        "الوكيل جاهز"
+      ],
+      "MCP & AI": [
+        "MCP والذكاء الاصطناعي"
+      ],
+      "Error generating LLMS.txt. Please check server permissions.": [
+        "حدث خطأ أثناء إنشاء LLMS.txt. يرجى التحقق من أذونات الخادم."
+      ],
+      "Settings saved successfully.": [
+        "تم حفظ الإعدادات بنجاح."
+      ],
+      "AI visibility score %d of 100": [
+        "درجة رؤية الذكاء الاصطناعي %d من 100"
+      ],
+      "AI visibility score not calculated yet": [
+        "لم يتم احتساب درجة رؤية الذكاء الاصطناعي بعد"
+      ],
+      "Open LLMagnet to improve this score": [
+        "افتح LLMagnet لتحسين هذه النتيجة"
+      ],
+      "Fix": [
+        "يصلح"
+      ],
+      "Unknown admin page.": [
+        "صفحة إدارية غير معروفة."
+      ],
+      "Analytics data not found.": [
+        "لم يتم العثور على بيانات التحليلات."
+      ],
+      "Unknown error": [
+        "خطأ غير معروف"
+      ],
+      "WordPress admin data not found.": [
+        "WordPress لم يتم العثور على بيانات المشرف."
+      ],
+      "Error saving settings:": [
+        "خطأ في حفظ الإعدادات:"
+      ],
+      "Error saving settings. Please try again.": [
+        "خطأ في حفظ الإعدادات. يرجى المحاولة مرة أخرى."
+      ],
+      "WordPress root directory is not writable. LLMS.txt cannot be generated.": [
+        "WordPress الدليل الجذر غير قابل للكتابة. لا يمكن إنشاء LLMS.txt."
+      ],
+      "Something went wrong loading Bot Analytics.": [
+        "حدث خطأ أثناء تحميل تحليلات الروبوت."
+      ],
+      "Bot analytics data not found.": [
+        "لم يتم العثور على بيانات تحليلات الروبوت."
+      ],
+      "View Full Statistics →": [
+        "عرض الإحصائيات الكاملة →"
+      ],
+      "Bot": [
+        "بوت"
+      ],
+      "Total Visits": [
+        "إجمالي الزيارات"
+      ],
+      "Clicks": [
+        "النقرات"
+      ],
+      "CTR": [
+        "CTR"
+      ],
+      "Trend": [
+        "اتجاه"
+      ],
+      "%s logo": [
+        "شعار %s"
+      ],
+      "Last 24 hours": [
+        "آخر 24 ساعة"
+      ],
+      "Last 7 days": [
+        "آخر 7 أيام"
+      ],
+      "Last 14 days": [
+        "آخر 14 يومًا"
+      ],
+      "Last 30 days": [
+        "آخر 30 يومًا"
+      ],
+      "Last 90 days": [
+        "آخر 90 يومًا"
+      ],
+      "All time (charts aggregate up to 365 days)": [
+        "جميع الأوقات (يصل إجمالي الرسوم البيانية إلى 365 يومًا)"
+      ],
+      "Custom: %1$s – %2$s": [
+        "مخصص: %1$s – %2$s"
+      ],
+      "Custom range": [
+        "نطاق مخصص"
+      ],
+      "Report email address saved successfully.": [
+        "تم حفظ عنوان البريد الإلكتروني للإبلاغ بنجاح."
+      ],
+      "Failed to save email address.": [
+        "فشل في حفظ عنوان البريد الإلكتروني."
+      ],
+      "Failed to save email address. Please try again.": [
+        "فشل في حفظ عنوان البريد الإلكتروني. يرجى المحاولة مرة أخرى."
+      ],
+      "Analytics report has been sent to your email.": [
+        "تم إرسال تقرير التحليلات إلى بريدك الإلكتروني."
+      ],
+      "Failed to send analytics report.": [
+        "فشل في إرسال تقرير التحليلات."
+      ],
+      "Failed to send analytics report. Please try again later.": [
+        "فشل في إرسال تقرير التحليلات. يرجى المحاولة مرة أخرى في وقت لاحق."
+      ],
+      "Premium Feature": [
+        "ميزة متميزة"
+      ],
+      "Access to real analytics data is available in the premium version.": [
+        "الوصول إلى بيانات التحليلات الحقيقية متاح في الإصدار المميز."
+      ],
+      "Upgrade Now": [
+        "الترقية الآن"
+      ],
+      "Analytics Reports": [
+        "تقارير التحليلات"
+      ],
+      "Report Email Address": [
+        "الإبلاغ عن عنوان البريد الإلكتروني"
+      ],
+      "Saving...": [
+        "توفير..."
+      ],
+      "Save": [
+        "يحفظ"
+      ],
+      "Sending...": [
+        "إرسال..."
+      ],
+      "Send Analytics Report Now": [
+        "أرسل تقرير التحليلات الآن"
+      ],
+      "Select Models": [
+        "حدد النماذج"
+      ],
+      "All Models": [
+        "جميع الموديلات"
+      ],
+      "%d Models": [
+        "%d النماذج"
+      ],
+      "Bot Traffic": [
+        "حركة المرور بوت"
+      ],
+      "Available in Plus & Enterprise plans": [
+        "متوفر في خطط Plus وEnterprise"
+      ],
+      "Upgrade": [
+        "يرقي"
+      ],
+      "Last 7 Days": [
+        "آخر 7 أيام"
+      ],
+      "Last 30 Days": [
+        "آخر 30 يومًا"
+      ],
+      "Last 90 Days": [
+        "آخر 90 يومًا"
+      ],
+      "Custom Range": [
+        "نطاق مخصص"
+      ],
+      "Select Date Range": [
+        "حدد النطاق الزمني"
+      ],
+      "Close date picker": [
+        "إغلاق منتقي التاريخ"
+      ],
+      "This Quarter": [
+        "هذا الربع"
+      ],
+      "This Year": [
+        "هذا العام"
+      ],
+      "From": [
+        "من"
+      ],
+      "To": [
+        "ل"
+      ],
+      "Apply Custom Range": [
+        "تطبيق النطاق المخصص"
+      ],
+      "Content length": [
+        "طول المحتوى"
+      ],
+      "Heading structure": [
+        "هيكل العنوان"
+      ],
+      "Image ALT coverage": [
+        "تغطية الصور البديلة"
+      ],
+      "Excerpt": [
+        "مقتطفات"
+      ],
+      "Tags & categories": [
+        "العلامات والفئات"
+      ],
+      "Readability": [
+        "سهولة القراءة"
+      ],
+      "Description length": [
+        "طول الوصف"
+      ],
+      "Tags": [
+        "العلامات"
+      ],
+      "Category assigned": [
+        "تم تعيين الفئة"
+      ],
+      "Passed": [
+        "اجتاز"
+      ],
+      "Needs improvement": [
+        "يحتاج إلى تحسين"
+      ],
+      "Missing": [
+        "مفتقد"
+      ],
+      "AI bot visibility (70% of score)": [
+        "رؤية روبوت الذكاء الاصطناعي (70% من النتيجة)"
+      ],
+      "%1$s is worth up to %2$s points of the total score": [
+        "تبلغ قيمة %1$s ما يصل إلى %2$s نقطة من إجمالي النقاط"
+      ],
+      "Recommendations": [
+        "التوصيات"
+      ],
+      "Please fill in both subject and description.": [
+        "يرجى ملء كل من الموضوع والوصف."
+      ],
+      "Could not send feedback (missing API settings). Please reload the page.": [
+        "تعذر إرسال التعليقات (إعدادات API مفقودة). يرجى إعادة تحميل الصفحة."
+      ],
+      "Request failed (%d)": [
+        "فشل الطلب (%d)"
+      ],
+      "Network error. Please try again.": [
+        "خطأ في الشبكة. يرجى المحاولة مرة أخرى."
+      ],
+      "Feedback / bugs": [
+        "ردود الفعل / الأخطاء"
+      ],
+      "Close feedback dialog": [
+        "إغلاق مربع حوار التعليقات"
+      ],
+      "Thanks — your feedback was sent.": [
+        "شكرا — تم إرسال ملاحظاتك."
+      ],
+      "Subject": [
+        "موضوع"
+      ],
+      "Have something to say?": [
+        "هل لديك ما تقوله؟"
+      ],
+      "Description": [
+        "وصف"
+      ],
+      "Describe your request": [
+        "قم بوصف طلبك"
+      ],
+      "We attach technical details (WordPress, PHP, plugin version, your account, and recent debug log if available) to help us reproduce issues.": [
+        "نرفق التفاصيل الفنية (WordPress، PHP، إصدار البرنامج المساعد، حسابك، وسجل تصحيح الأخطاء الأخير إذا كان متاحًا) لمساعدتنا في إعادة إنتاج المشكلات."
+      ],
+      "Cancel": [
+        "يلغي"
+      ],
+      "Sending…": [
+        "إرسال…"
+      ],
+      "Submit feedback": [
+        "إرسال ردود الفعل"
+      ],
+      "Overview": [
+        "ملخص"
+      ],
+      "Expand menu": [
+        "قم بتوسيع القائمة"
+      ],
+      "Collapse menu": [
+        "طي القائمة"
+      ],
+      "News & updates": [
+        "الأخبار والتحديثات"
+      ],
+      "Updated %s": [
+        "تم التحديث %s"
+      ],
+      "Close news drawer": [
+        "إغلاق درج الأخبار"
+      ],
+      "News feed is not available. Check your connection or": [
+        "موجز الأخبار غير متوفر. تحقق من اتصالك أو"
+      ],
+      "in": [
+        "في"
+      ],
+      "No announcements right now.": [
+        "لا إعلانات في الوقت الراهن."
+      ],
+      "Update": [
+        "تحديث"
+      ],
+      "Read more": [
+        "اقرأ المزيد"
+      ],
+      "Page details": [
+        "تفاصيل الصفحة"
+      ],
+      "Remove tag": [
+        "إزالة العلامة"
+      ],
+      "Product details": [
+        "تفاصيل المنتج"
+      ],
+      "Score not calculated yet": [
+        "النتيجة لم تحسب بعد"
+      ],
+      "Loading": [
+        "تحميل"
+      ],
+      "General Settings": [
+        "الإعدادات العامة"
+      ],
+      "Configure which content should be included in the llms.txt file and associated Markdown exports.": [
+        "قم بتكوين المحتوى الذي يجب تضمينه في ملف llms.txt وصادرات Markdown المرتبطة به."
+      ],
+      "Content Types to Include": [
+        "أنواع المحتوى المطلوب تضمينها"
+      ],
+      "Content Export": [
+        "تصدير المحتوى"
+      ],
+      "Include full content (unchecked = excerpt only)": [
+        "تضمين المحتوى الكامل (غير محدد = مقتطفات فقط)"
+      ],
+      "Time Period": [
+        "الفترة الزمنية"
+      ],
+      "Number of days of content to include": [
+        "عدد أيام المحتوى المراد تضمينه"
+      ],
+      "Number of days of content to include (0 = all content)": [
+        "عدد أيام المحتوى المراد تضمينه (0 = كل المحتوى)"
+      ],
+      "Cleanup on Uninstall": [
+        "التنظيف عند إلغاء التثبيت"
+      ],
+      "Delete llms.txt and llms-docs/ directory when plugin is uninstalled": [
+        "احذف دليل llms.txt وllms-docs/ عند إزالة تثبيت البرنامج الإضافي"
+      ],
+      "Save Changes": [
+        "حفظ التغييرات"
+      ],
+      "Success": [
+        "نجاح"
+      ],
+      "Error": [
+        "خطأ"
+      ],
+      "LLMS.txt Status": [
+        "حالة LLMS.txt"
+      ],
+      "Root Directory:": [
+        "الدليل الجذر:"
+      ],
+      "Writable": [
+        "قابل للكتابة"
+      ],
+      "Not Writable": [
+        "غير قابل للكتابة"
+      ],
+      "Last Generated:": [
+        "آخر إنشاء:"
+      ],
+      "Never": [
+        "أبداً"
+      ],
+      "Generating...": [
+        "جارٍ الإنشاء..."
+      ],
+      "Generate Now": [
+        "توليد الآن"
+      ],
+      "Failed to load news": [
+        "فشل في تحميل الأخبار"
+      ],
+      "Network error": [
+        "خطأ في الشبكة"
+      ],
+      "News and updates (unread items)": [
+        "الأخبار والتحديثات (العناصر غير المقروءة)"
+      ],
+      "News and updates": [
+        "الأخبار والتحديثات"
+      ],
+      "Content settings data not found.": [
+        "لم يتم العثور على بيانات إعدادات المحتوى."
+      ],
+      "No data available": [
+        "لا توجد بيانات متاحة"
+      ],
+      "Dashboard data not found.": [
+        "لم يتم العثور على بيانات لوحة المعلومات."
+      ],
+      "Overview data not found.": [
+        "لم يتم العثور على بيانات النظرة العامة."
+      ],
+      "Something went wrong loading Pages Analytics.": [
+        "حدث خطأ أثناء تحميل \"تحليلات الصفحات\"."
+      ],
+      "Pages data not found.": [
+        "لم يتم العثور على بيانات الصفحات."
+      ],
+      "Products data not found.": [
+        "لم يتم العثور على بيانات المنتجات."
+      ],
+      "WooCommerce Required": [
+        "WooCommerce مطلوب"
+      ],
+      "Products analytics requires WooCommerce to be installed and activated.": [
+        "تتطلب تحليلات المنتجات تثبيت وتنشيط WooCommerce."
+      ],
+      "Once WooCommerce is active, you'll be able to track product views, add-to-cart events, and revenue from LLM traffic.": [
+        "بمجرد تنشيط WooCommerce، ستتمكن من تتبع مشاهدات المنتج وأحداث الإضافة إلى سلة التسوق والإيرادات من حركة مرور LLM."
+      ],
+      "Reports data not found.": [
+        "لم يتم العثور على بيانات التقارير."
+      ],
+      "Schema data not loaded.": [
+        "لم يتم تحميل بيانات المخطط."
+      ],
+      "System information data not found.": [
+        "لم يتم العثور على بيانات معلومات النظام."
+      ],
+      "Report settings saved successfully.": [
+        "تم حفظ إعدادات التقرير بنجاح."
+      ],
+      "Failed to save settings.": [
+        "فشل في حفظ الإعدادات."
+      ],
+      "Failed to save settings. Please try again.": [
+        "فشل في حفظ الإعدادات. يرجى المحاولة مرة أخرى."
+      ],
+      "Analytics Reports is a premium feature. Please": [
+        "تعد تقارير التحليلات ميزة متميزة. لو سمحت"
+      ],
+      "upgrade": [
+        "يرقي"
+      ],
+      "to access this functionality.": [
+        "للوصول إلى هذه الوظيفة."
+      ],
+      "Email Report Settings": [
+        "إعدادات تقرير البريد الإلكتروني"
+      ],
+      "Report Recipients": [
+        "تقرير المستلمين"
+      ],
+      "Add multiple email addresses separated by commas (e.g., admin@example.com, team@example.com)": [
+        "إضافة عناوين بريد إلكتروني متعددة مفصولة بفواصل (على سبيل المثال، admin@example.com، team@example.com)"
+      ],
+      "Report Frequency": [
+        "تردد التقرير"
+      ],
+      "Daily": [
+        "يوميًا"
+      ],
+      "Weekly": [
+        "أسبوعي"
+      ],
+      "Monthly": [
+        "شهريا"
+      ],
+      "Quarterly": [
+        "ربع سنوية"
+      ],
+      "Send Time": [
+        "إرسال الوقت"
+      ],
+      "Company Logo": [
+        "شعار الشركة"
+      ],
+      "Enterprise": [
+        "مَشرُوع"
+      ],
+      "Add your company logo to email reports. Available for Enterprise users only.": [
+        "أضف شعار شركتك إلى تقارير البريد الإلكتروني. متاح لمستخدمي المؤسسات فقط."
+      ],
+      "Change Logo": [
+        "تغيير الشعار"
+      ],
+      "Remove": [
+        "يزيل"
+      ],
+      "Select Logo": [
+        "حدد الشعار"
+      ],
+      "Upgrade to Enterprise to add your company logo": [
+        "قم بالترقية إلى Enterprise لإضافة شعار شركتك"
+      ],
+      "Event alerts (opt-in)": [
+        "تنبيهات الأحداث (الاشتراك)"
+      ],
+      "Immediate emails when notable AI traffic events occur. Uses the report recipients above.": [
+        "رسائل بريد إلكتروني فورية عند حدوث أحداث حركة مرور ملحوظة بالذكاء الاصطناعي. يستخدم مستلمي التقرير أعلاه."
+      ],
+      "New product crawled within an hour of publish": [
+        "تم الزحف إلى المنتج الجديد خلال ساعة من نشره"
+      ],
+      "Bot traffic drops more than 40% week-over-week": [
+        "تنخفض حركة الروبوتات بأكثر من 40٪ أسبوعيًا"
+      ],
+      "A new AI bot type is detected on your site": [
+        "تم اكتشاف نوع جديد من روبوتات الذكاء الاصطناعي على موقعك"
+      ],
+      "Save Settings": [
+        "حفظ الإعدادات"
+      ],
+      "Send Report Now": [
+        "أرسل التقرير الآن"
+      ],
+      "Send an analytics report immediately to the recipients above.": [
+        "أرسل تقرير تحليلات على الفور إلى المستلمين أعلاه."
+      ],
+      "Email Template": [
+        "قالب البريد الإلكتروني"
+      ],
+      "Template:": [
+        "نموذج:"
+      ],
+      "Classic": [
+        "كلاسيكي"
+      ],
+      "Minimal": [
+        "الحد الأدنى"
+      ],
+      "Gradient": [
+        "التدرج"
+      ],
+      "Professional": [
+        "احترافي"
+      ],
+      "Loading email preview...": [
+        "جارٍ تحميل معاينة البريد الإلكتروني..."
+      ],
+      " — physical robots.txt detected": [
+        "- تم اكتشاف robots.txt الفعلي"
+      ],
+      "%1$d items included out of %2$d total items": [
+        "%1$d العناصر المضمنة من إجمالي %2$d العناصر"
+      ],
+      "%1$d of %2$d": [
+        "%1$d من %2$d"
+      ],
+      "%1$s: %2$d visits": [
+        "%1$s: %2$d الزيارات"
+      ],
+      "%d image is missing alt text. Adding descriptive alt text improves accessibility and can help LLMs better understand your images.": [
+        "صورة %d تفتقد النص البديل. تعمل إضافة نص بديل وصفي على تحسين إمكانية الوصول ويمكن أن تساعد طلاب LLM على فهم صورك بشكل أفضل."
+      ],
+      "%d loaded": [
+        "تم تحميل %d"
+      ],
+      "%d missing": [
+        "%d مفقود"
+      ],
+      "%d order": [
+        "%d النظام"
+      ],
+      "%d post included": [
+        "%d تم تضمين المشاركة"
+      ],
+      "%d quick fix available": [
+        "%d يتوفر حل سريع"
+      ],
+      "%d%% weight": [
+        "%d%% الوزن"
+      ],
+      "%s in llms.txt": [
+        "%s في llms.txt"
+      ],
+      "%s%% rate": [
+        "%s%% معدل"
+      ],
+      "A complete checklist to optimize your site for ChatGPT, Perplexity, Gemini, and the next generation of search.": [
+        "قائمة مرجعية كاملة لتحسين موقعك لـ ChatGPT، Perplexity، Gemini، والجيل القادم من البحث."
+      ],
+      "AI Availability Score": [
+        "درجة توافر الذكاء الاصطناعي"
+      ],
+      "AI Search Optimization Checklist": [
+        "قائمة مراجعة تحسين البحث بالذكاء الاصطناعي"
+      ],
+      "AI Visibility: %d": [
+        "رؤية الذكاء الاصطناعي: %d"
+      ],
+      "AI readiness fixes": [
+        "إصلاحات جاهزية الذكاء الاصطناعي"
+      ],
+      "ATC Rate": [
+        "معدل أتك"
+      ],
+      "Access to page analytics data is available in the premium version.": [
+        "الوصول إلى بيانات تحليلات الصفحة متاح في الإصدار المتميز."
+      ],
+      "Add llms.txt to robots.txt": [
+        "أضف llms.txt إلى robots.txt"
+      ],
+      "Add to Cart": [
+        "أضف إلى السلة"
+      ],
+      "Add to robots.txt": [
+        "أضف إلى robots.txt"
+      ],
+      "All set. No actionable recommendations right now.": [
+        "كل شيء جاهز. لا توجد توصيات قابلة للتنفيذ في الوقت الحالي."
+      ],
+      "Also attach the last lines of my debug.log to help diagnose this issue. The log may contain technical paths or data from other plugins; we mask obvious secrets, but only enable this if you are comfortable sharing it.": [
+        "قم أيضًا بإرفاق الأسطر الأخيرة من سجل التصحيح الخاص بي للمساعدة في تشخيص هذه المشكلة. قد يحتوي السجل على مسارات فنية أو بيانات من مكونات إضافية أخرى؛ نحن نخفي الأسرار الواضحة، لكن لا نقوم بذلك إلا إذا كنت تشعر بالارتياح عند مشاركتها."
+      ],
+      "Alt Text": [
+        "نص بديل"
+      ],
+      "An error occurred while generating files.": [
+        "حدث خطأ أثناء إنشاء الملفات."
+      ],
+      "Anonymous usage analytics, used only to improve LLMagnet. We never collect anything from your site visitors.": [
+        "تحليلات الاستخدام المجهولة، تُستخدم فقط لتحسين LLMagnet. نحن لا نجمع أي شيء من زوار موقعك أبدًا."
+      ],
+      "Avg words/sentence": [
+        "متوسط ​​الكلمات/الجملة"
+      ],
+      "Based on %1$d visits across %2$d pages in the last %3$d days": [
+        "استنادًا إلى زيارات %1$d عبر صفحات %2$d في آخر %3$d من الأيام"
+      ],
+      "Bot Impressions": [
+        "انطباعات الروبوت"
+      ],
+      "Bot Quality": [
+        "جودة البوت"
+      ],
+      "Bot Summaries": [
+        "ملخصات بوت"
+      ],
+      "Bot UTM clicks": [
+        "نقرات بوت UTM"
+      ],
+      "Bot Visibility": [
+        "رؤية الروبوت"
+      ],
+      "Bot Visits": [
+        "زيارات الروبوت"
+      ],
+      "Bot Visits (30 Days)": [
+        "زيارات الروبوت (30 يومًا)"
+      ],
+      "Bot visits will be automatically logged when LLM crawlers access your pages.": [
+        "سيتم تسجيل زيارات الروبوت تلقائيًا عندما تصل برامج زحف LLM إلى صفحاتك."
+      ],
+      "Bot visits will be automatically logged when LLM crawlers access your product pages.": [
+        "سيتم تسجيل زيارات الروبوت تلقائيًا عندما تصل برامج زحف LLM إلى صفحات منتجك."
+      ],
+      "Bot visits will be automatically logged when LLM crawlers access your site.": [
+        "سيتم تسجيل زيارات الروبوت تلقائيًا عندما تصل برامج زحف LLM إلى موقعك."
+      ],
+      "Breakdown by Post Type:": [
+        "التقسيم حسب نوع المشاركة:"
+      ],
+      "CURRENT FILE SIZE": [
+        "حجم الملف الحالي"
+      ],
+      "CUSTOM INTRO TEXT": [
+        "نص مقدمة مخصص"
+      ],
+      "Card View": [
+        "عرض البطاقة"
+      ],
+      "Categories": [
+        "فئات"
+      ],
+      "Check for first LLM visit": [
+        "تحقق من زيارة LLM الأولى"
+      ],
+      "Cleanup on uninstall": [
+        "التنظيف عند إلغاء التثبيت"
+      ],
+      "Click on any product to view detailed analytics and optimize content to improve its visibility score.": [
+        "انقر على أي منتج لعرض التحليلات التفصيلية وتحسين المحتوى لتحسين درجة رؤيته."
+      ],
+      "Clicks (30 Days)": [
+        "النقرات (30 يومًا)"
+      ],
+      "Combined score based on Bot Visibility (70%) and Content Quality (30%)": [
+        "النتيجة المجمعة تعتمد على رؤية الروبوت (70%) وجودة المحتوى (30%)"
+      ],
+      "Content Quality": [
+        "جودة المحتوى"
+      ],
+      "Content Stats": [
+        "إحصائيات المحتوى"
+      ],
+      "Content export options": [
+        "خيارات تصدير المحتوى"
+      ],
+      "Content optimization score. Based on length, headings, ALT texts, excerpt, tags, and readability.": [
+        "درجة تحسين المحتوى. استنادًا إلى الطول والعناوين ونصوص ALT والمقتطفات والعلامات وسهولة القراءة."
+      ],
+      "Content types to include": [
+        "أنواع المحتوى المراد تضمينها"
+      ],
+      "Continue": [
+        "يكمل"
+      ],
+      "Continue setup": [
+        "متابعة الإعداد"
+      ],
+      "Could not load the AI visibility score: %s": [
+        "تعذر تحميل درجة رؤية الذكاء الاصطناعي: %s"
+      ],
+      "Coverage Calculation": [
+        "حساب التغطية"
+      ],
+      "Crawl Frequency": [
+        "تردد الزحف"
+      ],
+      "Crawler activity": [
+        "نشاط الزاحف"
+      ],
+      "Delete files when plugin is uninstalled": [
+        "احذف الملفات عند إلغاء تثبيت البرنامج المساعد"
+      ],
+      "Describe this image...": [
+        "وصف هذه الصورة..."
+      ],
+      "Detailed diagnostics require an administrator account.": [
+        "تتطلب التشخيصات التفصيلية حساب مسؤول."
+      ],
+      "Diagnostics": [
+        "التشخيص"
+      ],
+      "Disabled": [
+        "عاجز"
+      ],
+      "Dismiss notification": [
+        "رفض الإخطار"
+      ],
+      "EXCERPTS ONLY": [
+        "مقتطفات فقط"
+      ],
+      "Edit": [
+        "يحرر"
+      ],
+      "Email reports": [
+        "تقارير البريد الإلكتروني"
+      ],
+      "Enable in Settings": [
+        "تمكين في الإعدادات"
+      ],
+      "Enter a custom description for your llms.txt header (leave empty to use site tagline)": [
+        "أدخل وصفًا مخصصًا لرأس llms.txt (اتركه فارغًا لاستخدام شعار الموقع)"
+      ],
+      "Error Loading Page": [
+        "حدث خطأ أثناء تحميل الصفحة"
+      ],
+      "Error Loading Product": [
+        "حدث خطأ أثناء تحميل المنتج"
+      ],
+      "Excellent": [
+        "ممتاز"
+      ],
+      "Excerpt / Meta Description": [
+        "مقتطفات / وصف ميتا"
+      ],
+      "FULL CONTENT": [
+        "المحتوى الكامل"
+      ],
+      "Failed to load analytics data. Please try again later.": [
+        "فشل تحميل بيانات التحليلات. يرجى المحاولة مرة أخرى في وقت لاحق."
+      ],
+      "Failed to load page statistics: %s": [
+        "فشل تحميل إحصائيات الصفحة: %s"
+      ],
+      "Failed to load product statistics: %s": [
+        "فشل تحميل إحصائيات المنتج: %s"
+      ],
+      "Failed to save email": [
+        "فشل في حفظ البريد الإلكتروني"
+      ],
+      "Failed to save email. Please try again.": [
+        "فشل في حفظ البريد الإلكتروني. يرجى المحاولة مرة أخرى."
+      ],
+      "Featured Image": [
+        "صورة مميزة"
+      ],
+      "File is %sMB. Consider reducing max posts.": [
+        "الملف هو %sMB. فكر في تقليل الحد الأقصى للمشاركات."
+      ],
+      "Finish setup to get discovered by AI assistants": [
+        "قم بإنهاء الإعداد ليتم اكتشافك بواسطة مساعدي الذكاء الاصطناعي"
+      ],
+      "Fix Missing Alt Text": [
+        "إصلاح النص البديل المفقود"
+      ],
+      "Fix Now": [
+        "أصلح الآن"
+      ],
+      "Fixing...": [
+        "تحديد..."
+      ],
+      "Formula: (Items in LLMS.txt ÷ Total Items) × 100": [
+        "الصيغة: (العناصر الموجودة في LLMS.txt ÷ إجمالي العناصر) × 100"
+      ],
+      "Full content export is off": [
+        "تم إيقاف تصدير المحتوى الكامل"
+      ],
+      "Full content or excerpts only": [
+        "محتوى كامل أو مقتطفات فقط"
+      ],
+      "GENERATE LLMS-FULL.TXT": [
+        "إنشاء LLMS-FULL.TXT"
+      ],
+      "GROUP BY CONTENT TYPE": [
+        "المجموعة حسب نوع المحتوى"
+      ],
+      "Gallery Images": [
+        "معرض الصور"
+      ],
+      "Generate your llms.txt file": [
+        "قم بإنشاء ملف llms.txt الخاص بك"
+      ],
+      "Get Started": [
+        "ابدأ"
+      ],
+      "Get the Checklist": [
+        "احصل على القائمة المرجعية"
+      ],
+      "Get weekly AI visibility reports delivered to your inbox so you always know how AI assistants interact with your site.": [
+        "احصل على تقارير رؤية الذكاء الاصطناعي الأسبوعية التي يتم تسليمها إلى بريدك الوارد حتى تعرف دائمًا كيفية تفاعل مساعدي الذكاء الاصطناعي مع موقعك."
+      ],
+      "Getting started with AI visibility": [
+        "البدء في رؤية الذكاء الاصطناعي"
+      ],
+      "Go to Dashboard": [
+        "انتقل إلى لوحة المعلومات"
+      ],
+      "Good": [
+        "جيد"
+      ],
+      "Great job! Your site is well optimized for AI Search Engines.": [
+        "عمل عظيم! تم تحسين موقعك بشكل جيد لمحركات البحث التي تعمل بالذكاء الاصطناعي."
+      ],
+      "Group by content type": [
+        "التجميع حسب نوع المحتوى"
+      ],
+      "Heading Structure": [
+        "هيكل العنوان"
+      ],
+      "Help improve LLMagnet": [
+        "ساعد في تحسين LLMagnet"
+      ],
+      "Hi %s": [
+        "مرحبًا %s"
+      ],
+      "High priority": [
+        "أولوية عالية"
+      ],
+      "How is the score calculated?": [
+        "كيف يتم حساب النتيجة؟"
+      ],
+      "How often AI bots visit this page. Based on crawl frequency, bot quality, and visit count.": [
+        "عدد مرات زيارة روبوتات الذكاء الاصطناعي لهذه الصفحة. استنادًا إلى تكرار الزحف وجودة الروبوت وعدد الزيارات."
+      ],
+      "How often AI bots visit this product. Based on crawl frequency, bot quality, and visit count.": [
+        "عدد مرات زيارة روبوتات الذكاء الاصطناعي لهذا المنتج. استنادًا إلى تكرار الزحف وجودة الروبوت وعدد الزيارات."
+      ],
+      "How often AI bots visit your site. More frequent visits mean better visibility.": [
+        "عدد مرات زيارة روبوتات الذكاء الاصطناعي لموقعك. المزيد من الزيارات المتكررة تعني رؤية أفضل."
+      ],
+      "I agree and accept the terms": [
+        "أنا أوافق وأوافق على الشروط"
+      ],
+      "IMAGES": [
+        "صور"
+      ],
+      "INCLUDE EXCERPTS": [
+        "تضمين مقتطفات"
+      ],
+      "Images & ALT Text": [
+        "الصور والنص البديل"
+      ],
+      "Impressions": [
+        "انطباعات"
+      ],
+      "Include excerpts": [
+        "تضمين مقتطفات"
+      ],
+      "Include images": [
+        "تضمين الصور"
+      ],
+      "LLM": [
+        "ماجستير"
+      ],
+      "LLM visit": [
+        "زيارة LLM"
+      ],
+      "LLMagnet Dashboard": [
+        "LLMagnet لوحة التحكم"
+      ],
+      "LLMs-full.txt (complete content)": [
+        "LLMs-full.txt (المحتوى الكامل)"
+      ],
+      "LLMs-full.txt Preview": [
+        "معاينة LLMs-full.txt"
+      ],
+      "LLMs.txt Manager": [
+        "LLMs.txt مدير"
+      ],
+      "LLMs.txt Preview": [
+        "LLMs.txt معاينة"
+      ],
+      "LLMs.txt structure settings": [
+        "إعدادات هيكل LLMs.txt"
+      ],
+      "Load More": [
+        "تحميل المزيد"
+      ],
+      "Loading preview...": [
+        "جارٍ تحميل المعاينة..."
+      ],
+      "Loading score…": [
+        "جارٍ تحميل النتيجة…"
+      ],
+      "Loading...": [
+        "تحميل..."
+      ],
+      "Long Description": [
+        "وصف طويل"
+      ],
+      "MAX POSTS": [
+        "الحد الأقصى من المشاركات"
+      ],
+      "MAX POSTS PER SECTION": [
+        "الحد الأقصى من المشاركات لكل قسم"
+      ],
+      "Manage your LLMS.txt file and LLM response settings": [
+        "إدارة ملف LLMS.txt وإعدادات استجابة LLM"
+      ],
+      "Manage your account": [
+        "إدارة حسابك"
+      ],
+      "Max posts for llms-full.txt": [
+        "الحد الأقصى لعدد المشاركات لـ llms-full.txt"
+      ],
+      "Max posts per section": [
+        "الحد الأقصى لعدد المشاركات لكل قسم"
+      ],
+      "Method: %1$s%2$s": [
+        "الطريقة: %1$s%2$s"
+      ],
+      "Missing llms.txt reference": [
+        "مرجع llms.txt مفقود"
+      ],
+      "Models": [
+        "نماذج"
+      ],
+      "Monthly Reports": [
+        "التقارير الشهرية"
+      ],
+      "Monthly reports are sent to: %s": [
+        "يتم إرسال التقارير الشهرية إلى: %s"
+      ],
+      "Needs Attention": [
+        "يحتاج إلى اهتمام"
+      ],
+      "Needs Improvement": [
+        "يحتاج إلى تحسين"
+      ],
+      "Next": [
+        "التالي"
+      ],
+      "No AI bot traffic in 30 days": [
+        "لا توجد حركة مرور لروبوتات الذكاء الاصطناعي خلال 30 يومًا"
+      ],
+      "No AI bot visits yet — that is normal on a fresh install. Complete these steps so crawlers can discover your content.": [
+        "لا توجد زيارات لروبوتات الذكاء الاصطناعي حتى الآن — وهذا أمر طبيعي عند التثبيت الجديد. أكمل هذه الخطوات حتى تتمكن برامج الزحف من اكتشاف المحتوى الخاص بك."
+      ],
+      "No Bot Visits Yet": [
+        "لا توجد زيارات بوت حتى الآن"
+      ],
+      "No LLM bot visits have been recorded yet.": [
+        "لم يتم تسجيل أي زيارات لروبوت LLM حتى الآن."
+      ],
+      "No Page Traffic Yet": [
+        "لا توجد حركة مرور للصفحة حتى الآن"
+      ],
+      "No Product Traffic Yet": [
+        "لا توجد حركة مرور للمنتج حتى الآن"
+      ],
+      "No bot data available yet": [
+        "لا توجد بيانات بوت متاحة حتى الآن"
+      ],
+      "No images found for this product. Add images in the WooCommerce product editor.": [
+        "لم يتم العثور على صور لهذا المنتج. قم بإضافة الصور في محرر المنتج WooCommerce."
+      ],
+      "No images found in this post.": [
+        "لم يتم العثور على صور في هذا المنصب."
+      ],
+      "No pages have received bot traffic yet.": [
+        "لم تتلق أي صفحات حركة مرور الروبوت حتى الآن."
+      ],
+      "No products have received bot traffic in the selected period.": [
+        "لم تتلق أي منتجات حركة مرور آلية في الفترة المحددة."
+      ],
+      "Not generated yet": [
+        "لم يتم إنشاؤها بعد"
+      ],
+      "Of 100": [
+        "من 100"
+      ],
+      "Open Content Settings": [
+        "افتح إعدادات المحتوى"
+      ],
+      "Open LLMagnet to fix": [
+        "افتح LLMagnet للإصلاح"
+      ],
+      "Open Schema JSON-LD": [
+        "مفتوح Schema JSON-LD"
+      ],
+      "Open in new tab": [
+        "افتح في علامة تبويب جديدة"
+      ],
+      "Open llms-full.txt in new tab": [
+        "افتح llms-full.txt في علامة تبويب جديدة"
+      ],
+      "Open llms.txt in new tab": [
+        "افتح llms.txt في علامة تبويب جديدة"
+      ],
+      "Overall": [
+        "إجمالي"
+      ],
+      "Overview Statistics": [
+        "إحصائيات عامة"
+      ],
+      "Page Health": [
+        "صحة الصفحة"
+      ],
+      "Page Visibility Score": [
+        "نقاط رؤية الصفحة"
+      ],
+      "Page editing and visibility scores are available in Plus and Enterprise plans.": [
+        "تتوفر نتائج تحرير الصفحة ورؤيتها في خطط Plus وEnterprise."
+      ],
+      "Paragraphs": [
+        "الفقرات"
+      ],
+      "Physical file": [
+        "الملف المادي"
+      ],
+      "Plus Feature": [
+        "ميزة إضافية"
+      ],
+      "Premium feature - Upgrade to enable": [
+        "ميزة مميزة - قم بالترقية للتمكين"
+      ],
+      "Privacy": [
+        "خصوصية"
+      ],
+      "Product Descriptions": [
+        "أوصاف المنتج"
+      ],
+      "Product Visibility Score": [
+        "نقاط رؤية المنتج"
+      ],
+      "Product content optimization. Based on descriptions, tags, categories, and image ALT texts.": [
+        "تحسين محتوى المنتج. استنادًا إلى الأوصاف والعلامات والفئات ونصوص الصور البديلة."
+      ],
+      "Product editing and visibility scores are available in Plus and Enterprise plans.": [
+        "تتوفر نتائج تحرير المنتج ورؤيته في خطط Plus وEnterprise."
+      ],
+      "Products sorted by bot impressions. %d products tracked.": [
+        "المنتجات مرتبة حسب مرات ظهور الروبوت. تم تتبع منتجات %d."
+      ],
+      "Purchase Rate": [
+        "معدل الشراء"
+      ],
+      "Ratio of content pages vs technical/commercial pages being crawled.": [
+        "نسبة صفحات المحتوى مقابل الصفحات التقنية/التجارية التي يتم الزحف إليها."
+      ],
+      "Read our Privacy Policy": [
+        "اقرأ سياسة الخصوصية الخاصة بنا"
+      ],
+      "Recalculate score": [
+        "إعادة حساب النتيجة"
+      ],
+      "Recommendations actions": [
+        "إجراءات التوصيات"
+      ],
+      "Recommended": [
+        "مُستَحسَن"
+      ],
+      "Reference your llms.txt in robots.txt so AI crawlers can automatically discover and read it.": [
+        "قم بالإشارة إلى llms.txt في robots.txt حتى تتمكن برامج زحف الذكاء الاصطناعي من اكتشافه وقراءته تلقائيًا."
+      ],
+      "Refresh preview": [
+        "تحديث المعاينة"
+      ],
+      "Regenerating...": [
+        "تجديد..."
+      ],
+      "Reload page": [
+        "إعادة تحميل الصفحة"
+      ],
+      "Robots.txt integration": [
+        "التكامل مع ملف Robots.txt"
+      ],
+      "Root directory is not writable. Please check file permissions before generating files.": [
+        "الدليل الجذر غير قابل للكتابة. الرجاء التحقق من أذونات الملف قبل إنشاء الملفات."
+      ],
+      "SHOW ABOUT SECTION": [
+        "عرض حول القسم"
+      ],
+      "SHOW PRODUCT PRICES": [
+        "عرض أسعار المنتجات"
+      ],
+      "STATUS": [
+        "حالة"
+      ],
+      "Save Alt Text": [
+        "حفظ النص البديل"
+      ],
+      "Save Email": [
+        "حفظ البريد الإلكتروني"
+      ],
+      "Saved": [
+        "أنقذ"
+      ],
+      "Schema health looks low (%1$d/100). JSON-LD helps AI and search engines read your site clearly.": [
+        "تبدو صحة المخطط منخفضة (%1$d/100). JSON-LD يساعد الذكاء الاصطناعي ومحركات البحث على قراءة موقعك بوضوح."
+      ],
+      "Score scale:": [
+        "مقياس النتيجة:"
+      ],
+      "Select content for llms.txt and Markdown exports.": [
+        "حدد المحتوى لصادرات llms.txt وMarkdown."
+      ],
+      "Set up email reports": [
+        "إعداد تقارير البريد الإلكتروني"
+      ],
+      "Settings saved": [
+        "تم حفظ الإعدادات"
+      ],
+      "Setup %1$d/4 complete": [
+        "اكتمل الإعداد %1$d/4"
+      ],
+      "Short Description": [
+        "وصف قصير"
+      ],
+      "Show about section": [
+        "عرض حول القسم"
+      ],
+      "Show product prices": [
+        "عرض أسعار المنتجات"
+      ],
+      "Showing all %d pages": [
+        "عرض جميع صفحات %d"
+      ],
+      "Site Homepage": [
+        "الصفحة الرئيسية للموقع"
+      ],
+      "Site coverage in llms.txt": [
+        "تغطية الموقع في llms.txt"
+      ],
+      "Skip": [
+        "يتخطى"
+      ],
+      "Skip for now": [
+        "تخطي الآن"
+      ],
+      "Some crawlers use robots.txt to discover llms.txt. Add the reference to improve discovery.": [
+        "تستخدم بعض برامج الزحف robots.txt لاكتشاف llms.txt. أضف المرجع لتحسين الاكتشاف."
+      ],
+      "Something went wrong loading this screen.": [
+        "حدث خطأ أثناء تحميل هذه الشاشة."
+      ],
+      "Start setup": [
+        "ابدأ الإعداد"
+      ],
+      "Step %d": [
+        "الخطوة %d"
+      ],
+      "Strengthen structured data (JSON-LD)": [
+        "تعزيز البيانات المنظمة (JSON-LD)"
+      ],
+      "Suggestion": [
+        "اقتراح"
+      ],
+      "Table View": [
+        "عرض الجدول"
+      ],
+      "Test on ChatGPT": [
+        "اختبار على ChatGPT"
+      ],
+      "Test your setup by asking ChatGPT about your site. This verifies everything is working correctly.": [
+        "اختبر الإعداد الخاص بك عن طريق سؤال ChatGPT عن موقعك. هذا يتحقق من أن كل شيء يعمل بشكل صحيح."
+      ],
+      "The Ultimate AI Search Optimization Checklist": [
+        "القائمة النهائية لتحسين البحث بالذكاء الاصطناعي"
+      ],
+      "This step is complete. Let's continue.": [
+        "هذه الخطوة كاملة. دعونا نستمر."
+      ],
+      "Total Revenue": [
+        "إجمالي الإيرادات"
+      ],
+      "Total Score": [
+        "مجموع النقاط"
+      ],
+      "Total number of bot visits in the analysis period.": [
+        "إجمالي عدد زيارات الروبوت في فترة التحليل."
+      ],
+      "Total visits: %s": [
+        "إجمالي الزيارات: %s"
+      ],
+      "Total:": [
+        "المجموع:"
+      ],
+      "Track LLM bot traffic to your WooCommerce products and measure conversions.": [
+        "تتبع حركة مرور روبوت LLM إلى منتجات WooCommerce الخاصة بك وقياس التحويلات."
+      ],
+      "Track LLM bot visits and engagement with your content.": [
+        "تتبع زيارات روبوت LLM والتفاعل مع المحتوى الخاص بك."
+      ],
+      "Track impressions, clicks, CTR and real AI bot traffic.": [
+        "تتبع مرات الظهور والنقرات وCTR وحركة مرور روبوتات الذكاء الاصطناعي الحقيقية."
+      ],
+      "Traffic Volume": [
+        "حجم حركة المرور"
+      ],
+      "Traffic in the last 30 days": [
+        "حركة المرور في آخر 30 يومًا"
+      ],
+      "Trial": [
+        "محاكمة"
+      ],
+      "Try Again": [
+        "حاول ثانية"
+      ],
+      "Turn on Full Content to provide richer context to AI crawlers in your exported content.": [
+        "قم بتشغيل المحتوى الكامل لتوفير سياق أكثر ثراءً لبرامج زحف الذكاء الاصطناعي في المحتوى الذي تم تصديره."
+      ],
+      "Type of AI bots visiting. User-facing AI (ChatGPT, Perplexity) are valued higher.": [
+        "نوع زيارة روبوتات الذكاء الاصطناعي. الذكاء الاصطناعي الذي يواجه المستخدم (ChatGPT، Perplexity) يحظى بتقدير أعلى."
+      ],
+      "Type: %s image": [
+        "النوع: %s صورة"
+      ],
+      "UTM Clicks": [
+        "نقرات UTM"
+      ],
+      "Unlock Full AI": [
+        "فتح الذكاء الاصطناعي الكامل"
+      ],
+      "Upgrade to Pro": [
+        "الترقية إلى برو"
+      ],
+      "Upgrade to see this bot": [
+        "قم بالترقية لرؤية هذا الروبوت"
+      ],
+      "View LLMS.txt": [
+        "عرض LLMS.txt"
+      ],
+      "View all": [
+        "عرض الكل"
+      ],
+      "View scan & recommendations": [
+        "عرض المسح والتوصيات"
+      ],
+      "View score breakdown": [
+        "عرض تفاصيل النتيجة"
+      ],
+      "View which pages on your site have received traffic from LLM bots.": [
+        "اعرض الصفحات الموجودة على موقعك والتي تلقت زيارات من روبوتات LLM."
+      ],
+      "Visibility Score": [
+        "نقاط الرؤية"
+      ],
+      "Visibility Score Breakdown": [
+        "تقسيم نقاط الرؤية"
+      ],
+      "Wait for the first AI bot crawl (usually 24–72 hours)": [
+        "انتظر أول زحف لروبوت الذكاء الاصطناعي (عادةً ما بين 24 إلى 72 ساعة)"
+      ],
+      "Waiting for your first LLM visit...": [
+        "في انتظار زيارتك الأولى للماجستير في القانون..."
+      ],
+      "Warning:": [
+        "تحذير:"
+      ],
+      "We attach basic technical details (WordPress, PHP, plugin version, your account) to help us reproduce issues.": [
+        "نرفق التفاصيل الفنية الأساسية (WordPress، PHP، إصدار البرنامج المساعد، حسابك) لمساعدتنا في إعادة إنتاج المشكلات."
+      ],
+      "We have not detected AI bot visits yet. Publish more crawlable content and regenerate llms.txt.": [
+        "لم نكتشف زيارات روبوت الذكاء الاصطناعي حتى الآن. انشر المزيد من المحتوى القابل للزحف وأعد إنشاء llms.txt."
+      ],
+      "We're thrilled to have you here. LLMagnet helps you create powerful, AI-powered forms that turn feedback into actionable insights. Let's get you set up.": [
+        "نحن سعداء بوجودك هنا. يساعدك LLMagnet على إنشاء نماذج قوية مدعومة بالذكاء الاصطناعي والتي تحول التعليقات إلى رؤى قابلة للتنفيذ. دعنا نجهزك."
+      ],
+      "Weekly AI visibility reports show exactly how LLMs engage with your site. Save your email now — reports activate automatically the moment you go Pro.": [
+        "تُظهر تقارير رؤية الذكاء الاصطناعي الأسبوعية كيفية تفاعل LLMs مع موقعك بالضبط. احفظ بريدك الإلكتروني الآن - يتم تفعيل التقارير تلقائيًا في اللحظة التي تصبح فيها محترفًا."
+      ],
+      "Welcome": [
+        "مرحباً"
+      ],
+      "Welcome to LLMagnet": [
+        "مرحبًا بك في LLMagnet"
+      ],
+      "When off, this content is left out of llms.txt, llms-full.txt and the markdown docs.": [
+        "عند إيقاف التشغيل، يتم استبعاد هذا المحتوى من llms.txt وllms-full.txt ومستندات تخفيض السعر."
+      ],
+      "Whether crawled pages are still accessible and published.": [
+        "ما إذا كان لا يزال من الممكن الوصول إلى الصفحات التي تم الزحف إليها ونشرها."
+      ],
+      "WooCommerce product analytics is available in the Plus and Enterprise plans.": [
+        "تتوفر تحليلات منتج WooCommerce في خطتي Plus وEnterprise."
+      ],
+      "WordPress filter (virtual)": [
+        "مرشح WordPress (افتراضي)"
+      ],
+      "Words": [
+        "كلمات"
+      ],
+      "You can change this email in the settings section below.": [
+        "يمكنك تغيير هذا البريد الإلكتروني في قسم الإعدادات أدناه."
+      ],
+      "You have unsaved changes — save to refresh the score.": [
+        "لديك تغييرات غير محفوظة - احفظها لتحديث النتيجة."
+      ],
+      "You haven't started setup yet": [
+        "لم تبدأ الإعداد بعد"
+      ],
+      "You're all set!": [
+        "أنت جاهز تمامًا!"
+      ],
+      "You're doing well, but there's room for improvement.": [
+        "أنت في حالة جيدة، ولكن هناك مجال للتحسين."
+      ],
+      "You're missing opportunities to reach users through AI Search Engines.": [
+        "أنت تضيع فرصًا للوصول إلى المستخدمين من خلال محركات بحث الذكاء الاصطناعي."
+      ],
+      "Your AI visibility is live. LLMagnet is now working to get your site discovered by AI assistants.": [
+        "رؤية الذكاء الاصطناعي الخاصة بك مباشرة. يعمل LLMagnet الآن على اكتشاف موقعك بواسطة مساعدي الذكاء الاصطناعي."
+      ],
+      "Your AI visibility journey starts here": [
+        "تبدأ رحلة رؤية الذكاء الاصطناعي الخاصة بك هنا"
+      ],
+      "Your llms.txt file helps AI assistants understand and reference your site content. Generate it with one click.": [
+        "يساعد ملف llms.txt مساعدي الذكاء الاصطناعي على فهم محتوى موقعك والإشارة إليه. قم بإنشائها بنقرة واحدة."
+      ],
+      "Your llms.txt file is not available yet, so AI crawlers may miss your content.": [
+        "ملف llms.txt الخاص بك غير متوفر بعد، لذا قد تفوت برامج زحف الذكاء الاصطناعي المحتوى الخاص بك."
+      ],
+      "llms.txt": [
+        "llms.txt"
+      ],
+      "robots.txt updated with llms.txt reference.": [
+        "تم تحديث robots.txt بمرجع llms.txt."
+      ],
+      "there": [
+        "هناك"
+      ],
+      " (or use Elementor page settings for page-specific markup)": [
+        "(أو استخدم إعدادات الصفحة Elementor للترميز الخاص بالصفحة)"
+      ],
+      " Link also in your email.": [
+        "الارتباط أيضا في البريد الإلكتروني الخاص بك."
+      ],
+      " · Last ping: %1$d URL(s), HTTP %2$d": [
+        "· آخر أمر ping: %1$d URL(s)، HTTP %2$d"
+      ],
+      "%1$d (%2$d read / %3$d write)": [
+        "%1$d (%2$d قراءة / %3$d كتابة)"
+      ],
+      "%1$d characters (consider shortening)": [
+        "أحرف %1$d (ضع في اعتبارك التقصير)"
+      ],
+      "%1$d characters (recommended: 120-160)": [
+        "%1$d حرف (مستحسن: 120-160)"
+      ],
+      "%1$d characters (recommended: 150-300)": [
+        "%1$d حرف (مستحسن: 150-300)"
+      ],
+      "%1$d characters (recommended: 50-125)": [
+        "%1$d حرف (موصى به: 50-125)"
+      ],
+      "%1$d characters (recommended: 500-2000)": [
+        "%1$d حرف (مستحسن: 500-2000)"
+      ],
+      "%1$d characters — Optimal": [
+        "%1$d أحرف — الأمثل"
+      ],
+      "%1$d characters ✓": [
+        "%1$d أحرف ✓"
+      ],
+      "%1$d image found without media library attachment. Edit ALT text in the WordPress editor.": [
+        "تم العثور على صورة %1$d بدون مرفق مكتبة الوسائط. قم بتحرير النص البديل في محرر WordPress."
+      ],
+      "%1$d tools (%2$d read / %3$d write)": [
+        "أدوات %1$d (%2$d قراءة / %3$d كتابة)"
+      ],
+      "%1$d tools from the shared registry. Anonymous callers can reach %2$d in Public content mode and %3$d in Public read mode.": [
+        "أدوات %1$d من السجل المشترك. يمكن للمتصلين المجهولين الوصول إلى %2$d في وضع المحتوى العام و%3$d في وضع القراءة العام."
+      ],
+      "%1$s is active. Page caches that ignore the Vary: Accept header can serve markdown to regular visitors. Exclude this site from full-page caching for negotiated responses, or keep this off and rely on .md URLs.": [
+        "%1$s نشط. يمكن أن تؤدي ذاكرات التخزين المؤقت للصفحة التي تتجاهل رأس Vary: Accept إلى تخفيض السعر للزائرين العاديين. استبعد هذا الموقع من التخزين المؤقت للصفحة الكاملة للاستجابات التي تم التفاوض عليها، أو قم بإيقاف تشغيل هذا واعتمد على .md URLs."
+      ],
+      "%1$s total visits across %2$d pages": [
+        "%1$s إجمالي الزيارات عبر صفحات %2$d"
+      ],
+      "%1$s visits across %2$d pages": [
+        "%1$s زيارات عبر صفحات %2$d"
+      ],
+      "%1$s visits • %2$d pages": [
+        "%1$s الزيارات • %2$d الصفحات"
+      ],
+      "%1$s — Click to hide": [
+        "%1$s — انقر للإخفاء"
+      ],
+      "%1$s — Click to show": [
+        "%1$s — انقر للإظهار"
+      ],
+      "%d URL scanned — all published pages, recent posts, and products.": [
+        "%d URL تم مسحها ضوئيًا — جميع الصفحات المنشورة والمشاركات الحديثة والمنتجات."
+      ],
+      "%d character": [
+        "حرف %d"
+      ],
+      "%d image selected successfully!": [
+        "تم اختيار الصورة %d بنجاح!"
+      ],
+      "%d post": [
+        "%d مشاركة"
+      ],
+      "%d product": [
+        "منتج %d"
+      ],
+      "%d to improve": [
+        "%d للتحسين"
+      ],
+      "%d%% of score": [
+        "%d%% من الدرجة"
+      ],
+      "%s Analytics": [
+        "%s التحليلات"
+      ],
+      "%s Visits": [
+        "%s الزيارات"
+      ],
+      "%s handles JSON-LD": [
+        "%s يعالج JSON-LD"
+      ],
+      "%s%% have image ALT": [
+        "%s%% تحتوي على صورة ALT"
+      ],
+      "%s%% have short descriptions": [
+        "%s%% تحتوي على أوصاف قصيرة"
+      ],
+      "%s%% missing tags": [
+        "%s%% علامات مفقودة"
+      ],
+      "(+1 legacy token)": [
+        "(+1 رمز قديم)"
+      ],
+      "(or a project's": [
+        "(أو المشروع"
+      ],
+      "A sampled audit (homepage + a few representative pages) scores your site across 7 domains of agent-readiness standards and shows exactly what to fix — much of it with one click.": [
+        "يقوم نموذج تدقيق (الصفحة الرئيسية + عدد قليل من الصفحات التمثيلية) بتقييم موقعك عبر 7 مجالات لمعايير جاهزية الوكلاء ويعرض بالضبط ما يجب إصلاحه - معظمه بنقرة واحدة."
+      ],
+      "AI Integrations": [
+        "تكاملات الذكاء الاصطناعي"
+      ],
+      "AI SEO Optimizer": [
+        "منظمة العفو الدولية SEO محسن"
+      ],
+      "AI Visibility Report": [
+        "تقرير رؤية الذكاء الاصطناعي"
+      ],
+      "AI assistants can connect to this site over the Model Context Protocol.": [
+        "يمكن لمساعدي الذكاء الاصطناعي الاتصال بهذا الموقع عبر بروتوكول السياق النموذجي."
+      ],
+      "AI clients": [
+        "عملاء الذكاء الاصطناعي"
+      ],
+      "AI input": [
+        "مدخلات الذكاء الاصطناعي"
+      ],
+      "AI training": [
+        "تدريب الذكاء الاصطناعي"
+      ],
+      "AI → Revenue Funnel": [
+        "الذكاء الاصطناعي → مسار تحويل الإيرادات"
+      ],
+      "Abilities API": [
+        "Abilities API"
+      ],
+      "Access mode": [
+        "وضع الوصول"
+      ],
+      "Access tokens": [
+        "رموز الوصول"
+      ],
+      "Action": [
+        "فعل"
+      ],
+      "Actions": [
+        "الإجراءات"
+      ],
+      "Active": [
+        "نشيط"
+      ],
+      "Active API Tokens": [
+        "الرموز المميزة API النشطة"
+      ],
+      "Activity log": [
+        "سجل النشاط"
+      ],
+      "Actor": [
+        "ممثل"
+      ],
+      "Add": [
+        "يضيف"
+      ],
+      "Add H2 and H3 headings to structure your content for better readability and SEO.": [
+        "أضف عناوين H2 وH3 لتنظيم المحتوى الخاص بك لتحسين إمكانية القراءة وSEO."
+      ],
+      "Add New Images": [
+        "إضافة صور جديدة"
+      ],
+      "Add a product to the WooCommerce cart (write action, opted in)": [
+        "أضف منتجًا إلى سلة التسوق WooCommerce (اكتب الإجراء، وقم بالاشتراك)"
+      ],
+      "Add a short excerpt that describes this page...": [
+        "أضف مقتطفًا قصيرًا يصف هذه الصفحة..."
+      ],
+      "Add descriptive ALT text...": [
+        "إضافة نص ALT وصفي..."
+      ],
+      "Add more tags (3-8 recommended)": [
+        "إضافة المزيد من العلامات (3-8 مستحسن)"
+      ],
+      "Add products to see readiness insights.": [
+        "أضف منتجات لرؤية رؤى الاستعداد."
+      ],
+      "Add social profile": [
+        "إضافة ملف تعريف اجتماعي"
+      ],
+      "Add tag...": [
+        "إضافة علامة..."
+      ],
+      "Add the snippet to": [
+        "أضف المقطع إلى"
+      ],
+      "Add your address to output LocalBusiness schema with a PostalAddress block. Available for all site types.": [
+        "أضف عنوانك لإخراج مخطط LocalBusiness باستخدام كتلة PostalAddress. متاح لجميع أنواع المواقع."
+      ],
+      "After text": [
+        "بعد النص"
+      ],
+      "After text response": [
+        "بعد الرد النصي"
+      ],
+      "Agent response": [
+        "رد الوكيل"
+      ],
+      "Agent-Ready Score": [
+        "نقاط جاهزية الوكيل"
+      ],
+      "Agent-Ready Score %1$d out of 100": [
+        "درجة جاهزية الوكيل %1$d من أصل 100"
+      ],
+      "Agent-readiness features": [
+        "ميزات جاهزية الوكيل"
+      ],
+      "All (%d)": [
+        "الكل (%d)"
+      ],
+      "All MCP requests are rejected while the server is disabled.": [
+        "يتم رفض جميع طلبات MCP أثناء تعطيل الخادم."
+      ],
+      "All good": [
+        "كل شيء جيد"
+      ],
+      "All-Time Bot Visits": [
+        "زيارات الروبوت في كل الأوقات"
+      ],
+      "All-Time Statistics": [
+        "إحصائيات في كل الأوقات"
+      ],
+      "All-Time Total": [
+        "إجمالي الوقت"
+      ],
+      "An error occurred while uploading the image.": [
+        "حدث خطأ أثناء تحميل الصورة."
+      ],
+      "Analytics tools (scores, bot traffic) are not exposed in Public content mode. They require Public read mode — which makes them readable by anyone — or future OAuth support.": [
+        "لا يتم عرض أدوات التحليلات (النتائج وحركة الروبوتات) في وضع المحتوى العام. وهي تتطلب وضع القراءة العامة — مما يجعلها قابلة للقراءة من قبل أي شخص — أو دعم OAuth في المستقبل."
+      ],
+      "Analytics tools in ChatGPT require Public read mode (with its warning) or OAuth support planned for a later release.": [
+        "تتطلب أدوات التحليلات في ChatGPT وضع القراءة العام (مع تحذيره) أو دعم OAuth المخطط لإصدار لاحق."
+      ],
+      "Analytics unavailable": [
+        "التحليلات غير متاحة"
+      ],
+      "Analyzing pages…": [
+        "جارٍ تحليل الصفحات..."
+      ],
+      "Anyone can read your published content via MCP (search, markdown, site info). Enables no-auth clients like ChatGPT connectors.": [
+        "يمكن لأي شخص قراءة المحتوى المنشور الخاص بك عبر MCP (البحث، تخفيض السعر، معلومات الموقع). تمكين العملاء بدون مصادقة مثل موصلات ChatGPT."
+      ],
+      "Anyone on the internet will be able to read this site's AI analytics — visibility scores, bot traffic, and recommendations — without authentication.": [
+        "سيتمكن أي شخص على الإنترنت من قراءة تحليلات الذكاء الاصطناعي لهذا الموقع - نتائج الرؤية، وحركة مرور الروبوتات، والتوصيات - دون مصادقة."
+      ],
+      "Anyone on the internet will be able to read this site\\u2019s AI analytics (scores, bot traffic, recommendations).": [
+        "سيتمكن أي شخص على الإنترنت من قراءة تحليلات الذكاء الاصطناعي لهذا الموقع (النتائج، وحركة الروبوتات، والتوصيات)."
+      ],
+      "Anyone will be able to read your published content via MCP — the same data search engines already see. Analytics tools stay private, and write tools still require an authenticated read/write token.": [
+        "سيتمكن أي شخص من قراءة المحتوى المنشور الخاص بك عبر MCP — نفس البيانات التي تراها محركات البحث بالفعل. تظل أدوات التحليلات خاصة، ولا تزال أدوات الكتابة تتطلب رمزًا مميزًا للقراءة/الكتابة مصادق عليه."
+      ],
+      "Attach an image that will be displayed with responses from all Large Language Models (ChatGPT, Claude, Gemini, GPT-4, etc.) and included in the llms.txt file.": [
+        "أرفق صورة سيتم عرضها مع الإجابات من جميع نماذج اللغات الكبيرة (ChatGPT، Claude، Gemini، GPT-4، وما إلى ذلك) ويتم تضمينها في ملف llms.txt."
+      ],
+      "Attach multiple images that will be displayed with responses from all Large Language Models (ChatGPT, Claude, Gemini, GPT-4, etc.) and included in the llms.txt file.": [
+        "قم بإرفاق صور متعددة سيتم عرضها مع الاستجابات من جميع نماذج اللغات الكبيرة (ChatGPT، Claude، Gemini، GPT-4، وما إلى ذلك) ويتم تضمينها في ملف llms.txt."
+      ],
+      "Attention": [
+        "انتباه"
+      ],
+      "Audit your site against current agent-readiness standards and fix the gaps — discovery files, machine-readable content, WebMCP, and security headers.": [
+        "قم بمراجعة موقعك وفقًا لمعايير جاهزية الوكيل الحالية وإصلاح الثغرات - ملفات الاكتشاف والمحتوى المقروء آليًا وWebMCP ورؤوس الأمان."
+      ],
+      "Auditing your site…": [
+        "تدقيق موقعك…"
+      ],
+      "Auth header:": [
+        "رأس المصادقة:"
+      ],
+      "Auth: tokens + legacy, Application Passwords": [
+        "المصادقة: الرموز + الإرث، كلمات مرور التطبيق"
+      ],
+      "Auth: tokens, Application Passwords": [
+        "المصادقة: الرموز المميزة وكلمات مرور التطبيق"
+      ],
+      "Authentication is required by default. Token secrets are hashed at rest (SHA-256) and shown exactly once. New tokens are read-only unless you choose otherwise, and write tools always require a read/write token regardless of access mode.": [
+        "المصادقة مطلوبة بشكل افتراضي. تتم تجزئة أسرار الرمز المميز في حالة عدم النشاط (SHA-256) ويتم عرضها مرة واحدة بالضبط. تكون الرموز المميزة الجديدة للقراءة فقط ما لم تختر خلاف ذلك، وتتطلب أدوات الكتابة دائمًا رمزًا مميزًا للقراءة/الكتابة بغض النظر عن وضع الوصول."
+      ],
+      "Automated Reporting System": [
+        "نظام التقارير الآلي"
+      ],
+      "Available (WordPress %1$s) — %2$d LLMagnet abilities registered under the": [
+        "المتاحة (WordPress %1$s) — %2$d LLMagnet القدرات المسجلة بموجب"
+      ],
+      "Available on Plus and Enterprise (or trial).": [
+        "متوفر في Plus وEnterprise (أو الإصدار التجريبي)."
+      ],
+      "Available — %d abilities registered": [
+        "المتاحة — %d قدرات مسجلة"
+      ],
+      "Avg Product Visibility": [
+        "متوسط ​​رؤية المنتج"
+      ],
+      "Before text": [
+        "قبل النص"
+      ],
+      "Before text response": [
+        "قبل الرد النصي"
+      ],
+      "Blog / publisher": [
+        "مدونة / ناشر"
+      ],
+      "Bot Name": [
+        "اسم البوت"
+      ],
+      "Bot Product Views": [
+        "مشاهدات منتج الروبوت"
+      ],
+      "Bot Views": [
+        "مشاهدات بوت"
+      ],
+      "Bot Visits for the Week of %s": [
+        "زيارات الروبوت لأسبوع %s"
+      ],
+      "Bot visits to products will appear here.": [
+        "ستظهر هنا زيارات الروبوت للمنتجات."
+      ],
+      "Bot visits will appear here once crawlers access your pages.": [
+        "ستظهر زيارات الروبوت هنا بمجرد وصول برامج الزحف إلى صفحاتك."
+      ],
+      "Brand or organization name": [
+        "اسم العلامة التجارية أو المنظمة"
+      ],
+      "Brief product summary shown in listings...": [
+        "ملخص موجز للمنتج الموضح في القوائم..."
+      ],
+      "Business / organization": [
+        "الأعمال / المنظمة"
+      ],
+      "Canonical fill (only without an SEO plugin)": [
+        "التعبئة الأساسية (فقط بدون المكوّن الإضافي SEO)"
+      ],
+      "Categories are managed in the WooCommerce product editor": [
+        "تتم إدارة الفئات في محرر المنتج WooCommerce"
+      ],
+      "Categories are managed in the WordPress post editor": [
+        "تتم إدارة الفئات في محرر النشر WordPress"
+      ],
+      "Change Image": [
+        "تغيير الصورة"
+      ],
+      "ChatGPT connects and gets your tools. Revoke anytime from the Access tokens / Connections card below.": [
+        "ChatGPT يتصل ويحصل على أدواتك. قم بالإلغاء في أي وقت من رموز الوصول/بطاقة الاتصالات أدناه."
+      ],
+      "ChatGPT custom connectors can't send a Bearer header, so they use OAuth instead. This server now runs its own OAuth 2.1 sign-in, so you can connect privately — no need to make any content public. You stay in control: you approve the connection on a consent screen and can revoke it anytime.": [
+        "لا يمكن للموصلات المخصصة ChatGPT إرسال رأس Bearer، لذلك يستخدمون OAuth بدلاً من ذلك. يقوم هذا الخادم الآن بتشغيل تسجيل الدخول الخاص به OAuth 2.1، حتى تتمكن من الاتصال بخصوصية - لا داعي لجعل أي محتوى عامًا. تظل متحكمًا: فأنت توافق على الاتصال على شاشة الموافقة ويمكنك إلغاءه في أي وقت."
+      ],
+      "ChatGPT custom connectors don't support custom headers, so Bearer tokens can't be used. Connectors require OAuth (currently turned off for this server — enable it in settings to connect privately) or no-auth. Deep-research connectors also need search/fetch-style tools — this server ships search_content and get_content_markdown for exactly that. ✔": [
+        "ChatGPT لا تدعم الموصلات المخصصة الرؤوس المخصصة، لذلك لا يمكن استخدام الرموز المميزة لحاملها. تتطلب الموصلات OAuth (متوقف حاليًا لهذا الخادم - قم بتمكينه في الإعدادات للاتصال بشكل خاص) أو عدم المصادقة. تحتاج موصلات البحث العميق أيضًا إلى أدوات نمط البحث/الجلب — يقوم هذا الخادم بشحن search_content وget_content_markdown لذلك بالضبط. ✔"
+      ],
+      "ChatGPT gets the content and site-info tools (published, public data only).": [
+        "ChatGPT يحصل على أدوات المحتوى ومعلومات الموقع (البيانات المنشورة والعامة فقط)."
+      ],
+      "Choose bot models to show data": [
+        "اختر نماذج الروبوتات لعرض البيانات"
+      ],
+      "City": [
+        "مدينة"
+      ],
+      "Click": [
+        "انقر"
+      ],
+      "Click the": [
+        "انقر فوق"
+      ],
+      "Clients using": [
+        "العملاء باستخدام"
+      ],
+      "Close dialog": [
+        "إغلاق مربع الحوار"
+      ],
+      "Coming soon": [
+        "قريباً"
+      ],
+      "Connect AI assistants to this site over the Model Context Protocol — analytics, content, and llms.txt tools from one endpoint.": [
+        "قم بتوصيل مساعدي الذكاء الاصطناعي بهذا الموقع عبر بروتوكول سياق النموذج - التحليلات والمحتوى وأدوات llms.txt من نقطة نهاية واحدة."
+      ],
+      "Connect your AI client": [
+        "قم بتوصيل عميل الذكاء الاصطناعي الخاص بك"
+      ],
+      "Consider reducing tags (3-8 recommended)": [
+        "فكر في تقليل العلامات (يوصى بـ 3-8)"
+      ],
+      "Content": [
+        "محتوى"
+      ],
+      "Content negotiation (Accept: text/markdown)": [
+        "التفاوض على المحتوى (قبول: نص/تخفيض)"
+      ],
+      "Content-Signal": [
+        "إشارة المحتوى"
+      ],
+      "Copied": [
+        "منقول"
+      ],
+      "Copy": [
+        "ينسخ"
+      ],
+      "Copy config": [
+        "نسخ التكوين"
+      ],
+      "Copy for Elementor": [
+        "نسخة لـ Elementor"
+      ],
+      "Copy prompt with token": [
+        "انسخ المطالبة بالرمز المميز"
+      ],
+      "Copy setup prompt": [
+        "نسخ موجه الإعداد"
+      ],
+      "Copy the schema below (use": [
+        "انسخ المخطط أدناه (استخدم"
+      ],
+      "Copy this prompt and paste it into %1$s. The agent will create the config, connect to this site, and verify the tools — no manual editing needed.": [
+        "انسخ هذه المطالبة والصقه في %1$s. سيقوم الوكيل بإنشاء التكوين والاتصال بهذا الموقع والتحقق من الأدوات - دون الحاجة إلى تحرير يدوي."
+      ],
+      "Copy with script": [
+        "نسخ مع البرنامج النصي"
+      ],
+      "Copy with token": [
+        "نسخ مع الرمز المميز"
+      ],
+      "Copy your new token now —": [
+        "انسخ الرمز المميز الجديد الخاص بك الآن -"
+      ],
+      "Copy-paste configs pre-filled with this site's MCP endpoint.": [
+        "تكوينات النسخ واللصق المملوءة مسبقًا بنقطة النهاية MCP لهذا الموقع."
+      ],
+      "Could not generate": [
+        "لا يمكن توليد"
+      ],
+      "Could not generate PDF.": [
+        "تعذر إنشاء PDF."
+      ],
+      "Could not load MCP status: %s": [
+        "تعذر تحميل MCP الحالة: %s"
+      ],
+      "Could not publish": [
+        "لا يمكن النشر"
+      ],
+      "Country code": [
+        "رمز البلد"
+      ],
+      "Create a read token below.": [
+        "قم بإنشاء رمز القراءة أدناه."
+      ],
+      "Create a read token in the Access tokens card below.": [
+        "أنشئ رمزًا مميزًا للقراءة في بطاقة رموز الوصول أدناه."
+      ],
+      "Create access token": [
+        "إنشاء رمز الوصول"
+      ],
+      "Create named token": [
+        "إنشاء رمز مميز"
+      ],
+      "Create token": [
+        "إنشاء رمز مميز"
+      ],
+      "Created": [
+        "مخلوق"
+      ],
+      "Cumulative Statistics": [
+        "الإحصائيات التراكمية"
+      ],
+      "Current Image": [
+        "الصورة الحالية"
+      ],
+      "Current Images (%d)": [
+        "الصور الحالية (%d)"
+      ],
+      "Dear Administrator,": [
+        "عزيزي المدير،"
+      ],
+      "Delete legacy token": [
+        "حذف الرمز القديم"
+      ],
+      "Delete legacy token?": [
+        "هل تريد حذف الرمز القديم؟"
+      ],
+      "Detailed findings and one-click fixes are a Pro feature": [
+        "تعد النتائج التفصيلية والإصلاحات بنقرة واحدة إحدى الميزات الاحترافية"
+      ],
+      "Detailed product description with features, benefits, specifications...": [
+        "وصف تفصيلي للمنتج مع الميزات والفوائد والمواصفات..."
+      ],
+      "Detected": [
+        "مُكتَشَف"
+      ],
+      "Detected — LLMagnet abilities are also reachable through the adapter's endpoint with an Application Password:": [
+        "تم اكتشاف — يمكن أيضًا الوصول إلى قدرات LLMagnet من خلال نقطة نهاية المحول باستخدام كلمة مرور التطبيق:"
+      ],
+      "Directory Status": [
+        "حالة الدليل"
+      ],
+      "Display Position": [
+        "موقف العرض"
+      ],
+      "Download PDF": [
+        "تنزيل PDF"
+      ],
+      "Downloaded PDF. Email failed: %s": [
+        "تم التنزيل PDF. فشل البريد الإلكتروني: %s"
+      ],
+      "Duration": [
+        "مدة"
+      ],
+      "Edit post in WordPress": [
+        "تحرير المشاركة في WordPress"
+      ],
+      "Edit product in WooCommerce →": [
+        "تحرير المنتج في WooCommerce →"
+      ],
+      "Email Preview": [
+        "معاينة البريد الإلكتروني"
+      ],
+      "Enable MCP server": [
+        "تمكين خادم MCP"
+      ],
+      "Enable public content": [
+        "تمكين المحتوى العام"
+      ],
+      "Enable public content access": [
+        "تمكين الوصول إلى المحتوى العام"
+      ],
+      "Enable public content access?": [
+        "هل تريد تمكين الوصول إلى المحتوى العام؟"
+      ],
+      "Enable public read": [
+        "تمكين القراءة العامة"
+      ],
+      "Enable public read access?": [
+        "هل تريد تمكين الوصول العام للقراءة؟"
+      ],
+      "Enable the server to run the self-test.": [
+        "تمكين الخادم من تشغيل الاختبار الذاتي."
+      ],
+      "Enabled (private)": [
+        "ممكّن (خاص)"
+      ],
+      "Enabled (public content mode)": [
+        "ممكّن (وضع المحتوى العام)"
+      ],
+      "Enabled (public read mode)": [
+        "ممكّن (وضع القراءة العامة)"
+      ],
+      "Endpoint": [
+        "نقطة النهاية"
+      ],
+      "Endpoint:": [
+        "نقطة النهاية:"
+      ],
+      "Enter to send · public WebMCP route": [
+        "أدخل لإرسال · طريق WebMCP عام"
+      ],
+      "Error fetching data": [
+        "حدث خطأ أثناء جلب البيانات"
+      ],
+      "Error: %s": [
+        "الخطأ: %s"
+      ],
+      "Error: network request failed.": [
+        "خطأ: فشل طلب الشبكة."
+      ],
+      "Everything ships off by default — enable what you want agents to use.": [
+        "يتم شحن كل شيء افتراضيًا — قم بتمكين ما تريد أن يستخدمه الوكلاء."
+      ],
+      "Exposed tools": [
+        "الأدوات المكشوفة"
+      ],
+      "Fail": [
+        "يفشل"
+      ],
+      "Failed to create token.": [
+        "فشل في إنشاء الرمز المميز."
+      ],
+      "Failed to load MCP status.": [
+        "فشل تحميل حالة MCP."
+      ],
+      "Failed to load data": [
+        "فشل تحميل البيانات"
+      ],
+      "Failed to load page details": [
+        "فشل تحميل تفاصيل الصفحة"
+      ],
+      "Failed to load product details": [
+        "فشل في تحميل تفاصيل المنتج"
+      ],
+      "Failed to load recommendations": [
+        "فشل تحميل التوصيات"
+      ],
+      "Failed to load timeline data.": [
+        "فشل تحميل بيانات المخطط الزمني."
+      ],
+      "Failed to revoke token.": [
+        "فشل في إلغاء الرمز المميز."
+      ],
+      "Failed to save": [
+        "فشل الحفظ"
+      ],
+      "Failed to save page": [
+        "فشل حفظ الصفحة"
+      ],
+      "Failed to save product": [
+        "فشل في حفظ المنتج"
+      ],
+      "Failed to update page": [
+        "فشل تحديث الصفحة"
+      ],
+      "Failed to update product": [
+        "فشل في تحديث المنتج"
+      ],
+      "Failed to upload image.": [
+        "فشل تحميل الصورة."
+      ],
+      "Fair": [
+        "عدل"
+      ],
+      "Featured": [
+        "مميز"
+      ],
+      "Fill OG/canonical tags only when no SEO plugin owns them.": [
+        "املأ علامات OG/canonical فقط عندما لا يمتلكها البرنامج الإضافي SEO."
+      ],
+      "Fix issues in Products →": [
+        "إصلاح المشكلات في المنتجات →"
+      ],
+      "Fix schema": [
+        "إصلاح المخطط"
+      ],
+      "Free": [
+        "حر"
+      ],
+      "Freq": [
+        "التكرار"
+      ],
+      "Frequency": [
+        "تكرار"
+      ],
+      "Generate your llms.txt →": [
+        "قم بإنشاء llms.txt →"
+      ],
+      "Generated JSON-LD (preview)": [
+        "تم إنشاء JSON-LD (معاينة)"
+      ],
+      "Generated Markdown Files": [
+        "تم إنشاء ملفات Markdown"
+      ],
+      "Good (%d)": [
+        "جيد (%d)"
+      ],
+      "HTTP %1$d — enable WebMCP first; the public routes are off while the toggle is off": [
+        "HTTP %1$d — قم بتمكين WebMCP أولاً؛ يتم إيقاف تشغيل الطرق العامة أثناء إيقاف تشغيل التبديل"
+      ],
+      "HTTP %d": [
+        "HTTP %d"
+      ],
+      "HTTP Link headers advertising llms.txt, the agent card, and schemamap.xml.": [
+        "تعلن رؤوس HTTP Link عن llms.txt وبطاقة الوكيل وschemamap.xml."
+      ],
+      "Handled externally": [
+        "يتم التعامل معها خارجياً"
+      ],
+      "Heads up — ChatGPT works differently": [
+        "تنبيه — ChatGPT يعمل بشكل مختلف"
+      ],
+      "Health": [
+        "صحة"
+      ],
+      "Help search engines and AI understand your site with structured data. Scan what you already have, follow plain-language recommendations, then generate and publish JSON-LD without writing code.": [
+        "ساعد محركات البحث والذكاء الاصطناعي على فهم موقعك باستخدام البيانات المنظمة. قم بمسح ما لديك بالفعل، واتبع التوصيات باللغة البسيطة، ثم قم بإنشاء ونشر JSON-LD دون كتابة التعليمات البرمجية."
+      ],
+      "Home": [
+        "بيت"
+      ],
+      "I've saved my token": [
+        "لقد قمت بحفظ الرمز الخاص بي"
+      ],
+      "Image": [
+        "صورة"
+      ],
+      "Image %d": [
+        "صورة %d"
+      ],
+      "Image Position": [
+        "موضع الصورة"
+      ],
+      "Image removed successfully!": [
+        "تمت إزالة الصورة بنجاح!"
+      ],
+      "Image selected": [
+        "تم تحديد الصورة"
+      ],
+      "Image size must be less than 5MB.": [
+        "يجب أن يكون حجم الصورة أقل من 5 ميغابايت."
+      ],
+      "Image uploaded successfully!": [
+        "تم تحميل الصورة بنجاح!"
+      ],
+      "In ChatGPT, open Settings → Connectors (developer mode) → Add custom connector.": [
+        "في ChatGPT، افتح الإعدادات ← الموصلات (وضع المطور) ← إضافة موصل مخصص."
+      ],
+      "In ChatGPT, open Settings → Connectors (enable Developer mode) → Add custom connector.": [
+        "في ChatGPT، افتح الإعدادات ← الموصلات (تمكين وضع المطور) ← إضافة موصل مخصص."
+      ],
+      "Include a Product example": [
+        "قم بتضمين مثال للمنتج"
+      ],
+      "IndexNow is already provided by %1$s — LLMagnet defers to avoid double pings.": [
+        "تم توفير IndexNow بالفعل بواسطة %1$s — يتم تأجيل LLMagnet لتجنب عمليات اختبار الاتصال المزدوجة."
+      ],
+      "Indexed Images": [
+        "الصور المفهرسة"
+      ],
+      "Invalid JSON": [
+        "JSON غير صالح"
+      ],
+      "Invalid JSON response from server": [
+        "استجابة JSON غير صالحة من الخادم"
+      ],
+      "Invalid post ID": [
+        "معرف المشاركة غير صالح"
+      ],
+      "Invalid product ID": [
+        "معرف المنتج غير صالح"
+      ],
+      "It has full access and is stored in plaintext. Replace it with a managed token: create a named token above, update your clients, then delete the legacy one.": [
+        "لديه حق الوصول الكامل ويتم تخزينه في نص عادي. استبدله برمز مميز مُدار: قم بإنشاء رمز مميز مسمى أعلاه، وقم بتحديث عملائك، ثم احذف الرمز القديم."
+      ],
+      "Key file:": [
+        "الملف الرئيسي:"
+      ],
+      "LLM Bot Analytics": [
+        "LLM تحليلات بوت"
+      ],
+      "LLM Bot Analytics Report": [
+        "تقرير LLM Bot Analytics"
+      ],
+      "LLM Response Image": [
+        "صورة استجابة LLM"
+      ],
+      "LLM Response Image %d": [
+        "صورة استجابة LLM %d"
+      ],
+      "LLM Response Image (Premium Feature)": [
+        "صورة استجابة LLM (ميزة مميزة)"
+      ],
+      "LLM Response Images (Premium Feature)": [
+        "صور استجابة LLM (ميزة مميزة)"
+      ],
+      "LLMS.txt Size": [
+        "حجم LLMS.txt"
+      ],
+      "LLMagnet detected that %1$s already outputs structured data. We will not print a second schema block on the live site. Copy the templates below and add or extend schema inside %1$s%2$s — avoid duplicating Organization, WebSite, or Product entities.": [
+        "اكتشف LLMagnet أن %1$s يقوم بالفعل بإخراج البيانات المنظمة. لن نقوم بطباعة كتلة المخطط الثانية على الموقع المباشر. انسخ القوالب أدناه وقم بإضافة المخطط أو توسيعه داخل %1$s%2$s - تجنب تكرار كيانات المؤسسة أو موقع الويب أو المنتج."
+      ],
+      "LLMagnet onboarding": [
+        "LLMagnet الإعداد"
+      ],
+      "LLMagnet tools are also exposed as standard WordPress Abilities, so any WP-native AI agent can use them.": [
+        "يتم أيضًا عرض أدوات LLMagnet كقدرات قياسية WordPress، بحيث يمكن لأي وكيل AI أصلي لـ WP استخدامها."
+      ],
+      "Label": [
+        "ملصق"
+      ],
+      "Last run: %s": [
+        "التشغيل الأخير: %s"
+      ],
+      "Last used": [
+        "آخر استخدام"
+      ],
+      "Learn more": [
+        "يتعلم أكثر"
+      ],
+      "Learn more:": [
+        "يتعلم أكثر:"
+      ],
+      "Legacy token (set via WP-CLI) is active": [
+        "الرمز القديم (الذي تم تعيينه عبر WP-CLI) نشط"
+      ],
+      "Let your AI set it up for you": [
+        "اسمح للذكاء الاصطناعي الخاص بك بإعداده لك"
+      ],
+      "Lets browser agents add products to the cart via WooCommerce’s own Store API. Off by default.": [
+        "يتيح لوكلاء المتصفح إضافة المنتجات إلى سلة التسوق عبر متجر WooCommerce الخاص API. إيقاف بشكل افتراضي."
+      ],
+      "Link discovery headers": [
+        "رؤوس اكتشاف الارتباط"
+      ],
+      "Live status of the W3C Web Model Context API in your own browser, and the tools this site registers for agents.": [
+        "الحالة المباشرة لسياق نموذج الويب W3C API في متصفحك الخاص، والأدوات التي يسجلها هذا الموقع للوكلاء."
+      ],
+      "Loading MCP status…": [
+        "جارٍ تحميل حالة MCP..."
+      ],
+      "Loading chart": [
+        "جارٍ تحميل الرسم البياني"
+      ],
+      "Loading table": [
+        "جدول التحميل"
+      ],
+      "Local business (address & phone)": [
+        "الأعمال التجارية المحلية (العنوان والهاتف)"
+      ],
+      "Location (optional)": [
+        "الموقع (اختياري)"
+      ],
+      "Logo": [
+        "الشعار"
+      ],
+      "Logo image URL (optional)": [
+        "صورة الشعار URL (اختياري)"
+      ],
+      "Logo preview": [
+        "معاينة الشعار"
+      ],
+      "MCP & AI sections": [
+        "MCP وأقسام الذكاء الاصطناعي"
+      ],
+      "MCP Adapter Plugin": [
+        "MCP Adapter البرنامج المساعد"
+      ],
+      "MCP Adapter plugin": [
+        "MCP Adapter البرنامج المساعد"
+      ],
+      "MCP Server": [
+        "MCP الخادم"
+      ],
+      "MCP Tools": [
+        "MCP الأدوات"
+      ],
+      "MCP connection": [
+        "اتصال MCP"
+      ],
+      "MCP endpoint URL": [
+        "MCP نقطة النهاية URL"
+      ],
+      "MCP server is active": [
+        "خادم MCP نشط"
+      ],
+      "MCP server is disabled": [
+        "تم تعطيل خادم MCP"
+      ],
+      "Manage on the MCP & AI page": [
+        "الإدارة على صفحة MCP وAI"
+      ],
+      "Managed User-agent groups for AI crawlers plus the Content-Signal block.": [
+        "مجموعات وكيل المستخدم المُدارة لبرامج زحف الذكاء الاصطناعي بالإضافة إلى كتلة Content-Signal."
+      ],
+      "Manual: %s": [
+        "دليل: %s"
+      ],
+      "Markdown content negotiation": [
+        "Markdown التفاوض على المحتوى"
+      ],
+      "Media library": [
+        "مكتبة الوسائط"
+      ],
+      "Mentions in the last 30 days": [
+        "الإشارات في آخر 30 يومًا"
+      ],
+      "Meta-description fill (an SEO plugin does this better)": [
+        "تعبئة الوصف التعريفي (المكون الإضافي SEO يقوم بذلك بشكل أفضل)"
+      ],
+      "Missing ALT text": [
+        "النص البديل مفقود"
+      ],
+      "Missing schema (%d)": [
+        "المخطط مفقود (%d)"
+      ],
+      "My Website": [
+        "موقع الويب الخاص بي"
+      ],
+      "Needs attention (%d)": [
+        "بحاجة إلى الاهتمام (%d)"
+      ],
+      "New token secret": [
+        "سر رمزي جديد"
+      ],
+      "No AI Commerce Activity": [
+        "لا يوجد نشاط تجاري بالذكاء الاصطناعي"
+      ],
+      "No AI-attributed commerce activity in the last 30 days.": [
+        "لم يكن هناك أي نشاط تجاري منسوب للذكاء الاصطناعي خلال آخر 30 يومًا."
+      ],
+      "No MCP calls yet — connect a client above.": [
+        "لا توجد مكالمات MCP حتى الآن — قم بتوصيل العميل أعلاه."
+      ],
+      "No Products Found": [
+        "لم يتم العثور على منتجات"
+      ],
+      "No Products Viewed": [
+        "لم يتم عرض أي منتجات"
+      ],
+      "No categories assigned": [
+        "لم يتم تعيين فئات"
+      ],
+      "No headings found": [
+        "لم يتم العثور على عناوين"
+      ],
+      "No image selected": [
+        "لم يتم تحديد أي صورة"
+      ],
+      "No missing entities detected for this page. Run a fresh scan if you recently updated schema.": [
+        "لم يتم اكتشاف أي كيانات مفقودة لهذه الصفحة. قم بإجراء فحص جديد إذا قمت بتحديث المخطط مؤخرًا."
+      ],
+      "No page traffic yet.": [
+        "لا يوجد حركة مرور الصفحة حتى الآن."
+      ],
+      "No parameters.": [
+        "لا توجد معلمات."
+      ],
+      "No product traffic yet.": [
+        "لا توجد حركة مرور للمنتج حتى الآن."
+      ],
+      "No products were viewed by bots in the last week.": [
+        "لم يتم عرض أي منتجات بواسطة الروبوتات في الأسبوع الماضي."
+      ],
+      "No recommendations yet. Run a scan to see tailored suggestions.": [
+        "لا توجد توصيات حتى الآن. قم بإجراء فحص لرؤية الاقتراحات المخصصة."
+      ],
+      "No tags (add 3-8 recommended)": [
+        "لا توجد علامات (يوصى بإضافة 3-8)"
+      ],
+      "No tags yet. Add tags below.": [
+        "لا توجد علامات حتى الآن. أضف العلامات أدناه."
+      ],
+      "No tokens yet. Create one to connect an AI client.": [
+        "لا توجد رموز حتى الآن. قم بإنشاء واحد لتوصيل عميل الذكاء الاصطناعي."
+      ],
+      "Not Agent Ready yet": [
+        "الوكيل ليس جاهزًا بعد"
+      ],
+      "Not Generated": [
+        "لم يتم إنشاؤها"
+      ],
+      "Not applicable": [
+        "لا ينطبق"
+      ],
+      "Not available (requires WP 6.9+, running %s)": [
+        "غير متوفر (يتطلب WP 6.9+، تشغيل %s)"
+      ],
+      "Not available on WordPress %1$s. The Abilities API ships with WordPress 6.9+ — update WordPress to expose LLMagnet tools as native abilities.": [
+        "غير متوفر على WordPress %1$s. يأتي Abilities API مزودًا بـ WordPress 6.9+ - تحديث WordPress لكشف أدوات LLMagnet كقدرات أصلية."
+      ],
+      "Not detected": [
+        "لم يتم الكشف عنها"
+      ],
+      "Not detected. The official adapter exposes all WordPress abilities (including LLMagnet's) over a second MCP endpoint.": [
+        "لم يتم الكشف عنها. يكشف المحول الرسمي عن جميع قدرات WordPress (بما في ذلك LLMagnet's) عبر نقطة نهاية MCP ثانية."
+      ],
+      "Not enough visibility history yet. Keep tracking to see trends.": [
+        "ليس هناك ما يكفي من سجل الرؤية حتى الآن. استمر في التتبع لرؤية الاتجاهات."
+      ],
+      "OK": [
+        "نعم"
+      ],
+      "On WordPress 6.9+ with the official MCP Adapter plugin, these tools are also available at": [
+        "في الإصدار WordPress 6.9+ مع البرنامج الإضافي الرسمي MCP Adapter، تتوفر هذه الأدوات أيضًا على"
+      ],
+      "Open Claude Desktop's config: Settings → Developer → Edit Config (": [
+        "افتح تكوين سطح المكتب Claude: الإعدادات → المطور → تحرير التكوين ("
+      ],
+      "Open Graph verify-or-fill": [
+        "Open Graph التحقق أو الملء"
+      ],
+      "Open LLMagnet →": [
+        "افتح LLMagnet →"
+      ],
+      "Open in Elementor": [
+        "مفتوح في Elementor"
+      ],
+      "Open the page in Elementor.": [
+        "افتح الصفحة في Elementor."
+      ],
+      "Open this page in": [
+        "افتح هذه الصفحة في"
+      ],
+      "Optimal tag count": [
+        "عدد العلامات الأمثل"
+      ],
+      "Other": [
+        "آخر"
+      ],
+      "PDF downloaded and emailed to you.": [
+        "تم تنزيل PDF وإرساله إليك عبر البريد الإلكتروني."
+      ],
+      "PDF downloaded. Email could not be sent (API settings missing).": [
+        "تم تنزيل PDF. لا يمكن إرسال البريد الإلكتروني (API الإعدادات مفقودة)."
+      ],
+      "Page analytics is available in the premium version.": [
+        "تحليلات الصفحة متاحة في الإصدار المتميز."
+      ],
+      "Page schema from Elementor is merged into the single LLMagnet JSON-LD block (site graph + page entities) — not a separate script tag.": [
+        "يتم دمج مخطط الصفحة من Elementor في كتلة LLMagnet JSON-LD الفردية (الرسم البياني للموقع + كيانات الصفحة) - وليس علامة برنامج نصي منفصلة."
+      ],
+      "Parameter": [
+        "المعلمة"
+      ],
+      "Pass": [
+        "يمر"
+      ],
+      "Paste in Elementor": [
+        "الصق في Elementor"
+      ],
+      "Paste into": [
+        "لصق في"
+      ],
+      "Paste the endpoint URL:": [
+        "الصق نقطة النهاية URL:"
+      ],
+      "Paste the snippet (it uses the mcp-remote shim for Bearer auth).": [
+        "الصق المقتطف (يستخدم الرقائق mcp-remote لمصادقة الحامل)."
+      ],
+      "Phone": [
+        "هاتف"
+      ],
+      "Ping IndexNow-backed engines when content is published or updated.": [
+        "محركات Ping IndexNow المدعومة عند نشر المحتوى أو تحديثه."
+      ],
+      "Plain permalinks — clients must use the ?rest_route= URL shown below": [
+        "روابط دائمة عادية — يجب على العملاء استخدام ?rest_route= URL الموضح أدناه"
+      ],
+      "Please enter a label (e.g. \"Claude Desktop\").": [
+        "الرجاء إدخال تصنيف (على سبيل المثال \"Claude سطح المكتب\")."
+      ],
+      "Please find below the comprehensive analytics report for LLM bot visits to your website. This report covers your AI Visibility Score, weekly performance metrics, and cumulative all-time statistics.": [
+        "يرجى الاطلاع أدناه على تقرير التحليلات الشامل لزيارات LLM bot إلى موقع الويب الخاص بك. يغطي هذا التقرير نقاط رؤية الذكاء الاصطناعي الخاصة بك، ومقاييس الأداء الأسبوعية، والإحصائيات التراكمية طوال الوقت."
+      ],
+      "Please select an image file.": [
+        "الرجاء تحديد ملف الصورة."
+      ],
+      "Plugin Version": [
+        "إصدار البرنامج المساعد"
+      ],
+      "Plus": [
+        "زائد"
+      ],
+      "Poor": [
+        "فقير"
+      ],
+      "Post": [
+        "بريد"
+      ],
+      "Postal code": [
+        "رمز بريدي"
+      ],
+      "Posts Available to Export": [
+        "المشاركات المتاحة للتصدير"
+      ],
+      "Powered by": [
+        "مدعوم من"
+      ],
+      "Premium Feature:": [
+        "ميزة مميزة:"
+      ],
+      "Premium Product Example": [
+        "مثال على المنتج المميز"
+      ],
+      "Preview": [
+        "معاينة"
+      ],
+      "Preview unavailable for this URL.": [
+        "المعاينة غير متاحة لهذا URL."
+      ],
+      "Previous": [
+        "سابق"
+      ],
+      "Private (recommended)": [
+        "خاص (مستحسن)"
+      ],
+      "Private connection ready — OAuth is on ✔": [
+        "اتصال خاص جاهز — OAuth قيد التشغيل ✔"
+      ],
+      "Pro": [
+        "برو"
+      ],
+      "Pro feature": [
+        "ميزة احترافية"
+      ],
+      "Product Readiness for AI": [
+        "جاهزية المنتج للذكاء الاصطناعي"
+      ],
+      "Product analytics is available in the Plus and Enterprise plans.": [
+        "تتوفر تحليلات المنتج في خطتي Plus وEnterprise."
+      ],
+      "Product image": [
+        "صورة المنتج"
+      ],
+      "Product of the Week": [
+        "منتج الأسبوع"
+      ],
+      "Protocol %s": [
+        "البروتوكول %s"
+      ],
+      "Public access is on (%1$s) — ChatGPT can connect without authentication.": [
+        "الوصول العام قيد التشغيل (%1$s) - يمكن لـ ChatGPT الاتصال بدون مصادقة."
+      ],
+      "Public content": [
+        "المحتوى العام"
+      ],
+      "Public read": [
+        "قراءة عامة"
+      ],
+      "Publish to website": [
+        "نشر على الموقع"
+      ],
+      "Published content also becomes readable anonymously. Write tools still require an authenticated read/write token.": [
+        "يصبح المحتوى المنشور أيضًا قابلاً للقراءة بشكل مجهول. لا تزال أدوات الكتابة تتطلب رمزًا مميزًا للقراءة/الكتابة معتمدًا."
+      ],
+      "Purchases": [
+        "المشتريات"
+      ],
+      "Re-add the feed <link rel=\"alternate\"> tags if your theme removed them.": [
+        "أعد إضافة علامات الخلاصة <link rel=\"alternate\"> إذا قام قالبك بإزالتها."
+      ],
+      "Re-run audit": [
+        "إعادة تشغيل التدقيق"
+      ],
+      "Read": [
+        "يقرأ"
+      ],
+      "Read the MCP security docs": [
+        "اقرأ مستندات الأمان MCP"
+      ],
+      "Read tools (%d)": [
+        "أدوات القراءة (%d)"
+      ],
+      "Read-write": [
+        "القراءة والكتابة"
+      ],
+      "Recent activity": [
+        "النشاط الأخير"
+      ],
+      "Recommended: at least 3 social profiles (e.g. LinkedIn, X, Facebook).": [
+        "موصى به: ما لا يقل عن 3 ملفات تعريف اجتماعية (مثل LinkedIn وX وFacebook)."
+      ],
+      "Refresh": [
+        "ينعش"
+      ],
+      "Refresh activity": [
+        "تحديث النشاط"
+      ],
+      "Refresh recommendations": [
+        "تحديث التوصيات"
+      ],
+      "Refresh score data": [
+        "تحديث بيانات النتيجة"
+      ],
+      "Region / state": [
+        "المنطقة / الولاية"
+      ],
+      "Register search/content tools on navigator.modelContext for browser agents on every front-end page.": [
+        "قم بتسجيل أدوات البحث/المحتوى على navigator.modelContext لوكلاء المتصفح في كل صفحة أمامية."
+      ],
+      "Registered tools (%d)": [
+        "الأدوات المسجلة (%d)"
+      ],
+      "Reload Cursor; the server appears under MCP settings.": [
+        "إعادة تحميل Cursor; يظهر الخادم ضمن إعدادات MCP."
+      ],
+      "Remove social profile": [
+        "إزالة الملف الشخصي الاجتماعي"
+      ],
+      "Replace %1$s with a token from the Access tokens card below.": [
+        "استبدل %1$s برمز مميز من بطاقة رموز الوصول أدناه."
+      ],
+      "Required": [
+        "مطلوب"
+      ],
+      "Requires a token or Application Password for every request.": [
+        "يتطلب رمزًا مميزًا أو كلمة مرور التطبيق لكل طلب."
+      ],
+      "Respectfully,": [
+        "مع احترامي،"
+      ],
+      "Restart Claude Desktop.": [
+        "أعد تشغيل Claude سطح المكتب."
+      ],
+      "Restore RSS feed links": [
+        "استعادة روابط تغذية RSS"
+      ],
+      "Result": [
+        "نتيجة"
+      ],
+      "Retry": [
+        "أعد المحاولة"
+      ],
+      "Revenue from AI": [
+        "الإيرادات من الذكاء الاصطناعي"
+      ],
+      "Review the notes above. Run a fresh scan if you recently updated schema on this page.": [
+        "قم بمراجعة الملاحظات أعلاه. قم بإجراء فحص جديد إذا قمت بتحديث المخطط مؤخرًا على هذه الصفحة."
+      ],
+      "Revoke": [
+        "إبطال"
+      ],
+      "Revoke token": [
+        "إبطال الرمز المميز"
+      ],
+      "Revoke token?": [
+        "هل تريد إلغاء الرمز المميز؟"
+      ],
+      "Root Path": [
+        "مسار الجذر"
+      ],
+      "Run a scan to compute score.": [
+        "قم بإجراء فحص لحساب النتيجة."
+      ],
+      "Run a scan to see structured data coverage.": [
+        "قم بإجراء فحص لرؤية تغطية البيانات المنظمة."
+      ],
+      "Run audit": [
+        "تشغيل التدقيق"
+      ],
+      "Run fresh scan": [
+        "تشغيل فحص جديد"
+      ],
+      "Run search": [
+        "تشغيل البحث"
+      ],
+      "Run this in your terminal:": [
+        "قم بتشغيل هذا في المحطة الطرفية الخاصة بك:"
+      ],
+      "Run your first Agent-Ready audit": [
+        "قم بإجراء أول تدقيق جاهز للوكيل"
+      ],
+      "Running audit…": [
+        "جارٍ التدقيق…"
+      ],
+      "Sampled audit of your site against current agent-readiness standards — discovery files, machine-readable content, security headers, and WebMCP.": [
+        "تدقيق عينات لموقعك وفقًا لمعايير جاهزية الوكيل الحالية - ملفات الاكتشاف، والمحتوى المقروء آليًا، ورؤوس الأمان، وWebMCP."
+      ],
+      "Save & Generate preview": [
+        "حفظ وإنشاء المعاينة"
+      ],
+      "Saved.": [
+        "أنقذ."
+      ],
+      "Saving…": [
+        "توفير…"
+      ],
+      "Scale: Poor · Fair · Good · Excellent — from the scan (JSON-LD coverage, checks, and issues).": [
+        "النطاق: ضعيف · مقبول · جيد · ممتاز — من الفحص (JSON-LD التغطية والفحوصات والإصدارات)."
+      ],
+      "Scan": [
+        "مسح"
+      ],
+      "Scan failed": [
+        "فشل المسح"
+      ],
+      "Scan running in the background — results update as pages are analyzed.": [
+        "يتم إجراء المسح الضوئي في الخلفية - يتم تحديث النتائج أثناء تحليل الصفحات."
+      ],
+      "Scanning %1$d/%2$d pages (%3$d%%)": [
+        "مسح صفحات %1$d/%2$d (%3$d%%)"
+      ],
+      "Scans and recommendations are available for everyone. Generating and publishing JSON-LD requires Pro, Plus, or Enterprise (trials included).": [
+        "عمليات المسح والتوصيات متاحة للجميع. يتطلب إنشاء JSON-LD ونشره إصدار Pro أو Plus أو Enterprise (يتضمن الإصدارات التجريبية)."
+      ],
+      "Schema JSON-LD sections": [
+        "Schema JSON-LD الأقسام"
+      ],
+      "Schema builder": [
+        "منشئ المخطط"
+      ],
+      "Schema found": [
+        "تم العثور على المخطط"
+      ],
+      "Schema health score %1$d out of 100": [
+        "درجة صحة المخطط %1$d من أصل 100"
+      ],
+      "Schema health score loading": [
+        "جارٍ تحميل درجة صحة المخطط"
+      ],
+      "Schema validator": [
+        "مدقق المخطط"
+      ],
+      "Scope": [
+        "نِطَاق"
+      ],
+      "Search": [
+        "يبحث"
+      ],
+      "Search your site like an agent would…": [
+        "ابحث في موقعك كما يفعل الوكيل..."
+      ],
+      "Security headers": [
+        "رؤوس الأمان"
+      ],
+      "Select Company Logo": [
+        "حدد شعار الشركة"
+      ],
+      "Select Images": [
+        "حدد الصور"
+      ],
+      "Select LLM Response Image": [
+        "حدد صورة استجابة LLM"
+      ],
+      "Select LLM Response Images": [
+        "حدد صور استجابة LLM"
+      ],
+      "Select an image to display with responses from all Large Language Models. This image will be included in the llms.txt file and will work with ChatGPT, Claude, Gemini, GPT-4, and other LLMs.": [
+        "حدد صورة لعرضها مع الاستجابات من جميع نماذج اللغات الكبيرة. سيتم تضمين هذه الصورة في ملف llms.txt وستعمل مع ChatGPT، Claude، Gemini، GPT-4، وغيرها من دورات LLM."
+      ],
+      "Select from Media Library": [
+        "اختر من مكتبة الوسائط"
+      ],
+      "Select logo": [
+        "حدد الشعار"
+      ],
+      "Selected image": [
+        "الصورة المختارة"
+      ],
+      "Self-test request failed.": [
+        "فشل طلب الاختبار الذاتي."
+      ],
+      "Self-test results": [
+        "نتائج الاختبار الذاتي"
+      ],
+      "Serve agent-card.json, agent-skills, mcp.json, security.txt, and the change-password redirect.": [
+        "قم بخدمة agent-card.json وagent-skills وmcp.json وsecurity.txt وإعادة توجيه تغيير كلمة المرور."
+      ],
+      "Serve any page as clean markdown at {permalink}.md.": [
+        "يمكنك عرض أي صفحة كتخفيض نظيف على {permalink}.md."
+      ],
+      "Serve markdown on the normal permalink when an agent sends Accept: text/markdown.": [
+        "قم بتقديم تخفيض السعر على الرابط الثابت العادي عندما يرسل الوكيل قبول: نص/تخفيض السعر."
+      ],
+      "Set Authentication to \"None\".": [
+        "اضبط المصادقة على \"لا شيء\"."
+      ],
+      "Set Authentication to \"OAuth\". ChatGPT discovers the sign-in automatically.": [
+        "اضبط المصادقة على \"OAuth\". يكتشف ChatGPT تسجيل الدخول تلقائيًا."
+      ],
+      "Short": [
+        "قصير"
+      ],
+      "Short description": [
+        "وصف قصير"
+      ],
+      "Should you require any additional information or have questions regarding this report, please do not hesitate to contact us.": [
+        "إذا كنت بحاجة إلى أي معلومات إضافية أو لديك أسئلة بخصوص هذا التقرير، فلا تتردد في الاتصال بنا."
+      ],
+      "Showing %1$d–%2$d of %3$d": [
+        "عرض %1$d–%2$d من %3$d"
+      ],
+      "Site type": [
+        "نوع الموقع"
+      ],
+      "Smoke test with curl:": [
+        "اختبار الدخان مع الضفيرة:"
+      ],
+      "Smoke-test": [
+        "اختبار الدخان"
+      ],
+      "Social profiles": [
+        "الملفات الشخصية الاجتماعية"
+      ],
+      "State your AI content-usage preferences in robots.txt (requires AI crawler rules).": [
+        "اذكر تفضيلات استخدام محتوى الذكاء الاصطناعي في robots.txt (يتطلب قواعد زاحف الذكاء الاصطناعي)."
+      ],
+      "Status": [
+        "حالة"
+      ],
+      "Streamable HTTP (stateless)": [
+        "HTTP قابل للتدفق (عديم الحالة)"
+      ],
+      "Street": [
+        "شارع"
+      ],
+      "Structure health": [
+        "صحة البنية"
+      ],
+      "Test connection": [
+        "اتصال الاختبار"
+      ],
+      "The WP-CLI legacy token will stop working immediately. Make sure every client has been switched to a managed token first.": [
+        "سيتوقف رمز WP-CLI القديم عن العمل على الفور. تأكد من تحويل كل عميل إلى رمز مميز مُدار أولاً."
+      ],
+      "The excerpt controls how this page appears in search results and social sharing. Keep it between 120-160 characters.": [
+        "يتحكم المقتطف في كيفية ظهور هذه الصفحة في نتائج البحث والمشاركة الاجتماعية. اجعله بين 120-160 حرفًا."
+      ],
+      "The last 50 MCP calls handled by this server.": [
+        "آخر 50 مكالمة MCP تمت معالجتها بواسطة هذا الخادم."
+      ],
+      "This feature is available for premium users only. Upgrade to attach images to your LLM responses.": [
+        "هذه الميزة متاحة للمستخدمين المميزين فقط. قم بالترقية لإرفاق الصور باستجابات LLM الخاصة بك."
+      ],
+      "This feature is available for premium users only. Upgrade to attach multiple images to your LLM responses.": [
+        "هذه الميزة متاحة للمستخدمين المميزين فقط. قم بالترقية لإرفاق صور متعددة باستجابات LLM الخاصة بك."
+      ],
+      "This is an automated report generated by LLMagnet AI SEO Optimizer.": [
+        "هذا تقرير تلقائي تم إنشاؤه بواسطة LLMagnet AI SEO Optimizer."
+      ],
+      "This report shows LLM bot visits to your website during the week of %s.": [
+        "يعرض هذا التقرير زيارات روبوت LLM إلى موقع الويب الخاص بك خلال أسبوع %s."
+      ],
+      "Time": [
+        "وقت"
+      ],
+      "Tip: ChatGPT's general-purpose custom connectors require a paid plan with Developer mode. The consent screen and token issuance are handled entirely by your site.": [
+        "نصيحة: تتطلب موصلات ChatGPT المخصصة للأغراض العامة خطة مدفوعة مع وضع المطور. تتم معالجة شاشة الموافقة وإصدار الرمز المميز بالكامل بواسطة موقعك."
+      ],
+      "Token": [
+        "رمز مميز"
+      ],
+      "Token created": [
+        "تم إنشاء الرمز المميز"
+      ],
+      "Tokens grant API access to this site's LLMagnet data. Treat them like passwords.": [
+        "تمنح الرموز المميزة API حق الوصول إلى بيانات LLMagnet الخاصة بهذا الموقع. تعامل معهم مثل كلمات المرور."
+      ],
+      "Tool": [
+        "أداة"
+      ],
+      "Tools": [
+        "أدوات"
+      ],
+      "Top Pages": [
+        "أعلى الصفحات"
+      ],
+      "Total": [
+        "المجموع"
+      ],
+      "Transport:": [
+        "ينقل:"
+      ],
+      "Try WebMCP": [
+        "جرب WebMCP"
+      ],
+      "Type": [
+        "يكتب"
+      ],
+      "Types": [
+        "أنواع"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "URL Structure": [
+        "URL الهيكل"
+      ],
+      "Unknown": [
+        "مجهول"
+      ],
+      "Untitled": [
+        "بدون عنوان"
+      ],
+      "Upload Error": [
+        "خطأ في التحميل"
+      ],
+      "Upload New": [
+        "تحميل جديد"
+      ],
+      "Upload New Image": [
+        "تحميل صورة جديدة"
+      ],
+      "Upload failed. Please check your connection and try again.": [
+        "فشل التحميل. يرجى التحقق من اتصالك والمحاولة مرة أخرى."
+      ],
+      "Upload failed. Please try again.": [
+        "فشل التحميل. يرجى المحاولة مرة أخرى."
+      ],
+      "Uploading...": [
+        "جارٍ التحميل..."
+      ],
+      "Use this image": [
+        "استخدم هذه الصورة"
+      ],
+      "Use this logo": [
+        "استخدم هذا الشعار"
+      ],
+      "Uses your WordPress site logo when set. You can also paste a URL or pick from the media library.": [
+        "يستخدم شعار موقع WordPress الخاص بك عند التعيين. يمكنك أيضًا لصق URL أو الاختيار من مكتبة الوسائط."
+      ],
+      "Valid JSON": [
+        "صالح JSON"
+      ],
+      "View": [
+        "منظر"
+      ],
+      "View plans": [
+        "عرض الخطط"
+      ],
+      "View pricing plans": [
+        "عرض خطط التسعير"
+      ],
+      "View products →": [
+        "عرض المنتجات →"
+      ],
+      "View-only on your plan.": [
+        "عرض فقط على خطتك."
+      ],
+      "Visibility Score Over Time": [
+        "نقاط الرؤية مع مرور الوقت"
+      ],
+      "Visibility score over time": [
+        "درجة الرؤية مع مرور الوقت"
+      ],
+      "Visit": [
+        "يزور"
+      ],
+      "Visit Types": [
+        "أنواع الزيارة"
+      ],
+      "Visit Volume": [
+        "حجم الزيارة"
+      ],
+      "Vol": [
+        "المجلد"
+      ],
+      "Volume": [
+        "مقدار"
+      ],
+      "Warning": [
+        "تحذير"
+      ],
+      "We analyzed this page and found structured data gaps. Copy the JSON-LD below into your theme, page builder, or SEO plugin.": [
+        "قمنا بتحليل هذه الصفحة ووجدنا فجوات في البيانات المنظمة. انسخ JSON-LD أدناه في القالب أو أداة إنشاء الصفحات أو المكون الإضافي SEO."
+      ],
+      "We couldn't load your analytics (missing API configuration). Please reload the page.": [
+        "لم نتمكن من تحميل تحليلاتك (تكوين API مفقود). يرجى إعادة تحميل الصفحة."
+      ],
+      "We couldn't load your analytics right now. Please reload the page or try again shortly.": [
+        "لم نتمكن من تحميل تحليلاتك الآن. يرجى إعادة تحميل الصفحة أو المحاولة مرة أخرى قريبا."
+      ],
+      "We couldn't load your analytics right now. Please try again in a moment.": [
+        "لم نتمكن من تحميل تحليلاتك الآن. الرجاء المحاولة مرة أخرى في لحظة."
+      ],
+      "WebMCP add to cart tool": [
+        "WebMCP أداة الإضافة إلى سلة التسوق"
+      ],
+      "WebMCP “Add to cart” tool": [
+        "WebMCP أداة \"إضافة إلى سلة التسوق\"."
+      ],
+      "Website URL": [
+        "موقع الكتروني URL"
+      ],
+      "Week of": [
+        "أسبوع من"
+      ],
+      "Week of %s": [
+        "أسبوع %s"
+      ],
+      "Weekly Bot Visits": [
+        "زيارات الروبوت الأسبوعية"
+      ],
+      "Weekly Performance Metrics": [
+        "مقاييس الأداء الأسبوعية"
+      ],
+      "Weekly Summary": [
+        "ملخص أسبوعي"
+      ],
+      "Weekly Visits": [
+        "الزيارات الأسبوعية"
+      ],
+      "Well-known endpoints": [
+        "نقاط النهاية المعروفة"
+      ],
+      "What we found": [
+        "ما وجدناه"
+      ],
+      "When off, this content is left out of llms.txt, llms-full.txt and the markdown docs. Changes apply to the export files right away.": [
+        "عند إيقاف التشغيل، يتم استبعاد هذا المحتوى من llms.txt وllms-full.txt ومستندات تخفيض السعر. تنطبق التغييرات على ملفات التصدير على الفور."
+      ],
+      "Widget": [
+        "القطعة"
+      ],
+      "WordPress Abilities API": [
+        "WordPress Abilities API"
+      ],
+      "WordPress Version": [
+        "WordPress الإصدار"
+      ],
+      "WordPress ecosystem": [
+        "WordPress النظام البيئي"
+      ],
+      "Working…": [
+        "عمل…"
+      ],
+      "Write": [
+        "يكتب"
+      ],
+      "Write action": [
+        "اكتب الإجراء"
+      ],
+      "Write tools (%d)": [
+        "أدوات الكتابة (%d)"
+      ],
+      "Write tools always require an authenticated read/write token — no mode changes that.": [
+        "تتطلب أدوات الكتابة دائمًا رمزًا مميزًا للقراءة/الكتابة معتمدًا - ولا يغير أي وضع ذلك."
+      ],
+      "You can select multiple images from the media library or upload them one by one.": [
+        "يمكنك تحديد صور متعددة من مكتبة الوسائط أو تحميلها واحدة تلو الأخرى."
+      ],
+      "You\\u2019ll be sent to this site to sign in and approve the connection (pick read-only or read + write).": [
+        "سيتم إرسالك إلى هذا الموقع لتسجيل الدخول والموافقة على الاتصال (اختر للقراءة فقط أو قراءة + كتابة)."
+      ],
+      "Your access mode is Private, so ChatGPT cannot connect right now. The recommended path is enabling Public content access: anyone can then read your published content via MCP (the same data search engines see) — analytics stay private.": [
+        "وضع الوصول الخاص بك خاص، لذا لا يمكن لـ ChatGPT الاتصال الآن. المسار الموصى به هو تمكين الوصول إلى المحتوى العام: يمكن لأي شخص بعد ذلك قراءة المحتوى المنشور الخاص بك عبر MCP (نفس البيانات التي تراها محركات البحث) - تظل التحليلات خاصة."
+      ],
+      "Your browser doesn\\u2019t support WebMCP yet — tools are registered for browsers/agents that do.": [
+        "متصفحك لا يدعم WebMCP حتى الآن — الأدوات مسجلة للمتصفحات/الوكلاء الذين يدعمون ذلك."
+      ],
+      "Your score and domain breakdown are shown above.": [
+        "يتم عرض درجاتك وتقسيم المجال أعلاه."
+      ],
+      "already outputs JSON-LD on your site. LLMagnet will not add a second block — use": [
+        "يتم بالفعل إخراج JSON-LD على موقعك. LLMagnet لن يضيف كتلة ثانية - استخدم"
+      ],
+      "and click": [
+        "وانقر"
+      ],
+      "another SEO plugin": [
+        "ملحق إضافي SEO"
+      ],
+      "auth failed": [
+        "فشلت المصادقة"
+      ],
+      "destructive": [
+        "مدمر"
+      ],
+      "e.g. Claude Desktop": [
+        "على سبيل المثال Claude سطح المكتب"
+      ],
+      "e.g. IL, US": [
+        "على سبيل المثال إلينوي، الولايات المتحدة"
+      ],
+      "for templates and extend schema inside": [
+        "للقوالب وتوسيع المخطط في الداخل"
+      ],
+      "gear (bottom-left) →": [
+        "والعتاد (أسفل اليسار) →"
+      ],
+      "idempotent": [
+        "عاجز"
+      ],
+      "in the graph (uses a sample product when available).": [
+        "في الرسم البياني (يستخدم نموذجًا للمنتج عند توفره)."
+      ],
+      "in your workspace (Copilot agent mode).": [
+        "في مساحة العمل الخاصة بك (وضع وكيل مساعد الطيار)."
+      ],
+      "includeSubDomains applies HSTS to every subdomain for a year — make sure all of them serve HTTPS before enabling.": [
+        "يطبق includeSubDomains HSTS على كل نطاق فرعي لمدة عام - تأكد من أن جميعها تخدم HTTPS قبل التمكين."
+      ],
+      "is available in this browser.": [
+        "موجود في هذا المتصفح"
+      ],
+      "llms.txt updated %s": [
+        "تم تحديث llms.txt %s"
+      ],
+      "namespace.": [
+        "مساحة الاسم."
+      ],
+      "nosniff, Referrer-Policy, Permissions-Policy, HSTS, CSP report-only.": [
+        "nosniff، سياسة المُحيل، سياسة الأذونات، HSTS، تقرير CSP فقط."
+      ],
+      "or Elementor page settings.": [
+        "أو إعدادات الصفحة Elementor."
+      ],
+      "projected": [
+        "المتوقع"
+      ],
+      "public: content modes": [
+        "عام: أوضاع المحتوى"
+      ],
+      "public: read mode": [
+        "عام: وضع القراءة"
+      ],
+      "robots.txt AI crawler rules": [
+        "robots.txt قواعد زاحف الذكاء الاصطناعي"
+      ],
+      "scope · stored hashed on the server.": [
+        "نطاق · تخزينها مجزأة على الخادم."
+      ],
+      "tab →": [
+        "علامة التبويب →"
+      ],
+      "to save your details and refresh the JSON-LD below, then publish when ready. This saves your graph and prints one JSON-LD script in the site HTML (wp_head). Other SEO plugins may also output schema—we don't remove theirs.": [
+        "لحفظ التفاصيل الخاصة بك وتحديث JSON-LD أدناه، ثم قم بالنشر عندما تصبح جاهزًا. يؤدي هذا إلى حفظ الرسم البياني الخاص بك وطباعة برنامج نصي JSON-LD واحد في موقع HTML (wp_head). قد تقوم المكونات الإضافية SEO أيضًا بإخراج المخطط، ولا نقوم بإزالة المخططات الخاصة بها."
+      ],
+      "to see every finding with evidence and apply automated fixes.": [
+        "لرؤية كل نتيجة مع الأدلة وتطبيق الإصلاحات التلقائية."
+      ],
+      "using an Application Password.": [
+        "باستخدام كلمة مرور التطبيق."
+      ],
+      "will immediately lose access. This cannot be undone.": [
+        "سوف تفقد الوصول على الفور. لا يمكن التراجع عن هذا."
+      ],
+      "you won't be able to see it again.": [
+        "لن تتمكن من رؤيته مرة أخرى."
+      ],
+      "your AI client": [
+        "عميل الذكاء الاصطناعي الخاص بك"
+      ],
+      "— WebMCP is currently off": [
+        "— WebMCP متوقف حاليًا"
+      ],
+      "— all tools, including future write actions.": [
+        "— جميع الأدوات، بما في ذلك إجراءات الكتابة المستقبلية."
+      ],
+      "— read-only tools (recommended).": [
+        "- أدوات للقراءة فقط (مستحسن)."
+      ],
+      "✓ Optimal tag count": [
+        "✓ عدد العلامات الأمثل"
+      ]
+    }
+  }
+}

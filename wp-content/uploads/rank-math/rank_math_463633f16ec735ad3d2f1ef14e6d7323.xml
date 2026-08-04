@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//onlinedissertationadvisors.co.uk/main-sitemap.xsl"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>https://onlinedissertationadvisors.co.uk/post-sitemap.xml</loc>
+		<lastmod>2026-08-03T08:07:00+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>https://onlinedissertationadvisors.co.uk/page-sitemap.xml</loc>
+		<lastmod>2026-07-30T13:36:48+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>https://onlinedissertationadvisors.co.uk/category-sitemap.xml</loc>
+		<lastmod>2026-08-03T08:07:00+00:00</lastmod>
+	</sitemap>
+</sitemapindex>

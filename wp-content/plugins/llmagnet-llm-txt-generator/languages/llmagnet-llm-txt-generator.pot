@@ -1,0 +1,6558 @@
+# Copyright (C) 2026 llmagnet
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: LLMagnet AI SEO Optimizer 3.4.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/llmagnet\n"
+"POT-Creation-Date: 2026-06-12T19:34:50+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: llmagnet-llm-txt-generator\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Plugin Name of the plugin
+#: llmagnet-ai-seo-optimizer.php
+msgid "LLMagnet AI SEO Optimizer"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: llmagnet-ai-seo-optimizer.php
+msgid "https://llmagnet.com/"
+msgstr ""
+
+#. Description of the plugin
+#: llmagnet-ai-seo-optimizer.php
+msgid ""
+"Automatically creates and maintains an llms.txt file and associated Markdown"
+" files for LLM crawlers."
+msgstr ""
+
+#. Author of the plugin
+#: llmagnet-ai-seo-optimizer.php
+msgid "llmagnet"
+msgstr ""
+
+#: includes/class-abilities.php:103 includes/class-admin.php:85
+msgid "LLMagnet AI SEO"
+msgstr ""
+
+#: includes/class-abilities.php:104
+msgid ""
+"AI visibility, LLM bot analytics, and llms.txt management for this site."
+msgstr ""
+
+#. translators: %s: internal tool id.
+#: includes/class-abilities.php:302
+#, php-format
+msgid "LLMagnet tool \"%s\" failed unexpectedly."
+msgstr ""
+
+#: includes/class-admin-bar.php:86
+msgid "LLMagnet — AI visibility score not calculated yet"
+msgstr ""
+
+#. translators: %d: score 0-100
+#: includes/class-admin-bar.php:88
+#, php-format
+msgid "LLMagnet — AI visibility score %d of 100"
+msgstr ""
+
+#: includes/class-admin.php:86
+msgid "LLMagnet"
+msgstr ""
+
+#: includes/class-admin.php:97 includes/class-admin.php:98
+msgid "Dashboard"
+msgstr ""
+
+#: includes/class-admin.php:109 includes/class-admin.php:110
+#: src/components/nav-sidebar.tsx:23
+msgid "Pages"
+msgstr ""
+
+#: includes/class-admin.php:119 includes/class-admin.php:120
+#: src/components/dashboard-analytics/bot-summary-table.tsx:7
+#: src/components/nav-sidebar.tsx:24
+msgid "Bot Analytics"
+msgstr ""
+
+#: includes/class-admin.php:133 includes/class-admin.php:134
+#: src/components/nav-sidebar.tsx:45
+msgid "Products"
+msgstr ""
+
+#: includes/class-admin.php:144 includes/class-admin.php:145
+#: src/components/nav-sidebar.tsx:25
+msgid "Reports"
+msgstr ""
+
+#: includes/class-admin.php:154 includes/class-admin.php:155
+#: src/components/nav-sidebar.tsx:26
+msgid "LLMs.txt"
+msgstr ""
+
+#: includes/class-admin.php:163 includes/class-admin.php:164
+#: src/components/nav-sidebar.tsx:30
+msgid "Schema JSON-LD"
+msgstr ""
+
+#: includes/class-admin.php:173 includes/class-admin.php:174
+#: src/components/nav-sidebar.tsx:35
+msgid "Agent Ready"
+msgstr ""
+
+#: includes/class-admin.php:183 includes/class-admin.php:184
+#: src/components/nav-sidebar.tsx:40
+msgid "MCP & AI"
+msgstr ""
+
+#: includes/class-admin.php:195 includes/class-admin.php:196
+msgid "Settings"
+msgstr ""
+
+#: includes/class-admin.php:247 includes/class-admin.php:433
+msgid "LLMS.txt generated successfully!"
+msgstr ""
+
+#: includes/class-admin.php:253 includes/class-admin.php:438 src/App.tsx:36
+#: src/components/status-box.tsx:42 src/dashboard-main.tsx:42
+#: src/overview-main.tsx:34
+msgid "Error generating LLMS.txt. Please check server permissions."
+msgstr ""
+
+#: includes/class-admin.php:407
+msgid "Loading…"
+msgstr ""
+
+#: includes/class-admin.php:420 includes/class-admin.php:451
+#: includes/class-alt-text-manager.php:77
+#: includes/class-alt-text-manager.php:450
+#: includes/class-alt-text-manager.php:531
+#: includes/class-alt-text-manager.php:908
+msgid "Security check failed."
+msgstr ""
+
+#: includes/class-admin.php:425 includes/class-admin.php:456
+#: includes/class-alt-text-manager.php:455
+#: includes/class-alt-text-manager.php:913
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/class-admin.php:463
+msgid "Invalid settings data."
+msgstr ""
+
+#: includes/class-admin.php:477 src/App.tsx:54
+msgid "Settings saved successfully."
+msgstr ""
+
+#: includes/class-admin.php:481
+msgid "Error saving settings."
+msgstr ""
+
+#. translators: %s: file size in MB
+#: includes/class-admin.php:501
+#, php-format
+msgid ""
+"llms-full.txt is %sMB. Consider reducing max posts to decrease file size."
+msgstr ""
+
+#. translators: %s: WordPress root directory path
+#: includes/class-admin.php:520
+#, php-format
+msgid ""
+"LLMS.txt Generator cannot write to your WordPress root directory (%s). "
+"Please check file permissions."
+msgstr ""
+
+#: includes/class-admin.php:593
+msgid "Products Analytics"
+msgstr ""
+
+#: includes/class-admin.php:595
+msgid ""
+"WooCommerce is required for Products Analytics. Please install and activate "
+"WooCommerce."
+msgstr ""
+
+#: includes/class-agent-audit.php:431
+msgid "robots.txt resolves and is parseable"
+msgstr ""
+
+#: includes/class-agent-audit.php:432
+msgid ""
+"Agents start at robots.txt. It must resolve with HTTP 200 and contain valid "
+"directives."
+msgstr ""
+
+#: includes/class-agent-audit.php:433
+msgid "Check your host/SEO plugin robots.txt configuration"
+msgstr ""
+
+#: includes/class-agent-audit.php:447
+msgid "Named AI crawler rules in robots.txt"
+msgstr ""
+
+#: includes/class-agent-audit.php:448
+msgid ""
+"Explicit User-agent groups for AI crawlers (GPTBot, ClaudeBot, "
+"PerplexityBot, …) signal an agent-aware site."
+msgstr ""
+
+#: includes/class-agent-audit.php:449
+msgid "Enable AI crawler rules"
+msgstr ""
+
+#: includes/class-agent-audit.php:465
+msgid "Content-Signal directives"
+msgstr ""
+
+#: includes/class-agent-audit.php:466
+msgid ""
+"Content-Signal (search / ai-input / ai-train) states your content-usage "
+"preferences for AI systems."
+msgstr ""
+
+#: includes/class-agent-audit.php:467
+msgid "Enable Content-Signal"
+msgstr ""
+
+#: includes/class-agent-audit.php:478
+msgid "XML sitemap with lastmod"
+msgstr ""
+
+#: includes/class-agent-audit.php:479
+msgid "A sitemap with <lastmod> lets agents prioritize fresh content."
+msgstr ""
+
+#: includes/class-agent-audit.php:480
+msgid "Use an SEO plugin sitemap (Yoast, Rank Math, …) that emits lastmod"
+msgstr ""
+
+#: includes/class-agent-audit.php:499
+msgid "/llms.txt resolves"
+msgstr ""
+
+#: includes/class-agent-audit.php:500
+msgid ""
+"llms.txt is the entry point AI agents use to understand your site's content."
+msgstr ""
+
+#: includes/class-agent-audit.php:501
+msgid "Generate llms.txt"
+msgstr ""
+
+#: includes/class-agent-audit.php:511
+msgid "/llms-full.txt resolves"
+msgstr ""
+
+#: includes/class-agent-audit.php:512
+msgid ""
+"llms-full.txt carries full content for agents that want everything in one "
+"fetch."
+msgstr ""
+
+#: includes/class-agent-audit.php:513
+msgid "Generate llms-full.txt"
+msgstr ""
+
+#: includes/class-agent-audit.php:522
+msgid "/.well-known/agent-card.json"
+msgstr ""
+
+#: includes/class-agent-audit.php:523
+msgid ""
+"An A2A-style agent card describing the site's machine-usable capabilities."
+msgstr ""
+
+#: includes/class-agent-audit.php:524 includes/class-agent-audit.php:531
+#: includes/class-agent-audit.php:538 includes/class-agent-audit.php:672
+#: includes/class-agent-audit.php:1077 includes/class-agent-audit.php:1341
+msgid "Enable well-known endpoints"
+msgstr ""
+
+#: includes/class-agent-audit.php:529
+msgid "/.well-known/agent-skills"
+msgstr ""
+
+#: includes/class-agent-audit.php:530
+msgid "A machine-readable index of the skills agents can use on this site."
+msgstr ""
+
+#: includes/class-agent-audit.php:536
+msgid "MCP server card discoverable"
+msgstr ""
+
+#: includes/class-agent-audit.php:537
+msgid "/.well-known/mcp.json advertises this site's MCP server to agents."
+msgstr ""
+
+#: includes/class-agent-audit.php:543
+msgid "Link headers advertise machine resources"
+msgstr ""
+
+#: includes/class-agent-audit.php:544
+msgid ""
+"HTTP Link headers pointing at llms.txt / the agent card make discovery free "
+"for any client."
+msgstr ""
+
+#: includes/class-agent-audit.php:545
+msgid "Enable Link headers"
+msgstr ""
+
+#: includes/class-agent-audit.php:557
+msgid "/.well-known/api-catalog (RFC 9727)"
+msgstr ""
+
+#: includes/class-agent-audit.php:558
+msgid "An API catalog listing the site's programmatic interfaces."
+msgstr ""
+
+#: includes/class-agent-audit.php:559
+msgid "Publish an api-catalog document on your host"
+msgstr ""
+
+#: includes/class-agent-audit.php:569
+msgid "_agents DNS records"
+msgstr ""
+
+#: includes/class-agent-audit.php:570
+msgid ""
+"SVCB/HTTPS records under _agents.{domain} for DNS-level agent discovery."
+msgstr ""
+
+#: includes/class-agent-audit.php:571
+msgid "Add _agents records at your DNS host"
+msgstr ""
+
+#: includes/class-agent-audit.php:596
+msgid "JSON-LD on sampled pages"
+msgstr ""
+
+#: includes/class-agent-audit.php:597
+msgid "Structured data is how agents understand entities on your pages."
+msgstr ""
+
+#: includes/class-agent-audit.php:598 includes/class-agent-audit.php:780
+msgid "Use the Schema JSON-LD wizard"
+msgstr ""
+
+#: includes/class-agent-audit.php:624
+msgid "Schema validates"
+msgstr ""
+
+#: includes/class-agent-audit.php:625
+msgid "Invalid structured data is worse than none — agents discard it."
+msgstr ""
+
+#: includes/class-agent-audit.php:626
+msgid "Run a scan on the Schema JSON-LD page"
+msgstr ""
+
+#: includes/class-agent-audit.php:642
+msgid "Open Graph tags"
+msgstr ""
+
+#: includes/class-agent-audit.php:643
+msgid ""
+"OG tags give agents (and link unfurlers) a canonical title/description/image"
+" per page."
+msgstr ""
+
+#: includes/class-agent-audit.php:644
+msgid "Enable Open Graph fill"
+msgstr ""
+
+#: includes/class-agent-audit.php:651
+msgid "Markdown endpoints (.md)"
+msgstr ""
+
+#: includes/class-agent-audit.php:652
+msgid "Per-page markdown lets agents read clean content without HTML parsing."
+msgstr ""
+
+#: includes/class-agent-audit.php:653
+msgid "Enable markdown endpoints"
+msgstr ""
+
+#: includes/class-agent-audit.php:670
+msgid "/schemamap.xml"
+msgstr ""
+
+#: includes/class-agent-audit.php:671
+msgid "An index mapping URLs to their published schema types."
+msgstr ""
+
+#: includes/class-agent-audit.php:682
+msgid "RSS feed published and linked"
+msgstr ""
+
+#: includes/class-agent-audit.php:683
+msgid ""
+"Feeds remain the most widely supported machine-readable content channel."
+msgstr ""
+
+#: includes/class-agent-audit.php:684
+msgid "Restore automatic feed links"
+msgstr ""
+
+#: includes/class-agent-audit.php:694
+msgid "RSS feed resolves with valid XML"
+msgstr ""
+
+#: includes/class-agent-audit.php:695
+msgid ""
+"The main feed URL must return HTTP 200 with parseable RSS/Atom XML, not an "
+"error page."
+msgstr ""
+
+#: includes/class-agent-audit.php:696
+msgid "Check feed-disabling plugins or theme feed overrides"
+msgstr ""
+
+#: includes/class-agent-audit.php:710
+msgid "Content renders without JavaScript"
+msgstr ""
+
+#: includes/class-agent-audit.php:711
+msgid ""
+"Most agents read raw HTML; content that only exists after JS execution is "
+"invisible to them."
+msgstr ""
+
+#: includes/class-agent-audit.php:712
+msgid "Ensure your theme/builder server-renders content"
+msgstr ""
+
+#: includes/class-agent-audit.php:732
+msgid "Stable internal URLs"
+msgstr ""
+
+#: includes/class-agent-audit.php:733
+msgid ""
+"Sampled internal links must not 404 or chain through multiple redirects."
+msgstr ""
+
+#: includes/class-agent-audit.php:734
+msgid "Fix broken links / redirect chains"
+msgstr ""
+
+#: includes/class-agent-audit.php:778
+msgid "BreadcrumbList markup"
+msgstr ""
+
+#: includes/class-agent-audit.php:779
+msgid ""
+"Breadcrumb structured data tells agents where a page sits in your site "
+"hierarchy."
+msgstr ""
+
+#: includes/class-agent-audit.php:795
+msgid "rel=\"canonical\" on sampled pages"
+msgstr ""
+
+#: includes/class-agent-audit.php:796
+msgid "Canonical URLs prevent agents from indexing duplicate variants."
+msgstr ""
+
+#: includes/class-agent-audit.php:797
+msgid "Enable canonical fill"
+msgstr ""
+
+#: includes/class-agent-audit.php:804
+msgid "Canonical points at the page itself"
+msgstr ""
+
+#: includes/class-agent-audit.php:805
+msgid ""
+"A canonical that points at a different host (or a stale URL) silently hands "
+"your content authority elsewhere."
+msgstr ""
+
+#: includes/class-agent-audit.php:806
+msgid "Review canonical settings in your SEO plugin"
+msgstr ""
+
+#: includes/class-agent-audit.php:846
+msgid "HTML5 doctype"
+msgstr ""
+
+#: includes/class-agent-audit.php:847
+msgid "A standards-mode doctype keeps parsers (human and agent) predictable."
+msgstr ""
+
+#: includes/class-agent-audit.php:848 includes/class-agent-audit.php:872
+#: includes/class-agent-audit.php:884 includes/class-agent-audit.php:953
+#: includes/class-agent-audit.php:1287
+msgid "Theme-level fix"
+msgstr ""
+
+#: includes/class-agent-audit.php:858
+msgid "html lang attribute"
+msgstr ""
+
+#: includes/class-agent-audit.php:859
+msgid "The lang attribute tells agents which language model/locale to apply."
+msgstr ""
+
+#: includes/class-agent-audit.php:860
+msgid "Theme-level fix (language_attributes filter)"
+msgstr ""
+
+#: includes/class-agent-audit.php:870
+msgid "Charset declared early"
+msgstr ""
+
+#: includes/class-agent-audit.php:871
+msgid "meta charset must appear in the first 1024 bytes for correct decoding."
+msgstr ""
+
+#: includes/class-agent-audit.php:882
+msgid "Viewport meta (zoomable)"
+msgstr ""
+
+#: includes/class-agent-audit.php:883
+msgid ""
+"A viewport meta without user-scalable=no keeps pages usable for everyone."
+msgstr ""
+
+#: includes/class-agent-audit.php:898
+msgid "Unique page titles"
+msgstr ""
+
+#: includes/class-agent-audit.php:899
+msgid "Every page needs a non-empty, unique <title>."
+msgstr ""
+
+#: includes/class-agent-audit.php:900
+msgid "Use an SEO plugin for title management"
+msgstr ""
+
+#: includes/class-agent-audit.php:927
+msgid "Meta description"
+msgstr ""
+
+#: includes/class-agent-audit.php:928
+msgid "Meta descriptions give agents a page summary without reading the body."
+msgstr ""
+
+#: includes/class-agent-audit.php:929
+msgid "Use an SEO plugin for meta descriptions"
+msgstr ""
+
+#: includes/class-agent-audit.php:936
+msgid "Favicon / site icon"
+msgstr ""
+
+#: includes/class-agent-audit.php:937
+msgid "A site icon is part of basic site identity for agents and browsers."
+msgstr ""
+
+#: includes/class-agent-audit.php:938
+msgid "Set a Site Icon under Appearance → Customize"
+msgstr ""
+
+#: includes/class-agent-audit.php:951
+msgid "theme-color meta"
+msgstr ""
+
+#: includes/class-agent-audit.php:952
+msgid "theme-color rounds out machine-readable site identity."
+msgstr ""
+
+#: includes/class-agent-audit.php:963
+msgid "Heading hierarchy"
+msgstr ""
+
+#: includes/class-agent-audit.php:964
+msgid ""
+"A single H1 with an orderly heading outline is how agents segment a page."
+msgstr ""
+
+#: includes/class-agent-audit.php:965
+msgid "Theme/content-level fix"
+msgstr ""
+
+#: includes/class-agent-audit.php:986
+msgid "Real 404 responses"
+msgstr ""
+
+#: includes/class-agent-audit.php:987
+msgid ""
+"Missing pages must answer HTTP 404, not a soft 200, or agents index junk."
+msgstr ""
+
+#: includes/class-agent-audit.php:988
+msgid "Check theme 404 template / redirect plugins"
+msgstr ""
+
+#: includes/class-agent-audit.php:1000
+msgid "IndexNow"
+msgstr ""
+
+#: includes/class-agent-audit.php:1001
+msgid ""
+"IndexNow pings get fresh content to AI-backed search engines within minutes."
+msgstr ""
+
+#: includes/class-agent-audit.php:1002
+msgid "Enable IndexNow"
+msgstr ""
+
+#: includes/class-agent-audit.php:1027
+msgid "HTTPS"
+msgstr ""
+
+#: includes/class-agent-audit.php:1028
+msgid "Agents (and browsers) treat plain-HTTP sites as untrustworthy."
+msgstr ""
+
+#: includes/class-agent-audit.php:1029
+msgid "Enable HTTPS at your host"
+msgstr ""
+
+#: includes/class-agent-audit.php:1036
+msgid "Strict-Transport-Security"
+msgstr ""
+
+#: includes/class-agent-audit.php:1037
+msgid "X-Content-Type-Options"
+msgstr ""
+
+#: includes/class-agent-audit.php:1038
+msgid "Referrer-Policy"
+msgstr ""
+
+#: includes/class-agent-audit.php:1039
+msgid "Permissions-Policy"
+msgstr ""
+
+#: includes/class-agent-audit.php:1042
+msgid "Content-Security-Policy"
+msgstr ""
+
+#: includes/class-agent-audit.php:1043
+msgid "A CSP (even report-only) demonstrates a hardened content pipeline."
+msgstr ""
+
+#: includes/class-agent-audit.php:1044
+msgid "Enable CSP report-only starter"
+msgstr ""
+
+#: includes/class-agent-audit.php:1055
+msgid "No mixed content"
+msgstr ""
+
+#: includes/class-agent-audit.php:1056
+msgid "http:// subresources on an HTTPS page break the security model."
+msgstr ""
+
+#: includes/class-agent-audit.php:1057
+msgid "Update hardcoded http:// asset URLs"
+msgstr ""
+
+#: includes/class-agent-audit.php:1075
+msgid "/.well-known/security.txt (RFC 9116)"
+msgstr ""
+
+#: includes/class-agent-audit.php:1076
+msgid ""
+"security.txt tells researchers (and agents) how to report vulnerabilities."
+msgstr ""
+
+#: includes/class-agent-audit.php:1082
+msgid "Web Bot Auth"
+msgstr ""
+
+#: includes/class-agent-audit.php:1083
+msgid ""
+"Cryptographic bot authentication (signed agents) is rolling out at the CDN "
+"level."
+msgstr ""
+
+#: includes/class-agent-audit.php:1084
+msgid "Requires host/CDN support (e.g. Cloudflare signed agents)"
+msgstr ""
+
+#: includes/class-agent-audit.php:1095
+msgid "Cookie attributes"
+msgstr ""
+
+#: includes/class-agent-audit.php:1096
+msgid "Front-end cookies should carry Secure and SameSite attributes."
+msgstr ""
+
+#: includes/class-agent-audit.php:1097
+msgid "Review plugins that set front-end cookies"
+msgstr ""
+
+#: includes/class-agent-audit.php:1125
+msgid "Response compression"
+msgstr ""
+
+#: includes/class-agent-audit.php:1126
+msgid "gzip/brotli keeps agent fetches (and crawl budgets) cheap."
+msgstr ""
+
+#: includes/class-agent-audit.php:1127
+msgid "Enable compression at your host"
+msgstr ""
+
+#: includes/class-agent-audit.php:1138
+msgid "HTTP/2 or newer"
+msgstr ""
+
+#: includes/class-agent-audit.php:1139
+msgid "Multiplexed transport speeds up multi-resource fetches."
+msgstr ""
+
+#: includes/class-agent-audit.php:1140
+msgid "Host-level configuration"
+msgstr ""
+
+#: includes/class-agent-audit.php:1149
+msgid "Static asset caching"
+msgstr ""
+
+#: includes/class-agent-audit.php:1150
+msgid "Static assets should be cacheable so repeat fetches are free."
+msgstr ""
+
+#: includes/class-agent-audit.php:1151
+msgid "Configure cache headers at your host"
+msgstr ""
+
+#: includes/class-agent-audit.php:1172
+msgid "Modern image formats"
+msgstr ""
+
+#: includes/class-agent-audit.php:1173
+msgid "WebP/AVIF keep pages light for agents and users alike."
+msgstr ""
+
+#: includes/class-agent-audit.php:1174
+msgid "Use an image-optimization plugin"
+msgstr ""
+
+#: includes/class-agent-audit.php:1198
+msgid "Render-blocking scripts"
+msgstr ""
+
+#: includes/class-agent-audit.php:1199
+msgid ""
+"Synchronous head scripts slow first paint for users and rendering agents."
+msgstr ""
+
+#: includes/class-agent-audit.php:1200
+msgid "Defer non-critical scripts (performance plugin)"
+msgstr ""
+
+#: includes/class-agent-audit.php:1235
+msgid "Image ALT text"
+msgstr ""
+
+#: includes/class-agent-audit.php:1236
+msgid "ALT text is how agents (and screen readers) understand images."
+msgstr ""
+
+#: includes/class-agent-audit.php:1237
+msgid "Use the LLMagnet ALT-text manager on the dashboard"
+msgstr ""
+
+#: includes/class-agent-audit.php:1260
+msgid "Form labels"
+msgstr ""
+
+#: includes/class-agent-audit.php:1261
+msgid "Inputs need labels or aria-labels for agents to fill forms correctly."
+msgstr ""
+
+#: includes/class-agent-audit.php:1262
+msgid "Theme/form-plugin-level fix"
+msgstr ""
+
+#: includes/class-agent-audit.php:1285
+msgid "Landmark regions"
+msgstr ""
+
+#: includes/class-agent-audit.php:1286
+msgid "<main>/<nav> landmarks help agents segment the page."
+msgstr ""
+
+#: includes/class-agent-audit.php:1300
+msgid "Descriptive link text"
+msgstr ""
+
+#: includes/class-agent-audit.php:1301
+msgid "\"Click here\" links carry zero information for agents scanning anchors."
+msgstr ""
+
+#: includes/class-agent-audit.php:1302
+msgid "Content-level fix"
+msgstr ""
+
+#: includes/class-agent-audit.php:1315
+msgid "No accessibility overlay"
+msgstr ""
+
+#: includes/class-agent-audit.php:1316
+msgid "Overlay widgets interfere with assistive tech and automated agents."
+msgstr ""
+
+#: includes/class-agent-audit.php:1317
+msgid "Remove the overlay; fix accessibility at the source"
+msgstr ""
+
+#: includes/class-agent-audit.php:1339
+msgid "/.well-known/change-password"
+msgstr ""
+
+#: includes/class-agent-audit.php:1340
+msgid "Password managers and agents use this redirect to find the reset flow."
+msgstr ""
+
+#: includes/class-agent-audit.php:1353
+msgid "WebMCP tools"
+msgstr ""
+
+#: includes/class-agent-audit.php:1354
+msgid ""
+"navigator.modelContext tools make the site directly operable by browser "
+"agents."
+msgstr ""
+
+#: includes/class-agent-audit.php:1355
+msgid "Enable WebMCP"
+msgstr ""
+
+#: includes/class-agent-audit.php:1368
+msgid "OAuth discovery metadata"
+msgstr ""
+
+#: includes/class-agent-audit.php:1369
+msgid "/.well-known/oauth-authorization-server for agent auth flows."
+msgstr ""
+
+#: includes/class-agent-audit.php:1370
+msgid "Requires an OAuth provider plugin"
+msgstr ""
+
+#: includes/class-agent-audit.php:1380
+msgid "Agentic commerce (x402/MPP)"
+msgstr ""
+
+#: includes/class-agent-audit.php:1381
+msgid "Machine-payable endpoints for agent-initiated purchases (emerging)."
+msgstr ""
+
+#: includes/class-agent-audit.php:1382
+msgid "Emerging standard — no WordPress implementation yet"
+msgstr ""
+
+#. translators: %s: HTTP header name.
+#: includes/class-agent-audit.php:1468
+#, php-format
+msgid "%s header"
+msgstr ""
+
+#. translators: %s: HTTP header name.
+#: includes/class-agent-audit.php:1470
+#, php-format
+msgid "The %s security header should be present on front-end responses."
+msgstr ""
+
+#: includes/class-agent-audit.php:1472
+msgid "Enable security headers"
+msgstr ""
+
+#: includes/class-agent-audit.php:1473
+msgid "Configure this header at your host"
+msgstr ""
+
+#: includes/class-agent-readiness-options.php:120
+msgid "LLMagnet agent-readiness feature toggles"
+msgstr ""
+
+#: includes/class-agent-readiness-options.php:128
+msgid "LLMagnet agent-card fields"
+msgstr ""
+
+#: includes/class-agent-readiness-options.php:136
+msgid "LLMagnet front-end HTTP header allowlist"
+msgstr ""
+
+#: includes/class-agent-readiness-options.php:144
+msgid "LLMagnet IndexNow key"
+msgstr ""
+
+#: includes/class-agent-skills-registry.php:115
+#: includes/class-mcp-tools.php:678 includes/class-mcp-tools.php:680
+msgid "Search Site Content"
+msgstr ""
+
+#: includes/class-agent-skills-registry.php:135
+#: includes/class-mcp-tools.php:639 includes/class-mcp-tools.php:641
+msgid "Get Page Content as Markdown"
+msgstr ""
+
+#: includes/class-agent-skills-registry.php:155
+msgid "List Recent Content"
+msgstr ""
+
+#: includes/class-agent-skills-registry.php:180
+msgid "Get Site Information"
+msgstr ""
+
+#: includes/class-agent-skills-registry.php:197
+msgid "Search Products"
+msgstr ""
+
+#: includes/class-alt-text-manager.php:82
+msgid "You do not have permission to upload files."
+msgstr ""
+
+#: includes/class-alt-text-manager.php:87
+msgid "This feature is available for premium users only."
+msgstr ""
+
+#: includes/class-alt-text-manager.php:92
+msgid "No image file uploaded."
+msgstr ""
+
+#: includes/class-alt-text-manager.php:101
+msgid "Invalid file type. Please upload an image file."
+msgstr ""
+
+#: includes/class-alt-text-manager.php:141
+msgid "Image uploaded successfully."
+msgstr ""
+
+#: includes/class-alt-text-manager.php:149
+msgid "Failed to create attachment."
+msgstr ""
+
+#: includes/class-alt-text-manager.php:152
+msgid "Upload failed."
+msgstr ""
+
+#: includes/class-alt-text-manager.php:528
+msgid "Invalid request method. This action requires a POST request."
+msgstr ""
+
+#: includes/class-alt-text-manager.php:1014
+msgid "Invalid image data. Please try the direct link instead."
+msgstr ""
+
+#: includes/class-alt-text-manager.php:1068
+#, php-format
+msgid "Updated alt text for %d images and regenerated llms.txt."
+msgstr ""
+
+#: includes/class-alt-text-manager.php:1076
+msgid "Error regenerating llms.txt after updating alt text."
+msgstr ""
+
+#: includes/class-analytics.php:636
+msgid "Invalid PDF payload."
+msgstr ""
+
+#: includes/class-analytics.php:645
+msgid "PDF is too large or could not be decoded."
+msgstr ""
+
+#: includes/class-analytics.php:655
+msgid "Your user account has no email address."
+msgstr ""
+
+#: includes/class-analytics.php:680
+msgid "Could not save report file."
+msgstr ""
+
+#: includes/class-analytics.php:688
+msgid "Analytics"
+msgstr ""
+
+#. translators: 1: site name, 2: report label
+#: includes/class-analytics.php:696
+#, php-format
+msgid "[%1$s] LLMagnet — %2$s Report"
+msgstr ""
+
+#: includes/class-analytics.php:836
+msgid "Could not send email. Check your WordPress mail configuration."
+msgstr ""
+
+#: includes/class-analytics.php:843
+msgid "Report emailed to your WordPress user address."
+msgstr ""
+
+#: includes/class-dashboard-widget.php:86 includes/class-post-meta.php:313
+msgid "LLMagnet — AI Visibility"
+msgstr ""
+
+#. translators: %s: formatted number of LLM bot visits in the last 30 days
+#: includes/class-dashboard-widget.php:128
+#, php-format
+msgid "%s LLM visits (30d)"
+msgstr ""
+
+#: includes/class-elementor.php:149
+msgid "LLMagnet — AI visibility score"
+msgstr ""
+
+#. translators: %d: score 0-100
+#. translators: %d: score from 0 to 100.
+#: includes/class-elementor.php:151 includes/class-list-table-columns.php:173
+#: includes/class-list-table-columns.php:300 src/components/score-badge.tsx:48
+#, php-format, js-format
+msgid "AI visibility score %d of 100"
+msgstr ""
+
+#: includes/class-elementor.php:152 includes/class-list-table-columns.php:141
+#: includes/class-post-meta.php:345 src/components/score-badge.tsx:32
+msgid "AI visibility score not calculated yet"
+msgstr ""
+
+#: includes/class-elementor.php:153
+msgid ""
+"You have unsaved Elementor changes. Save your Elementor changes first — "
+"description edits saved here could be overwritten by your next Elementor "
+"save."
+msgstr ""
+
+#: includes/class-elementor.php:154
+msgid "Dismiss"
+msgstr ""
+
+#: includes/class-email-reports.php:202
+#, php-format
+msgid "[%s] %s LLM Bot Analytics Report - %s"
+msgstr ""
+
+#: includes/class-email-reports.php:452
+msgid "Top Pages for AI Bots"
+msgstr ""
+
+#: includes/class-email-reports.php:455
+msgid "Page"
+msgstr ""
+
+#: includes/class-email-reports.php:456
+msgid "Visits"
+msgstr ""
+
+#: includes/class-email-reports.php:457
+msgid "Score"
+msgstr ""
+
+#: includes/class-email-reports.php:469
+msgid "View details"
+msgstr ""
+
+#: includes/class-email-reports.php:486
+msgid ""
+"Links open the page details drawer in your WordPress admin (login required)."
+msgstr ""
+
+#: includes/class-list-table-columns.php:103
+#: includes/class-list-table-columns.php:261
+msgid "LLM Score"
+msgstr ""
+
+#: includes/class-list-table-columns.php:181
+#: includes/class-list-table-columns.php:302 src/components/score-badge.tsx:65
+#: src/components/score-badge.tsx:77
+msgid "Open LLMagnet to improve this score"
+msgstr ""
+
+#: includes/class-list-table-columns.php:182
+#: includes/class-list-table-columns.php:301 src/components/score-badge.tsx:67
+#: src/components/score-badge.tsx:79
+msgid "Fix"
+msgstr ""
+
+#: includes/class-list-table-columns.php:260
+msgid "Open LLMagnet to view and improve this score"
+msgstr ""
+
+#: includes/class-mcp-admin-rest.php:361
+msgid "No legacy token exists."
+msgstr ""
+
+#: includes/class-mcp-admin-rest.php:372
+msgid "Token not found or already revoked."
+msgstr ""
+
+#: includes/class-mcp-admin-rest.php:449
+msgid "Initialize handshake"
+msgstr ""
+
+#. translators: %s: negotiated MCP protocol version.
+#: includes/class-mcp-admin-rest.php:453
+#, php-format
+msgid "Negotiated protocol version %s."
+msgstr ""
+
+#: includes/class-mcp-admin-rest.php:468
+msgid "List tools"
+msgstr ""
+
+#. translators: %d: number of MCP tools.
+#: includes/class-mcp-admin-rest.php:472
+#, php-format
+msgid "%d tools available."
+msgstr ""
+
+#: includes/class-mcp-admin-rest.php:474
+msgid "tools/list returned an empty tool set."
+msgstr ""
+
+#. translators: %s: tool name.
+#: includes/class-mcp-admin-rest.php:494
+#, php-format
+msgid "Call tool %s"
+msgstr ""
+
+#: includes/class-mcp-admin-rest.php:497
+msgid "Tool executed successfully."
+msgstr ""
+
+#: includes/class-mcp-admin-rest.php:574
+msgid "No valid JSON-RPC response from the MCP handler."
+msgstr ""
+
+#. translators: %d: maximum number of tokens.
+#: includes/class-mcp-tokens.php:75
+#, php-format
+msgid "Token limit reached (%d). Revoke an existing token first."
+msgstr ""
+
+#: includes/class-mcp-tokens.php:84
+msgid "Unnamed token"
+msgstr ""
+
+#: includes/class-mcp-tokens.php:202
+msgid "Legacy CLI token"
+msgstr ""
+
+#: includes/class-mcp-tools.php:333 includes/class-mcp-tools.php:335
+msgid "Get Site Info"
+msgstr ""
+
+#: includes/class-mcp-tools.php:360 includes/class-mcp-tools.php:362
+msgid "Get AI Visibility Score"
+msgstr ""
+
+#: includes/class-mcp-tools.php:387 includes/class-mcp-tools.php:389
+msgid "Get AI Bot Traffic"
+msgstr ""
+
+#: includes/class-mcp-tools.php:418 includes/class-mcp-tools.php:420
+msgid "Get Top Pages for AI Traffic"
+msgstr ""
+
+#: includes/class-mcp-tools.php:436 includes/class-mcp-tools.php:438
+msgid "Get Bot Stats Table"
+msgstr ""
+
+#: includes/class-mcp-tools.php:454 includes/class-mcp-tools.php:456
+msgid "Get AI Visibility Recommendations"
+msgstr ""
+
+#: includes/class-mcp-tools.php:487 includes/class-mcp-tools.php:489
+msgid "Get llms.txt Status"
+msgstr ""
+
+#: includes/class-mcp-tools.php:512 includes/class-mcp-tools.php:514
+msgid "Get Schema JSON-LD Status"
+msgstr ""
+
+#: includes/class-mcp-tools.php:538 includes/class-mcp-tools.php:540
+msgid "Get Page Visibility Score"
+msgstr ""
+
+#: includes/class-mcp-tools.php:581 includes/class-mcp-tools.php:583
+msgid "Get AI Referral Attribution Stats"
+msgstr ""
+
+#: includes/class-mcp-tools.php:614 includes/class-mcp-tools.php:616
+msgid "Get robots.txt AI Crawler Status"
+msgstr ""
+
+#: includes/class-mcp-tools.php:713 includes/class-mcp-tools.php:715
+msgid "Get AI Visit Trends"
+msgstr ""
+
+#: includes/class-mcp-tools.php:759 includes/class-mcp-tools.php:762
+msgid "Regenerate llms.txt"
+msgstr ""
+
+#: includes/class-mcp-tools.php:789 includes/class-mcp-tools.php:792
+msgid "Recalculate AI Visibility Score"
+msgstr ""
+
+#: includes/class-mcp-tools.php:827 includes/class-mcp-tools.php:830
+msgid "Send Analytics Report Email"
+msgstr ""
+
+#: includes/class-mcp-tools.php:865 includes/class-mcp-tools.php:867
+msgid "Get Product AI Traffic Stats"
+msgstr ""
+
+#: includes/class-mcp-tools.php:900 includes/class-mcp-tools.php:902
+msgid "Get AI Revenue Funnel"
+msgstr ""
+
+#. translators: %d HTTP status code
+#: includes/class-news-feed.php:104
+#, php-format
+msgid "Remote server returned HTTP %d"
+msgstr ""
+
+#: includes/class-news-feed.php:117
+msgid "Invalid JSON in news feed."
+msgstr ""
+
+#: includes/class-news-feed.php:132
+msgid "News feed must include a \"notifications\" or \"items\" array."
+msgstr ""
+
+#: includes/class-onboarding.php:356
+msgid "Subject and message are required."
+msgstr ""
+
+#: includes/class-onboarding.php:365
+msgid "Too many feedback submissions. Please try again in about an hour."
+msgstr ""
+
+#: includes/class-onboarding.php:390
+msgid "Could not send feedback. Please try again later."
+msgstr ""
+
+#: includes/class-post-meta.php:245 includes/class-post-meta.php:271
+msgid "Post not found."
+msgstr ""
+
+#: includes/class-post-meta.php:338
+msgid "AI visibility score"
+msgstr ""
+
+#: includes/class-post-meta.php:346
+msgid "Not calculated yet"
+msgstr ""
+
+#: includes/class-post-meta.php:354 includes/class-post-meta.php:520
+#: includes/class-post-meta.php:559
+msgid "Include in llms.txt"
+msgstr ""
+
+#: includes/class-post-meta.php:357
+msgid ""
+"When unchecked, this content is left out of llms.txt, llms-full.txt and the "
+"markdown docs."
+msgstr ""
+
+#: includes/class-post-meta.php:560
+msgid "Exclude from llms.txt"
+msgstr ""
+
+#. translators: %d: number of posts
+#: includes/class-post-meta.php:623
+#, php-format
+msgid "%d item included in llms.txt."
+msgid_plural "%d items included in llms.txt."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of posts
+#: includes/class-post-meta.php:630
+#, php-format
+msgid "%d item excluded from llms.txt."
+msgid_plural "%d items excluded from llms.txt."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-privacy.php:159
+msgid ""
+"Allow LLMagnet to send product telemetry (Brevo contact sync + Mixpanel "
+"usage analytics)."
+msgstr ""
+
+#: includes/class-privacy.php:173
+msgid ""
+"Number of days to retain AI bot visit and click logs (0 keeps them forever)."
+msgstr ""
+
+#: includes/class-privacy.php:188
+msgid ""
+"Enable LLM attribution tracking (first-party cookie on visitors arriving "
+"from AI platforms)."
+msgstr ""
+
+#: includes/class-privacy.php:387 includes/class-privacy.php:402
+#: includes/class-privacy.php:428
+msgid "LLMagnet AI Attribution Sessions"
+msgstr ""
+
+#: includes/class-privacy.php:432
+msgid "Session ID"
+msgstr ""
+
+#: includes/class-privacy.php:436
+msgid "AI platform source"
+msgstr ""
+
+#: includes/class-privacy.php:440
+msgid "Landing page"
+msgstr ""
+
+#: includes/class-privacy.php:444
+msgid "UTM medium"
+msgstr ""
+
+#: includes/class-privacy.php:448
+msgid "UTM campaign"
+msgstr ""
+
+#: includes/class-privacy.php:452
+msgid "First visit"
+msgstr ""
+
+#: includes/class-privacy.php:456
+msgid "Last activity"
+msgstr ""
+
+#: includes/class-privacy.php:460
+msgid "Converted to order"
+msgstr ""
+
+#: includes/class-privacy.php:461
+msgid "Yes"
+msgstr ""
+
+#: includes/class-privacy.php:461
+msgid "No"
+msgstr ""
+
+#: includes/class-publish-nudge.php:144
+msgid "See the fixes"
+msgstr ""
+
+#. translators: 1: post title, 2: score 0-100
+#: includes/class-publish-nudge.php:153
+#, php-format
+msgid ""
+"\"%1$s\" scores %2$d of 100 for AI visibility — a few quick fixes can "
+"improve how AI assistants see it."
+msgstr ""
+
+#: includes/class-robots-txt.php:233
+msgid "Enable the robots.txt AI rules feature before applying the block."
+msgstr ""
+
+#: includes/class-robots-txt.php:244
+msgid "Could not write to robots.txt. File may not exist or is not writable."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:262
+msgid "Schema generation is available on Pro, Plus, and Enterprise."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:294
+msgid "Publishing schema is available on Pro, Plus, and Enterprise."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:316
+msgid "Schema saved and will appear in your site HTML."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:358
+msgid "Homepage"
+msgstr ""
+
+#. translators: %s page slug
+#: includes/class-schema-jsonld.php:363
+#, php-format
+msgid "Page: %s"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:378
+msgid "Recent post"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:393 includes/class-schema-jsonld.php:590
+msgid "Product"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:427
+msgid "Could not load this page to read structured data."
+msgstr ""
+
+#. translators: %d HTTP status
+#: includes/class-schema-jsonld.php:441
+#, php-format
+msgid "Unexpected response (%d)"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:461
+msgid "A JSON-LD block contains invalid JSON."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:484
+msgid ""
+"No JSON-LD was found on this page. AI and search engines rely on structured "
+"data to understand your content."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:496
+msgid ""
+"Multiple JSON-LD blocks detected. If you use another SEO plugin, avoid "
+"duplicating the same business or product entities."
+msgstr ""
+
+#. translators: 1: schema type, 2: field name
+#: includes/class-schema-jsonld.php:574
+#, php-format
+msgid ""
+"Consider adding \"%2$s\" to your %1$s schema so machines can read key facts "
+"reliably."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:584
+msgid "Organization"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:587
+msgid "LocalBusiness"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:593
+msgid "Article"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:600
+msgid ""
+"FAQ schema should list question/answer pairs so assistants can reuse them."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:620
+msgid "Add business identity to your site"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:621
+msgid ""
+"Organization or LocalBusiness schema helps AI and search engines understand "
+"who you are and how to cite you."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:622
+msgid "Use Fix & Publish"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:630
+msgid "Product pages may be missing Product schema"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:631
+msgid ""
+"For stores, Product and Offer schema improves how prices and availability "
+"appear. This pack is included on Plus and Enterprise."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:632
+msgid "Learn about store schema"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:640
+msgid "Clarify site-wide context"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:641
+msgid ""
+"WebSite or WebPage JSON-LD connects your brand, search box, and key pages "
+"into one machine-readable graph."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:656
+msgid "Fix invalid JSON-LD"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:657
+msgid ""
+"Broken JSON-LD blocks are ignored by crawlers. Use the preview in Fix & "
+"Publish to validate before going live."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:736
+msgid "Store/Product schema templates are available on Plus and Enterprise."
+msgstr ""
+
+#: includes/class-schema-jsonld.php:832
+msgid "Example product"
+msgstr ""
+
+#: includes/class-schema-jsonld.php:833
+msgid ""
+"Publish a WooCommerce product to replace this placeholder in your graph."
+msgstr ""
+
+#: includes/class-score-store.php:359
+msgid "Comma-separated post IDs."
+msgstr ""
+
+#: includes/class-score-store.php:391
+msgid "No valid post IDs provided."
+msgstr ""
+
+#: includes/class-site-health.php:68
+msgid "AI Visibility"
+msgstr ""
+
+#: includes/class-site-health.php:81 includes/class-site-health.php:148
+msgid "llms.txt is generated and fresh"
+msgstr ""
+
+#: includes/class-site-health.php:86 includes/class-site-health.php:199
+msgid "robots.txt references llms.txt"
+msgstr ""
+
+#: includes/class-site-health.php:91 includes/class-site-health.php:235
+msgid "Images have ALT text"
+msgstr ""
+
+#: includes/class-site-health.php:98 includes/class-site-health.php:276
+msgid "AI visibility scores are calculated"
+msgstr ""
+
+#: includes/class-site-health.php:104 includes/class-site-health.php:341
+msgid "AI bot tracking is working"
+msgstr ""
+
+#: includes/class-site-health.php:151
+msgid ""
+"Your llms.txt file exists and is up to date, so AI assistants can discover "
+"your most important content."
+msgstr ""
+
+#: includes/class-site-health.php:163
+msgid "llms.txt has not been generated yet"
+msgstr ""
+
+#: includes/class-site-health.php:164
+msgid ""
+"llms.txt tells AI assistants (ChatGPT, Claude, Perplexity and others) which "
+"content on your site matters. Without it, AI crawlers have to guess."
+msgstr ""
+
+#: includes/class-site-health.php:168
+msgid "Generate your llms.txt"
+msgstr ""
+
+#: includes/class-site-health.php:176
+msgid "llms.txt has not been refreshed in over a week"
+msgstr ""
+
+#. translators: %s: human-readable time since the last refresh
+#: includes/class-site-health.php:179
+#, php-format
+msgid ""
+"llms.txt was last written %s ago. The daily regeneration may not be running "
+"— check WP-Cron."
+msgstr ""
+
+#: includes/class-site-health.php:185
+msgid "Review content settings and regenerate"
+msgstr ""
+
+#: includes/class-site-health.php:202
+msgid "Your robots.txt points crawlers at your llms.txt file."
+msgstr ""
+
+#: includes/class-site-health.php:215
+msgid "robots.txt does not reference llms.txt"
+msgstr ""
+
+#: includes/class-site-health.php:216
+msgid ""
+"Adding an llms.txt line to robots.txt helps AI crawlers discover the file. "
+"LLMagnet can inject it for you."
+msgstr ""
+
+#: includes/class-site-health.php:220
+msgid "Enable the robots.txt reference"
+msgstr ""
+
+#: includes/class-site-health.php:238
+msgid "No images missing ALT text were detected by the last scan."
+msgstr ""
+
+#. translators: %d: number of images
+#: includes/class-site-health.php:250
+#, php-format
+msgid "%d image is missing ALT text"
+msgid_plural "%d images are missing ALT text"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-site-health.php:253
+msgid ""
+"ALT text helps AI models and screen readers understand your images, and "
+"feeds the content-quality part of your AI visibility score."
+msgstr ""
+
+#: includes/class-site-health.php:257
+msgid "Fix ALT texts in LLMagnet"
+msgstr ""
+
+#: includes/class-site-health.php:285
+msgid "Score storage is unavailable."
+msgstr ""
+
+#: includes/class-site-health.php:311
+msgid "No published content to score yet."
+msgstr ""
+
+#. translators: 1: scored posts, 2: total posts, 3: percentage
+#: includes/class-site-health.php:319
+#, php-format
+msgid ""
+"%1$d of %2$d published items have a persisted AI visibility score (%3$d%%)."
+msgstr ""
+
+#: includes/class-site-health.php:327
+msgid "AI visibility scores are still being calculated"
+msgstr ""
+
+#: includes/class-site-health.php:328
+msgid ""
+"The hourly backfill computes a small batch per run, so coverage grows on its"
+" own. If this number never grows, WP-Cron may not be running."
+msgstr ""
+
+#: includes/class-site-health.php:355
+msgid "AI bot tracking table is missing"
+msgstr ""
+
+#: includes/class-site-health.php:356
+msgid ""
+"The bot-visits table was not created. Deactivate and reactivate LLMagnet to "
+"recreate it."
+msgstr ""
+
+#. translators: %s: formatted number of visits
+#: includes/class-site-health.php:367
+#, php-format
+msgid "%s AI bot visits were recorded in the last 30 days."
+msgstr ""
+
+#: includes/class-site-health.php:373
+msgid "View bot analytics"
+msgstr ""
+
+#: includes/class-site-health.php:379
+msgid "No AI bot visits recorded yet"
+msgstr ""
+
+#: includes/class-site-health.php:380
+msgid ""
+"Tracking is set up, but no AI bot visits have been logged in the last 30 "
+"days. New sites can take a while to be discovered; generating llms.txt and "
+"keeping it referenced from robots.txt speeds this up. If your site sits "
+"behind a full-page cache or proxy that serves bots without hitting PHP, "
+"visits cannot be logged."
+msgstr ""
+
+#: includes/class-site-health.php:384
+msgid "Open the LLMagnet overview"
+msgstr ""
+
+#: llmagnet-ai-seo-optimizer.php:95
+msgid ""
+"LLMagnet AI SEO Optimizer: Freemius SDK not loaded. Install via Composer or "
+"add freemius/start.php."
+msgstr ""
+
+#: llmagnet-ai-seo-optimizer.php:266
+msgid ""
+"LLMagnet AI SEO Optimizer is a single-site plugin and does not support "
+"WordPress multisite. The plugin writes llms.txt and related files to the "
+"site root directory, which would conflict between subsites, so it has been "
+"deactivated. Please use it on a standalone (single-site) WordPress "
+"installation."
+msgstr ""
+
+#: llmagnet-ai-seo-optimizer.php:267
+msgid "LLMagnet AI SEO Optimizer — multisite not supported"
+msgstr ""
+
+#: src/admin-shell-main.tsx:315
+msgid "Unknown admin page."
+msgstr ""
+
+#: src/analytics-main.tsx:13
+msgid "Analytics data not found."
+msgstr ""
+
+#: src/analytics-main.tsx:19 src/App.tsx:28 src/App.tsx:63 src/App.tsx:75
+#: src/dashboard-main.tsx:34 src/overview-main.tsx:26
+msgid "Unknown error"
+msgstr ""
+
+#: src/App.tsx:12
+msgid "WordPress admin data not found."
+msgstr ""
+
+#: src/App.tsx:63
+msgid "Error saving settings:"
+msgstr ""
+
+#: src/App.tsx:68
+msgid "Error saving settings. Please try again."
+msgstr ""
+
+#: src/App.tsx:104
+msgid ""
+"WordPress root directory is not writable. LLMS.txt cannot be generated."
+msgstr ""
+
+#: src/bot-analytics-main.tsx:18
+msgid "Something went wrong loading Bot Analytics."
+msgstr ""
+
+#: src/bot-analytics-main.tsx:29
+msgid "Bot analytics data not found."
+msgstr ""
+
+#: src/components/dashboard-analytics/bot-summary-table.tsx:13
+msgid "View Full Statistics →"
+msgstr ""
+
+#: src/components/dashboard-analytics/bot-summary-table.tsx:19
+msgid "Bot"
+msgstr ""
+
+#: src/components/dashboard-analytics/bot-summary-table.tsx:20
+msgid "Total Visits"
+msgstr ""
+
+#: src/components/dashboard-analytics/bot-summary-table.tsx:21
+msgid "Clicks"
+msgstr ""
+
+#: src/components/dashboard-analytics/bot-summary-table.tsx:22
+msgid "CTR"
+msgstr ""
+
+#: src/components/dashboard-analytics/bot-summary-table.tsx:23
+msgid "Trend"
+msgstr ""
+
+#. translators: %s: bot name.
+#: src/components/dashboard-analytics/bot-summary-table.tsx:41
+#, js-format
+msgid "%s logo"
+msgstr ""
+
+#: src/components/dashboard-analytics/constants.ts:58
+msgid "Last 24 hours"
+msgstr ""
+
+#: src/components/dashboard-analytics/constants.ts:60
+#: src/components/dashboard-analytics/constants.ts:85
+msgid "Last 7 days"
+msgstr ""
+
+#: src/components/dashboard-analytics/constants.ts:62
+msgid "Last 14 days"
+msgstr ""
+
+#: src/components/dashboard-analytics/constants.ts:64
+#: src/components/dashboard-analytics/constants.ts:80
+#: src/components/dashboard-analytics/constants.ts:88
+msgid "Last 30 days"
+msgstr ""
+
+#: src/components/dashboard-analytics/constants.ts:66
+#: src/components/dashboard-analytics/constants.ts:87
+msgid "Last 90 days"
+msgstr ""
+
+#: src/components/dashboard-analytics/constants.ts:68
+msgid "All time (charts aggregate up to 365 days)"
+msgstr ""
+
+#. translators: 1: start date, 2: end date.
+#: src/components/dashboard-analytics/constants.ts:73
+#, js-format
+msgid "Custom: %1$s – %2$s"
+msgstr ""
+
+#: src/components/dashboard-analytics/constants.ts:78
+msgid "Custom range"
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:166
+msgid "Report email address saved successfully."
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:174
+msgid "Failed to save email address."
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:181
+msgid "Failed to save email address. Please try again."
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:722
+msgid "Analytics report has been sent to your email."
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:727
+msgid "Failed to send analytics report."
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:734
+msgid "Failed to send analytics report. Please try again later."
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:876
+msgid "Premium Feature"
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:877
+msgid "Access to real analytics data is available in the premium version."
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:883
+msgid "Upgrade Now"
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:891
+msgid "Analytics Reports"
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:894
+msgid "Report Email Address"
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:913
+msgid "Saving..."
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:913
+msgid "Save"
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:926
+msgid "Sending..."
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx:926
+msgid "Send Analytics Report Now"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:26
+msgid "Select Models"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:28
+#: src/components/dashboard-analytics/time-range-filter.tsx:107
+#: src/components/dashboard-analytics/time-range-filter.tsx:111
+msgid "All Models"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:31
+#, js-format
+msgid "%d Models"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:35
+msgid "Bot Traffic"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:127
+msgid "Available in Plus & Enterprise plans"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:157
+msgid "Upgrade"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:183
+#: src/components/dashboard-analytics/time-range-filter.tsx:221
+msgid "Last 7 Days"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:184
+#: src/components/dashboard-analytics/time-range-filter.tsx:233
+msgid "Last 30 Days"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:185
+#: src/components/dashboard-analytics/time-range-filter.tsx:245
+msgid "Last 90 Days"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:187
+#: src/components/dashboard-analytics/time-range-filter.tsx:291
+msgid "Custom Range"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:200
+msgid "Select Date Range"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:205
+msgid "Close date picker"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:265
+msgid "This Quarter"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:285
+msgid "This Year"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:294
+msgid "From"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:309
+msgid "To"
+msgstr ""
+
+#: src/components/dashboard-analytics/time-range-filter.tsx:341
+msgid "Apply Custom Range"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:6
+msgid "Content length"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:7
+msgid "Heading structure"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:8
+#: src/components/editor/diagnostics-checklist.tsx:19
+msgid "Image ALT coverage"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:9
+msgid "Excerpt"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:10
+msgid "Tags & categories"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:11
+msgid "Readability"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:16
+msgid "Description length"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:17
+msgid "Tags"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:18
+msgid "Category assigned"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:24
+msgid "Passed"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:27
+msgid "Needs improvement"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:29
+msgid "Missing"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:40
+msgid "AI bot visibility (70% of score)"
+msgstr ""
+
+#. translators: 1: checklist item label, 2: max points it contributes to the
+#. 0-100 score
+#: src/components/editor/diagnostics-checklist.tsx:54
+#, js-format
+msgid "%1$s is worth up to %2$s points of the total score"
+msgstr ""
+
+#: src/components/editor/diagnostics-checklist.tsx:73
+msgid "Recommendations"
+msgstr ""
+
+#: src/components/feedback-modal.tsx:36
+msgid "Please fill in both subject and description."
+msgstr ""
+
+#: src/components/feedback-modal.tsx:42
+msgid ""
+"Could not send feedback (missing API settings). Please reload the page."
+msgstr ""
+
+#. translators: %d: HTTP status code.
+#: src/components/feedback-modal.tsx:61
+#, js-format
+msgid "Request failed (%d)"
+msgstr ""
+
+#: src/components/feedback-modal.tsx:78
+msgid "Network error. Please try again."
+msgstr ""
+
+#: src/components/feedback-modal.tsx:161 src/components/nav-sidebar.tsx:254
+#: src/components/nav-sidebar.tsx:255 src/components/nav-sidebar.tsx:281
+msgid "Feedback / bugs"
+msgstr ""
+
+#: src/components/feedback-modal.tsx:170
+msgid "Close feedback dialog"
+msgstr ""
+
+#: src/components/feedback-modal.tsx:189
+msgid "Thanks — your feedback was sent."
+msgstr ""
+
+#: src/components/feedback-modal.tsx:190
+msgid "Subject"
+msgstr ""
+
+#: src/components/feedback-modal.tsx:198
+msgid "Have something to say?"
+msgstr ""
+
+#: src/components/feedback-modal.tsx:224
+msgid "Description"
+msgstr ""
+
+#: src/components/feedback-modal.tsx:233
+msgid "Describe your request"
+msgstr ""
+
+#: src/components/feedback-modal.tsx:251
+msgid ""
+"We attach technical details (WordPress, PHP, plugin version, your account, "
+"and recent debug log if available) to help us reproduce issues."
+msgstr ""
+
+#: src/components/feedback-modal.tsx:271
+msgid "Cancel"
+msgstr ""
+
+#: src/components/feedback-modal.tsx:291
+msgid "Sending…"
+msgstr ""
+
+#: src/components/feedback-modal.tsx:291
+msgid "Submit feedback"
+msgstr ""
+
+#: src/components/nav-sidebar.tsx:22
+msgid "Overview"
+msgstr ""
+
+#: src/components/nav-sidebar.tsx:203 src/components/nav-sidebar.tsx:204
+msgid "Expand menu"
+msgstr ""
+
+#: src/components/nav-sidebar.tsx:203 src/components/nav-sidebar.tsx:204
+msgid "Collapse menu"
+msgstr ""
+
+#: src/components/news-drawer.tsx:136
+msgid "News & updates"
+msgstr ""
+
+#. translators: %s: formatted date.
+#: src/components/news-drawer.tsx:139
+#, js-format
+msgid "Updated %s"
+msgstr ""
+
+#: src/components/news-drawer.tsx:152
+msgid "Close news drawer"
+msgstr ""
+
+#: src/components/news-drawer.tsx:166
+msgid "News feed is not available. Check your connection or"
+msgstr ""
+
+#: src/components/news-drawer.tsx:170
+msgid "in"
+msgstr ""
+
+#: src/components/news-drawer.tsx:182
+msgid "No announcements right now."
+msgstr ""
+
+#: src/components/news-drawer.tsx:190
+msgid "Update"
+msgstr ""
+
+#: src/components/news-drawer.tsx:296
+msgid "Read more"
+msgstr ""
+
+#: src/components/page-drawer.tsx:200
+msgid "Page details"
+msgstr ""
+
+#: src/components/page-drawer.tsx:830 src/components/product-drawer.tsx:844
+msgid "Remove tag"
+msgstr ""
+
+#: src/components/product-drawer.tsx:230
+msgid "Product details"
+msgstr ""
+
+#: src/components/score-badge.tsx:33
+msgid "Score not calculated yet"
+msgstr ""
+
+#: src/components/screen-loader.tsx:8 src/components/screen-loader.tsx:27
+msgid "Loading"
+msgstr ""
+
+#: src/components/settings-form.tsx:57
+msgid "General Settings"
+msgstr ""
+
+#: src/components/settings-form.tsx:58
+msgid ""
+"Configure which content should be included in the llms.txt file and "
+"associated Markdown exports."
+msgstr ""
+
+#: src/components/settings-form.tsx:61
+msgid "Content Types to Include"
+msgstr ""
+
+#: src/components/settings-form.tsx:75
+msgid "Content Export"
+msgstr ""
+
+#: src/components/settings-form.tsx:85
+msgid "Include full content (unchecked = excerpt only)"
+msgstr ""
+
+#: src/components/settings-form.tsx:89
+msgid "Time Period"
+msgstr ""
+
+#: src/components/settings-form.tsx:96
+msgid "Number of days of content to include"
+msgstr ""
+
+#: src/components/settings-form.tsx:101
+msgid "Number of days of content to include (0 = all content)"
+msgstr ""
+
+#: src/components/settings-form.tsx:105
+msgid "Cleanup on Uninstall"
+msgstr ""
+
+#: src/components/settings-form.tsx:115
+msgid "Delete llms.txt and llms-docs/ directory when plugin is uninstalled"
+msgstr ""
+
+#: src/components/settings-form.tsx:130
+msgid "Save Changes"
+msgstr ""
+
+#: src/components/status-box.tsx:23
+msgid "Success"
+msgstr ""
+
+#: src/components/status-box.tsx:33 src/components/status-box.tsx:41
+msgid "Error"
+msgstr ""
+
+#: src/components/status-box.tsx:53
+msgid "LLMS.txt Status"
+msgstr ""
+
+#: src/components/status-box.tsx:60
+msgid "Root Directory:"
+msgstr ""
+
+#: src/components/status-box.tsx:64
+msgid "Writable"
+msgstr ""
+
+#: src/components/status-box.tsx:64
+msgid "Not Writable"
+msgstr ""
+
+#: src/components/status-box.tsx:70
+msgid "Last Generated:"
+msgstr ""
+
+#: src/components/status-box.tsx:72
+msgid "Never"
+msgstr ""
+
+#: src/components/status-box.tsx:84
+msgid "Generating..."
+msgstr ""
+
+#: src/components/status-box.tsx:87
+msgid "Generate Now"
+msgstr ""
+
+#: src/components/top-bar.tsx:53
+msgid "Failed to load news"
+msgstr ""
+
+#: src/components/top-bar.tsx:69
+msgid "Network error"
+msgstr ""
+
+#: src/components/top-bar.tsx:97
+msgid "News and updates (unread items)"
+msgstr ""
+
+#: src/components/top-bar.tsx:97
+msgid "News and updates"
+msgstr ""
+
+#: src/content-settings-main.tsx:11
+msgid "Content settings data not found."
+msgstr ""
+
+#: src/dashboard-main.tsx:20 src/overview-main.tsx:12
+msgid "No data available"
+msgstr ""
+
+#: src/dashboard-main.tsx:69
+msgid "Dashboard data not found."
+msgstr ""
+
+#: src/overview-main.tsx:39
+msgid "Overview data not found."
+msgstr ""
+
+#: src/pages-main.tsx:18
+msgid "Something went wrong loading Pages Analytics."
+msgstr ""
+
+#: src/pages-main.tsx:29
+msgid "Pages data not found."
+msgstr ""
+
+#: src/products-main.tsx:11
+msgid "Products data not found."
+msgstr ""
+
+#: src/products-main.tsx:15
+msgid "WooCommerce Required"
+msgstr ""
+
+#: src/products-main.tsx:16
+msgid "Products analytics requires WooCommerce to be installed and activated."
+msgstr ""
+
+#: src/products-main.tsx:17
+msgid ""
+"Once WooCommerce is active, you'll be able to track product views, add-to-"
+"cart events, and revenue from LLM traffic."
+msgstr ""
+
+#: src/reports-main.tsx:10
+msgid "Reports data not found."
+msgstr ""
+
+#: src/schema-jsonld-main.tsx:10
+msgid "Schema data not loaded."
+msgstr ""
+
+#: src/system-information-main.tsx:10
+msgid "System information data not found."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Report settings saved successfully."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Failed to save settings."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Failed to save settings. Please try again."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Analytics report has been sent to your email."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Failed to send analytics report."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Failed to send analytics report. Please try again later."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Analytics Reports is a premium feature. Please"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "upgrade"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "to access this functionality."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Email Report Settings"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Report Recipients"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid ""
+"Add multiple email addresses separated by commas (e.g., admin@example.com, "
+"team@example.com)"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Report Frequency"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Daily"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Weekly"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Monthly"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Quarterly"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Send Time"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Company Logo"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Enterprise"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid ""
+"Add your company logo to email reports. Available for Enterprise users only."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Change Logo"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Remove"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Select Logo"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Upgrade to Enterprise to add your company logo"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Event alerts (opt-in)"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid ""
+"Immediate emails when notable AI traffic events occur. Uses the report "
+"recipients above."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "New product crawled within an hour of publish"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Bot traffic drops more than 40% week-over-week"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "A new AI bot type is detected on your site"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Save Settings"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Send Report Now"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Send an analytics report immediately to the recipients above."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Email Template"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Template:"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Classic"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Minimal"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Gradient"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Professional"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Loading email preview..."
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid " — physical robots.txt detected"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "%1$d items included out of %2$d total items"
+msgstr ""
+
+#: src/components/pages-analytics.tsx
+msgid "%1$d of %2$d"
+msgstr ""
+
+#: includes/class-event-alerts.php
+msgid ""
+"%1$s crawled your product \"%2$s\" within an hour of publish — a strong "
+"signal that AI systems are discovering new catalog items quickly."
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid "%1$s wants to connect to %2$s"
+msgstr ""
+
+#: includes/class-event-alerts.php
+msgid "%1$s was detected for the first time on your site, visiting %2$s."
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "%1$s: %2$d visits"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid ""
+"%d image is missing alt text. Adding descriptive alt text improves "
+"accessibility and can help LLMs better understand your images."
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "%d loaded"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "%d missing"
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "%d order"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "%d post included"
+msgstr ""
+
+#: src/components/editor-panel.tsx
+msgid "%d quick fix available"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "%d%% weight"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "%s already outputs JSON-LD"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "%s in llms.txt"
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "%s%% rate"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid ""
+"A complete checklist to optimize your site for ChatGPT, Perplexity, Gemini, "
+"and the next generation of search."
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "AI Availability Score"
+msgstr ""
+
+#: includes/class-mcp-ui.php
+msgid "AI Bot Traffic"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "AI Search Optimization Checklist"
+msgstr ""
+
+#: includes/class-mcp-ui.php
+msgid "AI Visibility Recommendations"
+msgstr ""
+
+#: includes/class-mcp-ui.php
+msgid "AI Visibility Score"
+msgstr ""
+
+#: includes/class-admin-bar.php
+msgid "AI Visibility · %d"
+msgstr ""
+
+#: includes/class-admin-bar.php
+msgid "AI Visibility · —"
+msgstr ""
+
+#: includes/class-admin-bar.php
+msgid "AI Visibility — score %d of 100"
+msgstr ""
+
+#: includes/class-admin-bar.php
+msgid "AI Visibility — score not calculated yet"
+msgstr ""
+
+#: src/components/editor-panel.tsx
+msgid "AI Visibility: %d"
+msgstr ""
+
+#: includes/class-mcp-ui.php
+msgid "AI Visit Trends"
+msgstr ""
+
+#: includes/class-event-alerts.php
+msgid "AI bot traffic dropped sharply"
+msgstr ""
+
+#: src/components/readiness-recommendations-list.tsx
+msgid "AI readiness fixes"
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "ATC Rate"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "About pages should use AboutPage schema."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "AboutPage"
+msgstr ""
+
+#: src/components/pages-analytics.tsx
+msgid "Access to page analytics data is available in the premium version."
+msgstr ""
+
+#: includes/class-page-details.php
+msgid "Add ALT text to %d image to improve accessibility and AI context."
+msgstr ""
+
+#: includes/class-product-details.php
+msgid "Add ALT text to %d product image."
+msgstr ""
+
+#: includes/class-page-details.php
+msgid ""
+"Add H2 and H3 headings to structure your content for better readability."
+msgstr ""
+
+#: includes/class-product-details.php
+msgid "Add Product schema"
+msgstr ""
+
+#: includes/class-product-details.php
+msgid ""
+"Add a short description (150–300 characters) to improve product visibility "
+"in AI answers."
+msgstr ""
+
+#: includes/class-page-details.php
+msgid ""
+"Add an excerpt (120–160 characters) to control how this page appears in AI "
+"summaries."
+msgstr ""
+
+#: src/components/first-week-empty-state.tsx src/components/overview.tsx
+msgid "Add llms.txt to robots.txt"
+msgstr ""
+
+#: includes/class-product-details.php
+msgid "Add more product tags (recommended: 3–8) to help AI categorization."
+msgstr ""
+
+#: includes/class-page-details.php
+msgid ""
+"Add more tags (recommended: 3–8) to improve categorization for AI systems."
+msgstr ""
+
+#: includes/class-page-details.php
+msgid "Add schema in JSON-LD"
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "Add to Cart"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Add to robots.txt"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "All set. No actionable recommendations right now."
+msgstr ""
+
+#: includes/class-privacy.php
+msgid ""
+"Allow LLMagnet to collect Mixpanel usage analytics from the admin dashboard."
+msgstr ""
+
+#: src/components/feedback-modal.tsx
+msgid ""
+"Also attach the last lines of my debug.log to help diagnose this issue. The "
+"log may contain technical paths or data from other plugins; we mask obvious "
+"secrets, but only enable this if you are comfortable sharing it."
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Alt Text"
+msgstr ""
+
+#: includes/class-event-alerts.php
+msgid "An AI bot"
+msgstr ""
+
+#: src/components/dashboard.tsx src/components/overview.tsx
+msgid "An error occurred while generating files."
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid ""
+"Anonymous usage analytics, used only to improve LLMagnet. We never collect "
+"anything from your site visitors."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Article / BlogPosting"
+msgstr ""
+
+#: includes/class-product-details.php
+msgid ""
+"Assign at least one category to organize your product catalog for AI "
+"discovery."
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Avg words/sentence"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Based on %1$d visits across %2$d pages in the last %3$d days"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid ""
+"Blog posts should include Article or BlogPosting schema with title, author, "
+"and dates."
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "Bot Impressions"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Bot Quality"
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "Bot Summaries"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Bot UTM clicks"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Bot Visibility"
+msgstr ""
+
+#: src/components/pages-analytics.tsx
+msgid "Bot Visits"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Bot Visits (30 Days)"
+msgstr ""
+
+#: includes/class-event-alerts.php
+msgid ""
+"Bot visits fell %1$d%% week-over-week (%2$d visits in the last 7 days vs "
+"%3$d the week before). Review your llms.txt, robots.txt, and recent content "
+"changes."
+msgstr ""
+
+#: src/components/pages-analytics.tsx
+msgid ""
+"Bot visits will be automatically logged when LLM crawlers access your pages."
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid ""
+"Bot visits will be automatically logged when LLM crawlers access your "
+"product pages."
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid ""
+"Bot visits will be automatically logged when LLM crawlers access your site."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Breadcrumb navigation detected — add BreadcrumbList schema."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Breadcrumbs"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Breakdown by Post Type:"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid ""
+"Business contact details detected — add Organization or LocalBusiness "
+"schema."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Business information"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "CURRENT FILE SIZE"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "CUSTOM INTRO TEXT"
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "Card View"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Categories"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Check for first LLM visit"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Cleanup on uninstall"
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid ""
+"Click on any product to view detailed analytics and optimize content to "
+"improve its visibility score."
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Clicks (30 Days)"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Combined score based on Bot Visibility (70%) and Content Quality (30%)"
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid "Connect to %s"
+msgstr ""
+
+#: includes/class-mcp-admin-rest.php
+msgid "Connection not found or already revoked."
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/overview.tsx
+#: src/components/product-drawer.tsx
+msgid "Content Quality"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Content Stats"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Content export options"
+msgstr ""
+
+#: includes/class-page-details.php
+msgid ""
+"Content is short (%d words). Aim for 800+ words for better LLM visibility."
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid ""
+"Content optimization score. Based on length, headings, ALT texts, excerpt, "
+"tags, and readability."
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Content types to include"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Continue"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Continue setup"
+msgstr ""
+
+#: src/components/editor-panel.tsx
+msgid "Could not load the AI visibility score: %s"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Coverage Calculation"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Crawl Frequency"
+msgstr ""
+
+#: includes/class-page-details.php
+msgid ""
+"Crawled by %1$d AI bot(s) but content is thin (%2$d words). Expand the page "
+"body for better AI answers."
+msgstr ""
+
+#: includes/class-product-details.php
+msgid ""
+"Crawled by %d AI bot(s) but the description is thin. Expand product details "
+"for richer AI answers."
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Crawler activity"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Delete files when plugin is uninstalled"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Describe this image..."
+msgstr ""
+
+#: src/components/editor-panel.tsx
+msgid "Detailed diagnostics require an administrator account."
+msgstr ""
+
+#: src/components/editor-panel.tsx
+msgid "Diagnostics"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Disabled"
+msgstr ""
+
+#: src/components/ui/toast.tsx
+msgid "Dismiss notification"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "EXCERPTS ONLY"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Edit"
+msgstr ""
+
+#: includes/class-page-details.php
+msgid "Edit page"
+msgstr ""
+
+#: includes/class-product-details.php
+msgid "Edit product"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Email reports"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Embedded video detected — add VideoObject schema."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Enable in Settings"
+msgstr ""
+
+#: includes/class-elementor-schema.php
+msgid ""
+"Enter JSON-LD without <script> tags. Merged into the site LLMagnet schema "
+"block (not a separate script). Supports Elementor dynamic tags."
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid ""
+"Enter a custom description for your llms.txt header (leave empty to use site"
+" tagline)"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Error Loading Page"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Error Loading Product"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Event"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Event content detected — add Event schema with schedule and location."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Event pages should include Event schema with dates and location."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Event widget"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Excellent"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Excerpt / Meta Description"
+msgstr ""
+
+#: includes/class-page-details.php
+msgid "Expand content from %d to 800+ words for improved LLM visibility."
+msgstr ""
+
+#: includes/class-product-details.php
+msgid ""
+"Expand the long description to at least 500 characters with detailed product"
+" information."
+msgstr ""
+
+#: includes/class-page-details.php
+msgid ""
+"Extend your excerpt to 120–160 characters for optimal AI snippet appearance."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid ""
+"FAQ content detected on the page — add FAQPage schema with question/answer "
+"pairs."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "FAQ pages should list questions and answers in FAQPage schema."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "FAQ widget"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "FAQPage"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "FULL CONTENT"
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "Failed to load analytics data. Please try again later."
+msgstr ""
+
+#: src/components/pages-analytics.tsx
+msgid "Failed to load page statistics: %s"
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "Failed to load product statistics: %s"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Failed to save email"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Failed to save email. Please try again."
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Featured Image"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "File is %sMB. Consider reducing max posts."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Finish setup to get discovered by AI assistants"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Fix Missing Alt Text"
+msgstr ""
+
+#: src/components/overview.tsx src/components/onboarding-wizard.tsx
+msgid "Fix Now"
+msgstr ""
+
+#: src/components/overview.tsx src/components/onboarding-wizard.tsx
+msgid "Fixing..."
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Formula: (Items in LLMS.txt ÷ Total Items) × 100"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Full content export is off"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Full content or excerpts only"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "GENERATE LLMS-FULL.TXT"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "GROUP BY CONTENT TYPE"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Gallery Images"
+msgstr ""
+
+#: src/components/first-week-empty-state.tsx
+msgid "Generate your llms.txt file"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Get Started"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Get the Checklist"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid ""
+"Get weekly AI visibility reports delivered to your inbox so you always know "
+"how AI assistants interact with your site."
+msgstr ""
+
+#: src/components/first-week-empty-state.tsx
+msgid "Getting started with AI visibility"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Go to Dashboard"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Good"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Great job! Your site is well optimized for AI Search Engines."
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Group by content type"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Heading Structure"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Help improve LLMagnet"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Hi %s"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "High priority"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid ""
+"Homepages should declare WebSite schema so search engines understand site-"
+"wide context."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Homepages should include Organization schema describing your brand."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "How is the score calculated?"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid ""
+"How often AI bots visit this page. Based on crawl frequency, bot quality, "
+"and visit count."
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid ""
+"How often AI bots visit this product. Based on crawl frequency, bot quality,"
+" and visit count."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid ""
+"How often AI bots visit your site. More frequent visits mean better "
+"visibility."
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "I agree and accept the terms"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "IMAGES"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "INCLUDE EXCERPTS"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Images & ALT Text"
+msgstr ""
+
+#: src/components/products-analytics.tsx src/components/analytics.tsx
+msgid "Impressions"
+msgstr ""
+
+#: includes/class-page-details.php
+msgid ""
+"Improve heading hierarchy — use H2 for main sections and H3 for subsections."
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Include excerpts"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Include images"
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid "Insufficient permissions"
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid "Invalid connection request"
+msgstr ""
+
+#: includes/class-elementor-schema.php
+msgid "JSON-LD Schema"
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "LLM"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "LLM visit"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "LLMagnet Dashboard"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid ""
+"LLMagnet will not print a second schema block on the front end. Use Fix for "
+"copy-ready templates and extend schema inside your SEO plugin (or Elementor "
+"page settings) instead of duplicating entities."
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "LLMs-full.txt (complete content)"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "LLMs-full.txt Preview"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "LLMs.txt Manager"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "LLMs.txt Preview"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "LLMs.txt structure settings"
+msgstr ""
+
+#: src/components/products-analytics.tsx src/components/pages-analytics.tsx
+msgid "Load More"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Loading preview..."
+msgstr ""
+
+#: src/components/editor-panel.tsx
+msgid "Loading score…"
+msgstr ""
+
+#: src/components/products-analytics.tsx src/components/pages-analytics.tsx
+msgid "Loading..."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid ""
+"Local business pages should include address and contact details in "
+"LocalBusiness schema."
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Long Description"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "MAX POSTS"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "MAX POSTS PER SECTION"
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid "MCP client"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Manage your LLMS.txt file and LLM response settings"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Manage your account"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Max posts for llms-full.txt"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Max posts per section"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Method: %1$s%2$s"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Missing llms.txt reference"
+msgstr ""
+
+#: src/components/products-analytics.tsx src/components/pages-analytics.tsx
+msgid "Models"
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "Monthly Reports"
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "Monthly reports are sent to: %s"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid ""
+"Multiple JSON-LD blocks detected. %s already outputs structured data — avoid"
+" duplicating Organization, WebSite, or Product entities. Use Fix for "
+"templates, or extend schema inside that plugin."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid ""
+"Multiple JSON-LD blocks from different sources were detected. Avoid "
+"duplicating the same business or product entities across blocks."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Needs Attention"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Needs Improvement"
+msgstr ""
+
+#: includes/class-event-alerts.php
+msgid "New AI bot detected: %s"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Next"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "No AI bot traffic in 30 days"
+msgstr ""
+
+#: includes/class-page-details.php
+msgid ""
+"No AI bot visits detected in the last 30 days. Ensure llms.txt and "
+"robots.txt are configured."
+msgstr ""
+
+#: src/components/first-week-empty-state.tsx
+msgid ""
+"No AI bot visits yet — that is normal on a fresh install. Complete these "
+"steps so crawlers can discover your content."
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "No Bot Visits Yet"
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "No LLM bot visits have been recorded yet."
+msgstr ""
+
+#: src/components/pages-analytics.tsx
+msgid "No Page Traffic Yet"
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "No Product Traffic Yet"
+msgstr ""
+
+#: includes/class-product-details.php
+msgid ""
+"No Product schema detected — add structured data so AI assistants can quote "
+"price, SKU, and availability."
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "No bot data available yet"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid ""
+"No images found for this product. Add images in the WooCommerce product "
+"editor."
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "No images found in this post."
+msgstr ""
+
+#: src/components/pages-analytics.tsx
+msgid "No pages have received bot traffic yet."
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "No products have received bot traffic in the selected period."
+msgstr ""
+
+#: includes/class-product-details.php
+msgid ""
+"No recent AI bot traffic on this product. Check llms.txt inclusion and "
+"robots.txt discovery."
+msgstr ""
+
+#: includes/class-page-details.php
+msgid "No structured data (schema.org) detected for this page."
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Not generated yet"
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid ""
+"OAuth is turned off for this site. Enable it on the MCP & AI settings page."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Of 100"
+msgstr ""
+
+#: includes/class-cron.php
+msgid "Once Monthly"
+msgstr ""
+
+#: includes/class-cron.php
+msgid "Once Quarterly"
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid ""
+"Only an administrator can authorize an AI assistant to connect to this site."
+msgstr ""
+
+#: includes/class-product-details.php includes/class-page-details.php
+msgid "Open Agent Ready"
+msgstr ""
+
+#: includes/class-event-alerts.php
+msgid "Open Bot Analytics →"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Open Content Settings"
+msgstr ""
+
+#: src/components/editor-panel.tsx
+msgid "Open LLMagnet to fix"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Open Schema JSON-LD"
+msgstr ""
+
+#: src/components/products-analytics.tsx src/components/pages-analytics.tsx
+msgid "Open in new tab"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Open llms-full.txt in new tab"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Open llms.txt in new tab"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Overall"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Overview Statistics"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Page Health"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Page Visibility Score"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid ""
+"Page editing and visibility scores are available in Plus and Enterprise "
+"plans."
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Paragraphs"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Physical file"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/products-analytics.tsx
+#: src/components/product-drawer.tsx
+msgid "Plus Feature"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Premium feature - Upgrade to enable"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Privacy"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Product Descriptions"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Product Visibility Score"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid ""
+"Product content optimization. Based on descriptions, tags, categories, and "
+"image ALT texts."
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid ""
+"Product editing and visibility scores are available in Plus and Enterprise "
+"plans."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid ""
+"Product pages should include Product schema with name, image, and offers."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Product widget"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Product-like content detected in a widget — add Product schema."
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "Products sorted by bot impressions. %d products tracked."
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "Purchase Rate"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Ratio of content pages vs technical/commercial pages being crawled."
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Read our Privacy Policy"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Recalculate score"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Recommendations actions"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Recommended"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid ""
+"Reference your llms.txt in robots.txt so AI crawlers can automatically "
+"discover and read it."
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Refresh preview"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Regenerating..."
+msgstr ""
+
+#: src/admin-shell-main.tsx
+msgid "Reload page"
+msgstr ""
+
+#: includes/class-product-details.php includes/class-page-details.php
+msgid "Review content settings"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid ""
+"Review or testimonial content detected — add Review schema (often nested "
+"under Product)."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Review scan results"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Reviews / Testimonials"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Robots.txt integration"
+msgstr ""
+
+#: src/components/dashboard.tsx src/components/overview.tsx
+msgid ""
+"Root directory is not writable. Please check file permissions before "
+"generating files."
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "SHOW ABOUT SECTION"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "SHOW PRODUCT PRICES"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "STATUS"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Save Alt Text"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Save Email"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Saved"
+msgstr ""
+
+#: includes/class-elementor-schema.php
+msgid "Schema Markup"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid ""
+"Schema health looks low (%1$d/100). JSON-LD helps AI and search engines read"
+" your site clearly."
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Score scale:"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Select content for llms.txt and Markdown exports."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Service"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Service offering content detected — add Service schema."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Service pages should describe offerings with Service schema."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Service widget"
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid "Session expired"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Set up email reports"
+msgstr ""
+
+#: src/content-settings-main.tsx
+msgid "Settings saved"
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Settings saved. Preview updated."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Setup %1$d/4 complete"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Short Description"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Show about section"
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "Show product prices"
+msgstr ""
+
+#: src/components/pages-analytics.tsx
+msgid "Showing all %d pages"
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid "Sign-in connections are disabled"
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid "Signed in as %s"
+msgstr ""
+
+#: src/components/pages-analytics.tsx
+msgid "Site Homepage"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Site coverage in llms.txt"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Skip"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Skip for now"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid ""
+"Some crawlers use robots.txt to discover llms.txt. Add the reference to "
+"improve discovery."
+msgstr ""
+
+#: src/admin-shell-main.tsx
+msgid "Something went wrong loading this screen."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Start setup"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Step %d"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Strengthen structured data (JSON-LD)"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Suggestion"
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "Table View"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Test on ChatGPT"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid ""
+"Test your setup by asking ChatGPT about your site. This verifies everything "
+"is working correctly."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "The Ultimate AI Search Optimization Checklist"
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid ""
+"The requesting application is not registered or its redirect URL does not "
+"match. Start the connection again from your AI assistant."
+msgstr ""
+
+#: includes/class-mcp-oauth.php
+msgid ""
+"This authorization form expired. Please start the connection again from your"
+" AI assistant."
+msgstr ""
+
+#: includes/class-page-details.php
+msgid ""
+"This page is not included in llms.txt exports — AI crawlers may miss it."
+msgstr ""
+
+#: includes/class-product-details.php
+msgid ""
+"This product is not included in llms.txt exports — AI shopping agents may "
+"miss it."
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "This step is complete. Let's continue."
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "Total Revenue"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Total Score"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Total number of bot visits in the analysis period."
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "Total visits: %s"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Total:"
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid ""
+"Track LLM bot traffic to your WooCommerce products and measure conversions."
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "Track LLM bot visits and engagement with your content."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Track impressions, clicks, CTR and real AI bot traffic."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Traffic Volume"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Traffic in the last 30 days"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Trial"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/products-analytics.tsx
+#: src/components/pages-analytics.tsx src/components/analytics.tsx
+#: src/components/product-drawer.tsx
+msgid "Try Again"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid ""
+"Turn on Full Content to provide richer context to AI crawlers in your "
+"exported content."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid ""
+"Type of AI bots visiting. User-facing AI (ChatGPT, Perplexity) are valued "
+"higher."
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "Type: %s image"
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "UTM Clicks"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Unlock Full AI"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid "Upgrade to see this bot"
+msgstr ""
+
+#: includes/class-upgrade-notice.php
+msgid ""
+"Version %s is now active. If an admin page shows a blank screen or "
+"\"useState\" error, hard-refresh your browser (Ctrl+Shift+R or Cmd+Shift+R) "
+"or clear your site cache."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "Video"
+msgstr ""
+
+#: src/components/dashboard.tsx
+msgid "View LLMS.txt"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "View all"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "View scan & recommendations"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "View score breakdown"
+msgstr ""
+
+#: src/components/pages-analytics.tsx
+msgid "View which pages on your site have received traffic from LLM bots."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Visibility Score"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Visibility Score Breakdown"
+msgstr ""
+
+#: src/components/first-week-empty-state.tsx
+msgid "Wait for the first AI bot crawl (usually 24–72 hours)"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Waiting for your first LLM visit..."
+msgstr ""
+
+#: src/components/dashboard.tsx src/components/overview.tsx
+msgid "Warning:"
+msgstr ""
+
+#: src/components/feedback-modal.tsx
+msgid ""
+"We attach basic technical details (WordPress, PHP, plugin version, your "
+"account) to help us reproduce issues."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid ""
+"We have not detected AI bot visits yet. Publish more crawlable content and "
+"regenerate llms.txt."
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid ""
+"We're thrilled to have you here. LLMagnet helps you create powerful, AI-"
+"powered forms that turn feedback into actionable insights. Let's get you set"
+" up."
+msgstr ""
+
+#: includes/class-schema-jsonld.php
+msgid "WebSite"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid ""
+"Weekly AI visibility reports show exactly how LLMs engage with your site. "
+"Save your email now — reports activate automatically the moment you go Pro."
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Welcome"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Welcome to LLMagnet"
+msgstr ""
+
+#: src/components/editor-panel.tsx
+msgid ""
+"When off, this content is left out of llms.txt, llms-full.txt and the "
+"markdown docs."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "Whether crawled pages are still accessible and published."
+msgstr ""
+
+#: src/components/products-analytics.tsx
+msgid ""
+"WooCommerce product analytics is available in the Plus and Enterprise plans."
+msgstr ""
+
+#: src/components/content-settings.tsx
+msgid "WordPress filter (virtual)"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Words"
+msgstr ""
+
+#: src/components/analytics.tsx
+msgid "You can change this email in the settings section below."
+msgstr ""
+
+#: src/components/editor-panel.tsx
+msgid "You have unsaved changes — save to refresh the score."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "You haven't started setup yet"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "You're all set!"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "You're doing well, but there's room for improvement."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "You're missing opportunities to reach users through AI Search Engines."
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid ""
+"Your AI visibility is live. LLMagnet is now working to get your site "
+"discovered by AI assistants."
+msgstr ""
+
+#: src/components/first-week-empty-state.tsx
+msgid "Your AI visibility journey starts here"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid ""
+"Your llms.txt file helps AI assistants understand and reference your site "
+"content. Generate it with one click."
+msgstr ""
+
+#: src/components/overview.tsx
+msgid ""
+"Your llms.txt file is not available yet, so AI crawlers may miss your "
+"content."
+msgstr ""
+
+#: includes/class-event-alerts.php
+msgid "Your new product was crawled: %s"
+msgstr ""
+
+#: includes/class-event-alerts.php
+msgid "[%1$s] LLMagnet alert — %2$s"
+msgstr ""
+
+#: src/components/editor-panel.tsx
+msgid "llms.txt"
+msgstr ""
+
+#: src/components/overview.tsx
+msgid "robots.txt updated with llms.txt reference."
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "there"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid " (or use Elementor page settings for page-specific markup)"
+msgstr ""
+
+#: src/components/report-pdf-download-button.tsx
+msgid " Link also in your email."
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid " · Last ping: %1$d URL(s), HTTP %2$d"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "%1$d (%2$d read / %3$d write)"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "%1$d characters (consider shortening)"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "%1$d characters (recommended: 120-160)"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "%1$d characters (recommended: 150-300)"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "%1$d characters (recommended: 50-125)"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "%1$d characters (recommended: 500-2000)"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "%1$d characters — Optimal"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "%1$d characters ✓"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid ""
+"%1$d image found without media library attachment. Edit ALT text in the "
+"WordPress editor."
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "%1$d tools (%2$d read / %3$d write)"
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid ""
+"%1$d tools from the shared registry. Anonymous callers can reach %2$d in "
+"Public content mode and %3$d in Public read mode."
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid ""
+"%1$s is active. Page caches that ignore the Vary: Accept header can serve "
+"markdown to regular visitors. Exclude this site from full-page caching for "
+"negotiated responses, or keep this off and rely on .md URLs."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "%1$s total visits across %2$d pages"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "%1$s visits across %2$d pages"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "%1$s visits • %2$d pages"
+msgstr ""
+
+#: src/components/bot-traffic-chart.tsx
+msgid "%1$s — Click to hide"
+msgstr ""
+
+#: src/components/bot-traffic-chart.tsx
+msgid "%1$s — Click to show"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "%d URL scanned — all published pages, recent posts, and products."
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "%d character"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "%d image selected successfully!"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "%d post"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "%d product"
+msgstr ""
+
+#: src/components/agent-ready/findings-accordion.tsx
+msgid "%d to improve"
+msgstr ""
+
+#: src/components/agent-ready/findings-accordion.tsx
+msgid "%d%% of score"
+msgstr ""
+
+#: src/components/bot-traffic-chart.tsx
+msgid "%s Analytics"
+msgstr ""
+
+#: src/components/bot-traffic-chart.tsx
+msgid "%s Visits"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "%s handles JSON-LD"
+msgstr ""
+
+#: src/components/product-readiness.tsx
+msgid "%s%% have image ALT"
+msgstr ""
+
+#: src/components/product-readiness.tsx
+msgid "%s%% have short descriptions"
+msgstr ""
+
+#: src/components/product-readiness.tsx
+msgid "%s%% missing tags"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "(+1 legacy token)"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "(or a project's"
+msgstr ""
+
+#: src/agent-ready-main.tsx
+msgid ""
+"A sampled audit (homepage + a few representative pages) scores your site "
+"across 7 domains of agent-readiness standards and shows exactly what to fix "
+"— much of it with one click."
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "AI Integrations"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "AI SEO Optimizer"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "AI Visibility Report"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid ""
+"AI assistants can connect to this site over the Model Context Protocol."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "AI clients"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "AI input"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "AI training"
+msgstr ""
+
+#: src/components/ai-revenue-funnel.tsx
+msgid "AI → Revenue Funnel"
+msgstr ""
+
+#: src/components/mcp/ecosystem-card.tsx
+msgid "Abilities API"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Access mode"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Access tokens"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Action"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Actions"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Active"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Active API Tokens"
+msgstr ""
+
+#: src/components/mcp/mcp-page.tsx
+msgid "Activity log"
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "Actor"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/schema-wizard.tsx
+#: src/components/product-drawer.tsx
+msgid "Add"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid ""
+"Add H2 and H3 headings to structure your content for better readability and "
+"SEO."
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Add New Images"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "Add a product to the WooCommerce cart (write action, opted in)"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Add a short excerpt that describes this page..."
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Add descriptive ALT text..."
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Add more tags (3-8 recommended)"
+msgstr ""
+
+#: src/components/product-readiness.tsx
+msgid "Add products to see readiness insights."
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Add social profile"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Add tag..."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Add the snippet to"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid ""
+"Add your address to output LocalBusiness schema with a PostalAddress block. "
+"Available for all site types."
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "After text"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "After text response"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "Agent response"
+msgstr ""
+
+#: src/components/agent-ready/score-hero.tsx
+msgid "Agent-Ready Score"
+msgstr ""
+
+#: src/components/agent-ready/score-hero.tsx
+msgid "Agent-Ready Score %1$d out of 100"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Agent-readiness features"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "All (%d)"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "All MCP requests are rejected while the server is disabled."
+msgstr ""
+
+#: src/components/agent-ready/findings-accordion.tsx
+msgid "All good"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "All-Time Bot Visits"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "All-Time Statistics"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "All-Time Total"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "An error occurred while uploading the image."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"Analytics tools (scores, bot traffic) are not exposed in Public content "
+"mode. They require Public read mode — which makes them readable by anyone — "
+"or future OAuth support."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"Analytics tools in ChatGPT require Public read mode (with its warning) or "
+"OAuth support planned for a later release."
+msgstr ""
+
+#: src/components/bot-traffic-chart.tsx
+msgid "Analytics unavailable"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx src/components/schema-scan-results.tsx
+msgid "Analyzing pages…"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid ""
+"Anyone can read your published content via MCP (search, markdown, site "
+"info). Enables no-auth clients like ChatGPT connectors."
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid ""
+"Anyone on the internet will be able to read this site's AI analytics — "
+"visibility scores, bot traffic, and recommendations — without "
+"authentication."
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid ""
+"Anyone on the internet will be able to read this site\\u2019s AI analytics "
+"(scores, bot traffic, recommendations)."
+msgstr ""
+
+#: src/components/mcp/mcp-page.tsx
+msgid ""
+"Anyone will be able to read your published content via MCP — the same data "
+"search engines already see. Analytics tools stay private, and write tools "
+"still require an authenticated read/write token."
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid ""
+"Attach an image that will be displayed with responses from all Large "
+"Language Models (ChatGPT, Claude, Gemini, GPT-4, etc.) and included in the "
+"llms.txt file."
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid ""
+"Attach multiple images that will be displayed with responses from all Large "
+"Language Models (ChatGPT, Claude, Gemini, GPT-4, etc.) and included in the "
+"llms.txt file."
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Attention"
+msgstr ""
+
+#: src/agent-ready-main.tsx
+msgid ""
+"Audit your site against current agent-readiness standards and fix the gaps —"
+" discovery files, machine-readable content, WebMCP, and security headers."
+msgstr ""
+
+#: src/agent-ready-main.tsx
+msgid "Auditing your site…"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Auth header:"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Auth: tokens + legacy, Application Passwords"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Auth: tokens, Application Passwords"
+msgstr ""
+
+#: src/components/mcp/mcp-page.tsx
+msgid ""
+"Authentication is required by default. Token secrets are hashed at rest "
+"(SHA-256) and shown exactly once. New tokens are read-only unless you choose"
+" otherwise, and write tools always require a read/write token regardless of "
+"access mode."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Automated Reporting System"
+msgstr ""
+
+#: src/components/mcp/ecosystem-card.tsx
+msgid ""
+"Available (WordPress %1$s) — %2$d LLMagnet abilities registered under the"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Available on Plus and Enterprise (or trial)."
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Available — %d abilities registered"
+msgstr ""
+
+#: src/components/product-readiness.tsx
+msgid "Avg Product Visibility"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Before text"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "Before text response"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Blog / publisher"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Bot Name"
+msgstr ""
+
+#: src/components/ai-revenue-funnel.tsx
+msgid "Bot Product Views"
+msgstr ""
+
+#: src/components/product-of-week.tsx
+msgid "Bot Views"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Bot Visits for the Week of %s"
+msgstr ""
+
+#: src/components/top-products.tsx
+msgid "Bot visits to products will appear here."
+msgstr ""
+
+#: src/components/pages-overview.tsx src/components/top-pages-products.tsx
+msgid "Bot visits will appear here once crawlers access your pages."
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Brand or organization name"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Brief product summary shown in listings..."
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Business / organization"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Canonical fill (only without an SEO plugin)"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Categories are managed in the WooCommerce product editor"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Categories are managed in the WordPress post editor"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "Change Image"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"ChatGPT connects and gets your tools. Revoke anytime from the Access tokens "
+"/ Connections card below."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"ChatGPT custom connectors can't send a Bearer header, so they use OAuth "
+"instead. This server now runs its own OAuth 2.1 sign-in, so you can connect "
+"privately — no need to make any content public. You stay in control: you "
+"approve the connection on a consent screen and can revoke it anytime."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"ChatGPT custom connectors don't support custom headers, so Bearer tokens "
+"can't be used. Connectors require OAuth (currently turned off for this "
+"server — enable it in settings to connect privately) or no-auth. Deep-"
+"research connectors also need search/fetch-style tools — this server ships "
+"search_content and get_content_markdown for exactly that. ✔"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"ChatGPT gets the content and site-info tools (published, public data only)."
+msgstr ""
+
+#: src/components/bot-traffic-chart.tsx
+msgid "Choose bot models to show data"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "City"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Click"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Click the"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Clients using"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx src/components/mcp/modal.tsx
+msgid "Close dialog"
+msgstr ""
+
+#: src/components/agent-ready/findings-accordion.tsx
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Coming soon"
+msgstr ""
+
+#: src/components/mcp/mcp-page.tsx
+msgid ""
+"Connect AI assistants to this site over the Model Context Protocol — "
+"analytics, content, and llms.txt tools from one endpoint."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Connect your AI client"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Consider reducing tags (3-8 recommended)"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Content"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Content negotiation (Accept: text/markdown)"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Content-Signal"
+msgstr ""
+
+#: src/components/mcp/copy-button.tsx
+msgid "Copied"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx src/components/mcp/token-manager.tsx
+#: src/components/mcp/copy-button.tsx
+msgid "Copy"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Copy config"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Copy for Elementor"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Copy prompt with token"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Copy setup prompt"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Copy the schema below (use"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"Copy this prompt and paste it into %1$s. The agent will create the config, "
+"connect to this site, and verify the tools — no manual editing needed."
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Copy with script"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Copy with token"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Copy your new token now —"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Copy-paste configs pre-filled with this site's MCP endpoint."
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Could not generate"
+msgstr ""
+
+#: src/components/report-pdf-download-button.tsx
+msgid "Could not generate PDF."
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Could not load MCP status: %s"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Could not publish"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Country code"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Create a read token below."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Create a read token in the Access tokens card below."
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Create access token"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Create named token"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Create token"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Created"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Cumulative Statistics"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "Current Image"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Current Images (%d)"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Dear Administrator,"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Delete legacy token"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Delete legacy token?"
+msgstr ""
+
+#: src/agent-ready-main.tsx
+msgid "Detailed findings and one-click fixes are a Pro feature"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid ""
+"Detailed product description with features, benefits, specifications..."
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Detected"
+msgstr ""
+
+#: src/components/mcp/ecosystem-card.tsx
+msgid ""
+"Detected — LLMagnet abilities are also reachable through the adapter's "
+"endpoint with an Application Password:"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Directory Status"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Display Position"
+msgstr ""
+
+#: src/components/report-pdf-download-button.tsx
+msgid "Download PDF"
+msgstr ""
+
+#: src/components/report-pdf-download-button.tsx
+msgid "Downloaded PDF. Email failed: %s"
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "Duration"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Edit post in WordPress"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Edit product in WooCommerce →"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Email Preview"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Enable MCP server"
+msgstr ""
+
+#: src/components/mcp/mcp-page.tsx
+msgid "Enable public content"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Enable public content access"
+msgstr ""
+
+#: src/components/mcp/mcp-page.tsx
+msgid "Enable public content access?"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Enable public read"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Enable public read access?"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Enable the server to run the self-test."
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Enabled (private)"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Enabled (public content mode)"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Enabled (public read mode)"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Endpoint"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Endpoint:"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "Enter to send · public WebMCP route"
+msgstr ""
+
+#: src/components/mentions-overview.tsx
+msgid "Error fetching data"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "Error: %s"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "Error: network request failed."
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Everything ships off by default — enable what you want agents to use."
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid "Exposed tools"
+msgstr ""
+
+#: src/components/agent-ready/findings-accordion.tsx
+msgid "Fail"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Failed to create token."
+msgstr ""
+
+#: src/components/mcp/mcp-page.tsx
+msgid "Failed to load MCP status."
+msgstr ""
+
+#: src/components/product-readiness.tsx src/components/ai-revenue-funnel.tsx
+msgid "Failed to load data"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Failed to load page details"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Failed to load product details"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Failed to load recommendations"
+msgstr ""
+
+#: src/components/visibility-timeline.tsx
+msgid "Failed to load timeline data."
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Failed to revoke token."
+msgstr ""
+
+#: src/components/llms-include-toggle.tsx
+msgid "Failed to save"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Failed to save page"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Failed to save product"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Failed to update page"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Failed to update product"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Failed to upload image."
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/schema-jsonld.tsx
+msgid "Fair"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Featured"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Fill OG/canonical tags only when no SEO plugin owns them."
+msgstr ""
+
+#: src/components/product-readiness.tsx
+msgid "Fix issues in Products →"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Fix schema"
+msgstr ""
+
+#: src/components/plan-chip.tsx
+msgid "Free"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Freq"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Frequency"
+msgstr ""
+
+#: src/components/wp-dashboard-widget.tsx
+msgid "Generate your llms.txt →"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Generated JSON-LD (preview)"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Generated Markdown Files"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Good (%d)"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid ""
+"HTTP %1$d — enable WebMCP first; the public routes are off while the toggle "
+"is off"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "HTTP %d"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid ""
+"HTTP Link headers advertising llms.txt, the agent card, and schemamap.xml."
+msgstr ""
+
+#: src/components/agent-ready/findings-accordion.tsx
+msgid "Handled externally"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Heads up — ChatGPT works differently"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Health"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid ""
+"Help search engines and AI understand your site with structured data. Scan "
+"what you already have, follow plain-language recommendations, then generate "
+"and publish JSON-LD without writing code."
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Home"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "I've saved my token"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Image"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Image %d"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "Image Position"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Image removed successfully!"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "Image selected"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "Image size must be less than 5MB."
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Image uploaded successfully!"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"In ChatGPT, open Settings → Connectors (developer mode) → Add custom "
+"connector."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"In ChatGPT, open Settings → Connectors (enable Developer mode) → Add custom "
+"connector."
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Include a Product example"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid ""
+"IndexNow is already provided by %1$s — LLMagnet defers to avoid double "
+"pings."
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Indexed Images"
+msgstr ""
+
+#: src/components/schema-preview.tsx
+msgid "Invalid JSON"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Invalid JSON response from server"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Invalid post ID"
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Invalid product ID"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid ""
+"It has full access and is stored in plaintext. Replace it with a managed "
+"token: create a named token above, update your clients, then delete the "
+"legacy one."
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Key file:"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "LLM Bot Analytics"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "LLM Bot Analytics Report"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "LLM Response Image"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "LLM Response Image %d"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "LLM Response Image (Premium Feature)"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "LLM Response Images (Premium Feature)"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "LLMS.txt Size"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid ""
+"LLMagnet detected that %1$s already outputs structured data. We will not "
+"print a second schema block on the live site. Copy the templates below and "
+"add or extend schema inside %1$s%2$s — avoid duplicating Organization, "
+"WebSite, or Product entities."
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "LLMagnet onboarding"
+msgstr ""
+
+#: src/components/mcp/ecosystem-card.tsx
+msgid ""
+"LLMagnet tools are also exposed as standard WordPress Abilities, so any WP-"
+"native AI agent can use them."
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Label"
+msgstr ""
+
+#: src/components/agent-ready/score-hero.tsx
+msgid "Last run: %s"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Last used"
+msgstr ""
+
+#: src/components/mcp/ecosystem-card.tsx
+msgid "Learn more"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Learn more:"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Legacy token (set via WP-CLI) is active"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Let your AI set it up for you"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid ""
+"Lets browser agents add products to the cart via WooCommerce’s own Store "
+"API. Off by default."
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Link discovery headers"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid ""
+"Live status of the W3C Web Model Context API in your own browser, and the "
+"tools this site registers for agents."
+msgstr ""
+
+#: src/components/system-information.tsx src/components/mcp/mcp-page.tsx
+msgid "Loading MCP status…"
+msgstr ""
+
+#: src/components/data-skeleton.tsx
+msgid "Loading chart"
+msgstr ""
+
+#: src/components/data-skeleton.tsx
+msgid "Loading table"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Local business (address & phone)"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Location (optional)"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Logo"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Logo image URL (optional)"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Logo preview"
+msgstr ""
+
+#: src/components/mcp/mcp-page.tsx
+msgid "MCP & AI sections"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "MCP Adapter Plugin"
+msgstr ""
+
+#: src/components/mcp/ecosystem-card.tsx
+msgid "MCP Adapter plugin"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "MCP Server"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "MCP Tools"
+msgstr ""
+
+#: src/components/mcp/mcp-page.tsx
+msgid "MCP connection"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "MCP endpoint URL"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "MCP server is active"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "MCP server is disabled"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Manage on the MCP & AI page"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid ""
+"Managed User-agent groups for AI crawlers plus the Content-Signal block."
+msgstr ""
+
+#: src/components/agent-ready/findings-accordion.tsx
+msgid "Manual: %s"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Markdown content negotiation"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Media library"
+msgstr ""
+
+#: src/components/mentions-overview.tsx
+msgid "Mentions in the last 30 days"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Meta-description fill (an SEO plugin does this better)"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "Missing ALT text"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Missing schema (%d)"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "My Website"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Needs attention (%d)"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "New token secret"
+msgstr ""
+
+#: src/components/ai-revenue-funnel.tsx
+msgid "No AI Commerce Activity"
+msgstr ""
+
+#: src/components/ai-revenue-funnel.tsx
+msgid "No AI-attributed commerce activity in the last 30 days."
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "No MCP calls yet — connect a client above."
+msgstr ""
+
+#: src/components/product-readiness.tsx
+msgid "No Products Found"
+msgstr ""
+
+#: src/components/product-of-week.tsx
+msgid "No Products Viewed"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "No categories assigned"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "No headings found"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "No image selected"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid ""
+"No missing entities detected for this page. Run a fresh scan if you recently"
+" updated schema."
+msgstr ""
+
+#: src/components/pages-overview.tsx src/components/top-pages-products.tsx
+msgid "No page traffic yet."
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid "No parameters."
+msgstr ""
+
+#: src/components/top-products.tsx
+msgid "No product traffic yet."
+msgstr ""
+
+#: src/components/product-of-week.tsx
+msgid "No products were viewed by bots in the last week."
+msgstr ""
+
+#: src/components/schema-recommendations.tsx
+msgid "No recommendations yet. Run a scan to see tailored suggestions."
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "No tags (add 3-8 recommended)"
+msgstr ""
+
+#: src/components/page-drawer.tsx src/components/product-drawer.tsx
+msgid "No tags yet. Add tags below."
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "No tokens yet. Create one to connect an AI client."
+msgstr ""
+
+#: src/components/agent-ready/score-hero.tsx
+msgid "Not Agent Ready yet"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Not Generated"
+msgstr ""
+
+#: src/components/agent-ready/findings-accordion.tsx
+msgid "Not applicable"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Not available (requires WP 6.9+, running %s)"
+msgstr ""
+
+#: src/components/mcp/ecosystem-card.tsx
+msgid ""
+"Not available on WordPress %1$s. The Abilities API ships with WordPress 6.9+"
+" — update WordPress to expose LLMagnet tools as native abilities."
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Not detected"
+msgstr ""
+
+#: src/components/mcp/ecosystem-card.tsx
+msgid ""
+"Not detected. The official adapter exposes all WordPress abilities "
+"(including LLMagnet's) over a second MCP endpoint."
+msgstr ""
+
+#: src/components/visibility-timeline.tsx
+msgid "Not enough visibility history yet. Keep tracking to see trends."
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "OK"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"On WordPress 6.9+ with the official MCP Adapter plugin, these tools are also"
+" available at"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Open Claude Desktop's config: Settings → Developer → Edit Config ("
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Open Graph verify-or-fill"
+msgstr ""
+
+#: src/components/wp-dashboard-widget.tsx
+msgid "Open LLMagnet →"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Open in Elementor"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Open the page in Elementor."
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Open this page in"
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Optimal tag count"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Other"
+msgstr ""
+
+#: src/components/report-pdf-download-button.tsx
+msgid "PDF downloaded and emailed to you."
+msgstr ""
+
+#: src/components/report-pdf-download-button.tsx
+msgid "PDF downloaded. Email could not be sent (API settings missing)."
+msgstr ""
+
+#: src/components/top-pages-products.tsx
+msgid "Page analytics is available in the premium version."
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid ""
+"Page schema from Elementor is merged into the single LLMagnet JSON-LD block "
+"(site graph + page entities) — not a separate script tag."
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid "Parameter"
+msgstr ""
+
+#: src/components/agent-ready/findings-accordion.tsx
+msgid "Pass"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Paste in Elementor"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Paste into"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Paste the endpoint URL:"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Paste the snippet (it uses the mcp-remote shim for Bearer auth)."
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Phone"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Ping IndexNow-backed engines when content is published or updated."
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Plain permalinks — clients must use the ?rest_route= URL shown below"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Please enter a label (e.g. \"Claude Desktop\")."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid ""
+"Please find below the comprehensive analytics report for LLM bot visits to "
+"your website. This report covers your AI Visibility Score, weekly "
+"performance metrics, and cumulative all-time statistics."
+msgstr ""
+
+#: src/components/image-selector.tsx
+#: src/components/multiple-image-selector.tsx
+msgid "Please select an image file."
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Plugin Version"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Plus"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Poor"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Post"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Postal code"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Posts Available to Export"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Powered by"
+msgstr ""
+
+#: src/components/image-selector.tsx
+#: src/components/multiple-image-selector.tsx
+msgid "Premium Feature:"
+msgstr ""
+
+#: src/components/product-of-week.tsx
+msgid "Premium Product Example"
+msgstr ""
+
+#: src/components/schema-preview.tsx
+msgid "Preview"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Preview unavailable for this URL."
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Previous"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Private (recommended)"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Private connection ready — OAuth is on ✔"
+msgstr ""
+
+#: src/components/onboarding-wizard.tsx
+msgid "Pro"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Pro feature"
+msgstr ""
+
+#: src/components/product-readiness.tsx
+msgid "Product Readiness for AI"
+msgstr ""
+
+#: src/components/top-products.tsx
+msgid "Product analytics is available in the Plus and Enterprise plans."
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "Product image"
+msgstr ""
+
+#: src/components/product-of-week.tsx
+msgid "Product of the Week"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Protocol %s"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"Public access is on (%1$s) — ChatGPT can connect without authentication."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx src/components/mcp/status-card.tsx
+msgid "Public content"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx src/components/mcp/status-card.tsx
+msgid "Public read"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Publish to website"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid ""
+"Published content also becomes readable anonymously. Write tools still "
+"require an authenticated read/write token."
+msgstr ""
+
+#: src/components/ai-revenue-funnel.tsx
+msgid "Purchases"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Re-add the feed <link rel=\"alternate\"> tags if your theme removed them."
+msgstr ""
+
+#: src/components/agent-ready/score-hero.tsx
+msgid "Re-run audit"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx src/components/mcp/tools-list.tsx
+msgid "Read"
+msgstr ""
+
+#: src/components/mcp/mcp-page.tsx
+msgid "Read the MCP security docs"
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid "Read tools (%d)"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Read-write"
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "Recent activity"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Recommended: at least 3 social profiles (e.g. LinkedIn, X, Facebook)."
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "Refresh"
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "Refresh activity"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Refresh recommendations"
+msgstr ""
+
+#: src/components/visibility-timeline.tsx
+msgid "Refresh score data"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Region / state"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid ""
+"Register search/content tools on navigator.modelContext for browser agents "
+"on every front-end page."
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "Registered tools (%d)"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Reload Cursor; the server appears under MCP settings."
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Remove social profile"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Replace %1$s with a token from the Access tokens card below."
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid "Required"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Requires a token or Application Password for every request."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Respectfully,"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Restart Claude Desktop."
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Restore RSS feed links"
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "Result"
+msgstr ""
+
+#: src/components/visibility-timeline.tsx src/components/bot-traffic-chart.tsx
+msgid "Retry"
+msgstr ""
+
+#: src/components/ai-revenue-funnel.tsx
+msgid "Revenue from AI"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid ""
+"Review the notes above. Run a fresh scan if you recently updated schema on "
+"this page."
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Revoke"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Revoke token"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Revoke token?"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "Root Path"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Run a scan to compute score."
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Run a scan to see structured data coverage."
+msgstr ""
+
+#: src/agent-ready-main.tsx
+msgid "Run audit"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Run fresh scan"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "Run search"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Run this in your terminal:"
+msgstr ""
+
+#: src/agent-ready-main.tsx
+msgid "Run your first Agent-Ready audit"
+msgstr ""
+
+#: src/components/agent-ready/score-hero.tsx
+msgid "Running audit…"
+msgstr ""
+
+#: src/components/agent-ready/score-hero.tsx
+msgid ""
+"Sampled audit of your site against current agent-readiness standards — "
+"discovery files, machine-readable content, security headers, and WebMCP."
+msgstr ""
+
+#: src/components/schema-jsonld.tsx src/components/schema-wizard.tsx
+msgid "Save & Generate preview"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Saved."
+msgstr ""
+
+#: src/components/llms-include-toggle.tsx
+msgid "Saving…"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid ""
+"Scale: Poor · Fair · Good · Excellent — from the scan (JSON-LD coverage, "
+"checks, and issues)."
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Scan"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Scan failed"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Scan running in the background — results update as pages are analyzed."
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Scanning %1$d/%2$d pages (%3$d%%)"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid ""
+"Scans and recommendations are available for everyone. Generating and "
+"publishing JSON-LD requires Pro, Plus, or Enterprise (trials included)."
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Schema JSON-LD sections"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Schema builder"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Schema found"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Schema health score %1$d out of 100"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Schema health score loading"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Schema validator"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Scope"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Search"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "Search your site like an agent would…"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Security headers"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Select Company Logo"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Select Images"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "Select LLM Response Image"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Select LLM Response Images"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid ""
+"Select an image to display with responses from all Large Language Models. "
+"This image will be included in the llms.txt file and will work with ChatGPT,"
+" Claude, Gemini, GPT-4, and other LLMs."
+msgstr ""
+
+#: src/components/image-selector.tsx
+#: src/components/multiple-image-selector.tsx
+msgid "Select from Media Library"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Select logo"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "Selected image"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Self-test request failed."
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Self-test results"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid ""
+"Serve agent-card.json, agent-skills, mcp.json, security.txt, and the change-"
+"password redirect."
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Serve any page as clean markdown at {permalink}.md."
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid ""
+"Serve markdown on the normal permalink when an agent sends Accept: "
+"text/markdown."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Set Authentication to \"None\"."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"Set Authentication to \"OAuth\". ChatGPT discovers the sign-in "
+"automatically."
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid "Short"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Short description"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid ""
+"Should you require any additional information or have questions regarding "
+"this report, please do not hesitate to contact us."
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Showing %1$d–%2$d of %3$d"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Site type"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Smoke test with curl:"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "Smoke-test"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Social profiles"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid ""
+"State your AI content-usage preferences in robots.txt (requires AI crawler "
+"rules)."
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Status"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Streamable HTTP (stateless)"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Street"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "Structure health"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid "Test connection"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid ""
+"The WP-CLI legacy token will stop working immediately. Make sure every "
+"client has been switched to a managed token first."
+msgstr ""
+
+#: src/components/page-drawer.tsx
+msgid ""
+"The excerpt controls how this page appears in search results and social "
+"sharing. Keep it between 120-160 characters."
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "The last 50 MCP calls handled by this server."
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid ""
+"This feature is available for premium users only. Upgrade to attach images "
+"to your LLM responses."
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid ""
+"This feature is available for premium users only. Upgrade to attach multiple"
+" images to your LLM responses."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "This is an automated report generated by LLMagnet AI SEO Optimizer."
+msgstr ""
+
+#: src/components/reports.tsx
+msgid ""
+"This report shows LLM bot visits to your website during the week of %s."
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "Time"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"Tip: ChatGPT's general-purpose custom connectors require a paid plan with "
+"Developer mode. The consent screen and token issuance are handled entirely "
+"by your site."
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Token"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "Token created"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid ""
+"Tokens grant API access to this site's LLMagnet data. Treat them like "
+"passwords."
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "Tool"
+msgstr ""
+
+#: src/components/mcp/mcp-page.tsx
+msgid "Tools"
+msgstr ""
+
+#: src/components/pages-overview.tsx src/components/top-pages-products.tsx
+msgid "Top Pages"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Total"
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "Transport:"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "Try WebMCP"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx src/components/mcp/tools-list.tsx
+msgid "Type"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Types"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "URL"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "URL Structure"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "Unknown"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx src/components/schema-scan-results.tsx
+msgid "Untitled"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Upload Error"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "Upload New"
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid "Upload New Image"
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "Upload failed. Please check your connection and try again."
+msgstr ""
+
+#: src/components/image-selector.tsx
+msgid "Upload failed. Please try again."
+msgstr ""
+
+#: src/components/image-selector.tsx
+#: src/components/multiple-image-selector.tsx
+msgid "Uploading..."
+msgstr ""
+
+#: src/components/schema-wizard.tsx src/components/image-selector.tsx
+msgid "Use this image"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Use this logo"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid ""
+"Uses your WordPress site logo when set. You can also paste a URL or pick "
+"from the media library."
+msgstr ""
+
+#: src/components/schema-preview.tsx
+msgid "Valid JSON"
+msgstr ""
+
+#: src/components/schema-scan-results.tsx
+msgid "View"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "View plans"
+msgstr ""
+
+#: src/components/plan-chip.tsx
+msgid "View pricing plans"
+msgstr ""
+
+#: src/components/ai-revenue-funnel.tsx
+msgid "View products →"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "View-only on your plan."
+msgstr ""
+
+#: src/components/visibility-timeline.tsx
+msgid "Visibility Score Over Time"
+msgstr ""
+
+#: src/components/visibility-timeline.tsx
+msgid "Visibility score over time"
+msgstr ""
+
+#: src/components/pages-overview.tsx
+msgid "Visit"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Visit Types"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Visit Volume"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Vol"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Volume"
+msgstr ""
+
+#: src/components/agent-ready/findings-accordion.tsx
+msgid "Warning"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid ""
+"We analyzed this page and found structured data gaps. Copy the JSON-LD below"
+" into your theme, page builder, or SEO plugin."
+msgstr ""
+
+#: src/components/bot-traffic-chart.tsx
+msgid ""
+"We couldn't load your analytics (missing API configuration). Please reload "
+"the page."
+msgstr ""
+
+#: src/components/dashboard-analytics/index.tsx
+msgid ""
+"We couldn't load your analytics right now. Please reload the page or try "
+"again shortly."
+msgstr ""
+
+#: src/components/bot-traffic-chart.tsx
+msgid ""
+"We couldn't load your analytics right now. Please try again in a moment."
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "WebMCP add to cart tool"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "WebMCP “Add to cart” tool"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "Website URL"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Week of"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Week of %s"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Weekly Bot Visits"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Weekly Performance Metrics"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Weekly Summary"
+msgstr ""
+
+#: src/components/reports.tsx
+msgid "Weekly Visits"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Well-known endpoints"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "What we found"
+msgstr ""
+
+#: src/components/llms-include-toggle.tsx
+msgid ""
+"When off, this content is left out of llms.txt, llms-full.txt and the "
+"markdown docs. Changes apply to the export files right away."
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "Widget"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "WordPress Abilities API"
+msgstr ""
+
+#: src/components/system-information.tsx
+msgid "WordPress Version"
+msgstr ""
+
+#: src/components/mcp/ecosystem-card.tsx
+msgid "WordPress ecosystem"
+msgstr ""
+
+#: src/components/mcp/modal.tsx
+msgid "Working…"
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid "Write"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "Write action"
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid "Write tools (%d)"
+msgstr ""
+
+#: src/components/mcp/status-card.tsx
+msgid ""
+"Write tools always require an authenticated read/write token — no mode "
+"changes that."
+msgstr ""
+
+#: src/components/multiple-image-selector.tsx
+msgid ""
+"You can select multiple images from the media library or upload them one by "
+"one."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"You\\u2019ll be sent to this site to sign in and approve the connection "
+"(pick read-only or read + write)."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid ""
+"Your access mode is Private, so ChatGPT cannot connect right now. The "
+"recommended path is enabling Public content access: anyone can then read "
+"your published content via MCP (the same data search engines see) — "
+"analytics stay private."
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid ""
+"Your browser doesn\\u2019t support WebMCP yet — tools are registered for "
+"browsers/agents that do."
+msgstr ""
+
+#: src/agent-ready-main.tsx
+msgid "Your score and domain breakdown are shown above."
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid ""
+"already outputs JSON-LD on your site. LLMagnet will not add a second block —"
+" use"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "and click"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "another SEO plugin"
+msgstr ""
+
+#: src/components/mcp/activity-log.tsx
+msgid "auth failed"
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid "destructive"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "e.g. Claude Desktop"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "e.g. IL, US"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "for templates and extend schema inside"
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "gear (bottom-left) →"
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid "idempotent"
+msgstr ""
+
+#: src/components/schema-wizard.tsx
+msgid "in the graph (uses a sample product when available)."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "in your workspace (Copilot agent mode)."
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid ""
+"includeSubDomains applies HSTS to every subdomain for a year — make sure all"
+" of them serve HTTPS before enabling."
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "is available in this browser."
+msgstr ""
+
+#: src/components/wp-dashboard-widget.tsx
+msgid "llms.txt updated %s"
+msgstr ""
+
+#: src/components/mcp/ecosystem-card.tsx
+msgid "namespace."
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "nosniff, Referrer-Policy, Permissions-Policy, HSTS, CSP report-only."
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid "or Elementor page settings."
+msgstr ""
+
+#: src/components/visibility-timeline.tsx
+msgid "projected"
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid "public: content modes"
+msgstr ""
+
+#: src/components/mcp/tools-list.tsx
+msgid "public: read mode"
+msgstr ""
+
+#: src/components/agent-ready/feature-toggles.tsx
+msgid "robots.txt AI crawler rules"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "scope · stored hashed on the server."
+msgstr ""
+
+#: src/components/schema-fix-modal.tsx
+msgid "tab →"
+msgstr ""
+
+#: src/components/schema-jsonld.tsx
+msgid ""
+"to save your details and refresh the JSON-LD below, then publish when ready."
+" This saves your graph and prints one JSON-LD script in the site HTML "
+"(wp_head). Other SEO plugins may also output schema—we don't remove theirs."
+msgstr ""
+
+#: src/agent-ready-main.tsx
+msgid "to see every finding with evidence and apply automated fixes."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "using an Application Password."
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "will immediately lose access. This cannot be undone."
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "you won't be able to see it again."
+msgstr ""
+
+#: src/components/mcp/connect-guides.tsx
+msgid "your AI client"
+msgstr ""
+
+#: src/components/agent-ready/webmcp-try-it.tsx
+msgid "— WebMCP is currently off"
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "— all tools, including future write actions."
+msgstr ""
+
+#: src/components/mcp/token-manager.tsx
+msgid "— read-only tools (recommended)."
+msgstr ""
+
+#: src/components/product-drawer.tsx
+msgid "✓ Optimal tag count"
+msgstr ""

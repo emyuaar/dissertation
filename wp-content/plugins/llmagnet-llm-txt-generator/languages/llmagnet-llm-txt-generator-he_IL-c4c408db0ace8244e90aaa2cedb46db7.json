@@ -1,0 +1,24 @@
+{
+  "translation-revision-date": "2026-06-23 00:46+0300",
+  "generator": "LLMagnet bin/build-locale-files.py",
+  "source": "assets/react-build/js/wp-dashboard-widget.js",
+  "domain": "llmagnet-llm-txt-generator",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "llmagnet-llm-txt-generator",
+        "lang": "he_IL",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Generate your llms.txt →": [
+        "צור את llms.txt שלך →"
+      ],
+      "Open LLMagnet →": [
+        "פתח את LLMagnet →"
+      ],
+      "llms.txt updated %s": [
+        "llms.txt עודכן %s"
+      ]
+    }
+  }
+}

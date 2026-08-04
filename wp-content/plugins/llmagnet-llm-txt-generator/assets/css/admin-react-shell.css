@@ -1,0 +1,199 @@
+/**
+ * Loading shell: PHP placeholder shown before React mounts, and page fade-in after mount.
+ * Class names: .llmagnet-react-shell (root), .lrs-* (inner skeleton pieces).
+ * Keep in sync with render_react_app_mount_placeholder() in includes/class-admin.php.
+ */
+
+/* ── Animations ─────────────────────────────────────────────── */
+
+@keyframes llmagnet-shimmer {
+	0%   { background-position: 200% 0; }
+	100% { background-position: -200% 0; }
+}
+
+@keyframes llmagnet-fadein {
+	from { opacity: 0; transform: translateY(4px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── React-app root fade-in on mount ────────────────────────── */
+
+.llms-txt-react-app,
+.llms-bot-analytics-react-app,
+.llms-system-information-react-app,
+.llms-reports-react-app,
+.llms-products-react-app,
+.llms-pages-react-app,
+.llms-content-settings-react-app,
+.llms-schema-jsonld-react-app {
+	animation: llmagnet-fadein 0.22s ease-out both;
+}
+
+/* ── Outer shell (the React mount point itself) ─────────────── */
+
+.llmagnet-react-shell {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	min-height: 0;
+	background: transparent;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.llmagnet-react-shell--full {
+	height: 100%;
+	min-height: 0;
+}
+
+/* Full-height LLMagnet admin shell pages — fill WP content area, no page scroll gap */
+.llmagnet-dashboard-container,
+.llmagnet-overview-container,
+.llmagnet-pages-container,
+.llmagnet-bot-analytics-container,
+.llmagnet-products-container,
+.llmagnet-reports-container,
+.llmagnet-content-settings-container,
+.llmagnet-schema-jsonld-container,
+.llmagnet-agent-ready-container,
+.llmagnet-mcp-container,
+.llmagnet-system-information-container {
+	margin: 0;
+	padding: 0;
+	height: calc(100vh - var(--wp-admin--admin-bar--height, 32px));
+	max-height: calc(100vh - var(--wp-admin--admin-bar--height, 32px));
+	overflow: hidden;
+}
+
+#llms-admin-shell-root.llmagnet-react-shell {
+	height: calc(100vh - var(--wp-admin--admin-bar--height, 32px));
+	max-height: calc(100vh - var(--wp-admin--admin-bar--height, 32px));
+}
+
+/* Page bundles inside the shell — natural height; outlet scrolls, not WP */
+html.wp-toolbar:has(#llms-admin-shell-root) .llms-admin-shell-outlet > [class*="llms-"] {
+	min-height: 0;
+	height: auto;
+	max-height: none;
+}
+
+html.wp-toolbar:has(#llms-admin-shell-root) {
+	overflow: hidden;
+}
+
+html.wp-toolbar:has(#llms-admin-shell-root) #wpwrap {
+	overflow: hidden;
+	height: calc(100vh - var(--wp-admin--admin-bar--height, 32px));
+}
+
+html.wp-toolbar:has(#llms-admin-shell-root) #wpcontent,
+html.wp-toolbar:has(#llms-admin-shell-root) #wpbody,
+html.wp-toolbar:has(#llms-admin-shell-root) #wpbody-content {
+	height: 100%;
+	max-height: 100%;
+	overflow: hidden;
+}
+
+/*
+ * Locking #wpwrap to the viewport height (above) stops the WP page from
+ * scrolling, which also kills the admin menu's normal page-scroll. Give the
+ * menu its own internal scroll so all items stay reachable when the menu is
+ * taller than the viewport. Scoped to our shell so default WP is untouched.
+ */
+html.wp-toolbar:has(#llms-admin-shell-root) #adminmenuwrap {
+	max-height: calc(100vh - var(--wp-admin--admin-bar--height, 32px));
+	overflow-x: hidden;
+	overflow-y: auto;
+	scrollbar-width: thin;
+}
+
+/* Keep the collapsed (folded) menu's flyout submenus from being clipped. */
+html.wp-toolbar.folded:has(#llms-admin-shell-root) #adminmenuwrap {
+	overflow: visible;
+}
+
+/* ── Top-bar skeleton ───────────────────────────────────────── */
+
+.lrs-topbar {
+	width: 100%;
+	height: 58px;
+	background: #fff;
+	border-bottom: 1px solid rgba(0, 0, 0, .05);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	flex-shrink: 0;
+}
+
+.lrs-topbar-right {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* ── Content body ───────────────────────────────────────────── */
+
+.lrs-body {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	flex: 1;
+}
+
+/* ── Rows ───────────────────────────────────────────────────── */
+
+.lrs-row {
+	display: flex;
+	gap: 14px;
+}
+
+/* ── Shimmer base ───────────────────────────────────────────── */
+
+.lrs-sk {
+	border-radius: 8px;
+	background: linear-gradient(
+		90deg,
+		#eeeef1 0%,
+		#f7f7f9 48%,
+		#eeeef1 96%
+	);
+	background-size: 200% 100%;
+	animation: llmagnet-shimmer 1.5s ease-in-out infinite;
+}
+
+/* ── Top-bar pieces ─────────────────────────────────────────── */
+
+.lrs-sk-logo { width: 118px; height: 22px; border-radius: 5px; }
+.lrs-sk-icon { width: 28px;  height: 28px; border-radius: 50%; }
+.lrs-sk-chip { width: 72px;  height: 28px; border-radius: 14px; }
+
+/* ── Content card types ─────────────────────────────────────── */
+
+/* 4-column stat cards */
+.lrs-card      { flex: 1; height: 96px; }
+
+/* Wide chart (2/3) and narrow side panel (1/3) */
+.lrs-row-charts .lrs-chart-main { flex: 2; height: 220px; }
+.lrs-row-charts .lrs-chart-side { flex: 1; height: 220px; }
+
+/* Full-width block */
+.lrs-fullblock { flex: 1; height: 130px; }
+
+/* ── Staggered animation delays ─────────────────────────────── */
+
+.lrs-sk-logo { animation-delay: 0s; }
+.lrs-sk-icon { animation-delay: 0.06s; }
+.lrs-sk-chip { animation-delay: 0.12s; }
+
+.lrs-row:nth-child(1) .lrs-sk:nth-child(1) { animation-delay: 0s; }
+.lrs-row:nth-child(1) .lrs-sk:nth-child(2) { animation-delay: 0.08s; }
+.lrs-row:nth-child(1) .lrs-sk:nth-child(3) { animation-delay: 0.16s; }
+.lrs-row:nth-child(1) .lrs-sk:nth-child(4) { animation-delay: 0.24s; }
+
+.lrs-row:nth-child(2) .lrs-sk:nth-child(1) { animation-delay: 0.04s; }
+.lrs-row:nth-child(2) .lrs-sk:nth-child(2) { animation-delay: 0.12s; }
+
+.lrs-row:nth-child(3) .lrs-sk:nth-child(1) { animation-delay: 0.08s; }

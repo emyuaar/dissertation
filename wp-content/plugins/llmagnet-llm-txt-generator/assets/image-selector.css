@@ -1,0 +1,95 @@
+/* Image Selector Component Styles */
+.llmagnet-image-selector {
+  position: relative;
+}
+
+.llmagnet-image-selector .upload-area {
+  transition: all 0.2s ease;
+}
+
+.llmagnet-image-selector .upload-area:hover {
+  border-color: #3b82f6;
+  background-color: #f8fafc;
+}
+
+.llmagnet-image-selector .image-preview {
+  position: relative;
+  overflow: hidden;
+}
+
+.llmagnet-image-selector .image-preview img {
+  transition: transform 0.2s ease;
+}
+
+.llmagnet-image-selector .image-preview:hover img {
+  transform: scale(1.02);
+}
+
+.llmagnet-premium-notice {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  border: 1px solid #d97706;
+}
+
+.llmagnet-premium-notice::before {
+  content: "⭐";
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* WordPress Media Modal Customization */
+.media-modal.llmagnet-media-modal .media-frame-title h1::before {
+  content: "🖼️ ";
+  margin-right: 8px;
+}
+
+/* Loading State */
+.llmagnet-uploading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.llmagnet-upload-progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* Error States */
+.llmagnet-error {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Success Animation */
+.llmagnet-success {
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .llmagnet-image-selector .image-preview {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .llmagnet-image-selector .image-preview img {
+    margin-bottom: 16px;
+  }
+}

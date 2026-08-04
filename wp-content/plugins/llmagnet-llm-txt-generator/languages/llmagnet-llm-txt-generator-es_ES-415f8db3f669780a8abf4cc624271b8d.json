@@ -1,0 +1,3129 @@
+{
+  "translation-revision-date": "2026-06-23 01:06+0300",
+  "generator": "LLMagnet bin/build-locale-files.py",
+  "source": "assets/react-build/js/admin-shell.js",
+  "domain": "llmagnet-llm-txt-generator",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "llmagnet-llm-txt-generator",
+        "lang": "es",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Pages": [
+        "paginas"
+      ],
+      "Bot Analytics": [
+        "Análisis de robots"
+      ],
+      "Products": [
+        "Productos"
+      ],
+      "Reports": [
+        "Informes"
+      ],
+      "LLMs.txt": [
+        "LLMs.txt"
+      ],
+      "Schema JSON-LD": [
+        "Schema JSON-LD"
+      ],
+      "Agent Ready": [
+        "Agente listo"
+      ],
+      "MCP & AI": [
+        "MCP y AI"
+      ],
+      "Error generating LLMS.txt. Please check server permissions.": [
+        "Error al generar LLMS.txt. Por favor verifique los permisos del servidor."
+      ],
+      "Settings saved successfully.": [
+        "La configuración se guardó correctamente."
+      ],
+      "AI visibility score %d of 100": [
+        "Puntuación de visibilidad de IA %d de 100"
+      ],
+      "AI visibility score not calculated yet": [
+        "La puntuación de visibilidad de la IA aún no se ha calculado"
+      ],
+      "Open LLMagnet to improve this score": [
+        "Abra LLMagnet para mejorar esta puntuación."
+      ],
+      "Fix": [
+        "Arreglar"
+      ],
+      "Unknown admin page.": [
+        "Página de administración desconocida."
+      ],
+      "Analytics data not found.": [
+        "No se encontraron datos analíticos."
+      ],
+      "Unknown error": [
+        "Error desconocido"
+      ],
+      "WordPress admin data not found.": [
+        "WordPress datos de administrador no encontrados."
+      ],
+      "Error saving settings:": [
+        "Error al guardar la configuración:"
+      ],
+      "Error saving settings. Please try again.": [
+        "Error al guardar la configuración. Por favor inténtalo de nuevo."
+      ],
+      "WordPress root directory is not writable. LLMS.txt cannot be generated.": [
+        "No se puede escribir en el directorio raíz WordPress. No se puede generar LLMS.txt."
+      ],
+      "Something went wrong loading Bot Analytics.": [
+        "Se produjo un error al cargar Bot Analytics."
+      ],
+      "Bot analytics data not found.": [
+        "No se encontraron datos de análisis de bot."
+      ],
+      "View Full Statistics →": [
+        "Ver estadísticas completas →"
+      ],
+      "Bot": [
+        "Bot"
+      ],
+      "Total Visits": [
+        "Visitas totales"
+      ],
+      "Clicks": [
+        "Clics"
+      ],
+      "CTR": [
+        "CTR"
+      ],
+      "Trend": [
+        "Tendencia"
+      ],
+      "%s logo": [
+        "Logotipo %s"
+      ],
+      "Last 24 hours": [
+        "Últimas 24 horas"
+      ],
+      "Last 7 days": [
+        "últimos 7 días"
+      ],
+      "Last 14 days": [
+        "Últimos 14 días"
+      ],
+      "Last 30 days": [
+        "últimos 30 días"
+      ],
+      "Last 90 days": [
+        "últimos 90 días"
+      ],
+      "All time (charts aggregate up to 365 days)": [
+        "Todo el tiempo (los gráficos totalizan hasta 365 días)"
+      ],
+      "Custom: %1$s – %2$s": [
+        "Personalizado: %1$s – %2$s"
+      ],
+      "Custom range": [
+        "Rango personalizado"
+      ],
+      "Report email address saved successfully.": [
+        "Informe la dirección de correo electrónico guardada correctamente."
+      ],
+      "Failed to save email address.": [
+        "No se pudo guardar la dirección de correo electrónico."
+      ],
+      "Failed to save email address. Please try again.": [
+        "No se pudo guardar la dirección de correo electrónico. Por favor inténtalo de nuevo."
+      ],
+      "Analytics report has been sent to your email.": [
+        "El informe de análisis ha sido enviado a su correo electrónico."
+      ],
+      "Failed to send analytics report.": [
+        "No se pudo enviar el informe analítico."
+      ],
+      "Failed to send analytics report. Please try again later.": [
+        "No se pudo enviar el informe analítico. Inténtelo de nuevo más tarde."
+      ],
+      "Premium Feature": [
+        "Característica prémium"
+      ],
+      "Access to real analytics data is available in the premium version.": [
+        "El acceso a datos analíticos reales está disponible en la versión premium."
+      ],
+      "Upgrade Now": [
+        "Actualiza ahora"
+      ],
+      "Analytics Reports": [
+        "Informes analíticos"
+      ],
+      "Report Email Address": [
+        "Informar dirección de correo electrónico"
+      ],
+      "Saving...": [
+        "Ahorro..."
+      ],
+      "Save": [
+        "Ahorrar"
+      ],
+      "Sending...": [
+        "Envío..."
+      ],
+      "Send Analytics Report Now": [
+        "Enviar informe de análisis ahora"
+      ],
+      "Select Models": [
+        "Seleccionar modelos"
+      ],
+      "All Models": [
+        "Todos los modelos"
+      ],
+      "%d Models": [
+        "%d Modelos"
+      ],
+      "Bot Traffic": [
+        "Tráfico de robots"
+      ],
+      "Available in Plus & Enterprise plans": [
+        "Disponible en planes Plus y Enterprise"
+      ],
+      "Upgrade": [
+        "Mejora"
+      ],
+      "Last 7 Days": [
+        "Últimos 7 días"
+      ],
+      "Last 30 Days": [
+        "Últimos 30 días"
+      ],
+      "Last 90 Days": [
+        "Últimos 90 días"
+      ],
+      "Custom Range": [
+        "Rango personalizado"
+      ],
+      "Select Date Range": [
+        "Seleccionar rango de fechas"
+      ],
+      "Close date picker": [
+        "Cerrar selector de fecha"
+      ],
+      "This Quarter": [
+        "Este trimestre"
+      ],
+      "This Year": [
+        "este año"
+      ],
+      "From": [
+        "De"
+      ],
+      "To": [
+        "A"
+      ],
+      "Apply Custom Range": [
+        "Aplicar rango personalizado"
+      ],
+      "Content length": [
+        "Longitud del contenido"
+      ],
+      "Heading structure": [
+        "estructura de encabezado"
+      ],
+      "Image ALT coverage": [
+        "Cobertura ALT de imagen"
+      ],
+      "Excerpt": [
+        "Extracto"
+      ],
+      "Tags & categories": [
+        "Etiquetas y categorías"
+      ],
+      "Readability": [
+        "Legibilidad"
+      ],
+      "Description length": [
+        "Descripción longitud"
+      ],
+      "Tags": [
+        "Etiquetas"
+      ],
+      "Category assigned": [
+        "Categoría asignada"
+      ],
+      "Passed": [
+        "Aprobado"
+      ],
+      "Needs improvement": [
+        "Necesita mejorar"
+      ],
+      "Missing": [
+        "Desaparecido"
+      ],
+      "AI bot visibility (70% of score)": [
+        "Visibilidad del bot de IA (70 % de la puntuación)"
+      ],
+      "%1$s is worth up to %2$s points of the total score": [
+        "%1$s vale hasta %2$s puntos de la puntuación total"
+      ],
+      "Recommendations": [
+        "Recomendaciones"
+      ],
+      "Please fill in both subject and description.": [
+        "Por favor complete el asunto y la descripción."
+      ],
+      "Could not send feedback (missing API settings). Please reload the page.": [
+        "No se pudieron enviar comentarios (faltan las configuraciones API). Por favor recarga la página."
+      ],
+      "Request failed (%d)": [
+        "Solicitud fallida (%d)"
+      ],
+      "Network error. Please try again.": [
+        "Error de red. Por favor inténtalo de nuevo."
+      ],
+      "Feedback / bugs": [
+        "Comentarios / errores"
+      ],
+      "Close feedback dialog": [
+        "Cerrar el cuadro de diálogo de comentarios"
+      ],
+      "Thanks — your feedback was sent.": [
+        "Gracias, tus comentarios fueron enviados."
+      ],
+      "Subject": [
+        "Sujeto"
+      ],
+      "Have something to say?": [
+        "¿Tienes algo que decir?"
+      ],
+      "Description": [
+        "Descripción"
+      ],
+      "Describe your request": [
+        "Describe tu solicitud"
+      ],
+      "We attach technical details (WordPress, PHP, plugin version, your account, and recent debug log if available) to help us reproduce issues.": [
+        "Adjuntamos detalles técnicos (WordPress, PHP, versión del complemento, su cuenta y registro de depuración reciente si está disponible) para ayudarnos a reproducir los problemas."
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Sending…": [
+        "Envío…"
+      ],
+      "Submit feedback": [
+        "Enviar comentarios"
+      ],
+      "Overview": [
+        "Descripción general"
+      ],
+      "Expand menu": [
+        "Expandir menú"
+      ],
+      "Collapse menu": [
+        "Contraer menú"
+      ],
+      "News & updates": [
+        "Noticias y actualizaciones"
+      ],
+      "Updated %s": [
+        "Actualizado %s"
+      ],
+      "Close news drawer": [
+        "Cerrar cajón de noticias"
+      ],
+      "News feed is not available. Check your connection or": [
+        "El servicio de noticias no está disponible. Comprueba tu conexión o"
+      ],
+      "in": [
+        "en"
+      ],
+      "No announcements right now.": [
+        "No hay anuncios en este momento."
+      ],
+      "Update": [
+        "Actualizar"
+      ],
+      "Read more": [
+        "Leer más"
+      ],
+      "Page details": [
+        "Detalles de la página"
+      ],
+      "Remove tag": [
+        "Quitar etiqueta"
+      ],
+      "Product details": [
+        "Detalles del producto"
+      ],
+      "Score not calculated yet": [
+        "Puntuación aún no calculada"
+      ],
+      "Loading": [
+        "Cargando"
+      ],
+      "General Settings": [
+        "Configuraciones generales"
+      ],
+      "Configure which content should be included in the llms.txt file and associated Markdown exports.": [
+        "Configure qué contenido debe incluirse en el archivo llms.txt y las exportaciones Markdown asociadas."
+      ],
+      "Content Types to Include": [
+        "Tipos de contenido para incluir"
+      ],
+      "Content Export": [
+        "Exportación de contenido"
+      ],
+      "Include full content (unchecked = excerpt only)": [
+        "Incluir contenido completo (sin marcar = solo extracto)"
+      ],
+      "Time Period": [
+        "Período de tiempo"
+      ],
+      "Number of days of content to include": [
+        "Número de días de contenido a incluir"
+      ],
+      "Number of days of content to include (0 = all content)": [
+        "Número de días de contenido a incluir (0 = todo el contenido)"
+      ],
+      "Cleanup on Uninstall": [
+        "Limpieza al desinstalar"
+      ],
+      "Delete llms.txt and llms-docs/ directory when plugin is uninstalled": [
+        "Elimine el directorio llms.txt y llms-docs/ cuando se desinstale el complemento"
+      ],
+      "Save Changes": [
+        "Guardar cambios"
+      ],
+      "Success": [
+        "Éxito"
+      ],
+      "Error": [
+        "Error"
+      ],
+      "LLMS.txt Status": [
+        "Estado de LLMS.txt"
+      ],
+      "Root Directory:": [
+        "Directorio raíz:"
+      ],
+      "Writable": [
+        "grabable"
+      ],
+      "Not Writable": [
+        "No grabable"
+      ],
+      "Last Generated:": [
+        "Última generación:"
+      ],
+      "Never": [
+        "Nunca"
+      ],
+      "Generating...": [
+        "Generando..."
+      ],
+      "Generate Now": [
+        "Generar ahora"
+      ],
+      "Failed to load news": [
+        "No se pudo cargar la noticia"
+      ],
+      "Network error": [
+        "error de red"
+      ],
+      "News and updates (unread items)": [
+        "Noticias y actualizaciones (elementos no leídos)"
+      ],
+      "News and updates": [
+        "Noticias y actualizaciones"
+      ],
+      "Content settings data not found.": [
+        "No se encontraron datos de configuración de contenido."
+      ],
+      "No data available": [
+        "No hay datos disponibles"
+      ],
+      "Dashboard data not found.": [
+        "No se encontraron datos del panel."
+      ],
+      "Overview data not found.": [
+        "No se encontraron datos generales."
+      ],
+      "Something went wrong loading Pages Analytics.": [
+        "Se produjo un error al cargar Pages Analytics."
+      ],
+      "Pages data not found.": [
+        "No se encontraron datos de páginas."
+      ],
+      "Products data not found.": [
+        "Datos de productos no encontrados."
+      ],
+      "WooCommerce Required": [
+        "WooCommerce Requerido"
+      ],
+      "Products analytics requires WooCommerce to be installed and activated.": [
+        "El análisis de productos requiere que WooCommerce esté instalado y activado."
+      ],
+      "Once WooCommerce is active, you'll be able to track product views, add-to-cart events, and revenue from LLM traffic.": [
+        "Una vez que WooCommerce esté activo, podrá realizar un seguimiento de las vistas de productos, los eventos de agregar al carrito y los ingresos del tráfico de LLM."
+      ],
+      "Reports data not found.": [
+        "No se encontraron datos de informes."
+      ],
+      "Schema data not loaded.": [
+        "Datos de esquema no cargados."
+      ],
+      "System information data not found.": [
+        "No se encontraron datos de información del sistema."
+      ],
+      "Report settings saved successfully.": [
+        "La configuración del informe se guardó correctamente."
+      ],
+      "Failed to save settings.": [
+        "No se pudo guardar la configuración."
+      ],
+      "Failed to save settings. Please try again.": [
+        "No se pudo guardar la configuración. Por favor inténtalo de nuevo."
+      ],
+      "Analytics Reports is a premium feature. Please": [
+        "Analytics Reports es una característica premium. Por favor"
+      ],
+      "upgrade": [
+        "mejora"
+      ],
+      "to access this functionality.": [
+        "para acceder a esta funcionalidad."
+      ],
+      "Email Report Settings": [
+        "Configuración de informes de correo electrónico"
+      ],
+      "Report Recipients": [
+        "Destinatarios del informe"
+      ],
+      "Add multiple email addresses separated by commas (e.g., admin@example.com, team@example.com)": [
+        "Agregue varias direcciones de correo electrónico separadas por comas (por ejemplo, admin@example.com, team@example.com)"
+      ],
+      "Report Frequency": [
+        "Frecuencia de informes"
+      ],
+      "Daily": [
+        "A diario"
+      ],
+      "Weekly": [
+        "Semanalmente"
+      ],
+      "Monthly": [
+        "Mensual"
+      ],
+      "Quarterly": [
+        "Trimestral"
+      ],
+      "Send Time": [
+        "Enviar hora"
+      ],
+      "Company Logo": [
+        "Logotipo de la empresa"
+      ],
+      "Enterprise": [
+        "Empresa"
+      ],
+      "Add your company logo to email reports. Available for Enterprise users only.": [
+        "Agregue el logotipo de su empresa a los informes por correo electrónico. Disponible solo para usuarios empresariales."
+      ],
+      "Change Logo": [
+        "Cambiar logotipo"
+      ],
+      "Remove": [
+        "Eliminar"
+      ],
+      "Select Logo": [
+        "Seleccionar logotipo"
+      ],
+      "Upgrade to Enterprise to add your company logo": [
+        "Actualice a Enterprise para agregar el logotipo de su empresa"
+      ],
+      "Event alerts (opt-in)": [
+        "Alertas de eventos (optar por participar)"
+      ],
+      "Immediate emails when notable AI traffic events occur. Uses the report recipients above.": [
+        "Correos electrónicos inmediatos cuando ocurren eventos notables de tráfico de IA. Utiliza los destinatarios del informe anteriores."
+      ],
+      "New product crawled within an hour of publish": [
+        "Nuevo producto rastreado una hora después de su publicación"
+      ],
+      "Bot traffic drops more than 40% week-over-week": [
+        "El tráfico de bots cae más del 40% semana tras semana"
+      ],
+      "A new AI bot type is detected on your site": [
+        "Se detecta un nuevo tipo de bot de IA en su sitio"
+      ],
+      "Save Settings": [
+        "Guardar configuración"
+      ],
+      "Send Report Now": [
+        "Enviar informe ahora"
+      ],
+      "Send an analytics report immediately to the recipients above.": [
+        "Envíe un informe analítico inmediatamente a los destinatarios mencionados anteriormente."
+      ],
+      "Email Template": [
+        "Plantilla de correo electrónico"
+      ],
+      "Template:": [
+        "Plantilla:"
+      ],
+      "Classic": [
+        "Clásico"
+      ],
+      "Minimal": [
+        "Mínimo"
+      ],
+      "Gradient": [
+        "Gradiente"
+      ],
+      "Professional": [
+        "Profesional"
+      ],
+      "Loading email preview...": [
+        "Cargando vista previa del correo electrónico..."
+      ],
+      " — physical robots.txt detected": [
+        "— físico robots.txt detectado"
+      ],
+      "%1$d items included out of %2$d total items": [
+        "%1$d artículos incluidos de %2$d artículos totales"
+      ],
+      "%1$d of %2$d": [
+        "%1$d de %2$d"
+      ],
+      "%1$s: %2$d visits": [
+        "%1$s: %2$d visitas"
+      ],
+      "%d image is missing alt text. Adding descriptive alt text improves accessibility and can help LLMs better understand your images.": [
+        "A la imagen %d le falta texto alternativo. Agregar texto alternativo descriptivo mejora la accesibilidad y puede ayudar a los LLM a comprender mejor sus imágenes."
+      ],
+      "%d loaded": [
+        "%d cargado"
+      ],
+      "%d missing": [
+        "Falta %d"
+      ],
+      "%d order": [
+        "%d orden"
+      ],
+      "%d post included": [
+        "%d publicación incluida"
+      ],
+      "%d quick fix available": [
+        "%d solución rápida disponible"
+      ],
+      "%d%% weight": [
+        "%d%% peso"
+      ],
+      "%s in llms.txt": [
+        "%s en llms.txt"
+      ],
+      "%s%% rate": [
+        "%s%% tasa"
+      ],
+      "A complete checklist to optimize your site for ChatGPT, Perplexity, Gemini, and the next generation of search.": [
+        "Una lista de verificación completa para optimizar su sitio para ChatGPT, Perplexity, Gemini y la próxima generación de búsqueda."
+      ],
+      "AI Availability Score": [
+        "Puntuación de disponibilidad de IA"
+      ],
+      "AI Search Optimization Checklist": [
+        "Lista de verificación de optimización de búsqueda de IA"
+      ],
+      "AI Visibility: %d": [
+        "Visibilidad de la IA: %d"
+      ],
+      "AI readiness fixes": [
+        "Correcciones de preparación de IA"
+      ],
+      "ATC Rate": [
+        "Tarifa ATC"
+      ],
+      "Access to page analytics data is available in the premium version.": [
+        "El acceso a los datos analíticos de la página está disponible en la versión premium."
+      ],
+      "Add llms.txt to robots.txt": [
+        "Agregue llms.txt a robots.txt"
+      ],
+      "Add to Cart": [
+        "añadir a la cesta"
+      ],
+      "Add to robots.txt": [
+        "Agregar a robots.txt"
+      ],
+      "All set. No actionable recommendations right now.": [
+        "Listo. No hay recomendaciones procesables en este momento."
+      ],
+      "Also attach the last lines of my debug.log to help diagnose this issue. The log may contain technical paths or data from other plugins; we mask obvious secrets, but only enable this if you are comfortable sharing it.": [
+        "Adjunte también las últimas líneas de mi debug.log para ayudar a diagnosticar este problema. El registro puede contener rutas técnicas o datos de otros complementos; Enmascaramos secretos obvios, pero solo lo habilitamos si se siente cómodo compartiéndolos."
+      ],
+      "Alt Text": [
+        "Texto alternativo"
+      ],
+      "An error occurred while generating files.": [
+        "Se produjo un error al generar archivos."
+      ],
+      "Anonymous usage analytics, used only to improve LLMagnet. We never collect anything from your site visitors.": [
+        "Análisis de uso anónimo, utilizado únicamente para mejorar LLMagnet. Nunca recopilamos nada de los visitantes de su sitio."
+      ],
+      "Avg words/sentence": [
+        "Promedio de palabras/oración"
+      ],
+      "Based on %1$d visits across %2$d pages in the last %3$d days": [
+        "Basado en %1$d visitas a %2$d páginas en los últimos %3$d días"
+      ],
+      "Bot Impressions": [
+        "Impresiones de bots"
+      ],
+      "Bot Quality": [
+        "Calidad de los robots"
+      ],
+      "Bot Summaries": [
+        "Resúmenes de robots"
+      ],
+      "Bot UTM clicks": [
+        "Clics de bot UTM"
+      ],
+      "Bot Visibility": [
+        "Visibilidad de los robots"
+      ],
+      "Bot Visits": [
+        "Visitas de bots"
+      ],
+      "Bot Visits (30 Days)": [
+        "Visitas de bot (30 días)"
+      ],
+      "Bot visits will be automatically logged when LLM crawlers access your pages.": [
+        "Las visitas al bot se registrarán automáticamente cuando los rastreadores de LLM accedan a sus páginas."
+      ],
+      "Bot visits will be automatically logged when LLM crawlers access your product pages.": [
+        "Las visitas al bot se registrarán automáticamente cuando los rastreadores de LLM accedan a las páginas de sus productos."
+      ],
+      "Bot visits will be automatically logged when LLM crawlers access your site.": [
+        "Las visitas al bot se registrarán automáticamente cuando los rastreadores de LLM accedan a su sitio."
+      ],
+      "Breakdown by Post Type:": [
+        "Desglose por tipo de publicación:"
+      ],
+      "CURRENT FILE SIZE": [
+        "TAMAÑO DE ARCHIVO ACTUAL"
+      ],
+      "CUSTOM INTRO TEXT": [
+        "TEXTO DE INTRODUCCIÓN PERSONALIZADO"
+      ],
+      "Card View": [
+        "Vista de tarjeta"
+      ],
+      "Categories": [
+        "Categorías"
+      ],
+      "Check for first LLM visit": [
+        "Verifique la primera visita de LLM"
+      ],
+      "Cleanup on uninstall": [
+        "Limpieza al desinstalar"
+      ],
+      "Click on any product to view detailed analytics and optimize content to improve its visibility score.": [
+        "Haga clic en cualquier producto para ver análisis detallados y optimizar el contenido para mejorar su puntuación de visibilidad."
+      ],
+      "Clicks (30 Days)": [
+        "Clics (30 días)"
+      ],
+      "Combined score based on Bot Visibility (70%) and Content Quality (30%)": [
+        "Puntuación combinada basada en la visibilidad del bot (70%) y la calidad del contenido (30%)"
+      ],
+      "Content Quality": [
+        "Calidad del contenido"
+      ],
+      "Content Stats": [
+        "Estadísticas de contenido"
+      ],
+      "Content export options": [
+        "Opciones de exportación de contenido"
+      ],
+      "Content optimization score. Based on length, headings, ALT texts, excerpt, tags, and readability.": [
+        "Puntuación de optimización de contenido. Basado en longitud, títulos, textos ALT, extractos, etiquetas y legibilidad."
+      ],
+      "Content types to include": [
+        "Tipos de contenido a incluir"
+      ],
+      "Continue": [
+        "Continuar"
+      ],
+      "Continue setup": [
+        "Continuar con la configuración"
+      ],
+      "Could not load the AI visibility score: %s": [
+        "No se pudo cargar la puntuación de visibilidad de IA: %s"
+      ],
+      "Coverage Calculation": [
+        "Cálculo de cobertura"
+      ],
+      "Crawl Frequency": [
+        "Frecuencia de rastreo"
+      ],
+      "Crawler activity": [
+        "Actividad del rastreador"
+      ],
+      "Delete files when plugin is uninstalled": [
+        "Eliminar archivos cuando se desinstala el complemento"
+      ],
+      "Describe this image...": [
+        "Describe esta imagen..."
+      ],
+      "Detailed diagnostics require an administrator account.": [
+        "Los diagnósticos detallados requieren una cuenta de administrador."
+      ],
+      "Diagnostics": [
+        "Diagnóstico"
+      ],
+      "Disabled": [
+        "Desactivado"
+      ],
+      "Dismiss notification": [
+        "Descartar notificación"
+      ],
+      "EXCERPTS ONLY": [
+        "SÓLO EXTRACTOS"
+      ],
+      "Edit": [
+        "Editar"
+      ],
+      "Email reports": [
+        "Informes por correo electrónico"
+      ],
+      "Enable in Settings": [
+        "Habilitar en Configuración"
+      ],
+      "Enter a custom description for your llms.txt header (leave empty to use site tagline)": [
+        "Ingrese una descripción personalizada para su encabezado llms.txt (déjelo vacío para usar el eslogan del sitio)"
+      ],
+      "Error Loading Page": [
+        "Error al cargar la página"
+      ],
+      "Error Loading Product": [
+        "Error al cargar el producto"
+      ],
+      "Excellent": [
+        "Excelente"
+      ],
+      "Excerpt / Meta Description": [
+        "Extracto / Meta descripción"
+      ],
+      "FULL CONTENT": [
+        "CONTENIDO COMPLETO"
+      ],
+      "Failed to load analytics data. Please try again later.": [
+        "No se pudieron cargar los datos analíticos. Inténtelo de nuevo más tarde."
+      ],
+      "Failed to load page statistics: %s": [
+        "No se pudieron cargar las estadísticas de la página: %s"
+      ],
+      "Failed to load product statistics: %s": [
+        "No se pudieron cargar las estadísticas del producto: %s"
+      ],
+      "Failed to save email": [
+        "No se pudo guardar el correo electrónico"
+      ],
+      "Failed to save email. Please try again.": [
+        "No se pudo guardar el correo electrónico. Por favor inténtalo de nuevo."
+      ],
+      "Featured Image": [
+        "Imagen destacada"
+      ],
+      "File is %sMB. Consider reducing max posts.": [
+        "El archivo es %sMB. Considere reducir el número máximo de publicaciones."
+      ],
+      "Finish setup to get discovered by AI assistants": [
+        "Finaliza la configuración para que te descubran los asistentes de IA"
+      ],
+      "Fix Missing Alt Text": [
+        "Corregir el texto alternativo que falta"
+      ],
+      "Fix Now": [
+        "Reparar ahora"
+      ],
+      "Fixing...": [
+        "Fijación..."
+      ],
+      "Formula: (Items in LLMS.txt ÷ Total Items) × 100": [
+        "Fórmula: (Artículos en LLMS.txt ÷ Total de artículos) × 100"
+      ],
+      "Full content export is off": [
+        "La exportación de contenido completo está desactivada"
+      ],
+      "Full content or excerpts only": [
+        "Contenido completo o solo extractos"
+      ],
+      "GENERATE LLMS-FULL.TXT": [
+        "GENERAR LLMS-FULL.TXT"
+      ],
+      "GROUP BY CONTENT TYPE": [
+        "AGRUPAR POR TIPO DE CONTENIDO"
+      ],
+      "Gallery Images": [
+        "Galería de imágenes"
+      ],
+      "Generate your llms.txt file": [
+        "Genera tu archivo llms.txt"
+      ],
+      "Get Started": [
+        "Empezar"
+      ],
+      "Get the Checklist": [
+        "Obtenga la lista de verificación"
+      ],
+      "Get weekly AI visibility reports delivered to your inbox so you always know how AI assistants interact with your site.": [
+        "Reciba informes semanales de visibilidad de IA en su bandeja de entrada para saber siempre cómo interactúan los asistentes de IA con su sitio."
+      ],
+      "Getting started with AI visibility": [
+        "Comenzando con la visibilidad de la IA"
+      ],
+      "Go to Dashboard": [
+        "Ir al panel"
+      ],
+      "Good": [
+        "Bien"
+      ],
+      "Great job! Your site is well optimized for AI Search Engines.": [
+        "¡Buen trabajo! Su sitio está bien optimizado para los motores de búsqueda de IA."
+      ],
+      "Group by content type": [
+        "Agrupar por tipo de contenido"
+      ],
+      "Heading Structure": [
+        "Estructura de encabezado"
+      ],
+      "Help improve LLMagnet": [
+        "Ayuda a mejorar LLMagnet"
+      ],
+      "Hi %s": [
+        "Hola %s"
+      ],
+      "High priority": [
+        "Alta prioridad"
+      ],
+      "How is the score calculated?": [
+        "¿Cómo se calcula la puntuación?"
+      ],
+      "How often AI bots visit this page. Based on crawl frequency, bot quality, and visit count.": [
+        "Con qué frecuencia los robots de IA visitan esta página. Según la frecuencia de rastreo, la calidad del bot y el recuento de visitas."
+      ],
+      "How often AI bots visit this product. Based on crawl frequency, bot quality, and visit count.": [
+        "Con qué frecuencia los robots de IA visitan este producto. Según la frecuencia de rastreo, la calidad del bot y el recuento de visitas."
+      ],
+      "How often AI bots visit your site. More frequent visits mean better visibility.": [
+        "Con qué frecuencia los robots de IA visitan su sitio. Visitas más frecuentes significan una mejor visibilidad."
+      ],
+      "I agree and accept the terms": [
+        "Estoy de acuerdo y acepto los términos."
+      ],
+      "IMAGES": [
+        "IMÁGENES"
+      ],
+      "INCLUDE EXCERPTS": [
+        "INCLUIR EXTRACTOS"
+      ],
+      "Images & ALT Text": [
+        "Imágenes y texto alternativo"
+      ],
+      "Impressions": [
+        "Impresiones"
+      ],
+      "Include excerpts": [
+        "Incluir extractos"
+      ],
+      "Include images": [
+        "Incluir imágenes"
+      ],
+      "LLM": [
+        "LLM"
+      ],
+      "LLM visit": [
+        "visita de maestría"
+      ],
+      "LLMagnet Dashboard": [
+        "LLMagnet Panel de control"
+      ],
+      "LLMs-full.txt (complete content)": [
+        "LLMs-full.txt (contenido completo)"
+      ],
+      "LLMs-full.txt Preview": [
+        "LLMs-full.txt Vista previa"
+      ],
+      "LLMs.txt Manager": [
+        "LLMs.txt Gerente"
+      ],
+      "LLMs.txt Preview": [
+        "LLMs.txt Vista previa"
+      ],
+      "LLMs.txt structure settings": [
+        "LLMs.txt configuración de estructura"
+      ],
+      "Load More": [
+        "Cargar más"
+      ],
+      "Loading preview...": [
+        "Cargando vista previa..."
+      ],
+      "Loading score…": [
+        "Cargando puntuación…"
+      ],
+      "Loading...": [
+        "Cargando..."
+      ],
+      "Long Description": [
+        "Descripción larga"
+      ],
+      "MAX POSTS": [
+        "PUBLICACIONES MAX"
+      ],
+      "MAX POSTS PER SECTION": [
+        "MÁXIMOS PUBLICACIONES POR SECCIÓN"
+      ],
+      "Manage your LLMS.txt file and LLM response settings": [
+        "Administre su archivo LLMS.txt y la configuración de respuesta de LLM"
+      ],
+      "Manage your account": [
+        "Administra tu cuenta"
+      ],
+      "Max posts for llms-full.txt": [
+        "Publicaciones máximas para llms-full.txt"
+      ],
+      "Max posts per section": [
+        "Publicaciones máximas por sección"
+      ],
+      "Method: %1$s%2$s": [
+        "Método: %1$s%2$s"
+      ],
+      "Missing llms.txt reference": [
+        "Falta la referencia llms.txt"
+      ],
+      "Models": [
+        "Modelos"
+      ],
+      "Monthly Reports": [
+        "Informes mensuales"
+      ],
+      "Monthly reports are sent to: %s": [
+        "Los informes mensuales se envían a: %s"
+      ],
+      "Needs Attention": [
+        "Necesita atención"
+      ],
+      "Needs Improvement": [
+        "Necesita mejorar"
+      ],
+      "Next": [
+        "Próximo"
+      ],
+      "No AI bot traffic in 30 days": [
+        "Sin tráfico de bots de IA en 30 días"
+      ],
+      "No AI bot visits yet — that is normal on a fresh install. Complete these steps so crawlers can discover your content.": [
+        "Aún no hay visitas de robots de IA; eso es normal en una instalación nueva. Complete estos pasos para que los rastreadores puedan descubrir su contenido."
+      ],
+      "No Bot Visits Yet": [
+        "Aún no hay visitas de bots"
+      ],
+      "No LLM bot visits have been recorded yet.": [
+        "Aún no se han registrado visitas del bot LLM."
+      ],
+      "No Page Traffic Yet": [
+        "Aún no hay tráfico de página"
+      ],
+      "No Product Traffic Yet": [
+        "Aún no hay tráfico de productos"
+      ],
+      "No bot data available yet": [
+        "Aún no hay datos de bot disponibles"
+      ],
+      "No images found for this product. Add images in the WooCommerce product editor.": [
+        "No se encontraron imágenes para este producto. Agregue imágenes en el editor de productos WooCommerce."
+      ],
+      "No images found in this post.": [
+        "No se encontraron imágenes en esta publicación."
+      ],
+      "No pages have received bot traffic yet.": [
+        "Ninguna página ha recibido tráfico de bot todavía."
+      ],
+      "No products have received bot traffic in the selected period.": [
+        "Ningún producto ha recibido tráfico de bots en el período seleccionado."
+      ],
+      "Not generated yet": [
+        "Aún no generado"
+      ],
+      "Of 100": [
+        "de 100"
+      ],
+      "Open Content Settings": [
+        "Abrir configuración de contenido"
+      ],
+      "Open LLMagnet to fix": [
+        "Abra LLMagnet para arreglar"
+      ],
+      "Open Schema JSON-LD": [
+        "Abrir Schema JSON-LD"
+      ],
+      "Open in new tab": [
+        "Abrir en nueva pestaña"
+      ],
+      "Open llms-full.txt in new tab": [
+        "Abrir llms-full.txt en una nueva pestaña"
+      ],
+      "Open llms.txt in new tab": [
+        "Abrir llms.txt en una nueva pestaña"
+      ],
+      "Overall": [
+        "En general"
+      ],
+      "Overview Statistics": [
+        "Estadísticas generales"
+      ],
+      "Page Health": [
+        "Estado de la página"
+      ],
+      "Page Visibility Score": [
+        "Puntuación de visibilidad de la página"
+      ],
+      "Page editing and visibility scores are available in Plus and Enterprise plans.": [
+        "Las puntuaciones de visibilidad y edición de páginas están disponibles en los planes Plus y Enterprise."
+      ],
+      "Paragraphs": [
+        "Párrafos"
+      ],
+      "Physical file": [
+        "Archivo fisico"
+      ],
+      "Plus Feature": [
+        "Característica adicional"
+      ],
+      "Premium feature - Upgrade to enable": [
+        "Función Premium: actualice para habilitarla"
+      ],
+      "Privacy": [
+        "Privacidad"
+      ],
+      "Product Descriptions": [
+        "Descripciones de productos"
+      ],
+      "Product Visibility Score": [
+        "Puntuación de visibilidad del producto"
+      ],
+      "Product content optimization. Based on descriptions, tags, categories, and image ALT texts.": [
+        "Optimización del contenido del producto. Basado en descripciones, etiquetas, categorías y textos ALT de imágenes."
+      ],
+      "Product editing and visibility scores are available in Plus and Enterprise plans.": [
+        "Las puntuaciones de visibilidad y edición de productos están disponibles en los planes Plus y Enterprise."
+      ],
+      "Products sorted by bot impressions. %d products tracked.": [
+        "Productos ordenados por impresiones de bot. %d productos rastreados."
+      ],
+      "Purchase Rate": [
+        "Tarifa de compra"
+      ],
+      "Ratio of content pages vs technical/commercial pages being crawled.": [
+        "Proporción de páginas de contenido frente a páginas técnicas/comerciales que se rastrean."
+      ],
+      "Read our Privacy Policy": [
+        "Lea nuestra Política de Privacidad"
+      ],
+      "Recalculate score": [
+        "Recalcular puntuación"
+      ],
+      "Recommendations actions": [
+        "Recomendaciones acciones"
+      ],
+      "Recommended": [
+        "Recomendado"
+      ],
+      "Reference your llms.txt in robots.txt so AI crawlers can automatically discover and read it.": [
+        "Haga referencia a su llms.txt en robots.txt para que los rastreadores de IA puedan descubrirlo y leerlo automáticamente."
+      ],
+      "Refresh preview": [
+        "Actualizar vista previa"
+      ],
+      "Regenerating...": [
+        "Regenerante..."
+      ],
+      "Reload page": [
+        "Recargar página"
+      ],
+      "Robots.txt integration": [
+        "Integración de robots.txt"
+      ],
+      "Root directory is not writable. Please check file permissions before generating files.": [
+        "El directorio raíz no se puede escribir. Verifique los permisos de los archivos antes de generarlos."
+      ],
+      "SHOW ABOUT SECTION": [
+        "MOSTRAR ACERCA DE LA SECCIÓN"
+      ],
+      "SHOW PRODUCT PRICES": [
+        "MOSTRAR PRECIOS DE PRODUCTO"
+      ],
+      "STATUS": [
+        "ESTADO"
+      ],
+      "Save Alt Text": [
+        "Guardar texto alternativo"
+      ],
+      "Save Email": [
+        "Guardar correo electrónico"
+      ],
+      "Saved": [
+        "Guardado"
+      ],
+      "Schema health looks low (%1$d/100). JSON-LD helps AI and search engines read your site clearly.": [
+        "El estado del esquema parece bajo (%1$d/100). JSON-LD ayuda a la IA y a los motores de búsqueda a leer su sitio con claridad."
+      ],
+      "Score scale:": [
+        "Escala de puntuación:"
+      ],
+      "Select content for llms.txt and Markdown exports.": [
+        "Seleccione contenido para las exportaciones llms.txt y Markdown."
+      ],
+      "Set up email reports": [
+        "Configurar informes por correo electrónico"
+      ],
+      "Settings saved": [
+        "Configuración guardada"
+      ],
+      "Setup %1$d/4 complete": [
+        "Configuración %1$d/4 completa"
+      ],
+      "Short Description": [
+        "Breve descripción"
+      ],
+      "Show about section": [
+        "Mostrar acerca de la sección"
+      ],
+      "Show product prices": [
+        "Mostrar precios de productos"
+      ],
+      "Showing all %d pages": [
+        "Mostrando todas las páginas %d"
+      ],
+      "Site Homepage": [
+        "Página de inicio del sitio"
+      ],
+      "Site coverage in llms.txt": [
+        "Cobertura del sitio en llms.txt"
+      ],
+      "Skip": [
+        "Saltar"
+      ],
+      "Skip for now": [
+        "Saltar por ahora"
+      ],
+      "Some crawlers use robots.txt to discover llms.txt. Add the reference to improve discovery.": [
+        "Algunos rastreadores utilizan robots.txt para descubrir llms.txt. Agregue la referencia para mejorar el descubrimiento."
+      ],
+      "Something went wrong loading this screen.": [
+        "Algo salió mal al cargar esta pantalla."
+      ],
+      "Start setup": [
+        "Iniciar configuración"
+      ],
+      "Step %d": [
+        "Paso %d"
+      ],
+      "Strengthen structured data (JSON-LD)": [
+        "Fortalecer los datos estructurados (JSON-LD)"
+      ],
+      "Suggestion": [
+        "Sugerencia"
+      ],
+      "Table View": [
+        "Vista de tabla"
+      ],
+      "Test on ChatGPT": [
+        "Prueba en ChatGPT"
+      ],
+      "Test your setup by asking ChatGPT about your site. This verifies everything is working correctly.": [
+        "Pruebe su configuración preguntando a ChatGPT sobre su sitio. Esto verifica que todo esté funcionando correctamente."
+      ],
+      "The Ultimate AI Search Optimization Checklist": [
+        "La lista de verificación definitiva para la optimización de la búsqueda con IA"
+      ],
+      "This step is complete. Let's continue.": [
+        "Este paso está completo. Sigamos."
+      ],
+      "Total Revenue": [
+        "Ingresos totales"
+      ],
+      "Total Score": [
+        "Puntuación total"
+      ],
+      "Total number of bot visits in the analysis period.": [
+        "Número total de visitas de bot en el período de análisis."
+      ],
+      "Total visits: %s": [
+        "Visitas totales: %s"
+      ],
+      "Total:": [
+        "Total:"
+      ],
+      "Track LLM bot traffic to your WooCommerce products and measure conversions.": [
+        "Realice un seguimiento del tráfico de bots de LLM hacia sus productos WooCommerce y mida las conversiones."
+      ],
+      "Track LLM bot visits and engagement with your content.": [
+        "Realice un seguimiento de las visitas del bot LLM y del compromiso con su contenido."
+      ],
+      "Track impressions, clicks, CTR and real AI bot traffic.": [
+        "Realice un seguimiento de las impresiones, los clics, CTR y el tráfico real de bots de IA."
+      ],
+      "Traffic Volume": [
+        "Volumen de tráfico"
+      ],
+      "Traffic in the last 30 days": [
+        "Tráfico en los últimos 30 días"
+      ],
+      "Trial": [
+        "Ensayo"
+      ],
+      "Try Again": [
+        "Intentar otra vez"
+      ],
+      "Turn on Full Content to provide richer context to AI crawlers in your exported content.": [
+        "Active Contenido completo para proporcionar un contexto más rico a los rastreadores de IA en su contenido exportado."
+      ],
+      "Type of AI bots visiting. User-facing AI (ChatGPT, Perplexity) are valued higher.": [
+        "Tipo de bots de IA que visitan. La IA orientada al usuario (ChatGPT, Perplexity) se valora más."
+      ],
+      "Type: %s image": [
+        "Tipo: imagen %s"
+      ],
+      "UTM Clicks": [
+        "Clics UTM"
+      ],
+      "Unlock Full AI": [
+        "Desbloquear IA completa"
+      ],
+      "Upgrade to Pro": [
+        "Actualízate a Pro"
+      ],
+      "Upgrade to see this bot": [
+        "Actualiza para ver este bot"
+      ],
+      "View LLMS.txt": [
+        "Ver LLMS.txt"
+      ],
+      "View all": [
+        "Ver todo"
+      ],
+      "View scan & recommendations": [
+        "Ver análisis y recomendaciones"
+      ],
+      "View score breakdown": [
+        "Ver desglose de puntuación"
+      ],
+      "View which pages on your site have received traffic from LLM bots.": [
+        "Vea qué páginas de su sitio han recibido tráfico de robots LLM."
+      ],
+      "Visibility Score": [
+        "Puntuación de visibilidad"
+      ],
+      "Visibility Score Breakdown": [
+        "Desglose de la puntuación de visibilidad"
+      ],
+      "Wait for the first AI bot crawl (usually 24–72 hours)": [
+        "Espere el primer rastreo del bot de IA (normalmente entre 24 y 72 horas)"
+      ],
+      "Waiting for your first LLM visit...": [
+        "Esperando su primera visita de LLM..."
+      ],
+      "Warning:": [
+        "Advertencia:"
+      ],
+      "We attach basic technical details (WordPress, PHP, plugin version, your account) to help us reproduce issues.": [
+        "Adjuntamos detalles técnicos básicos (WordPress, PHP, versión del complemento, su cuenta) para ayudarnos a reproducir los problemas."
+      ],
+      "We have not detected AI bot visits yet. Publish more crawlable content and regenerate llms.txt.": [
+        "Aún no hemos detectado visitas de bots de IA. Publique más contenido rastreable y regenere llms.txt."
+      ],
+      "We're thrilled to have you here. LLMagnet helps you create powerful, AI-powered forms that turn feedback into actionable insights. Let's get you set up.": [
+        "Estamos encantados de tenerte aquí. LLMagnet le ayuda a crear formularios potentes basados ​​en IA que convierten los comentarios en información procesable. Vamos a configurarlo."
+      ],
+      "Weekly AI visibility reports show exactly how LLMs engage with your site. Save your email now — reports activate automatically the moment you go Pro.": [
+        "Los informes semanales de visibilidad de la IA muestran exactamente cómo los LLM interactúan con su sitio. Guarde su correo electrónico ahora: los informes se activan automáticamente en el momento en que se convierte en Pro."
+      ],
+      "Welcome": [
+        "Bienvenido"
+      ],
+      "Welcome to LLMagnet": [
+        "Bienvenido a LLMagnet"
+      ],
+      "When off, this content is left out of llms.txt, llms-full.txt and the markdown docs.": [
+        "Cuando está desactivado, este contenido queda fuera de llms.txt, llms-full.txt y los documentos de rebajas."
+      ],
+      "Whether crawled pages are still accessible and published.": [
+        "Si las páginas rastreadas siguen siendo accesibles y publicadas."
+      ],
+      "WooCommerce product analytics is available in the Plus and Enterprise plans.": [
+        "WooCommerce análisis de productos está disponible en los planes Plus y Enterprise."
+      ],
+      "WordPress filter (virtual)": [
+        "Filtro WordPress (virtual)"
+      ],
+      "Words": [
+        "Palabras"
+      ],
+      "You can change this email in the settings section below.": [
+        "Puede cambiar este correo electrónico en la sección de configuración a continuación."
+      ],
+      "You have unsaved changes — save to refresh the score.": [
+        "Tienes cambios sin guardar: guárdalos para actualizar la puntuación."
+      ],
+      "You haven't started setup yet": [
+        "Aún no has iniciado la configuración"
+      ],
+      "You're all set!": [
+        "¡Estás listo!"
+      ],
+      "You're doing well, but there's room for improvement.": [
+        "Lo estás haciendo bien, pero hay margen de mejora."
+      ],
+      "You're missing opportunities to reach users through AI Search Engines.": [
+        "Estás perdiendo oportunidades de llegar a los usuarios a través de motores de búsqueda con IA."
+      ],
+      "Your AI visibility is live. LLMagnet is now working to get your site discovered by AI assistants.": [
+        "Su visibilidad de IA está en vivo. LLMagnet ahora está trabajando para que los asistentes de IA descubran su sitio."
+      ],
+      "Your AI visibility journey starts here": [
+        "Su viaje de visibilidad de la IA comienza aquí"
+      ],
+      "Your llms.txt file helps AI assistants understand and reference your site content. Generate it with one click.": [
+        "Su archivo llms.txt ayuda a los asistentes de IA a comprender y hacer referencia al contenido de su sitio. Generalo con un clic."
+      ],
+      "Your llms.txt file is not available yet, so AI crawlers may miss your content.": [
+        "Su archivo llms.txt aún no está disponible, por lo que los rastreadores de IA pueden perder su contenido."
+      ],
+      "llms.txt": [
+        "llms.txt"
+      ],
+      "robots.txt updated with llms.txt reference.": [
+        "robots.txt actualizado con la referencia llms.txt."
+      ],
+      "there": [
+        "allá"
+      ],
+      " (or use Elementor page settings for page-specific markup)": [
+        "(o utilice la configuración de página Elementor para el marcado específico de la página)"
+      ],
+      " Link also in your email.": [
+        "Enlace también en tu correo electrónico."
+      ],
+      " · Last ping: %1$d URL(s), HTTP %2$d": [
+        "· Último ping: %1$d URL(s), HTTP %2$d"
+      ],
+      "%1$d (%2$d read / %3$d write)": [
+        "%1$d (%2$d lectura / %3$d escritura)"
+      ],
+      "%1$d characters (consider shortening)": [
+        "%1$d caracteres (considere acortar)"
+      ],
+      "%1$d characters (recommended: 120-160)": [
+        "%1$d caracteres (recomendado: 120-160)"
+      ],
+      "%1$d characters (recommended: 150-300)": [
+        "%1$d caracteres (recomendado: 150-300)"
+      ],
+      "%1$d characters (recommended: 50-125)": [
+        "%1$d caracteres (recomendado: 50-125)"
+      ],
+      "%1$d characters (recommended: 500-2000)": [
+        "%1$d caracteres (recomendado: 500-2000)"
+      ],
+      "%1$d characters — Optimal": [
+        "%1$d caracteres: óptimo"
+      ],
+      "%1$d characters ✓": [
+        "%1$d caracteres ✓"
+      ],
+      "%1$d image found without media library attachment. Edit ALT text in the WordPress editor.": [
+        "Imagen %1$d encontrada sin archivo adjunto de biblioteca multimedia. Edite el texto ALT en el editor WordPress."
+      ],
+      "%1$d tools (%2$d read / %3$d write)": [
+        "%1$d herramientas (%2$d lectura / %3$d escritura)"
+      ],
+      "%1$d tools from the shared registry. Anonymous callers can reach %2$d in Public content mode and %3$d in Public read mode.": [
+        "%1$d herramientas del registro compartido. Las personas que llaman anónimamente pueden comunicarse con %2$d en modo de contenido público y %3$d en modo de lectura pública."
+      ],
+      "%1$s is active. Page caches that ignore the Vary: Accept header can serve markdown to regular visitors. Exclude this site from full-page caching for negotiated responses, or keep this off and rely on .md URLs.": [
+        "%1$s está activo. Los cachés de página que ignoran el encabezado Variar: Aceptar pueden ofrecer rebajas a los visitantes habituales. Excluya este sitio del almacenamiento en caché de página completa para respuestas negociadas, o manténgalo desactivado y confíe en .md URLs."
+      ],
+      "%1$s total visits across %2$d pages": [
+        "%1$s visitas totales en %2$d páginas"
+      ],
+      "%1$s visits across %2$d pages": [
+        "%1$s visitas en %2$d páginas"
+      ],
+      "%1$s visits • %2$d pages": [
+        "%1$s visitas • %2$d páginas"
+      ],
+      "%1$s — Click to hide": [
+        "%1$s — Haga clic para ocultar"
+      ],
+      "%1$s — Click to show": [
+        "%1$s — Haga clic para mostrar"
+      ],
+      "%d URL scanned — all published pages, recent posts, and products.": [
+        "%d URL escaneado: todas las páginas publicadas, publicaciones recientes y productos."
+      ],
+      "%d character": [
+        "%d carácter"
+      ],
+      "%d image selected successfully!": [
+        "¡Imagen %d seleccionada exitosamente!"
+      ],
+      "%d post": [
+        "%d publicación"
+      ],
+      "%d product": [
+        "%d producto"
+      ],
+      "%d to improve": [
+        "%d para mejorar"
+      ],
+      "%d%% of score": [
+        "%d%% de puntuación"
+      ],
+      "%s Analytics": [
+        "%s Análisis"
+      ],
+      "%s Visits": [
+        "%s Visitas"
+      ],
+      "%s handles JSON-LD": [
+        "%s maneja JSON-LD"
+      ],
+      "%s%% have image ALT": [
+        "%s%% tiene imagen ALT"
+      ],
+      "%s%% have short descriptions": [
+        "%s%% tiene descripciones breves"
+      ],
+      "%s%% missing tags": [
+        "%s%% etiquetas faltantes"
+      ],
+      "(+1 legacy token)": [
+        "(+1 token heredado)"
+      ],
+      "(or a project's": [
+        "(o un proyecto"
+      ],
+      "A sampled audit (homepage + a few representative pages) scores your site across 7 domains of agent-readiness standards and shows exactly what to fix — much of it with one click.": [
+        "Una auditoría de muestra (página de inicio + algunas páginas representativas) califica su sitio en 7 dominios de estándares de preparación de agentes y muestra exactamente qué corregir, gran parte de ello con un solo clic."
+      ],
+      "AI Integrations": [
+        "Integraciones de IA"
+      ],
+      "AI SEO Optimizer": [
+        "Optimizador AI SEO"
+      ],
+      "AI Visibility Report": [
+        "Informe de visibilidad de IA"
+      ],
+      "AI assistants can connect to this site over the Model Context Protocol.": [
+        "Los asistentes de IA pueden conectarse a este sitio a través del Protocolo de contexto modelo."
+      ],
+      "AI clients": [
+        "Clientes de IA"
+      ],
+      "AI input": [
+        "entrada de IA"
+      ],
+      "AI training": [
+        "entrenamiento de IA"
+      ],
+      "AI → Revenue Funnel": [
+        "IA → Embudo de ingresos"
+      ],
+      "Abilities API": [
+        "Abilities API"
+      ],
+      "Access mode": [
+        "Modo de acceso"
+      ],
+      "Access tokens": [
+        "tokens de acceso"
+      ],
+      "Action": [
+        "Acción"
+      ],
+      "Actions": [
+        "Comportamiento"
+      ],
+      "Active": [
+        "Activo"
+      ],
+      "Active API Tokens": [
+        "Tokens API activos"
+      ],
+      "Activity log": [
+        "Registro de actividad"
+      ],
+      "Actor": [
+        "Actor"
+      ],
+      "Add": [
+        "Agregar"
+      ],
+      "Add H2 and H3 headings to structure your content for better readability and SEO.": [
+        "Agregue encabezados H2 y H3 para estructurar su contenido para una mejor legibilidad y SEO."
+      ],
+      "Add New Images": [
+        "Agregar nuevas imágenes"
+      ],
+      "Add a product to the WooCommerce cart (write action, opted in)": [
+        "Agregue un producto al carrito WooCommerce (escribir acción, participar)"
+      ],
+      "Add a short excerpt that describes this page...": [
+        "Agregue un breve extracto que describa esta página..."
+      ],
+      "Add descriptive ALT text...": [
+        "Añadir texto ALT descriptivo..."
+      ],
+      "Add more tags (3-8 recommended)": [
+        "Agregue más etiquetas (se recomiendan 3-8)"
+      ],
+      "Add products to see readiness insights.": [
+        "Agregue productos para ver información sobre la preparación."
+      ],
+      "Add social profile": [
+        "Agregar perfil social"
+      ],
+      "Add tag...": [
+        "Añadir etiqueta..."
+      ],
+      "Add the snippet to": [
+        "Añade el fragmento a"
+      ],
+      "Add your address to output LocalBusiness schema with a PostalAddress block. Available for all site types.": [
+        "Agregue su dirección al esquema de salida LocalBusiness con un bloque PostalAddress. Disponible para todo tipo de sitios."
+      ],
+      "After text": [
+        "Después del texto"
+      ],
+      "After text response": [
+        "Después de la respuesta de texto"
+      ],
+      "Agent response": [
+        "Respuesta del agente"
+      ],
+      "Agent-Ready Score": [
+        "Puntuación de agente listo"
+      ],
+      "Agent-Ready Score %1$d out of 100": [
+        "Puntuación de agente listo %1$d de 100"
+      ],
+      "Agent-readiness features": [
+        "Funciones de preparación del agente"
+      ],
+      "All (%d)": [
+        "Todo (%d)"
+      ],
+      "All MCP requests are rejected while the server is disabled.": [
+        "Todas las solicitudes MCP se rechazan mientras el servidor está deshabilitado."
+      ],
+      "All good": [
+        "Todo está bien"
+      ],
+      "All-Time Bot Visits": [
+        "Visitas de bots de todos los tiempos"
+      ],
+      "All-Time Statistics": [
+        "Estadísticas de todos los tiempos"
+      ],
+      "All-Time Total": [
+        "Total de todos los tiempos"
+      ],
+      "An error occurred while uploading the image.": [
+        "Se produjo un error al cargar la imagen."
+      ],
+      "Analytics tools (scores, bot traffic) are not exposed in Public content mode. They require Public read mode — which makes them readable by anyone — or future OAuth support.": [
+        "Las herramientas de análisis (puntuaciones, tráfico de bots) no están expuestas en el modo de contenido público. Requieren el modo de lectura pública, que los hace legibles para cualquier persona, o compatibilidad futura con OAuth."
+      ],
+      "Analytics tools in ChatGPT require Public read mode (with its warning) or OAuth support planned for a later release.": [
+        "Las herramientas de análisis en ChatGPT requieren el modo de lectura pública (con su advertencia) o la compatibilidad con OAuth planificada para una versión posterior."
+      ],
+      "Analytics unavailable": [
+        "Análisis no disponibles"
+      ],
+      "Analyzing pages…": [
+        "Analizando páginas…"
+      ],
+      "Anyone can read your published content via MCP (search, markdown, site info). Enables no-auth clients like ChatGPT connectors.": [
+        "Cualquiera puede leer su contenido publicado a través de MCP (búsqueda, rebajas, información del sitio). Habilita clientes sin autenticación como conectores ChatGPT."
+      ],
+      "Anyone on the internet will be able to read this site's AI analytics — visibility scores, bot traffic, and recommendations — without authentication.": [
+        "Cualquier persona en Internet podrá leer los análisis de IA de este sitio (puntuaciones de visibilidad, tráfico de bots y recomendaciones) sin autenticación."
+      ],
+      "Anyone on the internet will be able to read this site\\u2019s AI analytics (scores, bot traffic, recommendations).": [
+        "Cualquier persona en Internet podrá leer los análisis de IA de este sitio (puntuaciones, tráfico de bots, recomendaciones)."
+      ],
+      "Anyone will be able to read your published content via MCP — the same data search engines already see. Analytics tools stay private, and write tools still require an authenticated read/write token.": [
+        "Cualquiera podrá leer su contenido publicado a través de MCP, los mismos datos que ya ven los motores de búsqueda. Las herramientas de análisis permanecen privadas y las herramientas de escritura aún requieren un token de lectura/escritura autenticado."
+      ],
+      "Attach an image that will be displayed with responses from all Large Language Models (ChatGPT, Claude, Gemini, GPT-4, etc.) and included in the llms.txt file.": [
+        "Adjunte una imagen que se mostrará con las respuestas de todos los modelos de lenguaje grandes (ChatGPT, Claude, Gemini, GPT-4, etc.) y se incluirá en el archivo llms.txt."
+      ],
+      "Attach multiple images that will be displayed with responses from all Large Language Models (ChatGPT, Claude, Gemini, GPT-4, etc.) and included in the llms.txt file.": [
+        "Adjunte varias imágenes que se mostrarán con las respuestas de todos los modelos de lenguaje grandes (ChatGPT, Claude, Gemini, GPT-4, etc.) y se incluirán en el archivo llms.txt."
+      ],
+      "Attention": [
+        "Atención"
+      ],
+      "Audit your site against current agent-readiness standards and fix the gaps — discovery files, machine-readable content, WebMCP, and security headers.": [
+        "Audite su sitio según los estándares actuales de preparación de agentes y corrija las brechas: archivos de descubrimiento, contenido legible por máquina, WebMCP y encabezados de seguridad."
+      ],
+      "Auditing your site…": [
+        "Auditando su sitio..."
+      ],
+      "Auth header:": [
+        "Encabezado de autenticación:"
+      ],
+      "Auth: tokens + legacy, Application Passwords": [
+        "Autenticación: tokens + legado, contraseñas de aplicaciones"
+      ],
+      "Auth: tokens, Application Passwords": [
+        "Autenticación: tokens, contraseñas de aplicaciones"
+      ],
+      "Authentication is required by default. Token secrets are hashed at rest (SHA-256) and shown exactly once. New tokens are read-only unless you choose otherwise, and write tools always require a read/write token regardless of access mode.": [
+        "Se requiere autenticación de forma predeterminada. Los secretos de los tokens se procesan en reposo (SHA-256) y se muestran exactamente una vez. Los tokens nuevos son de solo lectura a menos que usted elija lo contrario, y las herramientas de escritura siempre requieren un token de lectura/escritura independientemente del modo de acceso."
+      ],
+      "Automated Reporting System": [
+        "Sistema de informes automatizado"
+      ],
+      "Available (WordPress %1$s) — %2$d LLMagnet abilities registered under the": [
+        "Disponible (WordPress %1$s) — %2$d LLMagnet habilidades registradas bajo el"
+      ],
+      "Available on Plus and Enterprise (or trial).": [
+        "Disponible en Plus y Enterprise (o versión de prueba)."
+      ],
+      "Available — %d abilities registered": [
+        "Disponible — %d habilidades registradas"
+      ],
+      "Avg Product Visibility": [
+        "Visibilidad promedio del producto"
+      ],
+      "Before text": [
+        "Antes del texto"
+      ],
+      "Before text response": [
+        "Antes de la respuesta de texto"
+      ],
+      "Blog / publisher": [
+        "Blog / editor"
+      ],
+      "Bot Name": [
+        "Nombre del robot"
+      ],
+      "Bot Product Views": [
+        "Vistas de productos de robots"
+      ],
+      "Bot Views": [
+        "Vistas de robots"
+      ],
+      "Bot Visits for the Week of %s": [
+        "Visitas de bot para la semana de %s"
+      ],
+      "Bot visits to products will appear here.": [
+        "Las visitas de bot a productos aparecerán aquí."
+      ],
+      "Bot visits will appear here once crawlers access your pages.": [
+        "Las visitas de bot aparecerán aquí una vez que los rastreadores accedan a sus páginas."
+      ],
+      "Brand or organization name": [
+        "Nombre de la marca u organización"
+      ],
+      "Brief product summary shown in listings...": [
+        "Breve resumen del producto que se muestra en los listados..."
+      ],
+      "Business / organization": [
+        "Empresa/organización"
+      ],
+      "Canonical fill (only without an SEO plugin)": [
+        "Relleno canónico (solo sin el complemento SEO)"
+      ],
+      "Categories are managed in the WooCommerce product editor": [
+        "Las categorías se gestionan en el editor de productos WooCommerce"
+      ],
+      "Categories are managed in the WordPress post editor": [
+        "Las categorías se administran en el editor de publicaciones WordPress"
+      ],
+      "Change Image": [
+        "Cambiar imagen"
+      ],
+      "ChatGPT connects and gets your tools. Revoke anytime from the Access tokens / Connections card below.": [
+        "ChatGPT se conecta y obtiene sus herramientas. Revocar en cualquier momento desde la tarjeta Tokens de acceso/Conexiones que aparece a continuación."
+      ],
+      "ChatGPT custom connectors can't send a Bearer header, so they use OAuth instead. This server now runs its own OAuth 2.1 sign-in, so you can connect privately — no need to make any content public. You stay in control: you approve the connection on a consent screen and can revoke it anytime.": [
+        "Los conectores personalizados ChatGPT no pueden enviar un encabezado de portador, por lo que utilizan OAuth en su lugar. Este servidor ahora ejecuta su propio inicio de sesión OAuth 2.1, por lo que puede conectarse de forma privada, sin necesidad de hacer público ningún contenido. Tú mantienes el control: apruebas la conexión en una pantalla de consentimiento y puedes revocarla en cualquier momento."
+      ],
+      "ChatGPT custom connectors don't support custom headers, so Bearer tokens can't be used. Connectors require OAuth (currently turned off for this server — enable it in settings to connect privately) or no-auth. Deep-research connectors also need search/fetch-style tools — this server ships search_content and get_content_markdown for exactly that. ✔": [
+        "Los conectores personalizados ChatGPT no admiten encabezados personalizados, por lo que no se pueden usar tokens de portador. Los conectores requieren OAuth (actualmente desactivado para este servidor; habilítelo en la configuración para conectarse de forma privada) o sin autenticación. Los conectores de investigación profunda también necesitan herramientas de estilo de búsqueda/obtención; este servidor incluye search_content y get_content_markdown exactamente para eso. ✔"
+      ],
+      "ChatGPT gets the content and site-info tools (published, public data only).": [
+        "ChatGPT obtiene el contenido y las herramientas de información del sitio (publicados, solo datos públicos)."
+      ],
+      "Choose bot models to show data": [
+        "Elija modelos de bot para mostrar datos"
+      ],
+      "City": [
+        "Ciudad"
+      ],
+      "Click": [
+        "Hacer clic"
+      ],
+      "Click the": [
+        "Haga clic en"
+      ],
+      "Clients using": [
+        "Clientes que usan"
+      ],
+      "Close dialog": [
+        "Cerrar diálogo"
+      ],
+      "Coming soon": [
+        "Muy pronto"
+      ],
+      "Connect AI assistants to this site over the Model Context Protocol — analytics, content, and llms.txt tools from one endpoint.": [
+        "Conecte asistentes de IA a este sitio a través del protocolo de contexto modelo: análisis, contenido y herramientas llms.txt desde un punto final."
+      ],
+      "Connect your AI client": [
+        "Conecte su cliente de IA"
+      ],
+      "Consider reducing tags (3-8 recommended)": [
+        "Considere reducir las etiquetas (se recomiendan de 3 a 8)"
+      ],
+      "Content": [
+        "Contenido"
+      ],
+      "Content negotiation (Accept: text/markdown)": [
+        "Negociación de contenido (Aceptar: texto/rebaja)"
+      ],
+      "Content-Signal": [
+        "Señal de contenido"
+      ],
+      "Copied": [
+        "copiado"
+      ],
+      "Copy": [
+        "Copiar"
+      ],
+      "Copy config": [
+        "Copiar configuración"
+      ],
+      "Copy for Elementor": [
+        "Copiar para Elementor"
+      ],
+      "Copy prompt with token": [
+        "Copiar mensaje con token"
+      ],
+      "Copy setup prompt": [
+        "Copiar mensaje de configuración"
+      ],
+      "Copy the schema below (use": [
+        "Copie el esquema a continuación (use"
+      ],
+      "Copy this prompt and paste it into %1$s. The agent will create the config, connect to this site, and verify the tools — no manual editing needed.": [
+        "Copie este mensaje y péguelo en %1$s. El agente creará la configuración, se conectará a este sitio y verificará las herramientas; no es necesaria ninguna edición manual."
+      ],
+      "Copy with script": [
+        "Copiar con guión"
+      ],
+      "Copy with token": [
+        "Copiar con token"
+      ],
+      "Copy your new token now —": [
+        "Copie su nuevo token ahora."
+      ],
+      "Copy-paste configs pre-filled with this site's MCP endpoint.": [
+        "Copie y pegue configuraciones precargadas con el punto final MCP de este sitio."
+      ],
+      "Could not generate": [
+        "No se pudo generar"
+      ],
+      "Could not generate PDF.": [
+        "No se pudo generar PDF."
+      ],
+      "Could not load MCP status: %s": [
+        "No se pudo cargar el estado MCP: %s"
+      ],
+      "Could not publish": [
+        "No se pudo publicar"
+      ],
+      "Country code": [
+        "Código del país"
+      ],
+      "Create a read token below.": [
+        "Cree un token de lectura a continuación."
+      ],
+      "Create a read token in the Access tokens card below.": [
+        "Cree un token de lectura en la tarjeta de tokens de acceso a continuación."
+      ],
+      "Create access token": [
+        "Crear token de acceso"
+      ],
+      "Create named token": [
+        "Crear token con nombre"
+      ],
+      "Create token": [
+        "Crear token"
+      ],
+      "Created": [
+        "Creado"
+      ],
+      "Cumulative Statistics": [
+        "Estadísticas acumuladas"
+      ],
+      "Current Image": [
+        "Imagen actual"
+      ],
+      "Current Images (%d)": [
+        "Imágenes actuales (%d)"
+      ],
+      "Dear Administrator,": [
+        "Estimado administrador,"
+      ],
+      "Delete legacy token": [
+        "Eliminar token heredado"
+      ],
+      "Delete legacy token?": [
+        "¿Eliminar el token heredado?"
+      ],
+      "Detailed findings and one-click fixes are a Pro feature": [
+        "Los hallazgos detallados y las correcciones con un solo clic son una característica Pro"
+      ],
+      "Detailed product description with features, benefits, specifications...": [
+        "Descripción detallada del producto con características, beneficios, especificaciones..."
+      ],
+      "Detected": [
+        "Detectado"
+      ],
+      "Detected — LLMagnet abilities are also reachable through the adapter's endpoint with an Application Password:": [
+        "Detectado: también se puede acceder a las capacidades LLMagnet a través del punto final del adaptador con una contraseña de aplicación:"
+      ],
+      "Directory Status": [
+        "Estado del directorio"
+      ],
+      "Display Position": [
+        "Posición de visualización"
+      ],
+      "Download PDF": [
+        "Descargar PDF"
+      ],
+      "Downloaded PDF. Email failed: %s": [
+        "Descargado PDF. Error de correo electrónico: %s"
+      ],
+      "Duration": [
+        "Duración"
+      ],
+      "Edit post in WordPress": [
+        "Editar publicación en WordPress"
+      ],
+      "Edit product in WooCommerce →": [
+        "Editar producto en WooCommerce →"
+      ],
+      "Email Preview": [
+        "Vista previa de correo electrónico"
+      ],
+      "Enable MCP server": [
+        "Habilitar el servidor MCP"
+      ],
+      "Enable public content": [
+        "Habilitar contenido público"
+      ],
+      "Enable public content access": [
+        "Habilitar el acceso al contenido público"
+      ],
+      "Enable public content access?": [
+        "¿Permitir el acceso al contenido público?"
+      ],
+      "Enable public read": [
+        "Habilitar lectura pública"
+      ],
+      "Enable public read access?": [
+        "¿Habilitar el acceso público de lectura?"
+      ],
+      "Enable the server to run the self-test.": [
+        "Habilite el servidor para ejecutar la autoprueba."
+      ],
+      "Enabled (private)": [
+        "Habilitado (privado)"
+      ],
+      "Enabled (public content mode)": [
+        "Habilitado (modo de contenido público)"
+      ],
+      "Enabled (public read mode)": [
+        "Habilitado (modo de lectura pública)"
+      ],
+      "Endpoint": [
+        "Punto final"
+      ],
+      "Endpoint:": [
+        "Punto final:"
+      ],
+      "Enter to send · public WebMCP route": [
+        "Ingrese para enviar · ruta pública WebMCP"
+      ],
+      "Error fetching data": [
+        "Error al obtener datos"
+      ],
+      "Error: %s": [
+        "Error: %s"
+      ],
+      "Error: network request failed.": [
+        "Error: la solicitud de red falló."
+      ],
+      "Everything ships off by default — enable what you want agents to use.": [
+        "Todo se envía de forma predeterminada: habilite lo que desee que utilicen los agentes."
+      ],
+      "Exposed tools": [
+        "Herramientas expuestas"
+      ],
+      "Fail": [
+        "Fallar"
+      ],
+      "Failed to create token.": [
+        "No se pudo crear el token."
+      ],
+      "Failed to load MCP status.": [
+        "No se pudo cargar el estado MCP."
+      ],
+      "Failed to load data": [
+        "No se pudieron cargar los datos"
+      ],
+      "Failed to load page details": [
+        "No se pudieron cargar los detalles de la página"
+      ],
+      "Failed to load product details": [
+        "No se pudieron cargar los detalles del producto"
+      ],
+      "Failed to load recommendations": [
+        "No se pudieron cargar las recomendaciones"
+      ],
+      "Failed to load timeline data.": [
+        "No se pudieron cargar los datos de la línea de tiempo."
+      ],
+      "Failed to revoke token.": [
+        "No se pudo revocar el token."
+      ],
+      "Failed to save": [
+        "No se pudo guardar"
+      ],
+      "Failed to save page": [
+        "No se pudo guardar la página"
+      ],
+      "Failed to save product": [
+        "No se pudo guardar el producto"
+      ],
+      "Failed to update page": [
+        "No se pudo actualizar la página"
+      ],
+      "Failed to update product": [
+        "No se pudo actualizar el producto"
+      ],
+      "Failed to upload image.": [
+        "No se pudo cargar la imagen."
+      ],
+      "Fair": [
+        "Justo"
+      ],
+      "Featured": [
+        "Presentado"
+      ],
+      "Fill OG/canonical tags only when no SEO plugin owns them.": [
+        "Complete las etiquetas OG/canónicas solo cuando ningún complemento SEO las posea."
+      ],
+      "Fix issues in Products →": [
+        "Solucionar problemas en Productos →"
+      ],
+      "Fix schema": [
+        "Arreglar esquema"
+      ],
+      "Free": [
+        "Gratis"
+      ],
+      "Freq": [
+        "frecuencia"
+      ],
+      "Frequency": [
+        "Frecuencia"
+      ],
+      "Generate your llms.txt →": [
+        "Genera tu llms.txt →"
+      ],
+      "Generated JSON-LD (preview)": [
+        "Generado JSON-LD (vista previa)"
+      ],
+      "Generated Markdown Files": [
+        "Archivos Markdown generados"
+      ],
+      "Good (%d)": [
+        "Bueno (%d)"
+      ],
+      "HTTP %1$d — enable WebMCP first; the public routes are off while the toggle is off": [
+        "HTTP %1$d: habilita WebMCP primero; Las rutas públicas están desactivadas mientras el interruptor está desactivado."
+      ],
+      "HTTP %d": [
+        "HTTP %d"
+      ],
+      "HTTP Link headers advertising llms.txt, the agent card, and schemamap.xml.": [
+        "Encabezados de enlace HTTP que anuncian llms.txt, la tarjeta de agente y esquemamap.xml."
+      ],
+      "Handled externally": [
+        "Manejado externamente"
+      ],
+      "Heads up — ChatGPT works differently": [
+        "Aviso: ChatGPT funciona de manera diferente"
+      ],
+      "Health": [
+        "Salud"
+      ],
+      "Help search engines and AI understand your site with structured data. Scan what you already have, follow plain-language recommendations, then generate and publish JSON-LD without writing code.": [
+        "Ayude a los motores de búsqueda y a la IA a comprender su sitio con datos estructurados. Escanee lo que ya tiene, siga recomendaciones en lenguaje sencillo y luego genere y publique JSON-LD sin escribir código."
+      ],
+      "Home": [
+        "Hogar"
+      ],
+      "I've saved my token": [
+        "He guardado mi token"
+      ],
+      "Image": [
+        "Imagen"
+      ],
+      "Image %d": [
+        "Imagen %d"
+      ],
+      "Image Position": [
+        "Posición de la imagen"
+      ],
+      "Image removed successfully!": [
+        "¡Imagen eliminada exitosamente!"
+      ],
+      "Image selected": [
+        "Imagen seleccionada"
+      ],
+      "Image size must be less than 5MB.": [
+        "El tamaño de la imagen debe ser inferior a 5 MB."
+      ],
+      "Image uploaded successfully!": [
+        "¡Imagen cargada exitosamente!"
+      ],
+      "In ChatGPT, open Settings → Connectors (developer mode) → Add custom connector.": [
+        "En ChatGPT, abra Configuración → Conectores (modo desarrollador) → Agregar conector personalizado."
+      ],
+      "In ChatGPT, open Settings → Connectors (enable Developer mode) → Add custom connector.": [
+        "En ChatGPT, abra Configuración → Conectores (habilite el modo de desarrollador) → Agregar conector personalizado."
+      ],
+      "Include a Product example": [
+        "Incluir un ejemplo de producto"
+      ],
+      "IndexNow is already provided by %1$s — LLMagnet defers to avoid double pings.": [
+        "IndexNow ya lo proporciona %1$s; LLMagnet difiere para evitar pings dobles."
+      ],
+      "Indexed Images": [
+        "Imágenes indexadas"
+      ],
+      "Invalid JSON": [
+        "JSON no válido"
+      ],
+      "Invalid JSON response from server": [
+        "Respuesta JSON no válida del servidor"
+      ],
+      "Invalid post ID": [
+        "ID de publicación no válida"
+      ],
+      "Invalid product ID": [
+        "ID de producto no válido"
+      ],
+      "It has full access and is stored in plaintext. Replace it with a managed token: create a named token above, update your clients, then delete the legacy one.": [
+        "Tiene acceso completo y se almacena en texto plano. Reemplácelo con un token administrado: cree un token con nombre arriba, actualice sus clientes y luego elimine el heredado."
+      ],
+      "Key file:": [
+        "Archivo clave:"
+      ],
+      "LLM Bot Analytics": [
+        "LLM Análisis de Bots"
+      ],
+      "LLM Bot Analytics Report": [
+        "Informe de análisis de bots de LLM"
+      ],
+      "LLM Response Image": [
+        "Imagen de respuesta de LLM"
+      ],
+      "LLM Response Image %d": [
+        "Imagen de respuesta de LLM %d"
+      ],
+      "LLM Response Image (Premium Feature)": [
+        "Imagen de respuesta de LLM (función premium)"
+      ],
+      "LLM Response Images (Premium Feature)": [
+        "Imágenes de respuesta de LLM (función premium)"
+      ],
+      "LLMS.txt Size": [
+        "Tamaño LLMS.txt"
+      ],
+      "LLMagnet detected that %1$s already outputs structured data. We will not print a second schema block on the live site. Copy the templates below and add or extend schema inside %1$s%2$s — avoid duplicating Organization, WebSite, or Product entities.": [
+        "LLMagnet detectó que %1$s ya genera datos estructurados. We will not print a second schema block on the live site. Copie las plantillas a continuación y agregue o extienda el esquema dentro de %1$s%2$s; evite duplicar entidades de Organización, Sitio web o Producto."
+      ],
+      "LLMagnet onboarding": [
+        "LLMagnet incorporación"
+      ],
+      "LLMagnet tools are also exposed as standard WordPress Abilities, so any WP-native AI agent can use them.": [
+        "Las herramientas LLMagnet también están expuestas como habilidades WordPress estándar, por lo que cualquier agente de IA nativo de WP puede usarlas."
+      ],
+      "Label": [
+        "Etiqueta"
+      ],
+      "Last run: %s": [
+        "Última ejecución: %s"
+      ],
+      "Last used": [
+        "último usado"
+      ],
+      "Learn more": [
+        "Más información"
+      ],
+      "Learn more:": [
+        "Más información:"
+      ],
+      "Legacy token (set via WP-CLI) is active": [
+        "El token heredado (configurado a través de WP-CLI) está activo"
+      ],
+      "Let your AI set it up for you": [
+        "Deja que tu IA lo configure por ti"
+      ],
+      "Lets browser agents add products to the cart via WooCommerce’s own Store API. Off by default.": [
+        "Permite a los agentes del navegador agregar productos al carrito a través de la propia Tienda API de WooCommerce. Desactivado de forma predeterminada."
+      ],
+      "Link discovery headers": [
+        "Encabezados de descubrimiento de enlaces"
+      ],
+      "Live status of the W3C Web Model Context API in your own browser, and the tools this site registers for agents.": [
+        "Estado activo del contexto del modelo web del W3C API en su propio navegador y las herramientas que este sitio registra para los agentes."
+      ],
+      "Loading MCP status…": [
+        "Cargando estado MCP..."
+      ],
+      "Loading chart": [
+        "Tabla de carga"
+      ],
+      "Loading table": [
+        "mesa de carga"
+      ],
+      "Local business (address & phone)": [
+        "Negocio local (dirección y teléfono)"
+      ],
+      "Location (optional)": [
+        "Ubicación (opcional)"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Logo image URL (optional)": [
+        "Imagen del logotipo URL (opcional)"
+      ],
+      "Logo preview": [
+        "Vista previa del logotipo"
+      ],
+      "MCP & AI sections": [
+        "MCP y secciones AI"
+      ],
+      "MCP Adapter Plugin": [
+        "Complemento MCP Adapter"
+      ],
+      "MCP Adapter plugin": [
+        "Complemento MCP Adapter"
+      ],
+      "MCP Server": [
+        "MCP Servidor"
+      ],
+      "MCP Tools": [
+        "MCP Herramientas"
+      ],
+      "MCP connection": [
+        "Conexión MCP"
+      ],
+      "MCP endpoint URL": [
+        "MCP punto final URL"
+      ],
+      "MCP server is active": [
+        "El servidor MCP está activo"
+      ],
+      "MCP server is disabled": [
+        "El servidor MCP está deshabilitado"
+      ],
+      "Manage on the MCP & AI page": [
+        "Administrar en la página MCP & AI"
+      ],
+      "Managed User-agent groups for AI crawlers plus the Content-Signal block.": [
+        "Grupos de agentes de usuario administrados para rastreadores de IA más el bloque de señal de contenido."
+      ],
+      "Manual: %s": [
+        "Manual: %s"
+      ],
+      "Markdown content negotiation": [
+        "Markdown negociación de contenido"
+      ],
+      "Media library": [
+        "Biblioteca multimedia"
+      ],
+      "Mentions in the last 30 days": [
+        "Menciones en los últimos 30 días"
+      ],
+      "Meta-description fill (an SEO plugin does this better)": [
+        "Relleno de metadescripción (un complemento SEO lo hace mejor)"
+      ],
+      "Missing ALT text": [
+        "Falta texto alternativo"
+      ],
+      "Missing schema (%d)": [
+        "Falta esquema (%d)"
+      ],
+      "My Website": [
+        "Mi sitio web"
+      ],
+      "Needs attention (%d)": [
+        "Necesita atención (%d)"
+      ],
+      "New token secret": [
+        "Nuevo token secreto"
+      ],
+      "No AI Commerce Activity": [
+        "Sin actividad comercial de IA"
+      ],
+      "No AI-attributed commerce activity in the last 30 days.": [
+        "No hay actividad comercial atribuida a la IA en los últimos 30 días."
+      ],
+      "No MCP calls yet — connect a client above.": [
+        "Aún no hay llamadas MCP: conecte un cliente arriba."
+      ],
+      "No Products Found": [
+        "No se encontraron productos"
+      ],
+      "No Products Viewed": [
+        "No hay productos vistos"
+      ],
+      "No categories assigned": [
+        "No hay categorías asignadas"
+      ],
+      "No headings found": [
+        "No se encontraron títulos"
+      ],
+      "No image selected": [
+        "Ninguna imagen seleccionada"
+      ],
+      "No missing entities detected for this page. Run a fresh scan if you recently updated schema.": [
+        "No se detectaron entidades faltantes para esta página. Ejecute un análisis nuevo si actualizó el esquema recientemente."
+      ],
+      "No page traffic yet.": [
+        "Aún no hay tráfico de página."
+      ],
+      "No parameters.": [
+        "Sin parámetros."
+      ],
+      "No product traffic yet.": [
+        "Aún no hay tráfico de productos."
+      ],
+      "No products were viewed by bots in the last week.": [
+        "Los bots no vieron ningún producto durante la última semana."
+      ],
+      "No recommendations yet. Run a scan to see tailored suggestions.": [
+        "Aún no hay recomendaciones. Ejecute un escaneo para ver sugerencias personalizadas."
+      ],
+      "No tags (add 3-8 recommended)": [
+        "Sin etiquetas (se recomienda agregar de 3 a 8)"
+      ],
+      "No tags yet. Add tags below.": [
+        "Aún no hay etiquetas. Agregue etiquetas a continuación."
+      ],
+      "No tokens yet. Create one to connect an AI client.": [
+        "Aún no hay fichas. Cree uno para conectar un cliente de IA."
+      ],
+      "Not Agent Ready yet": [
+        "Aún no está listo el agente"
+      ],
+      "Not Generated": [
+        "No generado"
+      ],
+      "Not applicable": [
+        "No aplicable"
+      ],
+      "Not available (requires WP 6.9+, running %s)": [
+        "No disponible (requiere WP 6.9+, ejecutando %s)"
+      ],
+      "Not available on WordPress %1$s. The Abilities API ships with WordPress 6.9+ — update WordPress to expose LLMagnet tools as native abilities.": [
+        "No disponible en WordPress %1$s. Abilities API se envía con WordPress 6.9+: actualice WordPress para exponer las herramientas LLMagnet como capacidades nativas."
+      ],
+      "Not detected": [
+        "No detectado"
+      ],
+      "Not detected. The official adapter exposes all WordPress abilities (including LLMagnet's) over a second MCP endpoint.": [
+        "No detectado. El adaptador oficial expone todas las capacidades WordPress (incluidas las de LLMagnet) en un segundo punto final MCP."
+      ],
+      "Not enough visibility history yet. Keep tracking to see trends.": [
+        "Aún no hay suficiente historial de visibilidad. Siga rastreando para ver las tendencias."
+      ],
+      "OK": [
+        "DE ACUERDO"
+      ],
+      "On WordPress 6.9+ with the official MCP Adapter plugin, these tools are also available at": [
+        "En WordPress 6.9+ con el complemento oficial MCP Adapter, estas herramientas también están disponibles en"
+      ],
+      "Open Claude Desktop's config: Settings → Developer → Edit Config (": [
+        "Abra la configuración del escritorio Claude: Configuración → Desarrollador → Editar configuración ("
+      ],
+      "Open Graph verify-or-fill": [
+        "Open Graph verificar o completar"
+      ],
+      "Open LLMagnet →": [
+        "Abrir LLMagnet →"
+      ],
+      "Open in Elementor": [
+        "Abrir en Elementor"
+      ],
+      "Open the page in Elementor.": [
+        "Abra la página en Elementor."
+      ],
+      "Open this page in": [
+        "Abra esta página en"
+      ],
+      "Optimal tag count": [
+        "Recuento óptimo de etiquetas"
+      ],
+      "Other": [
+        "Otro"
+      ],
+      "PDF downloaded and emailed to you.": [
+        "PDF descargado y enviado por correo electrónico."
+      ],
+      "PDF downloaded. Email could not be sent (API settings missing).": [
+        "PDF descargado. No se pudo enviar el correo electrónico (faltan las configuraciones API)."
+      ],
+      "Page analytics is available in the premium version.": [
+        "El análisis de páginas está disponible en la versión premium."
+      ],
+      "Page schema from Elementor is merged into the single LLMagnet JSON-LD block (site graph + page entities) — not a separate script tag.": [
+        "El esquema de página de Elementor se fusiona en un único bloque LLMagnet JSON-LD (gráfico del sitio + entidades de página), no en una etiqueta de secuencia de comandos separada."
+      ],
+      "Parameter": [
+        "Parámetro"
+      ],
+      "Pass": [
+        "Aprobar"
+      ],
+      "Paste in Elementor": [
+        "Pegar en Elementor"
+      ],
+      "Paste into": [
+        "Pegar en"
+      ],
+      "Paste the endpoint URL:": [
+        "Pegue el punto final URL:"
+      ],
+      "Paste the snippet (it uses the mcp-remote shim for Bearer auth).": [
+        "Pegue el fragmento (utiliza la cuña mcp-remote para la autenticación del portador)."
+      ],
+      "Phone": [
+        "Teléfono"
+      ],
+      "Ping IndexNow-backed engines when content is published or updated.": [
+        "Haga ping a los motores respaldados por IndexNow cuando se publique o actualice contenido."
+      ],
+      "Plain permalinks — clients must use the ?rest_route= URL shown below": [
+        "Enlaces permanentes simples: los clientes deben usar ?rest_route= URL que se muestra a continuación"
+      ],
+      "Please enter a label (e.g. \"Claude Desktop\").": [
+        "Introduzca una etiqueta (por ejemplo, \"Claude Escritorio\")."
+      ],
+      "Please find below the comprehensive analytics report for LLM bot visits to your website. This report covers your AI Visibility Score, weekly performance metrics, and cumulative all-time statistics.": [
+        "A continuación encontrará el informe analítico completo de las visitas del bot LLM a su sitio web. Este informe cubre su puntuación de visibilidad de IA, métricas de rendimiento semanales y estadísticas acumuladas de todos los tiempos."
+      ],
+      "Please select an image file.": [
+        "Seleccione un archivo de imagen."
+      ],
+      "Plugin Version": [
+        "Versión del complemento"
+      ],
+      "Plus": [
+        "Más"
+      ],
+      "Poor": [
+        "Pobre"
+      ],
+      "Post": [
+        "Correo"
+      ],
+      "Postal code": [
+        "Código Postal"
+      ],
+      "Posts Available to Export": [
+        "Publicaciones disponibles para exportar"
+      ],
+      "Powered by": [
+        "Desarrollado por"
+      ],
+      "Premium Feature:": [
+        "Característica prémium:"
+      ],
+      "Premium Product Example": [
+        "Ejemplo de producto premium"
+      ],
+      "Preview": [
+        "Avance"
+      ],
+      "Preview unavailable for this URL.": [
+        "Vista previa no disponible para este URL."
+      ],
+      "Previous": [
+        "Anterior"
+      ],
+      "Private (recommended)": [
+        "Privado (recomendado)"
+      ],
+      "Private connection ready — OAuth is on ✔": [
+        "Conexión privada lista: OAuth está activado ✔"
+      ],
+      "Pro": [
+        "Pro"
+      ],
+      "Pro feature": [
+        "característica profesional"
+      ],
+      "Product Readiness for AI": [
+        "Preparación del producto para la IA"
+      ],
+      "Product analytics is available in the Plus and Enterprise plans.": [
+        "El análisis de productos está disponible en los planes Plus y Enterprise."
+      ],
+      "Product image": [
+        "Imagen del producto"
+      ],
+      "Product of the Week": [
+        "Producto de la semana"
+      ],
+      "Protocol %s": [
+        "Protocolo %s"
+      ],
+      "Public access is on (%1$s) — ChatGPT can connect without authentication.": [
+        "El acceso público está activado (%1$s): ChatGPT puede conectarse sin autenticación."
+      ],
+      "Public content": [
+        "Contenido público"
+      ],
+      "Public read": [
+        "Lectura pública"
+      ],
+      "Publish to website": [
+        "Publicar en el sitio web"
+      ],
+      "Published content also becomes readable anonymously. Write tools still require an authenticated read/write token.": [
+        "El contenido publicado también se puede leer de forma anónima. Las herramientas de escritura aún requieren un token de lectura/escritura autenticado."
+      ],
+      "Purchases": [
+        "Compras"
+      ],
+      "Re-add the feed <link rel=\"alternate\"> tags if your theme removed them.": [
+        "Vuelva a agregar las etiquetas del feed <link rel=\"alternate\"> si su tema las eliminó."
+      ],
+      "Re-run audit": [
+        "Volver a ejecutar la auditoría"
+      ],
+      "Read": [
+        "Leer"
+      ],
+      "Read the MCP security docs": [
+        "Lea los documentos de seguridad MCP"
+      ],
+      "Read tools (%d)": [
+        "Herramientas de lectura (%d)"
+      ],
+      "Read-write": [
+        "lectura-escritura"
+      ],
+      "Recent activity": [
+        "Actividad reciente"
+      ],
+      "Recommended: at least 3 social profiles (e.g. LinkedIn, X, Facebook).": [
+        "Recomendado: al menos 3 perfiles sociales (por ejemplo, LinkedIn, X, Facebook)."
+      ],
+      "Refresh": [
+        "Refrescar"
+      ],
+      "Refresh activity": [
+        "Actualizar actividad"
+      ],
+      "Refresh recommendations": [
+        "Actualizar recomendaciones"
+      ],
+      "Refresh score data": [
+        "Actualizar datos de puntuación"
+      ],
+      "Region / state": [
+        "Región / estado"
+      ],
+      "Register search/content tools on navigator.modelContext for browser agents on every front-end page.": [
+        "Registre herramientas de búsqueda/contenido en navigator.modelContext para agentes de navegador en cada página de inicio."
+      ],
+      "Registered tools (%d)": [
+        "Herramientas registradas (%d)"
+      ],
+      "Reload Cursor; the server appears under MCP settings.": [
+        "Recargar Cursor; el servidor aparece en la configuración MCP."
+      ],
+      "Remove social profile": [
+        "Eliminar perfil social"
+      ],
+      "Replace %1$s with a token from the Access tokens card below.": [
+        "Reemplace %1$s con un token de la tarjeta de tokens de acceso a continuación."
+      ],
+      "Required": [
+        "Requerido"
+      ],
+      "Requires a token or Application Password for every request.": [
+        "Requiere un token o contraseña de aplicación para cada solicitud."
+      ],
+      "Respectfully,": [
+        "Respetuosamente,"
+      ],
+      "Restart Claude Desktop.": [
+        "Reinicie el escritorio Claude."
+      ],
+      "Restore RSS feed links": [
+        "Restaurar enlaces de fuentes RSS"
+      ],
+      "Result": [
+        "Resultado"
+      ],
+      "Retry": [
+        "Rever"
+      ],
+      "Revenue from AI": [
+        "Ingresos de la IA"
+      ],
+      "Review the notes above. Run a fresh scan if you recently updated schema on this page.": [
+        "Revise las notas anteriores. Ejecute un análisis nuevo si actualizó recientemente el esquema en esta página."
+      ],
+      "Revoke": [
+        "Revocar"
+      ],
+      "Revoke token": [
+        "Revocar token"
+      ],
+      "Revoke token?": [
+        "¿Revocar token?"
+      ],
+      "Root Path": [
+        "Ruta raíz"
+      ],
+      "Run a scan to compute score.": [
+        "Ejecute un escaneo para calcular la puntuación."
+      ],
+      "Run a scan to see structured data coverage.": [
+        "Ejecute un escaneo para ver la cobertura de datos estructurados."
+      ],
+      "Run audit": [
+        "Ejecutar auditoría"
+      ],
+      "Run fresh scan": [
+        "Ejecute un nuevo análisis"
+      ],
+      "Run search": [
+        "Ejecutar búsqueda"
+      ],
+      "Run this in your terminal:": [
+        "Ejecute esto en su terminal:"
+      ],
+      "Run your first Agent-Ready audit": [
+        "Ejecute su primera auditoría Agent-Ready"
+      ],
+      "Running audit…": [
+        "Ejecutando auditoría…"
+      ],
+      "Sampled audit of your site against current agent-readiness standards — discovery files, machine-readable content, security headers, and WebMCP.": [
+        "Auditoría de muestra de su sitio según los estándares actuales de preparación de agentes: archivos de descubrimiento, contenido legible por máquina, encabezados de seguridad y WebMCP."
+      ],
+      "Save & Generate preview": [
+        "Guardar y generar vista previa"
+      ],
+      "Saved.": [
+        "Guardado."
+      ],
+      "Saving…": [
+        "Ahorro…"
+      ],
+      "Scale: Poor · Fair · Good · Excellent — from the scan (JSON-LD coverage, checks, and issues).": [
+        "Escala: Deficiente · Regular · Bueno · Excelente: según el escaneo (cobertura, controles y problemas JSON-LD)."
+      ],
+      "Scan": [
+        "Escanear"
+      ],
+      "Scan failed": [
+        "Error de escaneo"
+      ],
+      "Scan running in the background — results update as pages are analyzed.": [
+        "El análisis se ejecuta en segundo plano: los resultados se actualizan a medida que se analizan las páginas."
+      ],
+      "Scanning %1$d/%2$d pages (%3$d%%)": [
+        "Escaneado de %1$d/%2$d páginas (%3$d%%)"
+      ],
+      "Scans and recommendations are available for everyone. Generating and publishing JSON-LD requires Pro, Plus, or Enterprise (trials included).": [
+        "Los escaneos y las recomendaciones están disponibles para todos. Generar y publicar JSON-LD requiere Pro, Plus o Enterprise (pruebas incluidas)."
+      ],
+      "Schema JSON-LD sections": [
+        "Schema JSON-LD secciones"
+      ],
+      "Schema builder": [
+        "Generador de esquemas"
+      ],
+      "Schema found": [
+        "Esquema encontrado"
+      ],
+      "Schema health score %1$d out of 100": [
+        "Puntuación de salud del esquema %1$d de 100"
+      ],
+      "Schema health score loading": [
+        "Carga de puntuación de salud del esquema"
+      ],
+      "Schema validator": [
+        "validador de esquemas"
+      ],
+      "Scope": [
+        "Alcance"
+      ],
+      "Search": [
+        "Buscar"
+      ],
+      "Search your site like an agent would…": [
+        "Busque en su sitio como lo haría un agente..."
+      ],
+      "Security headers": [
+        "encabezados de seguridad"
+      ],
+      "Select Company Logo": [
+        "Seleccione el logotipo de la empresa"
+      ],
+      "Select Images": [
+        "Seleccionar imágenes"
+      ],
+      "Select LLM Response Image": [
+        "Seleccione la imagen de respuesta de LLM"
+      ],
+      "Select LLM Response Images": [
+        "Seleccione imágenes de respuesta de LLM"
+      ],
+      "Select an image to display with responses from all Large Language Models. This image will be included in the llms.txt file and will work with ChatGPT, Claude, Gemini, GPT-4, and other LLMs.": [
+        "Seleccione una imagen para mostrar con las respuestas de todos los modelos de lenguaje grande. Esta imagen se incluirá en el archivo llms.txt y funcionará con ChatGPT, Claude, Gemini, GPT-4 y otros LLM."
+      ],
+      "Select from Media Library": [
+        "Seleccionar de la biblioteca multimedia"
+      ],
+      "Select logo": [
+        "Seleccionar logotipo"
+      ],
+      "Selected image": [
+        "Imagen seleccionada"
+      ],
+      "Self-test request failed.": [
+        "La solicitud de autoprueba falló."
+      ],
+      "Self-test results": [
+        "Resultados de la autoprueba"
+      ],
+      "Serve agent-card.json, agent-skills, mcp.json, security.txt, and the change-password redirect.": [
+        "Sirve agente-card.json, agente-skills, mcp.json, seguridad.txt y la redirección de cambio de contraseña."
+      ],
+      "Serve any page as clean markdown at {permalink}.md.": [
+        "Publique cualquier página como rebaja limpia en {permalink}.md."
+      ],
+      "Serve markdown on the normal permalink when an agent sends Accept: text/markdown.": [
+        "Servir rebaja en el enlace permanente normal cuando un agente envía Aceptar: texto/rebaja."
+      ],
+      "Set Authentication to \"None\".": [
+        "Establezca la autenticación en \"Ninguna\"."
+      ],
+      "Set Authentication to \"OAuth\". ChatGPT discovers the sign-in automatically.": [
+        "Establezca la autenticación en \"OAuth\". ChatGPT descubre el inicio de sesión automáticamente."
+      ],
+      "Short": [
+        "Corto"
+      ],
+      "Short description": [
+        "Breve descripción"
+      ],
+      "Should you require any additional information or have questions regarding this report, please do not hesitate to contact us.": [
+        "Si necesita información adicional o tiene preguntas sobre este informe, no dude en contactarnos."
+      ],
+      "Showing %1$d–%2$d of %3$d": [
+        "Mostrando %1$d–%2$d de %3$d"
+      ],
+      "Site type": [
+        "Tipo de sitio"
+      ],
+      "Smoke test with curl:": [
+        "Prueba de humo con rizo:"
+      ],
+      "Smoke-test": [
+        "prueba de humo"
+      ],
+      "Social profiles": [
+        "Perfiles sociales"
+      ],
+      "State your AI content-usage preferences in robots.txt (requires AI crawler rules).": [
+        "Indique sus preferencias de uso de contenido de IA en robots.txt (requiere reglas de rastreo de IA)."
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Streamable HTTP (stateless)": [
+        "HTTP transmitible (sin estado)"
+      ],
+      "Street": [
+        "Calle"
+      ],
+      "Structure health": [
+        "Salud de la estructura"
+      ],
+      "Test connection": [
+        "Conexión de prueba"
+      ],
+      "The WP-CLI legacy token will stop working immediately. Make sure every client has been switched to a managed token first.": [
+        "El token heredado de WP-CLI dejará de funcionar inmediatamente. Primero asegúrese de que cada cliente haya sido cambiado a un token administrado."
+      ],
+      "The excerpt controls how this page appears in search results and social sharing. Keep it between 120-160 characters.": [
+        "El extracto controla cómo aparece esta página en los resultados de búsqueda y en el intercambio social. Mantenlo entre 120 y 160 caracteres."
+      ],
+      "The last 50 MCP calls handled by this server.": [
+        "Las últimas 50 llamadas MCP manejadas por este servidor."
+      ],
+      "This feature is available for premium users only. Upgrade to attach images to your LLM responses.": [
+        "Esta función está disponible solo para usuarios premium. Actualice para adjuntar imágenes a sus respuestas de LLM."
+      ],
+      "This feature is available for premium users only. Upgrade to attach multiple images to your LLM responses.": [
+        "Esta función está disponible solo para usuarios premium. Actualice para adjuntar varias imágenes a sus respuestas de LLM."
+      ],
+      "This is an automated report generated by LLMagnet AI SEO Optimizer.": [
+        "Este es un informe automatizado generado por LLMagnet AI SEO Optimizer."
+      ],
+      "This report shows LLM bot visits to your website during the week of %s.": [
+        "Este informe muestra las visitas del bot LLM a su sitio web durante la semana de %s."
+      ],
+      "Time": [
+        "Tiempo"
+      ],
+      "Tip: ChatGPT's general-purpose custom connectors require a paid plan with Developer mode. The consent screen and token issuance are handled entirely by your site.": [
+        "Consejo: Los conectores personalizados de uso general de ChatGPT requieren un plan pago con modo de desarrollador. La pantalla de consentimiento y la emisión de tokens son manejadas completamente por su sitio."
+      ],
+      "Token": [
+        "Simbólico"
+      ],
+      "Token created": [
+        "Token creado"
+      ],
+      "Tokens grant API access to this site's LLMagnet data. Treat them like passwords.": [
+        "Los tokens otorgan a API acceso a los datos LLMagnet de este sitio. Trátelos como contraseñas."
+      ],
+      "Tool": [
+        "Herramienta"
+      ],
+      "Tools": [
+        "Herramientas"
+      ],
+      "Top Pages": [
+        "Páginas principales"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Transport:": [
+        "Transporte:"
+      ],
+      "Try WebMCP": [
+        "Pruebe WebMCP"
+      ],
+      "Type": [
+        "Tipo"
+      ],
+      "Types": [
+        "Tipos"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "URL Structure": [
+        "URL Estructura"
+      ],
+      "Unknown": [
+        "Desconocido"
+      ],
+      "Untitled": [
+        "Intitulado"
+      ],
+      "Upload Error": [
+        "Error de carga"
+      ],
+      "Upload New": [
+        "Subir nuevo"
+      ],
+      "Upload New Image": [
+        "Subir nueva imagen"
+      ],
+      "Upload failed. Please check your connection and try again.": [
+        "La carga falló. Por favor verifique su conexión e inténtelo nuevamente."
+      ],
+      "Upload failed. Please try again.": [
+        "La carga falló. Por favor inténtalo de nuevo."
+      ],
+      "Uploading...": [
+        "Subiendo..."
+      ],
+      "Use this image": [
+        "Usa esta imagen"
+      ],
+      "Use this logo": [
+        "Utilice este logotipo"
+      ],
+      "Uses your WordPress site logo when set. You can also paste a URL or pick from the media library.": [
+        "Utiliza el logotipo de su sitio WordPress cuando está configurado. También puede pegar un URL o seleccionarlo de la biblioteca multimedia."
+      ],
+      "Valid JSON": [
+        "Válido JSON"
+      ],
+      "View": [
+        "Vista"
+      ],
+      "View plans": [
+        "Ver planos"
+      ],
+      "View pricing plans": [
+        "Ver planes de precios"
+      ],
+      "View products →": [
+        "Ver productos →"
+      ],
+      "View-only on your plan.": [
+        "Solo visualización en su plan."
+      ],
+      "Visibility Score Over Time": [
+        "Puntuación de visibilidad a lo largo del tiempo"
+      ],
+      "Visibility score over time": [
+        "Puntuación de visibilidad a lo largo del tiempo"
+      ],
+      "Visit": [
+        "Visita"
+      ],
+      "Visit Types": [
+        "Tipos de visita"
+      ],
+      "Visit Volume": [
+        "Volumen de visitas"
+      ],
+      "Vol": [
+        "volumen"
+      ],
+      "Volume": [
+        "Volumen"
+      ],
+      "Warning": [
+        "Advertencia"
+      ],
+      "We analyzed this page and found structured data gaps. Copy the JSON-LD below into your theme, page builder, or SEO plugin.": [
+        "Analizamos esta página y encontramos lagunas de datos estructurados. Copie el JSON-LD a continuación en su tema, creador de páginas o complemento SEO."
+      ],
+      "We couldn't load your analytics (missing API configuration). Please reload the page.": [
+        "No pudimos cargar sus análisis (falta la configuración API). Por favor recarga la página."
+      ],
+      "We couldn't load your analytics right now. Please reload the page or try again shortly.": [
+        "No pudimos cargar sus análisis en este momento. Vuelva a cargar la página o vuelva a intentarlo en breve."
+      ],
+      "We couldn't load your analytics right now. Please try again in a moment.": [
+        "No pudimos cargar sus análisis en este momento. Inténtelo de nuevo en un momento."
+      ],
+      "WebMCP add to cart tool": [
+        "WebMCP herramienta para agregar al carrito"
+      ],
+      "WebMCP “Add to cart” tool": [
+        "WebMCP Herramienta “Añadir al carrito”"
+      ],
+      "Website URL": [
+        "Sitio web URL"
+      ],
+      "Week of": [
+        "Semana de"
+      ],
+      "Week of %s": [
+        "Semana de %s"
+      ],
+      "Weekly Bot Visits": [
+        "Visitas semanales de bots"
+      ],
+      "Weekly Performance Metrics": [
+        "Métricas de rendimiento semanales"
+      ],
+      "Weekly Summary": [
+        "Resumen semanal"
+      ],
+      "Weekly Visits": [
+        "Visitas Semanales"
+      ],
+      "Well-known endpoints": [
+        "Puntos finales conocidos"
+      ],
+      "What we found": [
+        "lo que encontramos"
+      ],
+      "When off, this content is left out of llms.txt, llms-full.txt and the markdown docs. Changes apply to the export files right away.": [
+        "Cuando está desactivado, este contenido queda fuera de llms.txt, llms-full.txt y los documentos de rebajas. Los cambios se aplican a los archivos de exportación de inmediato."
+      ],
+      "Widget": [
+        "widget"
+      ],
+      "WordPress Abilities API": [
+        "WordPress Abilities API"
+      ],
+      "WordPress Version": [
+        "WordPress Versión"
+      ],
+      "WordPress ecosystem": [
+        "ecosistema WordPress"
+      ],
+      "Working…": [
+        "Laboral…"
+      ],
+      "Write": [
+        "Escribir"
+      ],
+      "Write action": [
+        "Escribir acción"
+      ],
+      "Write tools (%d)": [
+        "Herramientas de escritura (%d)"
+      ],
+      "Write tools always require an authenticated read/write token — no mode changes that.": [
+        "Las herramientas de escritura siempre requieren un token de lectura/escritura autenticado; ningún modo cambia eso."
+      ],
+      "You can select multiple images from the media library or upload them one by one.": [
+        "Puede seleccionar varias imágenes de la biblioteca multimedia o cargarlas una por una."
+      ],
+      "You\\u2019ll be sent to this site to sign in and approve the connection (pick read-only or read + write).": [
+        "Se le enviará a este sitio para iniciar sesión y aprobar la conexión (elija solo lectura o lectura + escritura)."
+      ],
+      "Your access mode is Private, so ChatGPT cannot connect right now. The recommended path is enabling Public content access: anyone can then read your published content via MCP (the same data search engines see) — analytics stay private.": [
+        "Su modo de acceso es Privado, por lo que ChatGPT no puede conectarse en este momento. La ruta recomendada es habilitar el acceso al contenido público: cualquiera puede leer su contenido publicado a través de MCP (los mismos datos que ven los motores de búsqueda): los análisis permanecen privados."
+      ],
+      "Your browser doesn\\u2019t support WebMCP yet — tools are registered for browsers/agents that do.": [
+        "Su navegador aún no admite WebMCP; las herramientas están registradas para navegadores/agentes que sí lo admiten."
+      ],
+      "Your score and domain breakdown are shown above.": [
+        "Su puntuación y el desglose del dominio se muestran arriba."
+      ],
+      "already outputs JSON-LD on your site. LLMagnet will not add a second block — use": [
+        "ya genera JSON-LD en su sitio. LLMagnet no agregará un segundo bloque; use"
+      ],
+      "and click": [
+        "y haga clic"
+      ],
+      "another SEO plugin": [
+        "otro complemento SEO"
+      ],
+      "auth failed": [
+        "autenticación fallida"
+      ],
+      "destructive": [
+        "destructivo"
+      ],
+      "e.g. Claude Desktop": [
+        "p.ej. Claude Escritorio"
+      ],
+      "e.g. IL, US": [
+        "p.ej. IL, EE. UU."
+      ],
+      "for templates and extend schema inside": [
+        "para plantillas y ampliar el esquema en el interior"
+      ],
+      "gear (bottom-left) →": [
+        "engranaje (abajo a la izquierda) →"
+      ],
+      "idempotent": [
+        "idempotente"
+      ],
+      "in the graph (uses a sample product when available).": [
+        "en el gráfico (utiliza un producto de muestra cuando esté disponible)."
+      ],
+      "in your workspace (Copilot agent mode).": [
+        "en su espacio de trabajo (modo agente Copilot)."
+      ],
+      "includeSubDomains applies HSTS to every subdomain for a year — make sure all of them serve HTTPS before enabling.": [
+        "includeSubDomains aplica HSTS a cada subdominio durante un año; asegúrese de que todos sirvan HTTPS antes de habilitarlos."
+      ],
+      "is available in this browser.": [
+        "está disponible en este navegador."
+      ],
+      "llms.txt updated %s": [
+        "llms.txt actualizado %s"
+      ],
+      "namespace.": [
+        "espacio de nombres."
+      ],
+      "nosniff, Referrer-Policy, Permissions-Policy, HSTS, CSP report-only.": [
+        "nosniff, Política de referencia, Política de permisos, HSTS, Informe CSP únicamente."
+      ],
+      "or Elementor page settings.": [
+        "o Elementor configuración de página."
+      ],
+      "projected": [
+        "proyectado"
+      ],
+      "public: content modes": [
+        "público: modos de contenido"
+      ],
+      "public: read mode": [
+        "público: modo lectura"
+      ],
+      "robots.txt AI crawler rules": [
+        "robots.txt reglas del rastreador de IA"
+      ],
+      "scope · stored hashed on the server.": [
+        "alcance · almacenado en hash en el servidor."
+      ],
+      "tab →": [
+        "pestaña →"
+      ],
+      "to save your details and refresh the JSON-LD below, then publish when ready. This saves your graph and prints one JSON-LD script in the site HTML (wp_head). Other SEO plugins may also output schema—we don't remove theirs.": [
+        "para guardar sus datos y actualizar el JSON-LD a continuación, luego publíquelo cuando esté listo. Esto guarda su gráfico e imprime un script JSON-LD en el HTML del sitio (wp_head). Otros complementos SEO también pueden generar esquemas; no eliminamos los suyos."
+      ],
+      "to see every finding with evidence and apply automated fixes.": [
+        "para ver cada hallazgo con evidencia y aplicar correcciones automáticas."
+      ],
+      "using an Application Password.": [
+        "utilizando una contraseña de aplicación."
+      ],
+      "will immediately lose access. This cannot be undone.": [
+        "inmediatamente perderá el acceso. Esto no se puede deshacer."
+      ],
+      "you won't be able to see it again.": [
+        "no podrás volver a verlo."
+      ],
+      "your AI client": [
+        "tu cliente de IA"
+      ],
+      "— WebMCP is currently off": [
+        "— WebMCP está actualmente desactivado"
+      ],
+      "— all tools, including future write actions.": [
+        "– todas las herramientas, incluidas las acciones de escritura futuras."
+      ],
+      "— read-only tools (recommended).": [
+        "— herramientas de solo lectura (recomendado)."
+      ],
+      "✓ Optimal tag count": [
+        "✓ Recuento óptimo de etiquetas"
+      ]
+    }
+  }
+}

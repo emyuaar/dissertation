@@ -1,0 +1,1 @@
+import{_ as r}from"./preload-helper-a4192956.js";import{r as t}from"./index-9c2c3e00.js";import{s as a}from"./lazy-admin-page-2ed613b0.js";async function o(){return{default:(await r(()=>import(a("bot-traffic-chart.js")),[],import.meta.url)).BotTrafficChart}}const c=t.lazy(()=>o());export{c as L};

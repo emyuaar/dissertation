@@ -1,0 +1,78 @@
+/*
+* Main styling file for Better Business Reviews plugin
+*/
+
+.brtpmj_businessheader{
+	display: flex;
+	margin-bottom: 15px;
+	align-items: center;
+	gap: 10px;
+}
+.brtpmj_businessheader img{
+	width: 150px;
+}
+.brtpmj_business_ratings{
+	display: flex;
+	gap: 5px;
+	position: relative;
+}
+.brtpmj_business_ratings span{
+	font-weight: bold;
+}
+.brtpmj_br_score_img img{
+	width: 150px;
+	vertical-align: bottom;
+}
+.brtpmj_business_ratings a{
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px;
+	line-height: 1;
+	font-weight: bold;
+	text-decoration: none;
+}
+.brtpmj_business_ratings a img{
+	width: 15px;
+	height: 15px;
+	vertical-align: bottom;
+}
+
+/* single review */
+.brtpmj_single_rvw {
+	border: 1px solid #e5e5dd;
+	margin-bottom: 15px;
+	padding: 15px;
+	border-radius: 8px;
+	break-inside: avoid;
+}
+.brtpmj_sr_author_overview{
+	display: flex;
+	border-bottom: 1px solid #e5e5dd;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+}
+.brtpmj_sr_ab_img {
+	width: 50px;
+	height: 50px;
+	background: #d1f9ea;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.brtpmj_sr_ab_img span{
+	font-weight: bold;
+}
+.brtpmj_sr_ab_img img{
+	border-radius: 50%;
+}
+.brtpmj_sr_ab_name_date {
+	display: flex;
+	flex-direction: column;
+	margin-left: 15px;
+}
+.brtpmj_sr_ab_name{
+	font-weight: bold;
+}

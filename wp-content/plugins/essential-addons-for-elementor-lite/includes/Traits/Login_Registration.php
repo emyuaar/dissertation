@@ -1,0 +1,2740 @@
+<?php
+
+namespace Essential_Addons_Elementor\Traits;
+
+use Elementor\Plugin;
+use Essential_Addons_Elementor\Classes\Helper;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Trait Login_Registration is responsible for login or registering user using custom login | register widget.
+ * @package Essential_Addons_Elementor\Traits
+ */
+trait Login_Registration {
+	/**
+	 * @var bool
+	 */
+	public static $send_custom_email = false;
+	public static $send_custom_email_admin = false;
+	public static $send_custom_email_lostpassword = false;
+	public static $eael_custom_profile_field_prefix = 'eael_custom_profile_field_';
+
+	/**
+	 * It will contain all email related options like email subject, content, email content type etc.
+	 * @var array   $email_options {
+	 *      Used to build wp_mail().
+	 * @type string $template_type The type of the email template; custom | default.
+	 * @type string $subject       The subject of the email.
+	 * @type string $message       The body of the email.
+	 * @type string $content_type  The type of the email body; plain | html
+	 * }
+	 */
+	public static $email_options = [];
+	public static $email_options_lostpassword = [];
+
+	public static $recaptcha_v3_default_action = 'eael_login_register_form';
+
+	public static function get_recaptcha_threshold( $settings = [] ) {
+		$score_threshold = isset( $settings['login_register_recaptcha_v3_score_threshold']['size'] ) ? floatval( $settings['login_register_recaptcha_v3_score_threshold']['size'] ) : 0.5;
+		$score_threshold = $score_threshold >= 0 && $score_threshold <= 1 ? $score_threshold : 0.5;
+		return apply_filters( 'eael_recaptcha_threshold', $score_threshold );
+	}
+
+	public function login_or_register_user() {
+		do_action( 'eael/login-register/before-processing-login-register', $_POST ); //phpcs:ignore WordPress.Security.NonceVerification.Missing
+		// login or register form?
+		if ( isset( $_POST['eael-login-submit'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Missing
+			$this->log_user_in();
+		} else if ( isset( $_POST['eael-register-submit'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Missing
+			$this->register_user();
+		} else if ( isset( $_POST['eael-lostpassword-submit'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Missing
+			$this->send_password_reset();
+		} else if ( isset( $_POST['eael-resetpassword-submit'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Missing
+			$this->reset_password();
+		}
+		do_action( 'eael/login-register/after-processing-login-register', $_POST ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+
+	}
+
+	/**
+	 * It logs the user in when the login form is submitted normally without AJAX.
+	 */
+	public function log_user_in() {
+		$ajax   = wp_doing_ajax();
+		// before even thinking about login, check security and exit early if something is not right.
+		$page_id = 0;
+		if ( ! empty( $_POST['page_id'] ) ) {
+			$page_id = intval( $_POST['page_id'], 10 );
+		} else {
+			$err_msg = __( 'Page ID is missing', 'essential-addons-for-elementor-lite' );
+		}
+
+		$widget_id = 0;
+		if ( ! empty( $_POST['widget_id'] ) ) {
+			$widget_id = sanitize_text_field( wp_unslash( $_POST['widget_id'] ) );
+		} else {
+			$err_msg = __( 'Widget ID is missing', 'essential-addons-for-elementor-lite' );
+		}
+
+		if (!empty( $err_msg )){
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			setcookie( 'eael_login_error_' . $widget_id, $err_msg );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+
+
+		if ( empty( $_POST['eael-login-nonce'] ) ) {
+			$err_msg = __( 'Insecure form submitted without security token', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			setcookie( 'eael_login_error_' . $widget_id, $err_msg );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+		if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['eael-login-nonce'] ) ), 'essential-addons-elementor' ) ) {
+			$err_msg = __( 'Security token did not match', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			setcookie( 'eael_login_error_' . $widget_id, $err_msg );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+		$settings = $this->lr_get_widget_settings( $page_id, $widget_id);
+
+		// Reject spoofed page_id / widget_id. Empty settings means the target isn't an
+		// EA Login/Register widget; proceeding would disable OTP, reCAPTCHA, Turnstile.
+		if ( empty( $settings ) ) {
+			$err_msg = __( 'Invalid form submission.', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			setcookie( 'eael_login_error_' . $widget_id, $err_msg );
+
+			if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+				wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+				exit();
+			}
+			return;
+		}
+
+		if ( is_user_logged_in() ) {
+			$err_msg = isset( $settings['err_loggedin'] ) ? Helper::eael_wp_kses( $settings['err_loggedin'] ) : __( 'You are already logged in', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			setcookie( 'eael_login_error_' . $widget_id, $err_msg );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+
+		do_action( 'eael/login-register/before-login', $_POST, $settings, $this );
+
+		$widget_id = ! empty( $_POST['widget_id'] ) ? sanitize_text_field( wp_unslash( $_POST['widget_id'] ) ) : '';
+
+		//v2 or v3
+		$is_version_2 = isset( $settings['enable_register_recaptcha'] ) && 'yes' === $settings['enable_register_recaptcha'];
+		$is_version_3 = isset( $settings['login_register_recaptcha_version'] ) && 'v3' === $settings['login_register_recaptcha_version'];
+		if ( $is_version_2 || $is_version_3 ) {
+			$ld_recaptcha_version = $is_version_3 ? 'v3' : 'v2';
+			
+			if( ! $this->lr_validate_recaptcha( $ld_recaptcha_version, $settings ) ) {
+				$err_msg = isset( $settings['err_recaptcha'] ) ? Helper::eael_wp_kses( $settings['err_recaptcha'] ) : __( 'You did not pass recaptcha challenge.', 'essential-addons-for-elementor-lite' );
+				if ( $ajax ) {
+					wp_send_json_error( $err_msg );
+				}
+				setcookie( 'eael_login_error_' . $widget_id, $err_msg );
+
+				if (isset($_SERVER['HTTP_REFERER'])) {
+					wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+					exit();
+				} // fail early if recaptcha failed
+			}
+		}
+
+		if( ! empty( $settings['enable_cloudflare_turnstile'] ) && 'yes' === $settings['enable_cloudflare_turnstile'] && ! empty( $settings['enable_cloudflare_turnstile_on_login'] ) && 'yes' === $settings['enable_cloudflare_turnstile_on_login'] ){
+			if( ! $this->lr_validate_cloudflare_turnstile( $settings ) ) { // pass only sanitized data
+				$err_msg = isset( $settings['err_cloudflare_turnstile'] ) ? Helper::eael_wp_kses( $settings['err_cloudflare_turnstile'] ) : __( 'You did not pass Cloudflare Turnstile challenge.', 'essential-addons-for-elementor-lite' );
+				if ( $ajax ) {
+					wp_send_json_error( $err_msg );
+				}
+				setcookie( 'eael_login_error_' . $widget_id, $err_msg );
+
+				if (isset($_SERVER['HTTP_REFERER'])) {
+					wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+					exit();
+				} // fail early if cloudflare turnstile failed
+			}
+		}
+
+		$user_login = ! empty( $_POST['eael-user-login'] ) ? sanitize_text_field( wp_unslash( $_POST['eael-user-login'] ) ) : '';
+		if ( is_email( $user_login ) ) {
+			$user_login = sanitize_email( $user_login );
+		}
+
+		$password   = ! empty( $_POST['eael-user-password'] ) ? sanitize_text_field( $_POST['eael-user-password'] ) : ''; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+		$rememberme = ! empty( $_POST['eael-rememberme'] ) ? sanitize_text_field( wp_unslash( $_POST['eael-rememberme'] ) ) : '';
+
+		$credentials = [
+			'user_login'    => $user_login,
+			'user_password' => $password,
+			'remember'      => ( 'forever' === $rememberme ),
+		];
+
+		// If OTP is enabled for this form, validate credentials WITHOUT actually signing the user in.
+		// wp_signon() sets auth cookies as a side effect; that conflicts with the OTP gate (the user
+		// would briefly be authenticated, and on the redirect-back to show the OTP UI a widget configured
+		// with `hide_for_logged_in_user` would render nothing). wp_authenticate() validates the same
+		// credentials but never touches cookies, so the OTP redirect lands cleanly.
+		$login_otp_enabled = ! empty( $settings['enable_login_otp'] ) && 'yes' === $settings['enable_login_otp'];
+		if ( $login_otp_enabled ) {
+			$user_data = wp_authenticate( $user_login, $password );
+		} else {
+			$user_data = wp_signon( $credentials );
+		}
+
+		if ( is_wp_error( $user_data ) ) {
+			$err_msg = '';
+			if ( isset( $user_data->errors['invalid_email'][0] ) ) {
+				$err_msg = isset( $settings['err_email'] ) ? Helper::eael_wp_kses( $settings['err_email'] ) : __( 'Invalid Email. Please check your email or try again with your username.', 'essential-addons-for-elementor-lite' );
+			} elseif ( isset( $user_data->errors['invalid_username'][0] )) {
+				$err_msg = isset( $settings['err_username'] ) ? Helper::eael_wp_kses( $settings['err_username'] ) : __( 'Invalid Username. Please check your username or try again with your email.', 'essential-addons-for-elementor-lite' );
+
+			} elseif ( isset( $user_data->errors['incorrect_password'][0] ) || isset( $user_data->errors['empty_password'][0] ) ) {
+				$err_msg = isset( $settings['err_pass'] ) ? Helper::eael_wp_kses( $settings['err_pass'] ) : __( 'Invalid Password', 'essential-addons-for-elementor-lite' );
+			} else {
+				if( ! empty( $user_data->errors ) ){
+					foreach( $user_data->errors as $error ) {
+						$err_msg = is_array( $error ) && ! empty( $error[0] ) ? Helper::eael_wp_kses( $error[0] ) : __('Something went wrong!', 'essential-addons-for-elementor-lite');
+						break;
+					}
+				}
+			}
+
+			$err_msg = apply_filters('eael/login-register/login-validatiob-error-message', $err_msg, $user_data);
+			$err_msg = is_array( $err_msg ) && ! empty( $err_msg[0] ) ? Helper::eael_wp_kses( $err_msg[0] ) : Helper::eael_wp_kses( $err_msg );
+
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			setcookie( 'eael_login_error_' . $widget_id, $err_msg );
+		} else {
+			$user_roles = (array) $user_data->roles;
+			$allow_login_roles = ! empty( $settings['allow_login_roles'] ) ? (array) $settings['allow_login_roles'] : [];
+
+			if ( ! empty( $allow_login_roles ) && empty( array_intersect( $user_roles, $allow_login_roles ) ) ) {
+				wp_logout();
+				$err_msg = isset( $settings['err_restricted_role'] ) ? Helper::eael_wp_kses( $settings['err_restricted_role'] ) : __( 'You are not allowed to login from here.', 'essential-addons-for-elementor-lite' );
+
+				if ( $ajax ) {
+					wp_send_json_error( $err_msg );
+				}
+				setcookie( 'eael_login_error_' . $widget_id, $err_msg );
+
+				if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+					wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+					exit();
+				}
+			}
+
+			// ============================================================
+			// Pending OTP verification gate (Registration completion)
+			// If this user registered with OTP required but never completed
+			// verification, block login and prompt them to verify now.
+			// This check is independent of the login-specific OTP toggle.
+			// ============================================================
+			if ( '1' === get_user_meta( $user_data->ID, '_eael_otp_pending', true ) ) {
+				// Undo auth state set by wp_signon() (used when login OTP is disabled).
+				if ( ! $login_otp_enabled ) {
+					wp_clear_auth_cookie();
+				}
+
+				if ( empty( $user_data->user_email ) ) {
+					$err_msg = __( 'No email is associated with this account.', 'essential-addons-for-elementor-lite' );
+					if ( $ajax ) {
+						wp_send_json_error( $err_msg );
+					}
+					setcookie( 'eael_login_error_' . $widget_id, $err_msg );
+					if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+						wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+						exit();
+					}
+				}
+
+				$pending_redirect_to = ! empty( $_POST['redirect_to'] ) ? sanitize_url( wp_unslash( $_POST['redirect_to'] ) ) : ''; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+				$previous_page_url   = ! empty( $_POST['redirect_to_prev_page_login'] ) ? sanitize_url( wp_unslash( $_POST['redirect_to_prev_page_login'] ) ) : ''; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+				$custom_redirect_url = ! empty( $settings['login_redirect_url_prev_page'] ) && 'yes' === $settings['login_redirect_url_prev_page'] ? $previous_page_url : $pending_redirect_to;
+
+				$otp_payload = [
+					'user_id'                 => (int) $user_data->ID,
+					'remember'                => ( 'forever' === $rememberme ),
+					'redirect_url'            => $custom_redirect_url,
+					'is_pending_registration' => true,
+				];
+
+				$session = $this->eael_otp_create_session( 'login', $otp_payload, $user_data->user_email, $widget_id, $page_id, $settings );
+
+				if ( is_wp_error( $session ) ) {
+					if ( $ajax ) {
+						wp_send_json_error( $session->get_error_message() );
+					}
+					setcookie( 'eael_login_error_' . $widget_id, $session->get_error_message() );
+					if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+						wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+						exit();
+					}
+				}
+
+				if ( $ajax ) {
+					wp_send_json_success( [
+						'otp_required' => true,
+						'otp_token'    => $session['token'],
+						'otp_expiry'   => $session['expiry'],
+						'otp_cooldown' => $session['cooldown'],
+						'otp_email'    => $session['email'],
+						'message'      => __( 'Please complete your email verification to proceed.', 'essential-addons-for-elementor-lite' ),
+					] );
+				}
+
+				setcookie(
+					'eael_lr_otp_token_' . $widget_id,
+					$session['token'] . '|login',
+					time() + ( $session['expiry'] * MINUTE_IN_SECONDS ),
+					COOKIEPATH ? COOKIEPATH : '/',
+					COOKIE_DOMAIN
+				);
+				if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+					wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+					exit();
+				}
+			}
+
+			wp_set_current_user( $user_data->ID, $user_login );
+			$current_user_role = ! empty( $user_data->roles[0] ) ? $user_data->roles[0] : '';
+
+			$redirect_to = '';
+			if ( ! empty( $_POST['redirect_to'] ) ) {
+				$redirect_to = sanitize_url( $_POST['redirect_to'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+				if ( ! empty( $current_user_role ) ) {
+					$redirect_to = ! empty( $_POST[ 'redirect_to_' . esc_html( $current_user_role ) ] ) ? sanitize_url( $_POST[ 'redirect_to_' . esc_html( $current_user_role ) ] ) : $redirect_to; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+				}
+			}
+
+			// ============================================================
+			// Email OTP Verification gate (Login)
+			// ============================================================
+			if ( $login_otp_enabled ) {
+				// We used wp_authenticate() above (no auth cookies were set), so the only thing to
+				// roll back is the global $current_user that wp_set_current_user() just bound.
+				wp_set_current_user( 0 );
+
+				if ( empty( $user_data->user_email ) ) {
+					$err_msg = __( 'No email is associated with this account.', 'essential-addons-for-elementor-lite' );
+					if ( $ajax ) {
+						wp_send_json_error( $err_msg );
+					}
+					setcookie( 'eael_login_error_' . $widget_id, $err_msg );
+					if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+						wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+						exit();
+					}
+				}
+
+				$previous_page_url   = ! empty( $_POST['redirect_to_prev_page_login'] ) ? sanitize_url( $_POST['redirect_to_prev_page_login'] ) : ''; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+				$custom_redirect_url = ! empty( $settings['login_redirect_url_prev_page'] ) && 'yes' === $settings['login_redirect_url_prev_page'] ? $previous_page_url : $redirect_to;
+
+				$otp_payload = [
+					'user_id'      => (int) $user_data->ID,
+					'remember'     => ( 'forever' === $rememberme ),
+					'redirect_url' => $custom_redirect_url,
+				];
+
+				$session = $this->eael_otp_create_session( 'login', $otp_payload, $user_data->user_email, $widget_id, $page_id, $settings );
+
+				if ( is_wp_error( $session ) ) {
+					if ( $ajax ) {
+						wp_send_json_error( $session->get_error_message() );
+					}
+					setcookie( 'eael_login_error_' . $widget_id, $session->get_error_message() );
+					if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+						wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+						exit();
+					}
+				}
+
+				if ( $ajax ) {
+					wp_send_json_success( [
+						'otp_required' => true,
+						'otp_token'    => $session['token'],
+						'otp_expiry'   => $session['expiry'],
+						'otp_cooldown' => $session['cooldown'],
+						'otp_email'    => $session['email'],
+						'message'      => __( 'A verification code has been sent to your email.', 'essential-addons-for-elementor-lite' ),
+					] );
+				}
+
+				setcookie(
+					'eael_lr_otp_token_' . $widget_id,
+					$session['token'] . '|login',
+					time() + ( $session['expiry'] * MINUTE_IN_SECONDS ),
+					COOKIEPATH ? COOKIEPATH : '/',
+					COOKIE_DOMAIN
+				);
+				if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+					wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+					exit();
+				}
+			}
+
+			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+			do_action( 'wp_login', $user_data->user_login, $user_data );
+			do_action( 'eael/login-register/after-login', $user_data->user_login, $user_data, $settings );
+
+			$custom_redirect_url = $redirect_to;
+			$previous_page_url   = ! empty( $_POST['redirect_to_prev_page_login'] ) ? sanitize_url( $_POST['redirect_to_prev_page_login'] ) : ''; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+			$custom_redirect_url = ! empty( $settings['login_redirect_url_prev_page'] ) && $settings['login_redirect_url_prev_page'] === 'yes' ? $previous_page_url : $custom_redirect_url;
+
+			if ( $ajax ) {
+				$data = [
+					'message' => isset( $settings['success_login'] ) ? Helper::eael_wp_kses( $settings['success_login'] ) : __( 'You are logged in successfully', 'essential-addons-for-elementor-lite' ),
+				];
+
+				if ( ! empty( $custom_redirect_url ) ) {
+					$data['redirect_to'] = esc_url_raw( $custom_redirect_url );
+				}
+				wp_send_json_success( $data );
+			}
+
+			if ( ! empty( $custom_redirect_url ) ) {
+				wp_safe_redirect( esc_url_raw( $custom_redirect_url ) );
+				exit();
+			}
+		}
+        if (isset($_SERVER['HTTP_REFERER'])) {
+            wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+            exit();
+        }
+	}
+
+	/**
+	 * It register the user in when the registration form is submitted normally without AJAX.
+	 */
+	public function register_user() {
+		$ajax = wp_doing_ajax();
+
+		// validate & sanitize the request data
+		if ( empty( $_POST['eael-register-nonce'] ) ) {
+			if ( $ajax ) {
+				wp_send_json_error( __( 'Insecure form submitted without security token', 'essential-addons-for-elementor-lite' ) );
+			}
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+		if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['eael-register-nonce'] ) ), 'essential-addons-elementor' ) ) {
+			if ( $ajax ) {
+				wp_send_json_error( __( 'Security token did not match', 'essential-addons-for-elementor-lite' ) );
+			}
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+		$page_id = $widget_id = 0;
+		if ( ! empty( $_POST['page_id'] ) ) {
+			$page_id = intval( $_POST['page_id'] );
+			if ( in_array( get_post_status( $page_id ), [ 'future', 'draft', 'pending' ] ) ) {
+				$err_msg = __( 'You have to publish the page first.', 'essential-addons-for-elementor-lite' );
+			}
+		} else {
+            $err_msg = __( 'Page ID is missing', 'essential-addons-for-elementor-lite' );
+        }
+        if ( ! empty( $_POST['widget_id'] ) ) {
+			$widget_id = sanitize_text_field( wp_unslash( $_POST['widget_id'] ) );
+        } else {
+            $err_msg = __( 'Widget ID is missing', 'essential-addons-for-elementor-lite' );
+        }
+
+        if (!empty( $err_msg )){
+            if ( $ajax ) {
+                wp_send_json_error( $err_msg );
+            }
+            
+			setcookie( 'eael_register_errors_' . $widget_id, $err_msg );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+            return false;
+        }
+
+		$settings = $this->lr_get_widget_settings( $page_id, $widget_id);
+
+		// Reject spoofed page_id / widget_id. Empty settings means the target isn't an
+		// EA Login/Register widget; proceeding would disable OTP, reCAPTCHA, Turnstile.
+		if ( empty( $settings ) ) {
+			$err_msg = __( 'Invalid form submission.', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			setcookie( 'eael_register_errors_' . $widget_id, $err_msg );
+
+			if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+				wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+				exit();
+			}
+			return false;
+		}
+
+		if ( is_user_logged_in() ) {
+			$err_msg = isset( $settings['err_loggedin'] ) ? Helper::eael_wp_kses( $settings['err_loggedin'] ) : __( 'You are already logged in.', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+
+		do_action( 'eael/login-register/before-register' );
+
+		// prepare the data
+		$errors               = [];
+		$registration_allowed = get_option( 'users_can_register' );
+		$protocol             = is_ssl() ? "https://" : "http://";
+		$url  = '';
+		if ( ! empty( $_SERVER['HTTP_HOST'] ) && ! empty( $_SERVER['REQUEST_URI'] ) ) {
+			$url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		} 
+
+		// vail early if reg is closed.
+		if ( ! $registration_allowed ) {
+			$errors['registration'] = __( 'Registration is closed on this site', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $errors['registration'] );
+			}
+
+            //update_option( 'eael_register_errors_' . $widget_id, $errors, false );// if we redirect to other page, we dont need to save value
+            wp_safe_redirect(
+				add_query_arg(
+					array(
+						'registration'      => 'disabled',
+					),
+					esc_url_raw( $this->eael_wp_login_url() )
+				)
+			);
+			exit();
+		}
+		// prepare vars and flag errors
+		$settings_register_fields = isset($settings['register_fields']) ? $settings['register_fields'] : array();
+
+		$eael_custom_profile_fields_text = $this->get_eael_custom_profile_fields('text');
+		$eael_custom_profile_fields_image = $this->get_eael_custom_profile_fields('image');
+		$eael_custom_profile_fields = array_merge( $eael_custom_profile_fields_text, $eael_custom_profile_fields_image );
+
+		$eael_custom_profile_fields_image_keys = array_keys( $eael_custom_profile_fields_image );
+
+		if( count($settings_register_fields) ){
+			foreach($settings_register_fields as $register_field){
+				if( isset( $register_field['field_type'] ) && 'eael_phone_number' === $register_field['field_type']	){
+					//Phone number field
+					if( !empty( $register_field['required'] ) && 'yes' === $register_field['required'] && empty( $_POST['eael_phone_number'] ) ) {
+						$errors['eael_phone_number'] = isset( $settings['err_phone_number_missing'] ) ? $settings['err_phone_number_missing'] : __( 'Phone number is required', 'essential-addons-for-elementor-lite' );
+					}
+				}
+				
+				if( isset( $register_field['field_type'] ) && 'honeypot' === $register_field['field_type']	){
+					$honeypot_name  = 'eaelhoneyp' . esc_attr( $widget_id );
+					$honeypot_value = !empty( $_POST[ esc_attr( $honeypot_name ) ] ) ? sanitize_text_field( wp_unslash( $_POST[ esc_attr( $honeypot_name ) ] ) ) : '';
+					if ( ! empty( $honeypot_value ) ) {
+						$errors[ $register_field['field_type'] ] = __( 'Sorry, you are not allowed to submit this form!', 'essential-addons-for-elementor-lite' );
+					}
+				}
+
+				if( isset( $register_field['field_type'] ) && in_array( $register_field['field_type'], $eael_custom_profile_fields_image_keys )	){
+
+					if ( ! empty( $_FILES[ $register_field['field_type'] ] ) && ! empty( $_FILES[ $register_field['field_type'] ]["error"] ) && 4 !== $_FILES[ $register_field['field_type'] ]["error"] ) {
+						$custom_field_file_name 		= !empty( $_FILES[ $register_field['field_type'] ]["name"] ) ? sanitize_text_field( $_FILES[ $register_field['field_type'] ]["name"] ) : '';
+						$_custom_field_file_extension 	= explode( ".", $custom_field_file_name );
+						$custom_field_file_extension 	= end( $_custom_field_file_extension ); # extra () to prevent notice
+						$custom_field_file_size 		= !empty( $_FILES[ $register_field['field_type'] ]["size"] ) ? floatval( $_FILES[ $register_field['field_type'] ]["size"] ) : 0;
+
+						$unsupported_extensions = ['svg', 'php', 'js', 'aiff', 'psd', 'exr', 'wma', 'sql', 'm2v', 'swf', 'py', 'java', 'json', 'html', 'yaml', 'css', 'rb', 'cpp', 'c', 'cs', 'swift', 'kt', 'go', 'ts'];
+
+						if( ! empty ( $register_field['field_type_custom_image_extensions'] ) ||  in_array($custom_field_file_extension, $unsupported_extensions) ){
+							$field_type_custom_image_extensions_trimmed = trim( sanitize_text_field( $register_field['field_type_custom_image_extensions'] ), ' ,\n\r\0\x0B' );
+							$field_type_custom_image_extensions_array 	= array_unique( explode( ',', $field_type_custom_image_extensions_trimmed ) );
+
+							foreach( $field_type_custom_image_extensions_array as $item_key => $field_type_custom_image_extension ){
+								$field_type_custom_image_extensions_array[$item_key] = strtolower( trim( sanitize_text_field( $field_type_custom_image_extension ), ' ,\n\r\0\x0B' ) );
+							}
+
+							if( ! in_array( '.' . strtolower( $custom_field_file_extension ), $field_type_custom_image_extensions_array ) ) {
+								$errors[ $register_field['field_type'] ] = isset( $settings['field_type_custom_image_extensions_error'] ) ? $settings['field_type_custom_image_extensions_error'] : __( 'Sorry, you are not allowed to upload this file type.', 'essential-addons-for-elementor-lite' );
+							}
+						}
+						$register_field['field_type_custom_image_filesize'] 		= empty ( $register_field['field_type_custom_image_filesize'] ) 		? 5 : $register_field['field_type_custom_image_filesize'];
+						$register_field['field_type_custom_image_filename_length'] 	= empty ( $register_field['field_type_custom_image_filename_length'] ) 	? 128 : $register_field['field_type_custom_image_filename_length'];
+
+						if( ! empty ( $register_field['field_type_custom_image_filesize'] ) ){
+							$field_type_custom_image_filesize 		= floatval( $register_field['field_type_custom_image_filesize'] );
+							$field_type_custom_image_filesize 		= $field_type_custom_image_filesize > 512 ? 512 : $field_type_custom_image_filesize;
+							$field_type_custom_image_filesize_kb 	= $field_type_custom_image_filesize * 1000000;
+
+							if( $custom_field_file_size > $field_type_custom_image_filesize_kb ) {
+								// translators: %s is the maximum file size
+                                $errors[ $register_field['field_type'] ] = isset( $settings['field_type_custom_image_filesize_error'] ) ? $settings['field_type_custom_image_filesize_error'] : sprintf( __( 'File size exceeded. Maximum size is %sMB', 'essential-addons-for-elementor-lite' ), floatval( $field_type_custom_image_filesize ) );
+                            }
+						}
+
+						if( ! empty ( $register_field['field_type_custom_image_filename_length'] ) ){
+							$field_type_custom_image_filename_length	= intval( $register_field['field_type_custom_image_filename_length'] );
+
+							if( strlen( $custom_field_file_name ) > $field_type_custom_image_filename_length ) {
+								// translators: %d is the maximum length of the filename
+                                $errors[ $register_field['field_type'] ] = isset( $settings['field_type_custom_image_filename_length_error'] ) ? $settings['field_type_custom_image_filename_length_error'] : sprintf( __( 'Filename length exceeded. Maximum length is %d', 'essential-addons-for-elementor-lite' ), intval( $field_type_custom_image_filename_length ) );
+                            }
+						}
+					}
+				}
+
+				//Validate HTML tags on input fields; Throw error if found (Although we are sanitizing before saving)
+				if( isset( $register_field['field_type'] ) && !empty( $_POST[$register_field['field_type']] ) ){
+					if( preg_match('/<[^<]+>/', $_POST[ $register_field['field_type'] ] ) ){ //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+						// translators: %s is the field label
+						$errors[ sanitize_text_field( $register_field['field_type'] ) ] = sprintf( __( '%s can not contain HTML tags', 'essential-addons-for-elementor-lite' ), sanitize_text_field( $register_field['field_label'] ) );
+					}
+				}
+			}
+		}
+
+		if ( isset( $_POST['eael_tnc_active'] ) && empty( $_POST['eael_accept_tnc'] ) ) {
+			$errors['terms_conditions'] =  isset( $settings['err_tc'] ) ? Helper::eael_wp_kses( $settings['err_tc'] ) : __( 'You did not accept the Terms and Conditions. Please accept it and try again.', 'essential-addons-for-elementor-lite' );
+		}
+		//v2 or v3
+		$is_version_2 = isset( $settings['enable_register_recaptcha'] ) && 'yes' === $settings['enable_register_recaptcha'];
+		$is_version_3 = isset( $settings['login_register_recaptcha_version'] ) && 'v3' === $settings['login_register_recaptcha_version'];
+		if ( $is_version_2 || $is_version_3 ) {
+			$ld_recaptcha_version = $is_version_3 ? 'v3' : 'v2';
+			
+			if( ! $this->lr_validate_recaptcha( $ld_recaptcha_version, $settings ) ) {
+				$errors['recaptcha'] = isset( $settings['err_recaptcha'] ) ? Helper::eael_wp_kses( $settings['err_recaptcha'] ) : __( 'You did not pass recaptcha challenge.', 'essential-addons-for-elementor-lite' );
+			}
+		}
+
+		if ( isset( $settings['enable_cloudflare_turnstile_on_register'] ) && 'yes' === $settings['enable_cloudflare_turnstile_on_register'] ) {
+			if( ! $this->lr_validate_cloudflare_turnstile( $settings ) ) { // pass only sanitized data
+				$errors['cloudflare_turnstile'] = isset( $settings['err_cloudflare_turnstile'] ) ? Helper::eael_wp_kses( $settings['err_cloudflare_turnstile'] ) : __( 'You did not pass Cloudflare Turnstile challenge.', 'essential-addons-for-elementor-lite' );
+			}
+		}
+
+		if ( !empty( $_POST['eael_phone_number'] ) && ! $this->eael_is_phone( sanitize_text_field( wp_unslash( $_POST['eael_phone_number'] ) ) ) ) {
+			$errors['eael_phone_number'] =  isset( $settings['err_phone_number_invalid'] ) ? $settings['err_phone_number_invalid'] : __( 'Invalid phone number provided', 'essential-addons-for-elementor-lite' );
+		}
+
+		if ( ! empty( $_POST['email'] ) && is_email( wp_unslash( $_POST['email'] ) ) ) {
+			$email = sanitize_email( wp_unslash( $_POST['email'] ) );
+			if ( email_exists( $email ) ) {
+				$errors['email'] = isset( $settings['err_email_used'] ) ? Helper::eael_wp_kses( $settings['err_email_used'] ) : __( 'The provided email is already registered with other account. Please login or reset password or use another email.', 'essential-addons-for-elementor-lite' );
+			}
+		} else {
+			$errors['email'] = isset( $settings['err_email_missing'] ) ? Helper::eael_wp_kses( $settings['err_email_missing'] ) : __( 'Email is missing or Invalid', 'essential-addons-for-elementor-lite' );
+		}
+
+		// if user provided user name, validate & sanitize it
+		if ( !empty( $_POST['user_name'] ) ) {
+			$username = sanitize_user( wp_unslash( $_POST['user_name'] ) );
+			if ( ! validate_username( $username ) || mb_strlen( $username ) > 60 ) {
+				$errors['user_name'] = isset( $settings['err_username'] ) ? Helper::eael_wp_kses( $settings['err_username'] ) : __( 'Invalid username provided.', 'essential-addons-for-elementor-lite' );
+			}elseif(username_exists( $username )){
+				$errors['user_name'] = isset( $settings['err_username_used'] ) ? Helper::eael_wp_kses( $settings['err_username_used'] ) : __( 'The username already registered.', 'essential-addons-for-elementor-lite' );
+
+			}
+		} else {
+			// user has not provided username, so generate one from the provided email.
+			if ( empty( $errors['email'] ) && isset( $email ) ) {
+				$username = $this->generate_username_from_email( $email );
+			}
+		}
+
+		// Dynamic Password Generation
+		$is_pass_auto_generated = false; // emailing is must for autogen pass
+		if ( ! empty( $_POST['password'] ) ) {
+			$password = sanitize_text_field( $_POST['password'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+		} else {
+			$password               = wp_generate_password();
+			$is_pass_auto_generated = true;
+		}
+
+		if ( isset( $_POST['confirm_pass'] ) ) {
+			$confirm_pass = sanitize_text_field( $_POST['confirm_pass'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+			if ( $confirm_pass !== $password ) {
+				$errors['confirm_pass'] = isset( $settings['err_conf_pass'] ) ? Helper::eael_wp_kses( $settings['err_conf_pass'] ) : __( 'The confirmed password did not match.', 'essential-addons-for-elementor-lite' );
+			}
+		}
+
+		if(!$is_pass_auto_generated){
+			$errors = apply_filters( 'eael/login-register/register-user-password-validation', $errors, $settings, $password );
+		}
+		
+		// if any error found, abort
+		if ( ! empty( $errors ) ) {
+			$err_msg = '<ol>';
+			if ( count( $errors ) === 1 ) {
+				$err_msg = '<ol class="'. esc_attr('eael-list-style-none-wrap').'">';
+			}
+			
+			foreach ( $errors as $error ) {
+				$err_msg .= "<li>{$error}</li>";
+			}
+			$err_msg .= '</ol>';
+
+			//If AJAX enabled
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+
+			setcookie( 'eael_register_errors_' . $widget_id, $err_msg );
+
+			wp_safe_redirect( esc_url_raw( $url ) );
+			exit();
+		}
+
+		/*------General Mail Related Stuff------*/
+		self::$email_options['username']            = $username;
+		self::$email_options['password']            = $password;
+		self::$email_options['email']               = $email;
+		self::$email_options['firstname']           = '';
+		self::$email_options['lastname']            = '';
+		self::$email_options['website']             = '';
+		self::$email_options['password_reset_link'] = '';
+		self::$email_options['eael_phone_number'] 	= '';
+
+		// handle registration...
+		$user_data = [
+			'user_login' => $username,
+			'user_pass'  => $password,
+			'user_email' => $email,
+		];
+
+		if ( ! empty( $_POST['first_name'] ) ) {
+			$user_data['first_name'] = self::$email_options['firstname'] = sanitize_text_field( wp_unslash( $_POST['first_name'] ) );
+		}
+		if ( ! empty( $_POST['last_name'] ) ) {
+			$user_data['last_name'] = self::$email_options['lastname'] = sanitize_text_field( wp_unslash( $_POST['last_name'] ) );
+		}
+		if ( ! empty( $_POST['website'] ) ) {
+			$user_data['user_url'] = self::$email_options['website'] = esc_url_raw( $_POST['website'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+		}
+
+		if ( ! empty( $_POST['eael_phone_number'] ) ) {
+			$user_data['eael_phone_number'] = self::$email_options['eael_phone_number'] = sanitize_text_field( wp_unslash( $_POST['eael_phone_number'] ) );
+		}
+
+		if( count( $eael_custom_profile_fields_text ) ){
+			foreach( $eael_custom_profile_fields_text as $eael_custom_profile_field_text_key => $eael_custom_profile_field_text_value ){
+				self::$email_options[$eael_custom_profile_field_text_key] = '';
+
+				if ( ! empty( $_POST[ $eael_custom_profile_field_text_key ] ) ) {
+					$user_data[$eael_custom_profile_field_text_key] = self::$email_options[$eael_custom_profile_field_text_key] = sanitize_text_field( wp_unslash( $_POST[ $eael_custom_profile_field_text_key ] ) );
+				}
+			}
+		}
+
+		$register_actions    = [];
+		$custom_redirect_url = '';
+		if ( !empty( $settings) ) {
+			$register_actions    	= ! empty( $settings['register_action'] ) ? (array) $settings['register_action'] : [];
+			$custom_redirect_url 	= ! empty( $settings['register_redirect_url']['url'] ) ? esc_url_raw( $settings['register_redirect_url']['url'] ) : '/';
+
+			$previous_page_url 		= ! empty( $_POST['redirect_to_prev_page'] ) ? sanitize_url( $_POST['redirect_to_prev_page'] ) : ''; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+			$custom_redirect_url 	= ! empty( $settings['register_redirect_url_prev_page'] ) && $settings['register_redirect_url_prev_page'] === 'yes' ? $previous_page_url : $custom_redirect_url;
+
+			if ( ! empty( $settings['register_user_role'] ) ) {
+				$requested_role = sanitize_text_field( $settings['register_user_role'] );
+
+				// Verify the post was last saved by an administrator before trusting
+				$last_editor_id = (int) get_post_meta( $page_id, '_edit_last', true );
+				if ( ! $last_editor_id ) {
+					$last_editor_id = (int) get_post_field( 'post_author', $page_id );
+				}
+				$last_editor    = $last_editor_id ? get_userdata( $last_editor_id ) : false;
+				$saved_by_admin = $last_editor && in_array( 'administrator', (array) $last_editor->roles, true );
+
+				if ( $saved_by_admin ) {
+					// Reject any role that carries privileged capabilities,
+					$wp_role         = get_role( $requested_role );
+					$privileged_caps = [ 'manage_options', 'edit_users', 'delete_users', 'promote_users' ];
+					$is_safe_role    = ( $wp_role !== null );
+
+					if ( $is_safe_role ) {
+						foreach ( $privileged_caps as $cap ) {
+							if ( ! empty( $wp_role->capabilities[ $cap ] ) ) {
+								$is_safe_role = false;
+								break;
+							}
+						}
+					}
+
+					if ( $is_safe_role ) {
+						$user_data['role'] = $requested_role;
+					}
+				}
+			}
+
+			// set email related stuff
+			/*------User Mail Related Stuff------*/
+			if ( $is_pass_auto_generated || ( in_array( 'send_email', $register_actions ) && 'custom' === $settings['reg_email_template_type'] ) ) {
+				self::$send_custom_email = true;
+			}
+			if ( isset( $settings['reg_email_subject'] ) ) {
+				self::$email_options['subject'] = Helper::eael_wp_kses( $settings['reg_email_subject'] );
+			}
+			if ( isset( $settings['reg_email_message'] ) ) {
+				self::$email_options['message'] = $settings['reg_email_message'];
+			}
+			if ( isset( $settings['reg_email_content_type'] ) ) {
+				self::$email_options['headers'] = 'Content-Type: text/' . wp_strip_all_tags( $settings['reg_email_content_type'] ) . '; charset=UTF-8' . "\r\n";
+			}
+
+
+			/*------Admin Mail Related Stuff------*/
+			self::$send_custom_email_admin = ( ! empty( $settings['reg_admin_email_template_type'] ) && 'custom' === $settings['reg_admin_email_template_type'] );
+			if ( isset( $settings['reg_admin_email_subject'] ) ) {
+				self::$email_options['admin_subject'] = Helper::eael_wp_kses( $settings['reg_admin_email_subject'] );
+			}
+			if ( isset( $settings['reg_admin_email_message'] ) ) {
+				self::$email_options['admin_message'] = Helper::eael_wp_kses( $settings['reg_admin_email_message'] );
+			}
+			if ( isset( $settings['reg_admin_email_content_type'] ) ) {
+				self::$email_options['admin_headers'] = 'Content-Type: text/' . wp_strip_all_tags( $settings['reg_admin_email_content_type'] ) . '; charset=UTF-8' . "\r\n";
+			}
+		}
+
+		$custom_redirect_url = apply_filters( 'eael/login-register/register-redirect-url', $custom_redirect_url, $this );
+
+		$user_data = apply_filters( 'eael/login-register/new-user-data', $user_data );
+
+		$user_default_role = get_option( 'default_role' );
+
+		if ( ! empty( $user_default_role ) && empty( $user_data['role'] ) ) {
+			$user_data['role'] = $user_default_role;
+		}
+
+		// ============================================================
+		// Email OTP Verification gate (Registration)
+		// ============================================================
+		if ( ! empty( $settings['enable_register_otp'] ) && 'yes' === $settings['enable_register_otp'] ) {
+			$otp_payload = [
+				'user_data'              => $user_data,
+				'plain_password'         => $password,
+				'email_options'          => self::$email_options,
+				'send_custom_email'      => self::$send_custom_email,
+				'send_custom_email_admin'=> self::$send_custom_email_admin,
+				'register_actions'       => $register_actions,
+				'is_pass_auto_generated' => $is_pass_auto_generated,
+				'redirect_url'           => $custom_redirect_url,
+				'custom_profile_fields'  => [],
+			];
+
+			if ( count( $eael_custom_profile_fields_text ) ) {
+				foreach ( $eael_custom_profile_fields_text as $key => $_ ) {
+					if ( ! empty( $user_data[ $key ] ) ) {
+						$otp_payload['custom_profile_fields'][ $key ] = $user_data[ $key ];
+					}
+				}
+			}
+
+			// Optional "Show Flag on User list" mode: create the user immediately, mark them
+			// as pending verification via the `_eael_otp_pending` user meta, and store only the
+			// user_id on the OTP session payload. The eael_otp_finalize_register() helper detects
+			// the pre-created user and just clears the meta on a successful verify. If the user
+			// never verifies, the account stays in the WP Users list with the pending flag for
+			// the admin to triage.
+			$show_user_flag = ! empty( $settings['register_otp_show_user_flag'] ) && 'yes' === $settings['register_otp_show_user_flag'];
+			if ( $show_user_flag ) {
+				do_action( 'eael/login-register/before-insert-user', $user_data );
+				$pending_user_id = wp_insert_user( $user_data );
+
+				if ( is_wp_error( $pending_user_id ) ) {
+					$err_msg = isset( $settings['err_unknown'] )
+						? Helper::eael_wp_kses( $settings['err_unknown'] )
+						: __( 'Sorry, something went wrong. User could not be registered.', 'essential-addons-for-elementor-lite' );
+					if ( $ajax ) {
+						wp_send_json_error( $err_msg );
+					}
+					setcookie( 'eael_register_errors_' . $widget_id, $err_msg );
+					wp_safe_redirect( esc_url_raw( $url ) );
+					exit();
+				}
+
+				if ( ! empty( $user_data['eael_phone_number'] ) ) {
+					update_user_meta( $pending_user_id, 'eael_phone_number', $user_data['eael_phone_number'] );
+				}
+				foreach ( $otp_payload['custom_profile_fields'] as $cpf_key => $cpf_value ) {
+					update_user_meta( $pending_user_id, self::$eael_custom_profile_field_prefix . $cpf_key, $cpf_value );
+				}
+
+				// The flag itself.
+				update_user_meta( $pending_user_id, '_eael_otp_pending', '1' );
+				update_user_meta( $pending_user_id, '_eael_otp_pending_since', time() );
+
+				do_action( 'eael/login-register/after-insert-user', $pending_user_id, $user_data, $settings );
+
+				// On verify we only need the id; clear the heavy data so the transient stays small.
+				$otp_payload['pre_created_user_id'] = (int) $pending_user_id;
+				unset( $otp_payload['user_data'] );
+			}
+
+			$session = $this->eael_otp_create_session( 'register', $otp_payload, $email, $widget_id, $page_id, $settings );
+
+			if ( is_wp_error( $session ) ) {
+				if ( $ajax ) {
+					wp_send_json_error( $session->get_error_message() );
+				}
+				setcookie( 'eael_register_errors_' . $widget_id, $session->get_error_message() );
+				wp_safe_redirect( esc_url_raw( $url ) );
+				exit();
+			}
+
+			if ( $ajax ) {
+				wp_send_json_success( [
+					'otp_required' => true,
+					'otp_token'    => $session['token'],
+					'otp_expiry'   => $session['expiry'],
+					'otp_cooldown' => $session['cooldown'],
+					'otp_email'    => $session['email'],
+					'message'      => __( 'A verification code has been sent to your email.', 'essential-addons-for-elementor-lite' ),
+				] );
+			}
+
+			// Non-AJAX: drop a short-lived cookie carrying the token so the page can show the OTP UI on reload.
+			setcookie(
+				'eael_lr_otp_token_' . $widget_id,
+				$session['token'] . '|register',
+				time() + ( $session['expiry'] * MINUTE_IN_SECONDS ),
+				COOKIEPATH ? COOKIEPATH : '/',
+				COOKIE_DOMAIN
+			);
+			wp_safe_redirect( esc_url_raw( $url ) );
+			exit();
+		}
+
+		do_action( 'eael/login-register/before-insert-user', $user_data );
+
+		$user_id = wp_insert_user( $user_data );
+
+		if( count( $eael_custom_profile_fields_image ) ){
+			require_once( ABSPATH . 'wp-admin/includes/image.php' );
+			require_once( ABSPATH . 'wp-admin/includes/file.php' );
+			require_once( ABSPATH . 'wp-admin/includes/media.php' );
+
+			foreach( $eael_custom_profile_fields_image as $eael_custom_profile_field_image_key => $eael_custom_profile_field_value ){
+				self::$email_options[$eael_custom_profile_field_image_key] = '';
+
+				if ( ! empty( $_FILES[ $eael_custom_profile_field_image_key ] ) ) {
+					$attachment_id = media_handle_upload( $eael_custom_profile_field_image_key, 0, [ 'post_author' => $user_id ] );
+					if ( ! is_wp_error( $attachment_id ) ) {
+						$user_data[ $eael_custom_profile_field_image_key ] = sanitize_text_field( $attachment_id );
+						self::$email_options[$eael_custom_profile_field_image_key] = wp_get_attachment_image_url( sanitize_text_field( $attachment_id ) );
+					}
+				}
+			}
+		}
+
+		if ( ! empty( $user_data['eael_phone_number'] ) ) {
+			update_user_meta( $user_id, 'eael_phone_number', $user_data['eael_phone_number'] );
+		}
+
+		if( count( $eael_custom_profile_fields ) ){
+			foreach( $eael_custom_profile_fields as $eael_custom_profile_field_key => $eael_custom_profile_field_value ){
+				if ( ! empty( $user_data[ $eael_custom_profile_field_key ] ) ) {
+					update_user_meta( $user_id, self::$eael_custom_profile_field_prefix . $eael_custom_profile_field_key, $user_data[ $eael_custom_profile_field_key ] );
+				}
+			}
+		}
+
+		do_action( 'eael/login-register/after-insert-user', $user_id, $user_data, $settings );
+
+		if ( is_wp_error( $user_id ) ) {
+			// error happened during user creation
+			$errors['user_create'] = isset( $settings['err_unknown'] ) ? Helper::eael_wp_kses( $settings['err_unknown'] ) :  __( 'Sorry, something went wrong. User could not be registered.', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $errors['user_create'] );
+			}
+			
+			setcookie( 'eael_register_errors_' . $widget_id, $errors['user_create'] );
+			wp_safe_redirect( esc_url_raw( $url ) );
+			exit();
+		}
+
+		$user_data['eael_lrmuc'] = sanitize_text_field( wp_unslash( $_POST['eael_lrmuc'] ?? '' ) );
+		do_action( 'eael/login-register/mailchimp-integration-action', $user_id, $user_data, $settings );
+	
+		$admin_or_both = $is_pass_auto_generated || in_array( 'send_email', $register_actions ) ? 'both' : 'admin';
+
+		/**
+		 * Fires after a new user registration has been recorded.
+		 *
+		 * @param int $user_id ID of the newly registered user.
+		 *
+		 * @since 4.4.0
+		 */
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+		remove_action( 'register_new_user', 'wp_send_new_user_notifications' );
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+		do_action( 'register_new_user', $user_id );
+
+		wp_new_user_notification( $user_id, null, $admin_or_both );
+
+		// success & handle after registration action as defined by user in the widget
+		if ( ! $ajax && !in_array( 'redirect', $register_actions ) ) {
+			update_option( 'eael_register_success_' . $widget_id, 1, false );
+		}
+
+
+		// Handle after registration action
+		$data = [
+			'message' => isset( $settings['success_register'] ) ? Helper::eael_wp_kses( $settings['success_register'] ) : __( 'Your registration completed successfully.', 'essential-addons-for-elementor-lite' ),
+		];
+		// should user be auto logged in?
+		if ( in_array( 'auto_login', $register_actions ) && ! is_user_logged_in() ) {
+			wp_signon( [
+				'user_login'    => $username,
+				'user_password' => $password,
+				'remember'      => true,
+			] );
+            $this->delete_registration_options($widget_id);
+
+			if ( $ajax ) {
+				if ( in_array( 'redirect', $register_actions ) && ! empty( $custom_redirect_url ) ) {
+					$data['redirect_to'] = $custom_redirect_url;
+				}
+				wp_send_json_success( $data );
+			}
+
+			// if custom redirect not available then refresh the current page to show admin bar
+			if ( ! in_array( 'redirect', $register_actions ) ) {
+				wp_safe_redirect( esc_url_raw( $url ) );
+				exit();
+			}
+		}
+
+		// custom redirect?
+		if ( $ajax ) {
+			if ( in_array( 'redirect', $register_actions ) && ! empty( $custom_redirect_url ) ) {
+				$data['redirect_to'] = $custom_redirect_url;
+			}
+			wp_send_json_success( $data );
+		}
+
+		if ( in_array( 'redirect', $register_actions ) && ! empty( $custom_redirect_url ) ) {
+			wp_safe_redirect( $custom_redirect_url );
+			exit();
+		}
+
+        if (isset($_SERVER['HTTP_REFERER'])) {
+            wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+            exit();
+        }
+
+	}
+
+	/**
+	 * It sends the user an email with reset password link. Lost Password form is submitted normally without AJAX.
+	 */
+	public function send_password_reset() {
+		$ajax   = wp_doing_ajax();
+		// before even thinking about sending mail, check security and exit early if something is not right.
+		$page_id = 0;
+		$page_id_for_popup = 0;
+		$resetpassword_in_popup_selector = '';
+		if ( ! empty( $_POST['page_id'] ) ) {
+			$page_id = intval( $_POST['page_id'], 10 );
+			$page_id_for_popup = ! empty( $_POST['page_id_for_popup'] ) ? intval( $_POST['page_id_for_popup'], 10 ) : $page_id;
+			$resetpassword_in_popup_selector = ! empty( $_POST['resetpassword_in_popup_selector'] ) ? sanitize_text_field( wp_unslash( $_POST['resetpassword_in_popup_selector'] ) ) : '';
+		} else {
+			$err_msg = esc_html__( 'Page ID is missing', 'essential-addons-for-elementor-lite' );
+		}
+
+		$widget_id = 0;
+		if ( ! empty( $_POST['widget_id'] ) ) {
+			$widget_id = sanitize_text_field( wp_unslash( $_POST['widget_id'] ) );
+		} else {
+			$err_msg = esc_html__( 'Widget ID is missing', 'essential-addons-for-elementor-lite' );
+		}
+
+		if (!empty( $err_msg )){
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_lostpassword_error_' . $widget_id, $err_msg, false );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+
+
+		if ( empty( $_POST['eael-lostpassword-nonce'] ) ) {
+			$err_msg = esc_html__( 'Insecure form submitted without security token', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_lostpassword_error_' . $widget_id, $err_msg, false );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+		if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['eael-lostpassword-nonce'] ) ), 'essential-addons-elementor' ) ) {
+			$err_msg = esc_html__( 'Security token did not match', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_lostpassword_error_' . $widget_id, $err_msg, false );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+
+		$settings = $this->lr_get_widget_settings( $page_id, $widget_id);
+
+		// Reject spoofed page_id / widget_id. Empty settings means the target isn't an
+		// EA Login/Register widget; proceeding would disable reCAPTCHA / Turnstile.
+		if ( empty( $settings ) ) {
+			$err_msg = __( 'Invalid form submission.', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_lostpassword_error_' . $widget_id, $err_msg, false );
+
+			if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+				wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+				exit();
+			}
+			return;
+		}
+
+		if( ! empty( $settings['enable_cloudflare_turnstile'] ) && 'yes' === $settings['enable_cloudflare_turnstile'] && ! empty( $settings['enable_cloudflare_turnstile_on_lostpassword'] ) && 'yes' === $settings['enable_cloudflare_turnstile_on_lostpassword'] ){
+			if( ! $this->lr_validate_cloudflare_turnstile( $settings ) ) { // pass only sanitized data
+				$err_msg = isset( $settings['err_cloudflare_turnstile'] ) ? Helper::eael_wp_kses( $settings['err_cloudflare_turnstile'] ) : __( 'You did not pass Cloudflare Turnstile challenge.', 'essential-addons-for-elementor-lite' );
+				if ( $ajax ) {
+					wp_send_json_error( $err_msg );
+				}
+				update_option( 'eael_lostpassword_error_' . $widget_id, $err_msg, false );
+
+				if (isset($_SERVER['HTTP_REFERER'])) {
+					wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+					exit();
+				} // fail early if cloudflare turnstile failed
+			}
+		}
+
+		//v2 or v3
+		$is_version_2 = isset( $settings['enable_lostpassword_recaptcha'] ) && 'yes' === $settings['enable_lostpassword_recaptcha'];
+		$is_version_3 = isset( $settings['login_register_recaptcha_version'] ) && 'v3' === $settings['login_register_recaptcha_version'];
+		if ( $is_version_2 || $is_version_3 ) {
+			$ld_recaptcha_version = $is_version_3 ? 'v3' : 'v2';
+			
+			if( ! $this->lr_validate_recaptcha( $ld_recaptcha_version, $settings ) ) {
+				$err_msg = isset( $settings['err_recaptcha'] ) ? Helper::eael_wp_kses( $settings['err_recaptcha'] ) : __( 'You did not pass recaptcha challenge.', 'essential-addons-for-elementor-lite' );
+				if ( $ajax ) {
+					wp_send_json_error( $err_msg );
+				}
+				update_option( 'eael_lostpassword_error_' . $widget_id, $err_msg, false );
+
+				if (isset($_SERVER['HTTP_REFERER'])) {
+					wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+					exit();
+				} // fail early if recaptcha failed
+			}
+		}
+		
+		if ( is_user_logged_in() ) {
+			$err_msg = isset( $settings['err_loggedin'] ) ? Helper::eael_wp_kses( $settings['err_loggedin'] ) : esc_html__( 'You are already logged in', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_lostpassword_error_' . $widget_id, $err_msg, false );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+
+		do_action( 'eael/login-register/before-lostpassword-email' );
+
+		if( $_POST['eael-user-lostpassword'] != wp_strip_all_tags( $_POST['eael-user-lostpassword'] ) ){ //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotValidated 
+			// contains html tag
+			$err_msg = esc_html__( 'There is no account with that username or email address.', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_lostpassword_error_' . $widget_id, $err_msg, false );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+
+		$user_login = ! empty( $_POST['eael-user-lostpassword'] ) ? sanitize_text_field( $_POST['eael-user-lostpassword'] ) : ''; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+		if ( is_email( $user_login ) ) {
+			$user_login = sanitize_email( $user_login );
+		}
+
+		// set email related stuff
+		if ( ! empty( $settings['enable_reset_password'] ) && 'yes' === $settings['enable_reset_password'] ) {
+			self::$send_custom_email_lostpassword = true;
+		}
+		if ( isset( $settings['lostpassword_email_subject'] ) ) {
+			self::$email_options_lostpassword['subject'] = Helper::eael_wp_kses( $settings['lostpassword_email_subject'] );
+		}
+		if ( isset( $settings['lostpassword_email_message_reset_link_text'] ) ) {
+			self::$email_options_lostpassword['reset_link_text'] = Helper::eael_wp_kses( $settings['lostpassword_email_message_reset_link_text'] );
+		}
+		if ( isset( $settings['lostpassword_email_message'] ) ) {
+			self::$email_options_lostpassword['message'] = $settings['lostpassword_email_message'];
+		}
+		if ( isset( $settings['lostpassword_email_content_type'] ) ) {
+			self::$email_options_lostpassword['headers'] = 'Content-Type: text/' . Helper::eael_wp_kses( $settings['lostpassword_email_content_type'] ) . '; charset=UTF-8' . "\r\n";
+		}
+
+		if ( isset($_SERVER['HTTP_REFERER']) ) {
+			self::$email_options_lostpassword['http_referer'] = esc_url_raw( strtok( $_SERVER['HTTP_REFERER'], '?' ) ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		}
+		
+		if ( isset($page_id) ) {
+			self::$email_options_lostpassword['page_id'] = sanitize_text_field( $page_id );
+		}
+
+		if ( ! empty( $page_id_for_popup ) ) {
+			self::$email_options_lostpassword['page_id'] = sanitize_text_field( $page_id_for_popup );
+		}
+
+		if ( ! empty( $resetpassword_in_popup_selector ) ) {
+			self::$email_options_lostpassword['resetpassword_in_popup_selector'] = sanitize_text_field( $resetpassword_in_popup_selector );
+		}
+
+		if ( isset($widget_id) ) {
+			self::$email_options_lostpassword['widget_id'] = sanitize_text_field( $widget_id );
+		}
+
+		add_filter( 'retrieve_password_notification_email', [ $this, 'eael_retrieve_password_notification_email' ], 10, 4 );
+		
+		$results = retrieve_password( $user_login );
+		
+		if ( is_wp_error( $results ) ) {
+			$err_msg = '';
+			if ( isset( $results->errors['invalidcombo'][0] ) ) {
+				$err_msg = $results->errors['invalidcombo'][0];
+			} else if( isset( $results->errors ) && count( $results->errors ) ) {
+				if( isset( $results->errors['retrieve_password_email_failure'] ) ){
+					$err_msg = is_array( $results->errors['retrieve_password_email_failure'] ) ? $results->errors['retrieve_password_email_failure'][0] : $results->errors['retrieve_password_email_failure'];
+				} else {
+					$err_msg = esc_html__( 'There is no account with that username or email address.', 'essential-addons-for-elementor-lite' );
+				}
+			}
+
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_lostpassword_error_' . $widget_id, $err_msg, false );
+		} else {
+			$lostpassword_success_message = ! empty( $settings['success_lostpassword'] ) ? Helper::eael_wp_kses( $settings['success_lostpassword'] ) : Helper::eael_wp_kses( 'Check your email for the confirmation link.' ); 
+			$data = [
+				'message' => $lostpassword_success_message,
+			];
+
+			if ( $ajax ) {
+				if ( ! empty( $_POST['redirect_to'] ) ) {
+					$data['redirect_to'] = esc_url_raw( $_POST['redirect_to'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+				}
+				wp_send_json_success( $data );
+			} else {
+				update_option( 'eael_lostpassword_success_' . $widget_id, $data['message'], false );
+			}
+
+			if ( ! empty( $_POST['redirect_to'] ) ) {
+				wp_safe_redirect( esc_url_raw( $_POST['redirect_to'] ) ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+				exit();
+			}
+		}
+        if (isset($_SERVER['HTTP_REFERER'])) {
+            wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+            exit();
+        }
+	}
+	
+	/**
+	 * It reset the password with user submitted new password.
+	 */
+	public function reset_password() {
+		$ajax   = wp_doing_ajax();
+		$page_id = 0;
+		if ( ! empty( $_POST['page_id'] ) ) {
+			$page_id = intval( $_POST['page_id'], 10 );
+		} else {
+			$err_msg = esc_html__( 'Page ID is missing', 'essential-addons-for-elementor-lite' );
+		}
+
+		$widget_id = 0;
+		if ( ! empty( $_POST['widget_id'] ) ) {
+			$widget_id = sanitize_text_field( wp_unslash( $_POST['widget_id'] ) );
+		} else {
+			$err_msg = esc_html__( 'Widget ID is missing', 'essential-addons-for-elementor-lite' );
+		}
+
+		update_option( 'eael_show_reset_password_on_form_submit_' . $widget_id, true, false );
+
+		if (!empty( $err_msg )){
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_resetpassword_error_' . $widget_id, wp_json_encode( $err_msg ), false );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+
+		if ( empty( $_POST['eael-resetpassword-nonce'] ) ) {
+			$err_msg = esc_html__( 'Insecure form submitted without security token', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_resetpassword_error_' . $widget_id, wp_json_encode( $err_msg ), false );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+		if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['eael-resetpassword-nonce'] ) ), 'essential-addons-elementor' ) ) {
+			$err_msg = esc_html__( 'Security token did not match', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_resetpassword_error_' . $widget_id, wp_json_encode( $err_msg ), false );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+		$settings = $this->lr_get_widget_settings( $page_id, $widget_id);
+
+		// Reject spoofed page_id / widget_id. Empty settings means the target isn't an
+		// EA Login/Register widget; proceeding would disable reCAPTCHA / Turnstile.
+		if ( empty( $settings ) ) {
+			$err_msg = __( 'Invalid form submission.', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_resetpassword_error_' . $widget_id, wp_json_encode( $err_msg ), false );
+
+			if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+				wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+				exit();
+			}
+			return;
+		}
+
+		if ( is_user_logged_in() ) {
+			$err_msg = isset( $settings['err_loggedin'] ) ? Helper::eael_wp_kses( $settings['err_loggedin'] ) : esc_html__( 'You are already logged in', 'essential-addons-for-elementor-lite' );
+			if ( $ajax ) {
+				wp_send_json_error( $err_msg );
+			}
+			update_option( 'eael_resetpassword_error_' . $widget_id, wp_json_encode( $err_msg ), false );
+
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                wp_safe_redirect($_SERVER['HTTP_REFERER']); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+                exit();
+            }
+		}
+
+		do_action( 'eael/login-register/before-resetpassword-email' );
+
+		$widget_id = ! empty( $_POST['widget_id'] ) ? sanitize_text_field( wp_unslash( $_POST['widget_id'] ) ) : '';
+		// Check if password is one or all empty spaces.
+		$errors = [];
+		if ( ! empty( $_POST['eael-pass1'] ) ) {
+			$post_eael_pass1 = trim( sanitize_text_field( $_POST['eael-pass1'] ) ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+
+			if ( empty( $post_eael_pass1 ) ) {
+				$errors['password_reset_empty_space'] = isset( $settings['err_pass'] ) ? Helper::eael_wp_kses( $settings['err_pass'] ) : esc_html__( 'The password cannot be a space or all spaces.', 'essential-addons-for-elementor-lite' );
+			}
+		} else {
+			if ( empty( $_POST['eael-pass1'] ) ) {
+				$errors['password_reset_empty_space'] = isset( $settings['err_pass'] ) ? Helper::eael_wp_kses( $settings['err_pass'] ) : esc_html__( 'The password cannot be a space or all spaces.', 'essential-addons-for-elementor-lite' );
+			}
+		}
+
+		if( ! empty( $_POST['eael-pass1'] ) && strlen( trim( $_POST['eael-pass1'] ) ) == 0 ){ //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			$errors['password_reset_empty'] = esc_html__( 'The password cannot be empty.', 'essential-addons-for-elementor-lite' );
+		}
+		
+		// Check if password fields do not match.
+		if ( ! empty( $_POST['eael-pass1'] ) && ! empty( $_POST['eael-pass2'] ) && $_POST['eael-pass2'] !== $_POST['eael-pass1'] ) {
+			$errors['password_reset_mismatch'] = isset( $settings['err_conf_pass'] ) ? Helper::eael_wp_kses( $settings['err_conf_pass'] ) : esc_html__( 'The passwords do not match.', 'essential-addons-for-elementor-lite' );
+		}
+
+		if ( ( ! count( $errors ) ) && isset( $_POST['eael-pass1'] ) && ! empty( $_POST['eael-pass1'] ) ) {
+			$rp_data_db['rp_key']   = ! empty( $_POST['rp_key'] ) ? sanitize_text_field( wp_unslash( $_POST['rp_key'] ) ) : '';
+			$rp_data_db['rp_login'] = ! empty( $_POST['rp_login'] ) ? sanitize_text_field( wp_unslash( $_POST['rp_login'] ) ) : '';
+			
+			$user = check_password_reset_key( $rp_data_db['rp_key'], $rp_data_db['rp_login'] );
+
+			if( is_wp_error( $user ) || ! $user ){
+				$data['message'] = esc_html__( 'Invalid user name found!', 'essential-addons-for-elementor-lite' );
+
+				$success_key = 'eael_resetpassword_success_' . esc_attr( $widget_id );
+				delete_option( $success_key );
+
+				if($ajax){
+					wp_send_json_error( $data['message'] );
+				}else {
+					update_option( 'eael_resetpassword_error_' . $widget_id, wp_json_encode( $data['message'] ), false );
+				}
+			}
+
+			if( $user && ! is_wp_error( $user ) ){
+				try {
+					reset_password( $user, sanitize_text_field( $_POST['eael-pass1'] ) ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+					$data['message'] = isset( $settings['success_resetpassword'] ) ? Helper::eael_wp_kses( $settings['success_resetpassword'] ) : esc_html__( 'Your password has been reset.', 'essential-addons-for-elementor-lite' );
+
+					$error_key = 'eael_resetpassword_error_' . esc_attr( $widget_id );
+					delete_option( $error_key );
+					delete_option( 'eael_show_reset_password_on_form_submit_' . $widget_id );
+
+					if($ajax){
+						// $custom_redirect_url = ! empty( $settings['resetpassword_redirect_url']['url'] ) ? $settings['resetpassword_redirect_url']['url'] : '/';
+						if( ! empty( $_POST['resetpassword_redirect_to'] ) ){
+							$data['redirect_to'] = esc_url_raw( $_POST['resetpassword_redirect_to'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+						}
+
+						wp_send_json_success( $data );
+					} else {
+						update_option( 'eael_resetpassword_success_' . $widget_id, wp_json_encode( $data['message'] ), false );
+					}
+
+					if ( ! empty( $_POST['resetpassword_redirect_to'] ) ) {
+						wp_safe_redirect( esc_url_raw( $_POST['resetpassword_redirect_to'] ) ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+						exit();
+					}
+				} catch ( \Exception $e ) {
+					// Do nothing
+					unset( $e );
+				}
+			} else {
+				if (isset($_SERVER['HTTP_REFERER'])) {
+					wp_safe_redirect( strtok( $_SERVER['HTTP_REFERER'], '?' ) ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+					exit();
+				}
+			}
+		} else {
+			// if any error found, abort
+			if ( ! empty( $errors ) ) {
+				if ( $ajax ) {
+					$err_msg = '<ol>';
+					foreach ( $errors as $error ) {
+						$err_msg .= "<li>{$error}</li>";
+					}
+					$err_msg .= '</ol>';
+					wp_send_json_error( $err_msg );
+				}
+				update_option( 'eael_resetpassword_error_' . $widget_id, wp_json_encode( $errors ), false );
+
+				if (isset( $_SERVER['HTTP_REFERER'] )) {
+					wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+					exit();
+				}
+			}
+		}
+
+	}
+
+	public function eael_redirect_to_reset_password(){
+		if ( empty( $_GET['eael-resetpassword'] ) || empty( $_GET['key'] ) || empty( $_GET['login'] ) || empty( $_GET['action'] ) || 'rp' !== $_GET['action'] ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			return;
+		}
+
+		$this->page_id = isset( $_GET['page_id'] ) ? intval( $_GET['page_id'] ) : 0; //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$this->widget_id = isset( $_GET['widget_id'] ) ? sanitize_text_field( wp_unslash( $_GET['widget_id'] ) ) : ''; //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$this->resetpassword_in_popup_selector = isset( $_GET['popup-selector'] ) ? sanitize_text_field( wp_unslash( $_GET['popup-selector'] ) ) : ''; //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$rp_page_url = get_permalink( $this->page_id );
+		$user = false;
+
+		if ( isset( $_GET['key'] ) && isset( $_GET['login'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$user        = check_password_reset_key( sanitize_text_field( wp_unslash( $_GET['key'] ) ), sanitize_text_field( wp_unslash( $_GET['login'] ) ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$rp_page_url .= "?eael_key=" . sanitize_text_field( wp_unslash( $_GET['key'] ) ) . "&eael_login=" . sanitize_text_field( wp_unslash( $_GET['login'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		}
+
+		if ( ! $user || is_wp_error( $user ) ) {
+			update_option( 'eael_lostpassword_error_' . esc_attr( $this->widget_id ) . '_show', 1, false );
+
+			if ( $user && $user->get_error_code() === 'expired_key' ) {
+				wp_safe_redirect( $rp_page_url . '&eael-lostpassword=1&error=expiredkey' );
+			} else {
+				wp_safe_redirect( $rp_page_url . '&eael-lostpassword=1&error=expiredkey' );
+			}
+
+			exit;
+		}
+
+		if( $this->resetpassword_in_popup_selector ){
+			wp_safe_redirect( $rp_page_url . '&eael-resetpassword=1&popup-selector=' . $this->resetpassword_in_popup_selector );
+		} else {
+			wp_safe_redirect( $rp_page_url . '&eael-resetpassword=1' );
+		}
+
+		exit;
+	}
+
+	public function eael_retrieve_password_notification_email( $defaults, $key, $user_login, $user_data ){
+		if ( ! self::$send_custom_email_lostpassword ) {
+			return $defaults;
+		}
+
+		if ( ! empty( self::$email_options_lostpassword['subject'] ) ) {
+			$defaults['subject'] = self::$email_options_lostpassword['subject'];
+		}
+
+		$page_id = self::$email_options_lostpassword['page_id'] ? self::$email_options_lostpassword['page_id'] : 0;
+		$widget_id = self::$email_options_lostpassword['widget_id'] ? self::$email_options_lostpassword['widget_id'] : '';
+		$resetpassword_in_popup_selector = isset( self::$email_options_lostpassword['resetpassword_in_popup_selector'] ) ? str_replace(' ', '_', self::$email_options_lostpassword['resetpassword_in_popup_selector']) : '';
+
+		if ( ! empty( self::$email_options_lostpassword['message'] ) ) {
+			if ( ! empty( $key ) ) {
+				$locale = get_user_locale( $user_data );
+				self::$email_options_lostpassword['password_reset_link'] = add_query_arg(
+					array(
+						'action'				=> 'rp',
+						'eael-resetpassword'	=> 1,
+						'key'					=> $key,
+						'login'					=> rawurlencode( $user_login ),
+					),
+					esc_url_raw( $this->eael_wp_login_url() )
+				);
+				self::$email_options_lostpassword['password_reset_link'] = self::$email_options_lostpassword['password_reset_link'] . '&page_id='. $page_id . '&widget_id='. $widget_id .'&wp_lang=' . $locale . "\r\n\r\n";
+
+                if( ! empty( $resetpassword_in_popup_selector ) ){
+					self::$email_options_lostpassword['password_reset_link'] = add_query_arg(
+						array(
+							'action'				=> 'rp',
+							'eael-resetpassword'	=> '1',
+							'key'					=> $key,
+							'login'					=> rawurlencode( $user_login ),
+							'page_id'				=> $page_id,
+							'widget_id'				=> $widget_id,
+							'popup-selector'		=> $resetpassword_in_popup_selector,
+							'wp_lang'				=> $locale,
+						),
+						esc_url_raw( $this->eael_wp_login_url() )
+					);
+				}
+			}
+
+			if( is_object($user_data) ) {
+				$user_meta = get_user_meta( $user_data->ID );
+				self::$email_options_lostpassword['username'] = $user_login;
+				self::$email_options_lostpassword['firstname'] = !empty( $user_meta['first_name'][0] ) ? $user_meta['first_name'][0] : '';
+				self::$email_options_lostpassword['lastname'] = !empty( $user_meta['last_name'][0] ) ? $user_meta['last_name'][0] : '';
+				self::$email_options_lostpassword['email'] = $user_data->user_email;
+				self::$email_options_lostpassword['website'] = $user_data->user_url;				
+			}
+			$defaults['message'] = $this->replace_placeholders_lostpassword( self::$email_options_lostpassword['message'] );
+		}
+
+		if ( ! empty( self::$email_options_lostpassword['headers'] ) ) {
+			$defaults['headers'] = self::$email_options_lostpassword['headers'];
+		}
+
+		$defaults['message'] = wpautop( $defaults['message'] );
+		
+		return $defaults;
+	}
+
+	public function generate_username_from_email( $email, $suffix = '' ) {
+
+		$username_parts = [];
+		if ( empty( $username_parts ) ) {
+			$email_parts    = explode( '@', $email );
+			$email_username = $email_parts[0];
+
+			// Exclude common prefixes.
+			if ( in_array( $email_username, [
+				'sales',
+				'hello',
+				'mail',
+				'contact',
+				'info',
+			], true ) ) {
+				// Get the domain part.
+				$email_username = $email_parts[1];
+			}
+
+			$username_parts[] = sanitize_user( $email_username, true );
+		}
+		$username = strtolower( implode( '', $username_parts ) );
+
+		if ( $suffix ) {
+			$username .= $suffix;
+		}
+
+		$username = sanitize_user( $username, true );
+		if ( username_exists( $username ) ) {
+			// Generate something unique to append to the username in case of a conflict with another user.
+			$suffix = '-' . zeroise( wp_rand( 0, 9999 ), 4 );
+
+			return $this->generate_username_from_email( $email, $suffix );
+		}
+
+		return $username;
+	}
+
+	/**
+	 * Get Widget data.
+	 *
+	 * @param array  $elements Element array.
+	 * @param string $form_id  Element ID.
+	 *
+	 * @return bool|array
+	 */
+	public function find_element_recursive( $elements, $form_id ) {
+
+		foreach ( $elements as $element ) {
+			if ( $form_id === $element['id'] ) {
+				return $element;
+			}
+
+			if ( ! empty( $element['elements'] ) ) {
+				$element = $this->find_element_recursive( $element['elements'], $form_id );
+
+				if ( $element ) {
+					return $element;
+				}
+			}
+		}
+
+		return false;
+	}
+
+	public function get_user_roles() {
+		$user_roles[''] = __( 'Default', 'essential-addons-for-elementor-lite' );
+		if ( function_exists( 'get_editable_roles' ) ) {
+			$wp_roles = get_editable_roles();
+			$roles    = $wp_roles ? $wp_roles : [];
+			if ( ! empty( $roles ) && is_array( $roles ) ) {
+
+				foreach ( $wp_roles as $role_key => $role ) {
+					if ( $role_key === 'administrator' ) {
+						continue;
+					}
+					$user_roles[ $role_key ] = $role['name'];
+				}
+			}
+		}
+
+		return apply_filters( 'eael/login-register/new-user-roles', $user_roles );
+	}
+
+	/**
+	 * It store data temporarily,5 minutes by default
+	 *
+	 * @param     $name
+	 * @param     $data
+	 * @param int $time time in seconds. Default is 300s = 5 minutes
+	 *
+	 * @return bool it returns true if the data saved, otherwise, false returned.
+	 */
+	public function set_transient( $name, $data, $time = 300 ) {
+		$time = empty( $time ) ? (int) $time : ( 5 * MINUTE_IN_SECONDS );
+
+		return set_transient( $name, $data, $time );
+	}
+
+	/**
+	 * Filters the contents of the new user notification email sent to the new user.
+	 *
+	 * @param array    $email_data It contains, to, subject, message, headers etc.
+	 * @param \WP_User $user       User object for new user.
+	 * @param string   $blogname   The site title.
+	 *
+	 * @return array
+	 * @since 4.9.0
+	 */
+	public function new_user_notification_email( $email_data, $user, $blogname ) {
+		if ( ! self::$send_custom_email ) {
+			return $email_data;
+		}
+
+		if ( ! empty( self::$email_options['subject'] ) ) {
+			$email_data['subject'] = self::$email_options['subject'];
+		}
+
+		if ( ! empty( self::$email_options['message'] ) ) {
+			$key = get_password_reset_key( $user );
+			if ( ! empty( $key ) ) {
+				update_user_option( $user->ID, 'default_password_nag', true, true ); // Set up the password change nag.
+				$custom_reset_password_info = get_option( 'eael_lr_resetpassword_form_info' );
+
+				if( is_array( $custom_reset_password_info ) ){
+					$locale = get_user_locale( $user );
+					$password_reset_link = add_query_arg(
+						array(
+							'action'				=> 'rp',
+							'eael-resetpassword'	=> '1',
+							'key'					=> $key,
+							'login'					=> rawurlencode( $user->user_login ),
+							'page_id'				=> !empty( $custom_reset_password_info['page_id'] ) ? $custom_reset_password_info['page_id'] : 0,
+							'widget_id'				=> !empty( $custom_reset_password_info['widget_id'] ) ? $custom_reset_password_info['widget_id'] : '',
+							'wp_lang'				=> $locale,
+						),
+						esc_url_raw( $this->eael_wp_login_url() )
+					);
+				} else {
+					$password_reset_link = add_query_arg(
+						[
+							'action' => 'rp',
+							'key'	 => $key,
+							'login'	 => rawurlencode( $user->user_login ),
+						],
+						esc_url_raw( $this->eael_wp_login_url() )
+					);
+				}
+
+				$link_text = !empty( $custom_reset_password_info['link_text'] ) ? $custom_reset_password_info['link_text'] : __( 'Click here to reset your password', 'essential-addons-for-elementor-lite' );
+				$password_reset_link = '<a href="' . $password_reset_link . '" target="_blank">' . $link_text . '</a>';
+				self::$email_options_lostpassword['password_reset_link'] = $password_reset_link;
+				self::$email_options['password_reset_link'] = $password_reset_link . "\r\n\r\n";
+			}
+			$email_data['message'] = $this->replace_placeholders( self::$email_options['message'], 'user' );
+		}
+
+		if ( ! empty( self::$email_options['headers'] ) ) {
+			$email_data['headers'] = self::$email_options['headers'];
+		}
+
+		$email_data['message'] = wpautop( $email_data['message'] );
+
+		return apply_filters( 'eael/login-register/new-user-email-data', $email_data, $user, $blogname );
+
+	}
+
+	/**
+	 * Filters the contents of the new user notification email sent to the site admin.
+	 *
+	 * @param array    $email_data It contains, to, subject, message, headers etc.
+	 * @param \WP_User $user       User object for new user.
+	 * @param string   $blogname   The site title.
+	 *
+	 * @return array
+	 * @since 4.9.0
+	 */
+	public function new_user_notification_email_admin( $email_data, $user, $blogname ) {
+
+		if ( ! self::$send_custom_email_admin ) {
+			return $email_data;
+		}
+
+		if ( ! empty( self::$email_options['admin_subject'] ) ) {
+			$email_data['subject'] = self::$email_options['admin_subject'];
+		}
+
+		if ( ! empty( self::$email_options['admin_message'] ) ) {
+			$email_data['message'] = $this->replace_placeholders( self::$email_options['admin_message'], 'admin' );
+		}
+
+		if ( ! empty( self::$email_options['admin_headers'] ) ) {
+			$email_data['headers'] = self::$email_options['admin_headers'];
+		}
+
+		$email_data['message'] = wpautop( $email_data['message'] );
+
+		return apply_filters( 'eael/login-register/new-user-admin-email-data', $email_data, $user, $blogname );
+	}
+
+	/**
+	 * It replaces placeholders with dynamic value and returns it.
+	 *
+	 * @param        $message
+	 * @param string $receiver
+	 *
+	 * @return null|string|string[]
+	 */
+	public function replace_placeholders( $message, $receiver = 'user' ) {
+		$placeholders = [
+			'/(\w+\s*=\s*["\'][^"\']*\[(password_reset_link|password)\][^"\']*["\'])/',
+			'/<[^>]*\[(password_reset_link|password)\][^>]*>/',
+			'/\[eael_phone_number\]/',
+			'/\[password\]/',
+			'/\[password_reset_link\]/',
+			'/\[username\]/',
+			'/\[email\]/',
+			'/\[firstname\]/',
+			'/\[lastname\]/',
+			'/\[website\]/',
+			'/\[loginurl\]/',
+			'/\[sitetitle\]/',
+		];
+		$replacement  = [
+			'',
+			'',
+			self::$email_options['eael_phone_number'],
+			self::$email_options['password'],
+			self::$email_options['password_reset_link'],
+			self::$email_options['username'],
+			self::$email_options['email'],
+			self::$email_options['firstname'],
+			self::$email_options['lastname'],
+			self::$email_options['website'],
+			esc_url_raw( $this->eael_wp_login_url() ),
+			get_option( 'blogname' ),
+		];
+
+		if ( 'user' !== $receiver ) {
+			// remove password from admin mail, because admin should not see user's plain password
+			unset( $placeholders[3] );
+			unset( $placeholders[4] );
+			unset( $replacement[3] );
+			unset( $replacement[4] );
+		}
+
+		$message = preg_replace( $placeholders, $replacement, $message );
+
+		$message = $this->replace_placeholders_custom_fields($message);
+
+		return $message;
+	}
+
+	public function replace_placeholders_custom_fields( $message ){
+		// replace custom profile field shortcodes
+		$eael_custom_profile_fields_text = $this->get_eael_custom_profile_fields('text');
+		$eael_custom_profile_fields_image = $this->get_eael_custom_profile_fields('image');
+		$eael_custom_profile_fields_text_keys = count( $eael_custom_profile_fields_text ) ? array_keys( $eael_custom_profile_fields_text ) : [];
+		$eael_custom_profile_fields_image_keys = count( $eael_custom_profile_fields_image ) ? array_keys( $eael_custom_profile_fields_image ) : [];
+
+		$custom_field_placeholders = $custom_field_replacements = [];
+
+		if( count( $eael_custom_profile_fields_text_keys ) ){
+			foreach( $eael_custom_profile_fields_text_keys as $eael_custom_profile_fields_text_key){
+				$custom_field_placeholders[] = '/\[' . esc_html( $eael_custom_profile_fields_text_key ) . '\]/';
+				$custom_field_replacements[] = esc_html( self::$email_options[$eael_custom_profile_fields_text_key] );
+			}
+		}
+
+		if( count( $eael_custom_profile_fields_image_keys ) ){
+			foreach( $eael_custom_profile_fields_image_keys as $eael_custom_profile_fields_image_key){
+				$custom_field_placeholders[] = '/\[' . esc_html( $eael_custom_profile_fields_image_key ) . '\]/';
+				$custom_field_replacements[] = esc_url( self::$email_options[$eael_custom_profile_fields_image_key] );
+			}
+		}
+
+		if( count( $custom_field_placeholders ) ){
+			$message = preg_replace( $custom_field_placeholders, $custom_field_replacements, $message );
+		}
+
+		return $message;
+	}
+
+	/**
+	 * It replaces placeholders with dynamic value and returns it.
+	 *
+	 * @param        $message
+	 * @param string $receiver
+	 *
+	 * @return null|string|string[]
+	 */
+	public function replace_placeholders_lostpassword( $message ) {
+		$reset_link_text   = !empty( self::$email_options_lostpassword['reset_link_text'] ) ? self::$email_options_lostpassword['reset_link_text'] : esc_html__('Click here to reset your password', 'essential-addons-for-elementor-lite');
+		$password_reset_link = !empty( self::$email_options_lostpassword['password_reset_link'] ) ? '<a href="'.esc_url_raw( self::$email_options_lostpassword['password_reset_link'] ).'">' . esc_html( $reset_link_text ) . '</a>' : '';
+		$username 		   = !empty( self::$email_options_lostpassword['username'] ) ? self::$email_options_lostpassword['username'] : '';
+		$email 			   = !empty( self::$email_options_lostpassword['email'] ) ? self::$email_options_lostpassword['email'] : '';
+		$firstname 		   = !empty( self::$email_options_lostpassword['firstname'] ) ? self::$email_options_lostpassword['firstname'] : '';
+		$lastname 		   = !empty( self::$email_options_lostpassword['lastname'] ) ? self::$email_options_lostpassword['lastname'] : '';
+		$website 		   = !empty( self::$email_options_lostpassword['website'] ) ? self::$email_options_lostpassword['website'] : '';
+		
+		$placeholders = [
+			'/(\w+\s*=\s*["\'][^"\']*\[password_reset_link\][^"\']*["\'])/',
+			'/<[^>]*\[password_reset_link\][^>]*>/',
+			'/\[password_reset_link\]/',
+			'/\[username\]/',
+			'/\[email\]/',
+			'/\[firstname\]/',
+			'/\[lastname\]/',
+			'/\[website\]/',
+			'/\[loginurl\]/',
+			'/\[sitetitle\]/',
+		];
+		$replacement  = [
+			'',
+			'',
+			$password_reset_link,
+			$username,
+			$email,
+			$firstname,
+			$lastname,
+			$website,
+			esc_url_raw( $this->eael_wp_login_url() ),
+			get_option( 'blogname' ),
+		];
+
+		return preg_replace( $placeholders, $replacement, $message );
+	}
+
+	/**
+	 * It replaces placeholders with dynamic value and returns it.
+	 *
+	 * @param        $text
+	 * @param string $receiver
+	 *
+	 * @return null|string|string[]
+	 */
+	public function replace_placeholders_logout_link_text( $text ) {
+		$current_user   = wp_get_current_user()->display_name;
+		$logout_link 	= sprintf( '<a href="%1$s">%2$s</a>', esc_url( wp_logout_url() ), __( 'Logout', 'essential-addons-for-elementor-lite' ) );
+
+		$placeholders = [
+			'/\[username\]/',
+			'/\[logout_link\]/',
+		];
+		$replacement  = [
+			$current_user,
+			$logout_link,
+		];
+
+		return preg_replace( $placeholders, $replacement, $text );
+	}
+
+	public function lr_validate_recaptcha( $version = 'v2', $settings = [] ) {
+		if ( ! isset( $_REQUEST['g-recaptcha-response'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			return false;
+		}
+		$endpoint = 'https://www.recaptcha.net/recaptcha/api/siteverify';
+		$data     = [
+			'secret'   => 'v3' === $version ? get_option( 'eael_recaptcha_secret_v3' ) : get_option( 'eael_recaptcha_secret' ),
+			'response' => !empty( $_REQUEST['g-recaptcha-response'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['g-recaptcha-response'] ) ) : '', //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			'ip'       => !empty( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '', //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		];
+
+		$res = json_decode( wp_remote_retrieve_body( wp_remote_post( $endpoint, [ 'body' => $data ] ) ), 1 );
+		if ( isset( $res['success'] ) ) {
+			if('v3' === $version ) {
+				$action = self::$recaptcha_v3_default_action;
+				$action_ok = ! isset( $res['action'] ) ? true : $action === $res['action'];
+				return $action_ok && isset( $res['score'] ) && ( $res['score'] > self::get_recaptcha_threshold( $settings ) );
+			}else {
+				return $res['success'];				
+			}
+		}
+
+		return false;
+	}
+
+	public function lr_validate_cloudflare_turnstile( $settings = [] ) {
+		if ( ! isset( $_REQUEST['cf-turnstile-response'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			return false;
+		}
+		$secret = get_option( 'eael_cloudflare_turnstile_secretkey' );
+		if( empty( $secret ) ) {
+			return false;
+		}
+
+		$endpoint = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+		$data     = [
+			'secret'   => $secret,
+			'response' => !empty( $_REQUEST['cf-turnstile-response'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['cf-turnstile-response'] ) ) : '', //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			'remoteip' => !empty( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '', //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		];
+
+		$res = json_decode( wp_remote_retrieve_body( wp_remote_post( $endpoint, [ 'body' => $data ] ) ), 1 );
+		if ( isset( $res['success'] ) ) {
+			return $res['success'];
+		}
+
+		return false;
+	}
+
+	/* ============================================================================
+	 * Email OTP Verification
+	 * ============================================================================ */
+
+	/**
+	 * Transient key prefix for OTP sessions.
+	 */
+	public static $otp_transient_prefix = 'eael_lr_otp_';
+
+	/**
+	 * Generate a 6-digit numeric OTP.
+	 *
+	 * @return string
+	 */
+	protected function eael_otp_generate_code() {
+		return str_pad( (string) wp_rand( 0, 999999 ), 6, '0', STR_PAD_LEFT );
+	}
+
+	/**
+	 * Hash an OTP code for safe storage. We bind it to the token to prevent
+	 * cross-session reuse.
+	 *
+	 * @param string $code
+	 * @param string $token
+	 * @return string
+	 */
+	protected function eael_otp_hash_code( $code, $token ) {
+		return hash_hmac( 'sha256', $code, wp_salt( 'auth' ) . '|' . $token );
+	}
+
+	/**
+	 * Render an OTP email body, replacing placeholders.
+	 *
+	 * For HTML emails the [direct_login_url] placeholder expands into a real <a>
+	 * anchor; for plain-text emails it expands into the bare URL.
+	 *
+	 * @param string $template
+	 * @param string $code
+	 * @param int    $expiry_minutes
+	 * @param string $email
+	 * @param string $direct_url   Absolute URL to the page hosting the login/register widget.
+	 * @param string $content_type 'html' or 'plain'.
+	 * @return string
+	 */
+	protected function eael_otp_render_email( $template, $code, $expiry_minutes, $email, $direct_url = '', $content_type = 'plain' ) {
+		$direct_url      = $direct_url ? esc_url_raw( $direct_url ) : '';
+		$url_replacement = $direct_url;
+
+		if ( 'html' === $content_type && ! empty( $direct_url ) ) {
+			$url_replacement = sprintf(
+				'<a href="%1$s" target="_blank" rel="noopener">%2$s</a>',
+				esc_url( $direct_url ),
+				esc_html__( 'Verify your email', 'essential-addons-for-elementor-lite' )
+			);
+		}
+
+		$replacements = [
+			'[otp_code]'         => $code,
+			'[otp_expiry]'       => (int) $expiry_minutes,
+			'[email]'            => $email,
+			'[sitetitle]'        => get_option( 'blogname' ),
+			'[direct_login_url]' => $url_replacement,
+		];
+
+		return strtr( $template, $replacements );
+	}
+
+	/**
+	 * Send the OTP email using widget settings for subject/message/content-type.
+	 *
+	 * @param array  $settings  Widget settings.
+	 * @param string $email     Recipient email address.
+	 * @param string $form_type  'login' or 'register'.
+	 * @param string $code       The plain OTP code.
+	 * @param string $direct_url Absolute URL to the page hosting the widget.
+	 * @return bool
+	 */
+	protected function eael_otp_send_email( $settings, $email, $form_type, $code, $direct_url = '' ) {
+		$prefix         = ( 'login' === $form_type ) ? 'login' : 'register';
+		$expiry_minutes = ! empty( $settings[ "{$prefix}_otp_expiry" ] ) ? (int) $settings[ "{$prefix}_otp_expiry" ] : 5;
+
+		$default_subject = sprintf(
+			/* translators: %s: site name */
+			__( 'Your verification code for %s', 'essential-addons-for-elementor-lite' ),
+			get_option( 'blogname' )
+		);
+
+		$subject = ! empty( $settings[ "{$prefix}_otp_email_subject" ] )
+			? Helper::eael_wp_kses( $settings[ "{$prefix}_otp_email_subject" ] )
+			: $default_subject;
+
+		$default_message = __( 'Your one-time verification code is: [otp_code]', 'essential-addons-for-elementor-lite' )
+			. "\r\n\r\n"
+			. __( 'This code will expire in [otp_expiry] minutes.', 'essential-addons-for-elementor-lite' );
+
+		$message = ! empty( $settings[ "{$prefix}_otp_email_message" ] )
+			? $settings[ "{$prefix}_otp_email_message" ]
+			: $default_message;
+
+		$content_type = ! empty( $settings[ "{$prefix}_otp_email_content_type" ] )
+			? wp_strip_all_tags( $settings[ "{$prefix}_otp_email_content_type" ] )
+			: 'html';
+
+		// Fall back to the home URL if the caller did not pass an explicit direct URL.
+		if ( empty( $direct_url ) ) {
+			$direct_url = home_url( '/' );
+		}
+
+		// Subject lines are always plain text — never inject anchors there.
+		$subject = $this->eael_otp_render_email( $subject, $code, $expiry_minutes, $email, $direct_url, 'plain' );
+		$message = $this->eael_otp_render_email( $message, $code, $expiry_minutes, $email, $direct_url, $content_type );
+
+		// If the placeholder wasn't used in the body, auto-append a "Direct Access" line so the
+		// link is always present. We render an <a> for HTML emails and a bare URL for plain.
+		if ( ! empty( $direct_url ) && false === stripos( $message, $direct_url ) ) {
+			if ( 'html' === $content_type ) {
+				$direct_line = sprintf(
+					/* translators: %s: HTML anchor pointing at the verification screen. */
+					__( 'Direct access to the verification screen: %s', 'essential-addons-for-elementor-lite' ),
+					sprintf(
+						'<a href="%1$s" target="_blank" rel="noopener">%2$s</a>',
+						esc_url( $direct_url ),
+						esc_html__( 'Verify your email', 'essential-addons-for-elementor-lite' )
+					)
+				);
+			} else {
+				$direct_line = sprintf(
+					/* translators: %s: Absolute URL to the verification screen. */
+					__( 'Direct access to the verification screen: %s', 'essential-addons-for-elementor-lite' ),
+					$direct_url
+				);
+			}
+			$message .= "\r\n\r\n" . $direct_line;
+		}
+
+		if ( 'html' === $content_type ) {
+			$message = wpautop( $message );
+		}
+
+		$headers = 'Content-Type: text/' . $content_type . '; charset=UTF-8' . "\r\n";
+
+		return wp_mail( $email, $subject, $message, $headers );
+	}
+
+	/**
+	 * Create a new OTP session: stores data + hashed code in a transient and emails the user.
+	 *
+	 * @param string $flow      'register' or 'login'.
+	 * @param array  $payload   Sanitized form data needed to finalize the action.
+	 * @param string $email     Recipient address.
+	 * @param string $widget_id Widget ID.
+	 * @param int    $page_id   Page ID.
+	 * @param array  $settings   Widget settings.
+	 * @param string $direct_url Absolute URL of the page hosting the widget.
+	 * @return array { token, expiry, cooldown } or WP_Error on failure.
+	 */
+	protected function eael_otp_create_session( $flow, $payload, $email, $widget_id, $page_id, $settings, $direct_url = '' ) {
+		$prefix         = ( 'login' === $flow ) ? 'login' : 'register';
+		$expiry_minutes = ! empty( $settings[ "{$prefix}_otp_expiry" ] ) ? max( 1, (int) $settings[ "{$prefix}_otp_expiry" ] ) : 5;
+		$cooldown       = ! empty( $settings[ "{$prefix}_otp_resend_cooldown" ] ) ? max( 15, (int) $settings[ "{$prefix}_otp_resend_cooldown" ] ) : 60;
+
+		$token = wp_generate_password( 32, false, false );
+		$code  = $this->eael_otp_generate_code();
+
+		// Capture the page URL hosting the widget so it can be embedded in the OTP email.
+		if ( empty( $direct_url ) ) {
+			if ( $page_id ) {
+				$direct_url = get_permalink( $page_id );
+			}
+			if ( empty( $direct_url ) && ! empty( $_SERVER['HTTP_REFERER'] ) ) {
+				$direct_url = esc_url_raw( wp_unslash( $_SERVER['HTTP_REFERER'] ) ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
+			}
+			if ( empty( $direct_url ) ) {
+				$direct_url = home_url( '/' );
+			}
+		}
+
+		// Stamp the direct URL with query args so a click from email — even on a different
+		// browser/device where the cookie is absent — lands the user straight on the OTP screen.
+		$direct_url = add_query_arg(
+			[
+				'eael_otp'      => $token,
+				'eael_otp_flow' => $flow,
+			],
+			$direct_url
+		);
+
+		$session = [
+			'flow'       => $flow,
+			'email'      => $email,
+			'widget_id'  => $widget_id,
+			'page_id'    => (int) $page_id,
+			'payload'    => $payload,
+			'code_hash'  => $this->eael_otp_hash_code( $code, $token ),
+			'attempts'   => 0,
+			'last_sent'  => time(),
+			'created'    => time(),
+			'expiry'     => $expiry_minutes * MINUTE_IN_SECONDS,
+			'cooldown'   => $cooldown,
+			'direct_url' => esc_url_raw( $direct_url ),
+		];
+
+		set_transient( self::$otp_transient_prefix . $token, $session, $expiry_minutes * MINUTE_IN_SECONDS );
+
+		$sent = $this->eael_otp_send_email( $settings, $email, $flow, $code, $direct_url );
+
+		if ( ! $sent ) {
+			delete_transient( self::$otp_transient_prefix . $token );
+			return new \WP_Error(
+				'eael_otp_email_failed',
+				__( 'We could not send the verification email. Please try again later.', 'essential-addons-for-elementor-lite' )
+			);
+		}
+
+		return [
+			'token'    => $token,
+			'expiry'   => $expiry_minutes,
+			'cooldown' => $cooldown,
+			'email'    => $this->eael_otp_mask_email( $email ),
+		];
+	}
+
+	/**
+	 * Mask an email address for display, e.g. j***@example.com.
+	 *
+	 * @param string $email
+	 * @return string
+	 */
+	protected function eael_otp_mask_email( $email ) {
+		$parts = explode( '@', $email );
+		if ( count( $parts ) !== 2 ) {
+			return $email;
+		}
+		$local  = $parts[0];
+		$masked = substr( $local, 0, 1 ) . str_repeat( '*', max( 1, strlen( $local ) - 1 ) );
+		return $masked . '@' . $parts[1];
+	}
+
+	/**
+	 * AJAX: send / resend OTP.
+	 */
+	public function eael_ajax_send_otp() {
+		check_ajax_referer( 'eael_lr_otp', '_eael_otp_nonce' );
+
+		$token = ! empty( $_POST['otp_token'] ) ? sanitize_text_field( wp_unslash( $_POST['otp_token'] ) ) : '';
+		if ( empty( $token ) ) {
+			wp_send_json_error( [ 'message' => __( 'Invalid OTP session.', 'essential-addons-for-elementor-lite' ) ] );
+		}
+
+		$session = get_transient( self::$otp_transient_prefix . $token );
+		if ( empty( $session ) || ! is_array( $session ) ) {
+			wp_send_json_error( [ 'message' => __( 'Your verification session has expired. Please start over.', 'essential-addons-for-elementor-lite' ) ] );
+		}
+
+		$elapsed = time() - (int) $session['last_sent'];
+		if ( $elapsed < (int) $session['cooldown'] ) {
+			wp_send_json_error( [
+				'message'   => sprintf(
+					/* translators: %d seconds remaining */
+					__( 'Please wait %d seconds before requesting a new code.', 'essential-addons-for-elementor-lite' ),
+					(int) $session['cooldown'] - $elapsed
+				),
+				'cooldown' => (int) $session['cooldown'] - $elapsed,
+			] );
+		}
+
+		$settings = $this->lr_get_widget_settings( (int) $session['page_id'], $session['widget_id'] );
+		if ( empty( $settings ) ) {
+			wp_send_json_error( [ 'message' => __( 'Widget settings could not be loaded.', 'essential-addons-for-elementor-lite' ) ] );
+		}
+
+		$code                  = $this->eael_otp_generate_code();
+		$session['code_hash']  = $this->eael_otp_hash_code( $code, $token );
+		$session['last_sent']  = time();
+		$session['attempts']   = 0;
+
+		set_transient( self::$otp_transient_prefix . $token, $session, (int) $session['expiry'] );
+
+		$direct_url = ! empty( $session['direct_url'] ) ? $session['direct_url'] : '';
+		$sent       = $this->eael_otp_send_email( $settings, $session['email'], $session['flow'], $code, $direct_url );
+
+		if ( ! $sent ) {
+			wp_send_json_error( [ 'message' => __( 'We could not send the verification email. Please try again later.', 'essential-addons-for-elementor-lite' ) ] );
+		}
+
+		wp_send_json_success( [
+			'message'  => __( 'A new verification code has been sent.', 'essential-addons-for-elementor-lite' ),
+			'cooldown' => (int) $session['cooldown'],
+		] );
+	}
+
+	/**
+	 * AJAX: verify OTP and finalize the gated action.
+	 */
+	public function eael_ajax_verify_otp() {
+		check_ajax_referer( 'eael_lr_otp', '_eael_otp_nonce' );
+
+		$token = ! empty( $_POST['otp_token'] ) ? sanitize_text_field( wp_unslash( $_POST['otp_token'] ) ) : '';
+		$code  = ! empty( $_POST['otp_code'] ) ? preg_replace( '/[^0-9]/', '', wp_unslash( $_POST['otp_code'] ) ) : '';
+
+		if ( empty( $token ) || empty( $code ) ) {
+			wp_send_json_error( [ 'message' => __( 'Please enter the verification code.', 'essential-addons-for-elementor-lite' ) ] );
+		}
+
+		$session = get_transient( self::$otp_transient_prefix . $token );
+		if ( empty( $session ) || ! is_array( $session ) ) {
+			wp_send_json_error( [ 'message' => __( 'Your verification code has expired. Please request a new one.', 'essential-addons-for-elementor-lite' ) ] );
+		}
+
+		if ( (int) $session['attempts'] >= 5 ) {
+			delete_transient( self::$otp_transient_prefix . $token );
+			wp_send_json_error( [ 'message' => __( 'Too many invalid attempts. Please request a new code.', 'essential-addons-for-elementor-lite' ) ] );
+		}
+
+		$expected = $this->eael_otp_hash_code( $code, $token );
+		if ( ! hash_equals( (string) $session['code_hash'], $expected ) ) {
+			$session['attempts'] = (int) $session['attempts'] + 1;
+			set_transient( self::$otp_transient_prefix . $token, $session, (int) $session['expiry'] );
+			wp_send_json_error( [
+				'message'  => __( 'Invalid verification code. Please try again.', 'essential-addons-for-elementor-lite' ),
+				'attempts' => $session['attempts'],
+			] );
+		}
+
+		// Code valid: consume the session immediately.
+		delete_transient( self::$otp_transient_prefix . $token );
+
+		$settings = $this->lr_get_widget_settings( (int) $session['page_id'], $session['widget_id'] );
+		if ( empty( $settings ) ) {
+			wp_send_json_error( [ 'message' => __( 'Widget settings could not be loaded.', 'essential-addons-for-elementor-lite' ) ] );
+		}
+
+		if ( 'register' === $session['flow'] ) {
+			$result = $this->eael_otp_finalize_register( $session, $settings );
+		} else {
+			$result = $this->eael_otp_finalize_login( $session, $settings );
+		}
+
+		if ( is_wp_error( $result ) ) {
+			wp_send_json_error( [ 'message' => $result->get_error_message() ] );
+		}
+
+		wp_send_json_success( $result );
+	}
+
+	/**
+	 * Finalize a registration after a successful OTP verification.
+	 *
+	 * @param array $session
+	 * @param array $settings
+	 * @return array|\WP_Error
+	 */
+	protected function eael_otp_finalize_register( $session, $settings ) {
+		$payload = isset( $session['payload'] ) ? (array) $session['payload'] : [];
+
+		// Repopulate static email options for the email filter.
+		self::$email_options              = isset( $payload['email_options'] ) ? (array) $payload['email_options'] : [];
+		self::$send_custom_email          = ! empty( $payload['send_custom_email'] );
+		self::$send_custom_email_admin    = ! empty( $payload['send_custom_email_admin'] );
+
+		// Two paths converge here:
+		//   A) "Show Flag on User list" was OFF: nothing exists yet → wp_insert_user now.
+		//   B) "Show Flag on User list" was ON:  the user already exists with `_eael_otp_pending=1`
+		//      → just clear the flag and run the post-create hooks.
+		if ( ! empty( $payload['pre_created_user_id'] ) ) {
+			$user_id = (int) $payload['pre_created_user_id'];
+			$user    = get_user_by( 'id', $user_id );
+			if ( ! $user ) {
+				return new \WP_Error( 'eael_otp_user', __( 'The pending user no longer exists.', 'essential-addons-for-elementor-lite' ) );
+			}
+
+			delete_user_meta( $user_id, '_eael_otp_pending' );
+			delete_user_meta( $user_id, '_eael_otp_pending_since' );
+
+			$user_data = [
+				'user_login' => $user->user_login,
+				'user_email' => $user->user_email,
+			];
+		} else {
+			$user_data = isset( $payload['user_data'] ) ? (array) $payload['user_data'] : [];
+
+			if ( empty( $user_data['user_email'] ) || empty( $user_data['user_login'] ) ) {
+				return new \WP_Error( 'eael_otp_payload', __( 'Stored registration data is incomplete.', 'essential-addons-for-elementor-lite' ) );
+			}
+
+			do_action( 'eael/login-register/before-insert-user', $user_data );
+
+			$user_id = wp_insert_user( $user_data );
+
+			if ( is_wp_error( $user_id ) ) {
+				return new \WP_Error(
+					'eael_otp_create_user',
+					isset( $settings['err_unknown'] )
+						? Helper::eael_wp_kses( $settings['err_unknown'] )
+						: __( 'Sorry, something went wrong. User could not be registered.', 'essential-addons-for-elementor-lite' )
+				);
+			}
+
+			if ( ! empty( $user_data['eael_phone_number'] ) ) {
+				update_user_meta( $user_id, 'eael_phone_number', $user_data['eael_phone_number'] );
+			}
+
+			$custom_profile_fields = isset( $payload['custom_profile_fields'] ) ? (array) $payload['custom_profile_fields'] : [];
+			foreach ( $custom_profile_fields as $key => $value ) {
+				update_user_meta( $user_id, self::$eael_custom_profile_field_prefix . $key, $value );
+			}
+
+			do_action( 'eael/login-register/after-insert-user', $user_id, $user_data, $settings );
+		}
+
+		$register_actions = isset( $payload['register_actions'] ) ? (array) $payload['register_actions'] : [];
+		$is_pass_auto    = ! empty( $payload['is_pass_auto_generated'] );
+		$admin_or_both   = ( $is_pass_auto || in_array( 'send_email', $register_actions, true ) ) ? 'both' : 'admin';
+
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+		remove_action( 'register_new_user', 'wp_send_new_user_notifications' );
+		do_action( 'register_new_user', $user_id );
+		wp_new_user_notification( $user_id, null, $admin_or_both );
+
+		$response = [
+			'message' => isset( $settings['success_register'] )
+				? Helper::eael_wp_kses( $settings['success_register'] )
+				: __( 'Your registration completed successfully.', 'essential-addons-for-elementor-lite' ),
+		];
+
+		// Persist the success flag the same way the standard (non-OTP) register flow does, so
+		// that when the JS reloads the page after the verify-success delay, the form's
+		// existing print_validation_message() / print_registration_success_message() picks it up
+		// and the user lands on the standard success banner instead of an empty register form.
+		if ( ! in_array( 'redirect', $register_actions, true ) && ! empty( $session['widget_id'] ) ) {
+			update_option( 'eael_register_success_' . $session['widget_id'], 1, false );
+		}
+
+		// Optional auto-login.
+		if ( in_array( 'auto_login', $register_actions, true ) && ! is_user_logged_in() ) {
+			wp_signon( [
+				'user_login'    => $user_data['user_login'],
+				'user_password' => isset( $payload['plain_password'] ) ? $payload['plain_password'] : '',
+				'remember'      => true,
+			] );
+		}
+
+		if ( in_array( 'redirect', $register_actions, true ) && ! empty( $payload['redirect_url'] ) ) {
+			$response['redirect_to'] = esc_url_raw( $payload['redirect_url'] );
+		}
+
+		return $response;
+	}
+
+	/**
+	 * Finalize a login after a successful OTP verification.
+	 *
+	 * @param array $session
+	 * @param array $settings
+	 * @return array|\WP_Error
+	 */
+	protected function eael_otp_finalize_login( $session, $settings ) {
+		$payload = isset( $session['payload'] ) ? (array) $session['payload'] : [];
+		$user_id = isset( $payload['user_id'] ) ? (int) $payload['user_id'] : 0;
+
+		if ( ! $user_id ) {
+			return new \WP_Error( 'eael_otp_payload', __( 'Stored login data is incomplete.', 'essential-addons-for-elementor-lite' ) );
+		}
+
+		$user = get_user_by( 'id', $user_id );
+		if ( ! $user ) {
+			return new \WP_Error( 'eael_otp_user', __( 'User no longer exists.', 'essential-addons-for-elementor-lite' ) );
+		}
+
+		// If this login OTP was triggered to complete a pending registration, clear the flag now.
+		if ( ! empty( $payload['is_pending_registration'] ) ) {
+			delete_user_meta( $user_id, '_eael_otp_pending' );
+			delete_user_meta( $user_id, '_eael_otp_pending_since' );
+		}
+
+		$remember = ! empty( $payload['remember'] );
+		wp_set_current_user( $user->ID, $user->user_login );
+		wp_set_auth_cookie( $user->ID, $remember );
+
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+		do_action( 'wp_login', $user->user_login, $user );
+		do_action( 'eael/login-register/after-login', $user->user_login, $user, $settings );
+
+		$response = [
+			'message' => isset( $settings['success_login'] )
+				? Helper::eael_wp_kses( $settings['success_login'] )
+				: __( 'You are logged in successfully', 'essential-addons-for-elementor-lite' ),
+		];
+
+		if ( ! empty( $payload['redirect_url'] ) ) {
+			$response['redirect_to'] = esc_url_raw( $payload['redirect_url'] );
+		}
+
+		return $response;
+	}
+
+	/**
+	 * Decorate the WP Users list rows for users that are still pending OTP verification.
+	 *
+	 * Renders inline in the wp-admin Users page footer (no new column added). For each user
+	 * carrying the `_eael_otp_pending=1` meta we inject a small dashicon flag next to the
+	 * username, with `title` and `aria-label` attributes describing the state.
+	 *
+	 * Wired to the `admin_footer-users.php` action so it only loads on the Users screen.
+	 */
+	public function eael_lr_otp_pending_user_flag() {
+		if ( ! current_user_can( 'list_users' ) ) {
+			return;
+		}
+
+		$pending_users = get_users( [
+			'meta_key'   => '_eael_otp_pending',
+			'meta_value' => '1',
+			'fields'     => 'ID',
+			'number'     => -1,
+		] );
+
+		if ( empty( $pending_users ) ) {
+			return;
+		}
+
+		$pending_users = array_map( 'intval', $pending_users );
+		$tooltip       = esc_html__( 'Email verification pending — this user has not completed OTP verification.', 'essential-addons-for-elementor-lite' );
+		?>
+		<style>
+			.eael-otp-pending-flag {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				margin-left: 6px;
+				color: #d63638;
+				font-size: 16px;
+				line-height: 1;
+				vertical-align: middle;
+				cursor: help;
+				text-decoration: none;
+			}
+			.eael-otp-pending-flag:before {
+				content: "\f534"; /* dashicons-warning */
+				font-family: dashicons;
+			}
+		</style>
+		<script>
+		(function ($) {
+			var pendingIds = <?php echo wp_json_encode( array_values( $pending_users ) ); ?>;
+			var tooltip    = <?php echo wp_json_encode( $tooltip ); ?>;
+			$(function () {
+				pendingIds.forEach(function (uid) {
+					var $row = $('tr#user-' + uid);
+					if (!$row.length) {
+						return;
+					}
+					// Append the flag inside the username cell, after the <strong>username</strong>.
+					var $username = $row.find('td.username strong, td.column-username strong').first();
+					if (!$username.length) {
+						$username = $row.find('td.username, td.column-username').first();
+					}
+					if ($username.length && !$username.find('.eael-otp-pending-flag').length) {
+						$username.append(
+							' <span class="eael-otp-pending-flag" title="' + tooltip + '" aria-label="' + tooltip + '"></span>'
+						);
+					}
+				});
+			});
+		})(jQuery);
+		</script>
+		<?php
+	}
+
+	public function lr_get_widget_settings( $page_id, $widget_id ) {
+		$document = Plugin::$instance->documents->get( $page_id );
+		$settings = [];
+		if ( $document ) {
+			$elements    = Plugin::instance()->documents->get( $page_id )->get_elements_data();
+			$widget_data = $this->find_element_recursive( $elements, $widget_id );
+
+			// Enforce widget type. Without this check, a spoofed page_id / widget_id
+			// returns an empty settings array, causing OTP, reCAPTCHA, and Cloudflare
+			// Turnstile gates to be silently skipped in the login/register handlers.
+			if ( ! empty( $widget_data ) && isset( $widget_data['widgetType'] ) && 'eael-login-register' === $widget_data['widgetType'] ) {
+                $widget      = Plugin::instance()->elements_manager->create_element_instance( $widget_data );
+                if ( $widget ) {
+                    $settings    = $widget->get_settings_for_display();
+                }
+            }
+
+		}
+		return $settings;
+	}
+
+    public function delete_registration_options($widget_id)
+    {
+        delete_option('eael_register_success_' . $widget_id);
+        delete_option('eael_register_errors_' . $widget_id);
+	}
+
+	/**
+	 * Add extra custom fields on user profile (e.x. edit page and Registration form).
+	 * @param \WP_User $user
+	 * 
+	 * @since 5.1.4
+	 */
+	public function eael_extra_user_profile_fields( $user ){ ?>
+		<?php $eael_custom_profile_fields_text = $this->get_eael_custom_profile_fields('text'); ?>
+		<?php $eael_custom_profile_fields_image = $this->get_eael_custom_profile_fields('image'); ?>
+
+		<?php //if ( count( $eael_custom_profile_fields_text ) || count( $eael_custom_profile_fields_image ) ): ?>
+		<h3><?php esc_html_e('EA Login | Register Form', 'essential-addons-for-elementor-lite'); ?></h3>
+		<?php // endif; ?>
+
+		<table class="form-table">
+		<tr>
+				<th><label for="eael_phone_number"><?php esc_html_e('Phone', 'essential-addons-for-elementor-lite'); ?></label></th>
+				<td>
+					<input type="text" name="eael_phone_number" id="eael_phone_number" value="<?php echo esc_attr( get_the_author_meta( 'eael_phone_number', $user->ID ) ); ?>" class="regular-text" /><br />
+					<p class="description"><?php esc_html_e('Please enter your phone number.', 'essential-addons-for-elementor-lite'); ?></p>
+				</td>
+			</tr>
+		<?php
+		if( count( $eael_custom_profile_fields_text ) ) :
+			foreach( $eael_custom_profile_fields_text as $eael_custom_profile_field_text_key => $eael_custom_profile_field_value ) :
+		?>
+			<tr>
+				<th><label for="<?php echo esc_attr( $eael_custom_profile_field_text_key ); ?>"><?php echo esc_html( $eael_custom_profile_field_value ); ?></label></th>
+				<td>
+					<input type="text" name="<?php echo esc_attr( $eael_custom_profile_field_text_key ); ?>" id="<?php echo esc_attr( $eael_custom_profile_field_text_key ); ?>" value="<?php echo esc_attr( get_the_author_meta( self::$eael_custom_profile_field_prefix . $eael_custom_profile_field_text_key, $user->ID ) ); ?>" class="regular-text" /><br />
+					<!-- <p class="description"><?php //printf( __( "Please Enter %s", 'essential-addons-for-elementor-lite'), esc_html( $custom_profile_fields_text )); ?></p> -->
+				</td>
+			</tr>
+		<?php
+			endforeach;
+		endif;
+		?>
+
+		<?php
+		if( count( $eael_custom_profile_fields_image ) ) :
+			foreach( $eael_custom_profile_fields_image as $eael_custom_profile_field_image_key => $eael_custom_profile_field_value ) :
+				$user_meta_attachment_id = get_the_author_meta( self::$eael_custom_profile_field_prefix . $eael_custom_profile_field_image_key, $user->ID );
+		?>
+			<tr>
+				<th><label for="<?php echo esc_attr( $eael_custom_profile_field_image_key ); ?>"><?php echo esc_html( $eael_custom_profile_field_value ); ?></label></th>
+				<td>
+					<input type="text" name="<?php echo esc_attr( $eael_custom_profile_field_image_key ); ?>" id="<?php echo esc_attr( $eael_custom_profile_field_image_key ); ?>" value="<?php echo esc_attr( $user_meta_attachment_id ); ?>" class="regular-text" /><br />
+					<p class="description"><?php esc_html_e( "Above, input the ID of the attachment.", 'essential-addons-for-elementor-lite'); ?></p>
+					<?php
+					if( ! empty( $user_meta_attachment_id ) ){
+						echo wp_kses( wp_get_attachment_image($user_meta_attachment_id, 'thumbnail', 1), Helper::eael_allowed_tags() );
+					}
+					?>
+				</td>
+			</tr>
+		<?php
+			endforeach;
+		endif;
+		?>
+		</table>
+	<?php }
+
+	/**
+	 * Save extra custom fields of user profile
+	 * @param int $user_id
+	 * 
+	 * @since 5.1.4
+	 */
+	public function eael_save_extra_user_profile_fields( $user_id ){
+		if ( empty( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'update-user_' . $user_id ) ) {
+			return;
+		}
+
+		if ( !current_user_can( 'edit_user', $user_id ) ) { 
+			return false; 
+		}
+		if( !empty( $_POST['eael_phone_number'] ) ) {
+			update_user_meta( $user_id, 'eael_phone_number', sanitize_text_field( wp_unslash( $_POST['eael_phone_number'] ) ) );
+		}
+
+		$eael_custom_profile_fields = $this->get_eael_custom_profile_fields('all');
+
+		if( count( $eael_custom_profile_fields ) ){
+			foreach( $eael_custom_profile_fields as $eael_custom_profile_field_key => $eael_custom_profile_field_value ){
+				if( empty( $_POST[ $eael_custom_profile_field_key ] ) ){
+					continue;
+				}
+
+				update_user_meta( $user_id, sanitize_key( self::$eael_custom_profile_field_prefix . $eael_custom_profile_field_key ), sanitize_text_field( wp_unslash( $_POST[ $eael_custom_profile_field_key ] ) ) );
+			}
+		}
+	}
+
+	public function eael_is_phone($phone){
+		if ( 0 < strlen( trim( preg_replace( '/[\s\#0-9_\-\+\/\(\)\.]/', '', $phone ) ) ) ) {
+			return false;
+		}
+
+		if( strlen( str_replace(['+', '00', ' ', '(', ')', '-', '.', '_', '/'], '', $phone) ) === 0 ) {
+			return false;
+		}
+
+		//Phone number length can't be more than 15
+		if( strlen( str_replace(['+', '00', ' ', '(', ')', '-', '.', '_', '/'], '', $phone) ) > 15 ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public function eael_wp_login_url(){
+		return apply_filters( 'eael/login-register/wp-login-url', wp_login_url() );
+	}
+
+	public function get_eael_custom_profile_fields( $type = 'text' ){
+		$eael_custom_profile_fields = [];
+		$custom_profile_fields_arr 	= [];
+
+		$eael_custom_profile_field_text_trimmed  	= trim( get_option( 'eael_custom_profile_fields_text' ), ' ,\n\r\0\x0B' );
+		$eael_custom_profile_field_image_trimmed 	= trim( get_option( 'eael_custom_profile_fields_img' ), ' ,\n\r\0\x0B' );
+		$eael_custom_profile_field_text_trimmed 	= str_replace(self::$eael_custom_profile_field_prefix, '', $eael_custom_profile_field_text_trimmed);
+		$eael_custom_profile_field_image_trimmed 	= str_replace(self::$eael_custom_profile_field_prefix, '', $eael_custom_profile_field_image_trimmed);
+
+		$custom_profile_fields_text_arr 			= ! empty ( $eael_custom_profile_field_text_trimmed ) ? array_unique( explode( ',', $eael_custom_profile_field_text_trimmed ) ) 	: [];
+		$custom_profile_fields_img_arr  			= ! empty( $eael_custom_profile_field_image_trimmed ) ? array_unique( explode( ',', $eael_custom_profile_field_image_trimmed ) ) 	: [];
+		$custom_profile_fields_all_arr 				= array_merge( $custom_profile_fields_text_arr, $custom_profile_fields_img_arr );
+
+		switch( $type ){
+			case 'text':
+				$custom_profile_fields_arr = $custom_profile_fields_text_arr;
+				break;
+
+			case 'image':
+				$custom_profile_fields_arr = $custom_profile_fields_img_arr;
+				break;
+
+			case 'all':
+				$custom_profile_fields_arr = $custom_profile_fields_all_arr;
+				break;
+
+			default:
+				break;
+		}
+
+		if( count( $custom_profile_fields_arr ) ){
+			foreach( $custom_profile_fields_arr as $custom_profile_field_text ){
+				$custom_profile_field_slug = str_replace(' ', '_', trim( strtolower( sanitize_text_field( $custom_profile_field_text ) ), ' ' ));
+				$eael_custom_profile_fields[ sanitize_text_field( $custom_profile_field_slug ) ] = esc_html( $custom_profile_field_text );
+			}
+		}
+
+		return $eael_custom_profile_fields;
+	}
+}

@@ -4,10 +4,10 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit9025254fc381777df07bd83da5448298
+class ComposerStaticInitcdc366926c7feaedafc83315708262e0
 {
     public static $prefixLengthsPsr4 = array (
-        'T' => 
+        'T' =>
         array (
             'Tawk\\Tests\\' => 11,
             'Tawk\\' => 5,
@@ -15,11 +15,11 @@ class ComposerStaticInit9025254fc381777df07bd83da5448298
     );
 
     public static $prefixDirsPsr4 = array (
-        'Tawk\\Tests\\' => 
+        'Tawk\\Tests\\' =>
         array (
             0 => __DIR__ . '/..' . '/tawk/url-utils/tests',
         ),
-        'Tawk\\' => 
+        'Tawk\\' =>
         array (
             0 => __DIR__ . '/..' . '/tawk/url-utils/lib',
         ),
@@ -32,9 +32,9 @@ class ComposerStaticInit9025254fc381777df07bd83da5448298
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit9025254fc381777df07bd83da5448298::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit9025254fc381777df07bd83da5448298::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit9025254fc381777df07bd83da5448298::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitcdc366926c7feaedafc83315708262e0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitcdc366926c7feaedafc83315708262e0::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitcdc366926c7feaedafc83315708262e0::$classMap;
 
         }, null, ClassLoader::class);
     }

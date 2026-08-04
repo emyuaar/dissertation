@@ -1,0 +1,60 @@
+{
+  "translation-revision-date": "2026-06-23 00:54+0300",
+  "generator": "LLMagnet bin/build-locale-files.py",
+  "source": "assets/react-build/js/editor.js",
+  "domain": "llmagnet-llm-txt-generator",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "llmagnet-llm-txt-generator",
+        "lang": "ar",
+        "plural-forms": "nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);"
+      },
+      "Content length": [
+        "طول المحتوى"
+      ],
+      "Heading structure": [
+        "هيكل العنوان"
+      ],
+      "Image ALT coverage": [
+        "تغطية الصور البديلة"
+      ],
+      "Excerpt": [
+        "مقتطفات"
+      ],
+      "Tags & categories": [
+        "العلامات والفئات"
+      ],
+      "Readability": [
+        "سهولة القراءة"
+      ],
+      "Description length": [
+        "طول الوصف"
+      ],
+      "Tags": [
+        "العلامات"
+      ],
+      "Category assigned": [
+        "تم تعيين الفئة"
+      ],
+      "Passed": [
+        "اجتاز"
+      ],
+      "Needs improvement": [
+        "يحتاج إلى تحسين"
+      ],
+      "Missing": [
+        "مفتقد"
+      ],
+      "AI bot visibility (70% of score)": [
+        "رؤية روبوت الذكاء الاصطناعي (70% من النتيجة)"
+      ],
+      "%1$s is worth up to %2$s points of the total score": [
+        "تبلغ قيمة %1$s ما يصل إلى %2$s نقطة من إجمالي النقاط"
+      ],
+      "Recommendations": [
+        "التوصيات"
+      ]
+    }
+  }
+}

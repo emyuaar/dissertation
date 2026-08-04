@@ -1,0 +1,60 @@
+{
+  "translation-revision-date": "2026-06-23 00:46+0300",
+  "generator": "LLMagnet bin/build-locale-files.py",
+  "source": "assets/react-build/js/editor.js",
+  "domain": "llmagnet-llm-txt-generator",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "llmagnet-llm-txt-generator",
+        "lang": "he_IL",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Content length": [
+        "אורך תוכן"
+      ],
+      "Heading structure": [
+        "מבנה כותרת"
+      ],
+      "Image ALT coverage": [
+        "כיסוי ALT תמונה"
+      ],
+      "Excerpt": [
+        "קֶטַע"
+      ],
+      "Tags & categories": [
+        "תגיות וקטגוריות"
+      ],
+      "Readability": [
+        "קְרִיאוּת"
+      ],
+      "Description length": [
+        "אורך תיאור"
+      ],
+      "Tags": [
+        "תגים"
+      ],
+      "Category assigned": [
+        "קטגוריה הוקצתה"
+      ],
+      "Passed": [
+        "עבר"
+      ],
+      "Needs improvement": [
+        "טעון שיפור"
+      ],
+      "Missing": [
+        "חָסֵר"
+      ],
+      "AI bot visibility (70% of score)": [
+        "נראות בוט בינה מלאכותית (70% מהניקוד)"
+      ],
+      "%1$s is worth up to %2$s points of the total score": [
+        "%1$s שווה עד %2$s נקודות מהציון הכולל"
+      ],
+      "Recommendations": [
+        "המלצות"
+      ]
+    }
+  }
+}

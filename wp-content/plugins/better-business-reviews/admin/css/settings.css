@@ -1,0 +1,113 @@
+
+/* custom image icon for menu */
+#toplevel_page_brtpmj-free .wp-menu-image{
+	background: url(../../assets/logo.svg) !important;
+	background-size: 22px 20px !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	padding: 0 0 0 0 !important;
+}
+
+/* Each Setting Container CSS */
+.brtpmj_setting-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+    background-color: #f4faff;
+    margin: 2rem 0;
+    border-radius: 5px;
+}
+
+.brtpmj_admin_heading{
+    font-size: 1.25rem;
+    margin: 0;
+    width: 98%;
+    background-color: #adb5bd;
+    line-height: 1.2;
+    font-weight: 500;
+    padding: 1%;
+}
+
+.brtpmj_inner-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 3vh 0 3vh 0;
+}
+
+.brtpmj_col-1{
+    width: 30%;
+    margin-left: 1.5vw;
+    font-weight: 700;
+    line-height: 2;
+    font-size: 14px;
+}
+
+.brtpmj_col-2{
+    width: 70%;
+}
+
+.brtpmj_input {
+    min-width: 75%;
+    width: 75%;
+    border-radius: 0 !important;
+  }
+
+#brtpmj_admin_sync_progress{
+	display: none;
+}
+#brtpmj_admin_sync_progress img{
+	height: 30px;
+	vertical-align: bottom;
+}
+#brtpmj_admin_sync_status{
+	font-weight: bold;
+	color: forestgreen;
+}
+.brtpmj_adm_btn {
+    background: #00b67a;
+    border: none;
+    color: #fff;
+    padding: 0px 10px;
+    height: 30px;
+    cursor: pointer;
+  }
+  #license_key_better-business-revi {
+    min-width: 75%;
+    width: 75%;
+    border-radius: 0 !important;
+    background: #fff;
+    border: 1px solid #8c8f94;
+    height: 30px;
+  }
+  .brtpmj_btn, #brtpmj_activate_license {
+    border: none;
+    color: #fff;
+    background: #207196;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+  }
+  .brtpmj_shortcode {
+    background: #fff;
+    padding: 5px 10px;
+  }
+  .brtpmj_info {
+    padding-top: 20px;
+    display: flex;
+  }
+
+  .brtpmj_get_pro {
+    color: #fff;
+    text-decoration: none;
+    float: right;
+    background: #207196;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: -7.5px;
+  }
+  .brtpmj_get_pro:hover {
+    background: #00b67a;
+    color: #fff;
+  }

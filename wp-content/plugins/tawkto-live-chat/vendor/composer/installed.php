@@ -1,8 +1,8 @@
 <?php return array(
     'root' => array(
         'name' => 'tawk/tawk-wordpress',
-        'pretty_version' => '0.9.2',
-        'version' => '0.9.2.0',
+        'pretty_version' => '0.9.3',
+        'version' => '0.9.3.0',
         'reference' => null,
         'type' => 'project',
         'install_path' => __DIR__ . '/../../../',
@@ -11,8 +11,8 @@
     ),
     'versions' => array(
         'tawk/tawk-wordpress' => array(
-            'pretty_version' => '0.9.2',
-            'version' => '0.9.2.0',
+            'pretty_version' => '0.9.3',
+            'version' => '0.9.3.0',
             'reference' => null,
             'type' => 'project',
             'install_path' => __DIR__ . '/../../../',

@@ -1,0 +1,60 @@
+{
+  "translation-revision-date": "2026-06-23 01:06+0300",
+  "generator": "LLMagnet bin/build-locale-files.py",
+  "source": "assets/react-build/js/editor.js",
+  "domain": "llmagnet-llm-txt-generator",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "llmagnet-llm-txt-generator",
+        "lang": "es",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Content length": [
+        "Longitud del contenido"
+      ],
+      "Heading structure": [
+        "estructura de encabezado"
+      ],
+      "Image ALT coverage": [
+        "Cobertura ALT de imagen"
+      ],
+      "Excerpt": [
+        "Extracto"
+      ],
+      "Tags & categories": [
+        "Etiquetas y categorías"
+      ],
+      "Readability": [
+        "Legibilidad"
+      ],
+      "Description length": [
+        "Descripción longitud"
+      ],
+      "Tags": [
+        "Etiquetas"
+      ],
+      "Category assigned": [
+        "Categoría asignada"
+      ],
+      "Passed": [
+        "Aprobado"
+      ],
+      "Needs improvement": [
+        "Necesita mejorar"
+      ],
+      "Missing": [
+        "Desaparecido"
+      ],
+      "AI bot visibility (70% of score)": [
+        "Visibilidad del bot de IA (70 % de la puntuación)"
+      ],
+      "%1$s is worth up to %2$s points of the total score": [
+        "%1$s vale hasta %2$s puntos de la puntuación total"
+      ],
+      "Recommendations": [
+        "Recomendaciones"
+      ]
+    }
+  }
+}

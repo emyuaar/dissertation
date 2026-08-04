@@ -1,0 +1,15 @@
+<?php
+/**
+ * Copy this file to brevo-vendor-key.php (same directory).
+ * Set your Brevo API key below. brevo-vendor-key.php is gitignored.
+ *
+ * @package LLMagnet_AI_SEO_Optimizer
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ( ! defined( 'LLMAGNET_BREVO_API_KEY' ) ) {
+	define( 'LLMAGNET_BREVO_API_KEY', '' );
+}

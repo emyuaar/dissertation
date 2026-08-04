@@ -1,0 +1,3129 @@
+{
+  "translation-revision-date": "2026-06-23 00:46+0300",
+  "generator": "LLMagnet bin/build-locale-files.py",
+  "source": "assets/react-build/js/admin-shell.js",
+  "domain": "llmagnet-llm-txt-generator",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "llmagnet-llm-txt-generator",
+        "lang": "he_IL",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Pages": [
+        "דפים"
+      ],
+      "Bot Analytics": [
+        "תנועת בוטים"
+      ],
+      "Products": [
+        "מוצרים"
+      ],
+      "Reports": [
+        "דוחות"
+      ],
+      "LLMs.txt": [
+        "קבצי LLMs.txt"
+      ],
+      "Schema JSON-LD": [
+        "Schema JSON-LD"
+      ],
+      "Agent Ready": [
+        "סוכן Web"
+      ],
+      "MCP & AI": [
+        "MCP ובינה מלאכותית"
+      ],
+      "Error generating LLMS.txt. Please check server permissions.": [
+        "שגיאה ביצירת LLMS.txt. אנא בדוק את הרשאות השרת."
+      ],
+      "Settings saved successfully.": [
+        "ההגדרות נשמרו בהצלחה."
+      ],
+      "AI visibility score %d of 100": [
+        "ציון נראות בינה מלאכותית %d מתוך 100"
+      ],
+      "AI visibility score not calculated yet": [
+        "ציון נראות בינה מלאכותית עדיין לא חושב"
+      ],
+      "Open LLMagnet to improve this score": [
+        "פתח את LLMagnet כדי לשפר את הציון הזה"
+      ],
+      "Fix": [
+        "לִקְבּוֹעַ"
+      ],
+      "Unknown admin page.": [
+        "דף ניהול לא ידוע."
+      ],
+      "Analytics data not found.": [
+        "נתוני אנליטיקס לא נמצאו."
+      ],
+      "Unknown error": [
+        "שגיאה לא ידועה"
+      ],
+      "WordPress admin data not found.": [
+        "WordPress נתוני מנהל לא נמצאו."
+      ],
+      "Error saving settings:": [
+        "שגיאה בשמירת ההגדרות:"
+      ],
+      "Error saving settings. Please try again.": [
+        "שגיאה בשמירת ההגדרות. אנא נסה שוב."
+      ],
+      "WordPress root directory is not writable. LLMS.txt cannot be generated.": [
+        "ספריית השורש WordPress אינה ניתנת לכתיבה. לא ניתן ליצור LLMS.txt."
+      ],
+      "Something went wrong loading Bot Analytics.": [
+        "משהו השתבש בטעינת תנועת הבוטים."
+      ],
+      "Bot analytics data not found.": [
+        "נתוני ניתוח בוט לא נמצאו."
+      ],
+      "View Full Statistics →": [
+        "צפה בסטטיסטיקה מלאה →"
+      ],
+      "Bot": [
+        "בוט"
+      ],
+      "Total Visits": [
+        "סך הביקורים"
+      ],
+      "Clicks": [
+        "קליקים"
+      ],
+      "CTR": [
+        "CTR"
+      ],
+      "Trend": [
+        "מְגַמָה"
+      ],
+      "%s logo": [
+        "לוגו %s"
+      ],
+      "Last 24 hours": [
+        "24 השעות האחרונות"
+      ],
+      "Last 7 days": [
+        "7 ימים אחרונים"
+      ],
+      "Last 14 days": [
+        "14 ימים אחרונים"
+      ],
+      "Last 30 days": [
+        "30 הימים האחרונים"
+      ],
+      "Last 90 days": [
+        "90 הימים האחרונים"
+      ],
+      "All time (charts aggregate up to 365 days)": [
+        "כל הזמנים (תרשימים מצטברים עד 365 ימים)"
+      ],
+      "Custom: %1$s – %2$s": [
+        "מותאם אישית: %1$s – %2$s"
+      ],
+      "Custom range": [
+        "טווח מותאם אישית"
+      ],
+      "Report email address saved successfully.": [
+        "כתובת הדוא\"ל של הדיווח נשמרה בהצלחה."
+      ],
+      "Failed to save email address.": [
+        "שמירת כתובת האימייל נכשלה."
+      ],
+      "Failed to save email address. Please try again.": [
+        "שמירת כתובת האימייל נכשלה. אנא נסה שוב."
+      ],
+      "Analytics report has been sent to your email.": [
+        "דוח Analytics נשלח לדוא\"ל שלך."
+      ],
+      "Failed to send analytics report.": [
+        "שליחת דוח ניתוח נכשל."
+      ],
+      "Failed to send analytics report. Please try again later.": [
+        "שליחת דוח ניתוח נכשל. אנא נסה שוב מאוחר יותר."
+      ],
+      "Premium Feature": [
+        "תכונת פרימיום"
+      ],
+      "Access to real analytics data is available in the premium version.": [
+        "גישה לנתוני ניתוח אמיתיים זמינה בגרסת הפרימיום."
+      ],
+      "Upgrade Now": [
+        "שדרג עכשיו"
+      ],
+      "Analytics Reports": [
+        "דוחות אנליטיקס"
+      ],
+      "Report Email Address": [
+        "דווח על כתובת דואר אלקטרוני"
+      ],
+      "Saving...": [
+        "חִסָכוֹן..."
+      ],
+      "Save": [
+        "לְהַצִיל"
+      ],
+      "Sending...": [
+        "שְׁלִיחָה..."
+      ],
+      "Send Analytics Report Now": [
+        "שלח דוח Analytics עכשיו"
+      ],
+      "Select Models": [
+        "בחר דגמים"
+      ],
+      "All Models": [
+        "כל הדגמים"
+      ],
+      "%d Models": [
+        "%d דגמים"
+      ],
+      "Bot Traffic": [
+        "תנועת בוטים"
+      ],
+      "Available in Plus & Enterprise plans": [
+        "זמין בתוכניות פלוס וארגונים"
+      ],
+      "Upgrade": [
+        "שדרוג"
+      ],
+      "Last 7 Days": [
+        "7 הימים האחרונים"
+      ],
+      "Last 30 Days": [
+        "30 הימים האחרונים"
+      ],
+      "Last 90 Days": [
+        "90 הימים האחרונים"
+      ],
+      "Custom Range": [
+        "טווח מותאם אישית"
+      ],
+      "Select Date Range": [
+        "בחר טווח תאריכים"
+      ],
+      "Close date picker": [
+        "סגור את בוחר התאריכים"
+      ],
+      "This Quarter": [
+        "הרבעון הזה"
+      ],
+      "This Year": [
+        "השנה"
+      ],
+      "From": [
+        "מִן"
+      ],
+      "To": [
+        "אֶל"
+      ],
+      "Apply Custom Range": [
+        "החל טווח מותאם אישית"
+      ],
+      "Content length": [
+        "אורך תוכן"
+      ],
+      "Heading structure": [
+        "מבנה כותרת"
+      ],
+      "Image ALT coverage": [
+        "כיסוי ALT תמונה"
+      ],
+      "Excerpt": [
+        "קֶטַע"
+      ],
+      "Tags & categories": [
+        "תגיות וקטגוריות"
+      ],
+      "Readability": [
+        "קְרִיאוּת"
+      ],
+      "Description length": [
+        "אורך תיאור"
+      ],
+      "Tags": [
+        "תגים"
+      ],
+      "Category assigned": [
+        "קטגוריה הוקצתה"
+      ],
+      "Passed": [
+        "עבר"
+      ],
+      "Needs improvement": [
+        "טעון שיפור"
+      ],
+      "Missing": [
+        "חָסֵר"
+      ],
+      "AI bot visibility (70% of score)": [
+        "נראות בוט בינה מלאכותית (70% מהניקוד)"
+      ],
+      "%1$s is worth up to %2$s points of the total score": [
+        "%1$s שווה עד %2$s נקודות מהציון הכולל"
+      ],
+      "Recommendations": [
+        "המלצות"
+      ],
+      "Please fill in both subject and description.": [
+        "נא למלא גם נושא וגם תיאור."
+      ],
+      "Could not send feedback (missing API settings). Please reload the page.": [
+        "לא ניתן לשלוח משוב (חסרות הגדרות API). בבקשה טען מחדש את הדף."
+      ],
+      "Request failed (%d)": [
+        "הבקשה נכשלה (%d)"
+      ],
+      "Network error. Please try again.": [
+        "שגיאת רשת. אנא נסה שוב."
+      ],
+      "Feedback / bugs": [
+        "משוב / באגים"
+      ],
+      "Close feedback dialog": [
+        "סגור דו-שיח משוב"
+      ],
+      "Thanks — your feedback was sent.": [
+        "תודה - המשוב שלך נשלח."
+      ],
+      "Subject": [
+        "נוֹשֵׂא"
+      ],
+      "Have something to say?": [
+        "יש לך מה להגיד?"
+      ],
+      "Description": [
+        "תֵאוּר"
+      ],
+      "Describe your request": [
+        "תאר את בקשתך"
+      ],
+      "We attach technical details (WordPress, PHP, plugin version, your account, and recent debug log if available) to help us reproduce issues.": [
+        "אנו מצרפים פרטים טכניים (WordPress, PHP, גרסת הפלאגין, החשבון שלך ויומן ניפוי באגים אחרון אם זמין) כדי לעזור לנו לשחזר בעיות."
+      ],
+      "Cancel": [
+        "לְבַטֵל"
+      ],
+      "Sending…": [
+        "שְׁלִיחָה…"
+      ],
+      "Submit feedback": [
+        "שלח משוב"
+      ],
+      "Overview": [
+        "סקירה כללית"
+      ],
+      "Expand menu": [
+        "הרחב את התפריט"
+      ],
+      "Collapse menu": [
+        "כווץ תפריט"
+      ],
+      "News & updates": [
+        "חדשות ועדכונים"
+      ],
+      "Updated %s": [
+        "עודכן %s"
+      ],
+      "Close news drawer": [
+        "סגור את מגירת החדשות"
+      ],
+      "News feed is not available. Check your connection or": [
+        "עדכון חדשות אינו זמין. בדוק את החיבור שלך או"
+      ],
+      "in": [
+        "ב"
+      ],
+      "No announcements right now.": [
+        "אין הודעות כרגע."
+      ],
+      "Update": [
+        "לְעַדְכֵּן"
+      ],
+      "Read more": [
+        "קרא עוד"
+      ],
+      "Page details": [
+        "פרטי העמוד"
+      ],
+      "Remove tag": [
+        "הסר תג"
+      ],
+      "Product details": [
+        "פרטי המוצר"
+      ],
+      "Score not calculated yet": [
+        "הציון עדיין לא מחושב"
+      ],
+      "Loading": [
+        "טְעִינָה"
+      ],
+      "General Settings": [
+        "הגדרות כלליות"
+      ],
+      "Configure which content should be included in the llms.txt file and associated Markdown exports.": [
+        "הגדר איזה תוכן יש לכלול בקובץ llms.txt וביצוא Markdown המשויך."
+      ],
+      "Content Types to Include": [
+        "סוגי תוכן לכלול"
+      ],
+      "Content Export": [
+        "ייצוא תוכן"
+      ],
+      "Include full content (unchecked = excerpt only)": [
+        "כלול תוכן מלא (לא מסומן = קטע בלבד)"
+      ],
+      "Time Period": [
+        "פרק זמן"
+      ],
+      "Number of days of content to include": [
+        "מספר ימי התוכן שיש לכלול"
+      ],
+      "Number of days of content to include (0 = all content)": [
+        "מספר ימי התוכן שיש לכלול (0 = כל התוכן)"
+      ],
+      "Cleanup on Uninstall": [
+        "ניקוי בעת הסרת ההתקנה"
+      ],
+      "Delete llms.txt and llms-docs/ directory when plugin is uninstalled": [
+        "מחק את llms.txt ואת ספריית llms-docs/ כאשר התוסף מוסר"
+      ],
+      "Save Changes": [
+        "שמור שינויים"
+      ],
+      "Success": [
+        "הַצלָחָה"
+      ],
+      "Error": [
+        "שְׁגִיאָה"
+      ],
+      "LLMS.txt Status": [
+        "מצב LLMS.txt"
+      ],
+      "Root Directory:": [
+        "ספריית שורש:"
+      ],
+      "Writable": [
+        "ניתן לכתיבה"
+      ],
+      "Not Writable": [
+        "לא ניתן לכתיבה"
+      ],
+      "Last Generated:": [
+        "נוצר לאחרונה:"
+      ],
+      "Never": [
+        "לְעוֹלָם לֹא"
+      ],
+      "Generating...": [
+        "יוצר..."
+      ],
+      "Generate Now": [
+        "צור עכשיו"
+      ],
+      "Failed to load news": [
+        "טעינת החדשות נכשלה"
+      ],
+      "Network error": [
+        "שגיאת רשת"
+      ],
+      "News and updates (unread items)": [
+        "חדשות ועדכונים (פריטים שלא נקראו)"
+      ],
+      "News and updates": [
+        "חדשות ועדכונים"
+      ],
+      "Content settings data not found.": [
+        "נתוני הגדרות התוכן לא נמצאו."
+      ],
+      "No data available": [
+        "אין נתונים זמינים"
+      ],
+      "Dashboard data not found.": [
+        "נתוני לוח המחוונים לא נמצאו."
+      ],
+      "Overview data not found.": [
+        "נתוני סקירה לא נמצאו."
+      ],
+      "Something went wrong loading Pages Analytics.": [
+        "משהו השתבש בטעינת Pages Analytics."
+      ],
+      "Pages data not found.": [
+        "נתוני דפים לא נמצאו."
+      ],
+      "Products data not found.": [
+        "נתוני מוצרים לא נמצאו."
+      ],
+      "WooCommerce Required": [
+        "WooCommerce נדרש"
+      ],
+      "Products analytics requires WooCommerce to be installed and activated.": [
+        "ניתוח מוצרים דורש התקנה והפעלה של WooCommerce."
+      ],
+      "Once WooCommerce is active, you'll be able to track product views, add-to-cart events, and revenue from LLM traffic.": [
+        "ברגע שWooCommerce יהיה פעיל, תוכל לעקוב אחר צפיות במוצר, אירועי הוספה לעגלת הקניות והכנסות מתעבורת LLM."
+      ],
+      "Reports data not found.": [
+        "נתוני דוחות לא נמצאו."
+      ],
+      "Schema data not loaded.": [
+        "נתוני הסכימה לא נטענו."
+      ],
+      "System information data not found.": [
+        "נתוני מידע מערכת לא נמצאו."
+      ],
+      "Report settings saved successfully.": [
+        "הגדרות הדוח נשמרו בהצלחה."
+      ],
+      "Failed to save settings.": [
+        "שמירת ההגדרות נכשלה."
+      ],
+      "Failed to save settings. Please try again.": [
+        "שמירת ההגדרות נכשלה. אנא נסה שוב."
+      ],
+      "Analytics Reports is a premium feature. Please": [
+        "דוחות Analytics היא תכונת פרימיום. אָנָא"
+      ],
+      "upgrade": [
+        "שדרוג"
+      ],
+      "to access this functionality.": [
+        "כדי לגשת לפונקציונליות זו."
+      ],
+      "Email Report Settings": [
+        "הגדרות דואר אלקטרוני"
+      ],
+      "Report Recipients": [
+        "נמעני דיווח"
+      ],
+      "Add multiple email addresses separated by commas (e.g., admin@example.com, team@example.com)": [
+        "הוסף מספר כתובות דוא\"ל מופרדות בפסיקים (למשל, admin@example.com, team@example.com)"
+      ],
+      "Report Frequency": [
+        "תדירות דיווח"
+      ],
+      "Daily": [
+        "יוֹמִי"
+      ],
+      "Weekly": [
+        "שְׁבוּעִי"
+      ],
+      "Monthly": [
+        "יַרחוֹן"
+      ],
+      "Quarterly": [
+        "רִבעוֹן"
+      ],
+      "Send Time": [
+        "שלח זמן"
+      ],
+      "Company Logo": [
+        "לוגו החברה"
+      ],
+      "Enterprise": [
+        "מִפְעָל"
+      ],
+      "Add your company logo to email reports. Available for Enterprise users only.": [
+        "הוסף את לוגו החברה שלך לדוחות בדוא\"ל. זמין עבור משתמשי Enterprise בלבד."
+      ],
+      "Change Logo": [
+        "שנה לוגו"
+      ],
+      "Remove": [
+        "לְהַסִיר"
+      ],
+      "Select Logo": [
+        "בחר לוגו"
+      ],
+      "Upgrade to Enterprise to add your company logo": [
+        "שדרג ל-Enterprise כדי להוסיף את לוגו החברה שלך"
+      ],
+      "Event alerts (opt-in)": [
+        "התראות על אירועים (הצטרפות)"
+      ],
+      "Immediate emails when notable AI traffic events occur. Uses the report recipients above.": [
+        "הודעות דוא\"ל מיידיות כאשר מתרחשים אירועי תנועה בולטים של AI. משתמש במקבלי הדוח שלמעלה."
+      ],
+      "New product crawled within an hour of publish": [
+        "מוצר חדש נסרק תוך שעה מהפרסום"
+      ],
+      "Bot traffic drops more than 40% week-over-week": [
+        "תעבורת הבוטים יורדת ביותר מ-40% משבוע לשבוע"
+      ],
+      "A new AI bot type is detected on your site": [
+        "סוג בוט AI חדש מזוהה באתר שלך"
+      ],
+      "Save Settings": [
+        "שמור הגדרות"
+      ],
+      "Send Report Now": [
+        "שלח דוח עכשיו"
+      ],
+      "Send an analytics report immediately to the recipients above.": [
+        "שלח דוח ניתוח מיד לנמענים למעלה."
+      ],
+      "Email Template": [
+        "תבנית אימייל"
+      ],
+      "Template:": [
+        "תבנית:"
+      ],
+      "Classic": [
+        "קלַאסִי"
+      ],
+      "Minimal": [
+        "מִינִימָלִי"
+      ],
+      "Gradient": [
+        "מִדרוֹן"
+      ],
+      "Professional": [
+        "מִקצוֹעִי"
+      ],
+      "Loading email preview...": [
+        "טוען תצוגה מקדימה של אימייל..."
+      ],
+      " — physical robots.txt detected": [
+        "— זוהה robots.txt פיזית"
+      ],
+      "%1$d items included out of %2$d total items": [
+        "%1$d פריטים כלולים מתוך %2$d פריטים בסך הכל"
+      ],
+      "%1$d of %2$d": [
+        "%1$d מתוך %2$d"
+      ],
+      "%1$s: %2$d visits": [
+        "%1$s: %2$d ביקורים"
+      ],
+      "%d image is missing alt text. Adding descriptive alt text improves accessibility and can help LLMs better understand your images.": [
+        "בתמונה %d חסר טקסט חלופי. הוספת טקסט חלופי תיאורי משפרת את הנגישות ויכולה לעזור ל-LLMs להבין טוב יותר את התמונות שלך."
+      ],
+      "%d loaded": [
+        "%d נטען"
+      ],
+      "%d missing": [
+        "%d חסר"
+      ],
+      "%d order": [
+        "%d הזמנה"
+      ],
+      "%d post included": [
+        "פוסט %d כלול"
+      ],
+      "%d quick fix available": [
+        "%d פתרון מהיר זמין"
+      ],
+      "%d%% weight": [
+        "משקל %d%%"
+      ],
+      "%s in llms.txt": [
+        "%s ב-llms.txt"
+      ],
+      "%s%% rate": [
+        "שיעור %s%%"
+      ],
+      "A complete checklist to optimize your site for ChatGPT, Perplexity, Gemini, and the next generation of search.": [
+        "רשימת בדיקה מלאה לאופטימיזציה של האתר שלך עבור ChatGPT, Perplexity, Gemini, והדור הבא של החיפוש."
+      ],
+      "AI Availability Score": [
+        "ציון זמינות בינה מלאכותית"
+      ],
+      "AI Search Optimization Checklist": [
+        "רשימת חיפוש AI אופטימיזציה"
+      ],
+      "AI Visibility: %d": [
+        "נראות בינה מלאכותית: %d"
+      ],
+      "AI readiness fixes": [
+        "תיקוני מוכנות בינה מלאכותית"
+      ],
+      "ATC Rate": [
+        "שיעור ATC"
+      ],
+      "Access to page analytics data is available in the premium version.": [
+        "גישה לנתוני ניתוח עמודים זמינה בגרסת הפרימיום."
+      ],
+      "Add llms.txt to robots.txt": [
+        "הוסף את llms.txt ל-robots.txt"
+      ],
+      "Add to Cart": [
+        "הוסף לעגלה"
+      ],
+      "Add to robots.txt": [
+        "הוסף לrobots.txt"
+      ],
+      "All set. No actionable recommendations right now.": [
+        "מוּכָן. אין המלצות בר-פעולה כרגע."
+      ],
+      "Also attach the last lines of my debug.log to help diagnose this issue. The log may contain technical paths or data from other plugins; we mask obvious secrets, but only enable this if you are comfortable sharing it.": [
+        "צרף גם את השורות האחרונות של debug.log שלי כדי לעזור באבחון בעיה זו. היומן עשוי להכיל נתיבים טכניים או נתונים מתוספים אחרים; אנו מסווים סודות ברורים, אך מאפשרים זאת רק אם אתה מרגיש בנוח לשתף אותו."
+      ],
+      "Alt Text": [
+        "טקסט חלופי"
+      ],
+      "An error occurred while generating files.": [
+        "אירעה שגיאה בעת יצירת קבצים."
+      ],
+      "Anonymous usage analytics, used only to improve LLMagnet. We never collect anything from your site visitors.": [
+        "ניתוח שימוש אנונימי, משמש רק לשיפור LLMagnet. אנחנו אף פעם לא אוספים דבר מהמבקרים באתר שלך."
+      ],
+      "Avg words/sentence": [
+        "ממוצע מילים/משפט"
+      ],
+      "Based on %1$d visits across %2$d pages in the last %3$d days": [
+        "בהתבסס על %1$d ביקורים על פני %2$d דפים ב-%3$d הימים האחרונים"
+      ],
+      "Bot Impressions": [
+        "הופעות בוט"
+      ],
+      "Bot Quality": [
+        "איכות בוט"
+      ],
+      "Bot Summaries": [
+        "סיכומי בוט"
+      ],
+      "Bot UTM clicks": [
+        "בוט UTM קליקים"
+      ],
+      "Bot Visibility": [
+        "נראות בוט"
+      ],
+      "Bot Visits": [
+        "ביקורי בוטים"
+      ],
+      "Bot Visits (30 Days)": [
+        "ביקורי בוט (30 ימים)"
+      ],
+      "Bot visits will be automatically logged when LLM crawlers access your pages.": [
+        "ביקורי בוטים יירשמו באופן אוטומטי כאשר סורקי LLM ניגשים לדפים שלך."
+      ],
+      "Bot visits will be automatically logged when LLM crawlers access your product pages.": [
+        "ביקורי בוטים יירשמו באופן אוטומטי כאשר סורקי LLM ניגשים לדפי המוצר שלך."
+      ],
+      "Bot visits will be automatically logged when LLM crawlers access your site.": [
+        "ביקורי בוטים יירשמו באופן אוטומטי כאשר סורקי LLM ניגשים לאתר שלך."
+      ],
+      "Breakdown by Post Type:": [
+        "פירוט לפי סוג פוסט:"
+      ],
+      "CURRENT FILE SIZE": [
+        "גודל קובץ נוכחי"
+      ],
+      "CUSTOM INTRO TEXT": [
+        "טקסט מבוא מותאם אישית"
+      ],
+      "Card View": [
+        "תצוגת כרטיסים"
+      ],
+      "Categories": [
+        "קטגוריות"
+      ],
+      "Check for first LLM visit": [
+        "בדוק את הביקור הראשון ב-LLM"
+      ],
+      "Cleanup on uninstall": [
+        "ניקוי בעת הסרת ההתקנה"
+      ],
+      "Click on any product to view detailed analytics and optimize content to improve its visibility score.": [
+        "לחץ על כל מוצר כדי להציג ניתוח מפורט וביצוע אופטימיזציה של תוכן כדי לשפר את ציון הנראות שלו."
+      ],
+      "Clicks (30 Days)": [
+        "קליקים (30 ימים)"
+      ],
+      "Combined score based on Bot Visibility (70%) and Content Quality (30%)": [
+        "ציון משולב מבוסס על נראות בוט (70%) ואיכות תוכן (30%)"
+      ],
+      "Content Quality": [
+        "איכות תוכן"
+      ],
+      "Content Stats": [
+        "סטטיסטיקת תוכן"
+      ],
+      "Content export options": [
+        "אפשרויות ייצוא תוכן"
+      ],
+      "Content optimization score. Based on length, headings, ALT texts, excerpt, tags, and readability.": [
+        "ציון אופטימיזציה של תוכן. מבוסס על אורך, כותרות, טקסטים ALT, קטע, תגים וקריאות."
+      ],
+      "Content types to include": [
+        "סוגי תוכן לכלול"
+      ],
+      "Continue": [
+        "לְהַמשִׁיך"
+      ],
+      "Continue setup": [
+        "המשך בהגדרה"
+      ],
+      "Could not load the AI visibility score: %s": [
+        "לא ניתן לטעון את ציון הנראות של AI: %s"
+      ],
+      "Coverage Calculation": [
+        "חישוב כיסוי"
+      ],
+      "Crawl Frequency": [
+        "תדירות סריקה"
+      ],
+      "Crawler activity": [
+        "פעילות סורק"
+      ],
+      "Delete files when plugin is uninstalled": [
+        "מחק קבצים כאשר הפלאגין מוסר"
+      ],
+      "Describe this image...": [
+        "תאר את התמונה הזו..."
+      ],
+      "Detailed diagnostics require an administrator account.": [
+        "אבחון מפורט דורש חשבון מנהל מערכת."
+      ],
+      "Diagnostics": [
+        "אבחון"
+      ],
+      "Disabled": [
+        "נָכֶה"
+      ],
+      "Dismiss notification": [
+        "בטל הודעה"
+      ],
+      "EXCERPTS ONLY": [
+        "קטעים בלבד"
+      ],
+      "Edit": [
+        "לַעֲרוֹך"
+      ],
+      "Email reports": [
+        "דוחות במייל"
+      ],
+      "Enable in Settings": [
+        "הפעל בהגדרות"
+      ],
+      "Enter a custom description for your llms.txt header (leave empty to use site tagline)": [
+        "הזן תיאור מותאם אישית עבור הכותרת llms.txt שלך (השאר ריק כדי להשתמש בשורה של האתר)"
+      ],
+      "Error Loading Page": [
+        "שגיאה בטעינת העמוד"
+      ],
+      "Error Loading Product": [
+        "שגיאה בטעינת המוצר"
+      ],
+      "Excellent": [
+        "מְעוּלֶה"
+      ],
+      "Excerpt / Meta Description": [
+        "קטע / מטא תיאור"
+      ],
+      "FULL CONTENT": [
+        "תוכן מלא"
+      ],
+      "Failed to load analytics data. Please try again later.": [
+        "טעינת נתוני ניתוח נכשלה. אנא נסה שוב מאוחר יותר."
+      ],
+      "Failed to load page statistics: %s": [
+        "טעינת הנתונים הסטטיסטיים של העמוד נכשלה: %s"
+      ],
+      "Failed to load product statistics: %s": [
+        "טעינת הנתונים הסטטיסטיים של המוצר נכשלה: %s"
+      ],
+      "Failed to save email": [
+        "שמירת האימייל נכשלה"
+      ],
+      "Failed to save email. Please try again.": [
+        "שמירת האימייל נכשלה. אנא נסה שוב."
+      ],
+      "Featured Image": [
+        "תמונה מומלצת"
+      ],
+      "File is %sMB. Consider reducing max posts.": [
+        "הקובץ הוא %sMB. שקול להפחית את מקסימום הפוסטים."
+      ],
+      "Finish setup to get discovered by AI assistants": [
+        "סיים את ההגדרה כדי להתגלות על ידי עוזרי בינה מלאכותית"
+      ],
+      "Fix Missing Alt Text": [
+        "תקן טקסט חלופי חסר"
+      ],
+      "Fix Now": [
+        "תקן עכשיו"
+      ],
+      "Fixing...": [
+        "קְבִיעָה..."
+      ],
+      "Formula: (Items in LLMS.txt ÷ Total Items) × 100": [
+        "נוסחה: (פריטים ב-LLMS.txt ÷ סה\"כ פריטים) × 100"
+      ],
+      "Full content export is off": [
+        "ייצוא תוכן מלא כבוי"
+      ],
+      "Full content or excerpts only": [
+        "תוכן מלא או קטעים בלבד"
+      ],
+      "GENERATE LLMS-FULL.TXT": [
+        "צור LLMS-FULL.TXT"
+      ],
+      "GROUP BY CONTENT TYPE": [
+        "קבוצה לפי סוג תוכן"
+      ],
+      "Gallery Images": [
+        "תמונות גלריה"
+      ],
+      "Generate your llms.txt file": [
+        "צור קובץ llms.txt שלך"
+      ],
+      "Get Started": [
+        "התחל"
+      ],
+      "Get the Checklist": [
+        "קבלו את רשימת התיוג"
+      ],
+      "Get weekly AI visibility reports delivered to your inbox so you always know how AI assistants interact with your site.": [
+        "קבל דוחות נראות שבועיים של AI הנשלחים לתיבת הדואר הנכנס שלך, כך שאתה תמיד יודע כיצד עוזרי AI מתקשרים עם האתר שלך."
+      ],
+      "Getting started with AI visibility": [
+        "תחילת העבודה עם נראות בינה מלאכותית"
+      ],
+      "Go to Dashboard": [
+        "עבור אל לוח המחוונים"
+      ],
+      "Good": [
+        "טוֹב"
+      ],
+      "Great job! Your site is well optimized for AI Search Engines.": [
+        "עבודה נהדרת! האתר שלך מותאם היטב למנועי חיפוש בינה מלאכותית."
+      ],
+      "Group by content type": [
+        "קבץ לפי סוג תוכן"
+      ],
+      "Heading Structure": [
+        "מבנה כותרת"
+      ],
+      "Help improve LLMagnet": [
+        "עזור לשפר את LLMagnet"
+      ],
+      "Hi %s": [
+        "היי %s"
+      ],
+      "High priority": [
+        "עדיפות גבוהה"
+      ],
+      "How is the score calculated?": [
+        "כיצד מחושב הציון?"
+      ],
+      "How often AI bots visit this page. Based on crawl frequency, bot quality, and visit count.": [
+        "באיזו תדירות מבקרים בוטים של AI בדף זה. מבוסס על תדירות סריקה, איכות הבוט וספירת ביקורים."
+      ],
+      "How often AI bots visit this product. Based on crawl frequency, bot quality, and visit count.": [
+        "באיזו תדירות בוטים של AI מבקרים במוצר זה. מבוסס על תדירות סריקה, איכות הבוט וספירת ביקורים."
+      ],
+      "How often AI bots visit your site. More frequent visits mean better visibility.": [
+        "באיזו תדירות בוטים של AI מבקרים באתר שלך. ביקורים תכופים יותר פירושם נראות טובה יותר."
+      ],
+      "I agree and accept the terms": [
+        "אני מסכים ומקבל את התנאים"
+      ],
+      "IMAGES": [
+        "תמונות"
+      ],
+      "INCLUDE EXCERPTS": [
+        "כלול קטעים"
+      ],
+      "Images & ALT Text": [
+        "תמונות וטקסט ALT"
+      ],
+      "Impressions": [
+        "הופעות"
+      ],
+      "Include excerpts": [
+        "כלול קטעים"
+      ],
+      "Include images": [
+        "כלול תמונות"
+      ],
+      "LLM": [
+        "LLM"
+      ],
+      "LLM visit": [
+        "ביקור LLM"
+      ],
+      "LLMagnet Dashboard": [
+        "LLMagnet לוח מחוונים"
+      ],
+      "LLMs-full.txt (complete content)": [
+        "LLMs-full.txt (תוכן מלא)"
+      ],
+      "LLMs-full.txt Preview": [
+        "תצוגה מקדימה של LLMs-full.txt"
+      ],
+      "LLMs.txt Manager": [
+        "LLMs.txt מנהל"
+      ],
+      "LLMs.txt Preview": [
+        "LLMs.txt תצוגה מקדימה"
+      ],
+      "LLMs.txt structure settings": [
+        "הגדרות מבנה LLMs.txt"
+      ],
+      "Load More": [
+        "טען עוד"
+      ],
+      "Loading preview...": [
+        "טוען תצוגה מקדימה..."
+      ],
+      "Loading score…": [
+        "טוען ציון..."
+      ],
+      "Loading...": [
+        "טְעִינָה..."
+      ],
+      "Long Description": [
+        "תיאור ארוך"
+      ],
+      "MAX POSTS": [
+        "מקסימום פוסטים"
+      ],
+      "MAX POSTS PER SECTION": [
+        "מקסימום פוסטים לכל סעיף"
+      ],
+      "Manage your LLMS.txt file and LLM response settings": [
+        "נהל את קובץ ה-LLMS.txt ואת הגדרות התגובה של LLM"
+      ],
+      "Manage your account": [
+        "נהל את החשבון שלך"
+      ],
+      "Max posts for llms-full.txt": [
+        "מקסימום פוסטים עבור llms-full.txt"
+      ],
+      "Max posts per section": [
+        "מקסימום פוסטים לכל מדור"
+      ],
+      "Method: %1$s%2$s": [
+        "שיטה: %1$s%2$s"
+      ],
+      "Missing llms.txt reference": [
+        "חסרה הפניה llms.txt"
+      ],
+      "Models": [
+        "דגמים"
+      ],
+      "Monthly Reports": [
+        "דוחות חודשיים"
+      ],
+      "Monthly reports are sent to: %s": [
+        "דוחות חודשיים נשלחים אל: %s"
+      ],
+      "Needs Attention": [
+        "צריך תשומת לב"
+      ],
+      "Needs Improvement": [
+        "טעון שיפור"
+      ],
+      "Next": [
+        "הַבָּא"
+      ],
+      "No AI bot traffic in 30 days": [
+        "אין תעבורת בוט AI תוך 30 יום"
+      ],
+      "No AI bot visits yet — that is normal on a fresh install. Complete these steps so crawlers can discover your content.": [
+        "עדיין אין ביקורים של בוט AI - זה נורמלי בהתקנה חדשה. השלם את השלבים האלה כדי שהסורקים יוכלו לגלות את התוכן שלך."
+      ],
+      "No Bot Visits Yet": [
+        "עדיין אין ביקורי בוט"
+      ],
+      "No LLM bot visits have been recorded yet.": [
+        "עדיין לא נרשמו ביקורים של בוט LLM."
+      ],
+      "No Page Traffic Yet": [
+        "אין עדיין תנועה לדף"
+      ],
+      "No Product Traffic Yet": [
+        "אין עדיין תנועה למוצר"
+      ],
+      "No bot data available yet": [
+        "עדיין אין נתוני בוט זמינים"
+      ],
+      "No images found for this product. Add images in the WooCommerce product editor.": [
+        "לא נמצאו תמונות עבור מוצר זה. הוסף תמונות בעורך המוצר WooCommerce."
+      ],
+      "No images found in this post.": [
+        "לא נמצאו תמונות בפוסט הזה."
+      ],
+      "No pages have received bot traffic yet.": [
+        "אף דפים לא קיבלו עדיין תעבורת בוטים."
+      ],
+      "No products have received bot traffic in the selected period.": [
+        "שום מוצרים לא קיבלו תעבורת בוטים בתקופה שנבחרה."
+      ],
+      "Not generated yet": [
+        "עדיין לא נוצר"
+      ],
+      "Of 100": [
+        "מתוך 100"
+      ],
+      "Open Content Settings": [
+        "פתח את הגדרות תוכן"
+      ],
+      "Open LLMagnet to fix": [
+        "פתח את LLMagnet כדי לתקן"
+      ],
+      "Open Schema JSON-LD": [
+        "פתח את Schema JSON-LD"
+      ],
+      "Open in new tab": [
+        "פתח בכרטיסייה חדשה"
+      ],
+      "Open llms-full.txt in new tab": [
+        "פתח את llms-full.txt בכרטיסייה חדשה"
+      ],
+      "Open llms.txt in new tab": [
+        "פתח את llms.txt בכרטיסייה חדשה"
+      ],
+      "Overall": [
+        "בסך הכל"
+      ],
+      "Overview Statistics": [
+        "סטטיסטיקות סקירה"
+      ],
+      "Page Health": [
+        "בריאות העמוד"
+      ],
+      "Page Visibility Score": [
+        "ציון נראות הדף"
+      ],
+      "Page editing and visibility scores are available in Plus and Enterprise plans.": [
+        "ציוני עריכת דף וניראות זמינים בתוכניות Plus ו-Enterprise."
+      ],
+      "Paragraphs": [
+        "פסקאות"
+      ],
+      "Physical file": [
+        "קובץ פיזי"
+      ],
+      "Plus Feature": [
+        "תכונה פלוס"
+      ],
+      "Premium feature - Upgrade to enable": [
+        "תכונת פרימיום - שדרג כדי להפעיל"
+      ],
+      "Privacy": [
+        "פְּרָטִיוּת"
+      ],
+      "Product Descriptions": [
+        "תיאורי מוצרים"
+      ],
+      "Product Visibility Score": [
+        "ציון נראות המוצר"
+      ],
+      "Product content optimization. Based on descriptions, tags, categories, and image ALT texts.": [
+        "אופטימיזציה של תוכן המוצר. מבוסס על תיאורים, תגים, קטגוריות וטקסטים ALT של תמונה."
+      ],
+      "Product editing and visibility scores are available in Plus and Enterprise plans.": [
+        "ציוני עריכת מוצרים וניראות זמינים בתוכניות Plus ו-Enterprise."
+      ],
+      "Products sorted by bot impressions. %d products tracked.": [
+        "מוצרים ממוינים לפי הופעות בוטים. %d מוצרים במעקב."
+      ],
+      "Purchase Rate": [
+        "שיעור רכישה"
+      ],
+      "Ratio of content pages vs technical/commercial pages being crawled.": [
+        "היחס בין דפי תוכן לעומת דפים טכניים/מסחריים שנסרקים."
+      ],
+      "Read our Privacy Policy": [
+        "קרא את מדיניות הפרטיות שלנו"
+      ],
+      "Recalculate score": [
+        "חישוב ציון מחדש"
+      ],
+      "Recommendations actions": [
+        "פעולות המלצות"
+      ],
+      "Recommended": [
+        "מוּמלָץ"
+      ],
+      "Reference your llms.txt in robots.txt so AI crawlers can automatically discover and read it.": [
+        "עיין ב-llms.txt שלך ב-robots.txt כדי שסורקי בינה מלאכותית יוכלו לגלות ולקרוא אותו באופן אוטומטי."
+      ],
+      "Refresh preview": [
+        "רענן תצוגה מקדימה"
+      ],
+      "Regenerating...": [
+        "מתחדש..."
+      ],
+      "Reload page": [
+        "טען מחדש את הדף"
+      ],
+      "Robots.txt integration": [
+        "אינטגרציה של Robots.txt"
+      ],
+      "Root directory is not writable. Please check file permissions before generating files.": [
+        "ספריית השורש אינה ניתנת לכתיבה. אנא בדוק את הרשאות הקובץ לפני יצירת קבצים."
+      ],
+      "SHOW ABOUT SECTION": [
+        "הצג על סעיף"
+      ],
+      "SHOW PRODUCT PRICES": [
+        "הצג מחירי מוצרים"
+      ],
+      "STATUS": [
+        "סטָטוּס"
+      ],
+      "Save Alt Text": [
+        "שמור טקסט חלופי"
+      ],
+      "Save Email": [
+        "שמור אימייל"
+      ],
+      "Saved": [
+        "נשמר"
+      ],
+      "Schema health looks low (%1$d/100). JSON-LD helps AI and search engines read your site clearly.": [
+        "בריאות הסכימה נראית נמוכה (%1$d/100). JSON-LD עוזר לבינה מלאכותית ולמנועי חיפוש לקרוא את האתר שלך בצורה ברורה."
+      ],
+      "Score scale:": [
+        "סולם ציונים:"
+      ],
+      "Select content for llms.txt and Markdown exports.": [
+        "בחר תוכן לייצוא llms.txt וMarkdown."
+      ],
+      "Set up email reports": [
+        "הגדר דוחות דואר אלקטרוני"
+      ],
+      "Settings saved": [
+        "ההגדרות נשמרו"
+      ],
+      "Setup %1$d/4 complete": [
+        "ההגדרה %1$d/4 הושלמה"
+      ],
+      "Short Description": [
+        "תיאור קצר"
+      ],
+      "Show about section": [
+        "הצג קטע אודות"
+      ],
+      "Show product prices": [
+        "הצג מחירי מוצרים"
+      ],
+      "Showing all %d pages": [
+        "מציג את כל דפי %d"
+      ],
+      "Site Homepage": [
+        "דף הבית של האתר"
+      ],
+      "Site coverage in llms.txt": [
+        "כיסוי האתר ב-llms.txt"
+      ],
+      "Skip": [
+        "לְדַלֵג"
+      ],
+      "Skip for now": [
+        "דלג לעת עתה"
+      ],
+      "Some crawlers use robots.txt to discover llms.txt. Add the reference to improve discovery.": [
+        "חלק מהסורקים משתמשים ב-robots.txt כדי לגלות את llms.txt. הוסף את ההפניה כדי לשפר את הגילוי."
+      ],
+      "Something went wrong loading this screen.": [
+        "משהו השתבש בטעינת המסך הזה."
+      ],
+      "Start setup": [
+        "התחל את ההגדרה"
+      ],
+      "Step %d": [
+        "שלב %d"
+      ],
+      "Strengthen structured data (JSON-LD)": [
+        "חיזוק נתונים מובנים (JSON-LD)"
+      ],
+      "Suggestion": [
+        "הַצָעָה"
+      ],
+      "Table View": [
+        "תצוגת שולחן"
+      ],
+      "Test on ChatGPT": [
+        "בדיקה ב-ChatGPT"
+      ],
+      "Test your setup by asking ChatGPT about your site. This verifies everything is working correctly.": [
+        "בדוק את ההגדרה שלך על ידי שאלת ChatGPT לגבי האתר שלך. זה מוודא שהכל עובד כשורה."
+      ],
+      "The Ultimate AI Search Optimization Checklist": [
+        "רשימת התיעוד האולטימטיבי לחיפוש AI"
+      ],
+      "This step is complete. Let's continue.": [
+        "שלב זה הושלם. בואו נמשיך."
+      ],
+      "Total Revenue": [
+        "סך ההכנסות"
+      ],
+      "Total Score": [
+        "ציון כולל"
+      ],
+      "Total number of bot visits in the analysis period.": [
+        "המספר הכולל של ביקורי בוטים בתקופת הניתוח."
+      ],
+      "Total visits: %s": [
+        "סך הביקורים: %s"
+      ],
+      "Total:": [
+        "סַך הַכֹּל:"
+      ],
+      "Track LLM bot traffic to your WooCommerce products and measure conversions.": [
+        "עקוב אחר תעבורת בוט LLM למוצרי WooCommerce שלך ומדוד המרות."
+      ],
+      "Track LLM bot visits and engagement with your content.": [
+        "עקוב אחר ביקורי בוטים של LLM ומעורבות בתוכן שלך."
+      ],
+      "Track impressions, clicks, CTR and real AI bot traffic.": [
+        "עקוב אחר הופעות, קליקים, CTR ותעבורת בוטים אמיתיים של AI."
+      ],
+      "Traffic Volume": [
+        "נפח תנועה"
+      ],
+      "Traffic in the last 30 days": [
+        "תנועה ב-30 הימים האחרונים"
+      ],
+      "Trial": [
+        "מִשׁפָּט"
+      ],
+      "Try Again": [
+        "נסה שוב"
+      ],
+      "Turn on Full Content to provide richer context to AI crawlers in your exported content.": [
+        "הפעל תוכן מלא כדי לספק הקשר עשיר יותר לסורקי בינה מלאכותית בתוכן המיוצא שלך."
+      ],
+      "Type of AI bots visiting. User-facing AI (ChatGPT, Perplexity) are valued higher.": [
+        "סוג בוטים של AI המבקרים. AI הפונה למשתמש (ChatGPT, Perplexity) מוערך גבוה יותר."
+      ],
+      "Type: %s image": [
+        "סוג: תמונה %s"
+      ],
+      "UTM Clicks": [
+        "קליקים של UTM"
+      ],
+      "Unlock Full AI": [
+        "פתח את הנעילה של AI מלא"
+      ],
+      "Upgrade to Pro": [
+        "שדרג ל-Pro"
+      ],
+      "Upgrade to see this bot": [
+        "שדרג כדי לראות את הבוט הזה"
+      ],
+      "View LLMS.txt": [
+        "הצג את LLMS.txt"
+      ],
+      "View all": [
+        "הצג הכל"
+      ],
+      "View scan & recommendations": [
+        "הצג סריקה והמלצות"
+      ],
+      "View score breakdown": [
+        "הצג פירוט ציונים"
+      ],
+      "View which pages on your site have received traffic from LLM bots.": [
+        "הצג אילו דפים באתר שלך קיבלו תנועה מבוטים של LLM."
+      ],
+      "Visibility Score": [
+        "ציון נראות"
+      ],
+      "Visibility Score Breakdown": [
+        "פירוט ציון הנראות"
+      ],
+      "Wait for the first AI bot crawl (usually 24–72 hours)": [
+        "המתן לסריקת בוט הבינה המלאכותית הראשונה (בדרך כלל 24–72 שעות)"
+      ],
+      "Waiting for your first LLM visit...": [
+        "מחכה לביקור הראשון שלך ב-LLM..."
+      ],
+      "Warning:": [
+        "אַזהָרָה:"
+      ],
+      "We attach basic technical details (WordPress, PHP, plugin version, your account) to help us reproduce issues.": [
+        "אנו מצרפים פרטים טכניים בסיסיים (WordPress, PHP, גרסת הפלאגין, החשבון שלך) כדי לעזור לנו לשחזר בעיות."
+      ],
+      "We have not detected AI bot visits yet. Publish more crawlable content and regenerate llms.txt.": [
+        "עדיין לא זיהינו ביקורים של בוט בינה מלאכותית. פרסם יותר תוכן שניתן לסריקה והפק מחדש את llms.txt."
+      ],
+      "We're thrilled to have you here. LLMagnet helps you create powerful, AI-powered forms that turn feedback into actionable insights. Let's get you set up.": [
+        "אנחנו שמחים לראות אותך כאן. LLMagnet עוזר לך ליצור טפסים עוצמתיים המופעלים על ידי בינה מלאכותית שהופכים משוב לתובנות ניתנות לפעולה. בוא נסדר אותך."
+      ],
+      "Weekly AI visibility reports show exactly how LLMs engage with your site. Save your email now — reports activate automatically the moment you go Pro.": [
+        "דוחות נראות שבועיים של בינה מלאכותית מראים בדיוק כיצד מנהלי LLM מתקשרים לאתר שלך. שמור את האימייל שלך עכשיו - דוחות מופעלים אוטומטית ברגע שאתה הולך למקצוען."
+      ],
+      "Welcome": [
+        "קַבָּלַת פָּנִים"
+      ],
+      "Welcome to LLMagnet": [
+        "ברוכים הבאים אל LLMagnet"
+      ],
+      "When off, this content is left out of llms.txt, llms-full.txt and the markdown docs.": [
+        "כאשר כבוי, תוכן זה נותר מחוץ ל-llms.txt, llms-full.txt ומסמכי הסימון."
+      ],
+      "Whether crawled pages are still accessible and published.": [
+        "האם דפים שנסרקו עדיין נגישים ומתפרסמים."
+      ],
+      "WooCommerce product analytics is available in the Plus and Enterprise plans.": [
+        "ניתוח מוצר WooCommerce זמין בתוכניות Plus ו-Enterprise."
+      ],
+      "WordPress filter (virtual)": [
+        "מסנן WordPress (וירטואלי)"
+      ],
+      "Words": [
+        "מילים"
+      ],
+      "You can change this email in the settings section below.": [
+        "אתה יכול לשנות את האימייל הזה בסעיף ההגדרות למטה."
+      ],
+      "You have unsaved changes — save to refresh the score.": [
+        "יש לך שינויים שלא נשמרו - שמור כדי לרענן את הניקוד."
+      ],
+      "You haven't started setup yet": [
+        "עדיין לא התחלת את ההגדרה"
+      ],
+      "You're all set!": [
+        "אתה מוכן!"
+      ],
+      "You're doing well, but there's room for improvement.": [
+        "אתה מצליח, אבל יש מקום לשיפור."
+      ],
+      "You're missing opportunities to reach users through AI Search Engines.": [
+        "אתה מפספס הזדמנויות להגיע למשתמשים באמצעות מנועי חיפוש בינה מלאכותית."
+      ],
+      "Your AI visibility is live. LLMagnet is now working to get your site discovered by AI assistants.": [
+        "נראות ה-AI שלך בשידור חי. LLMagnet פועל כעת כדי לגרום לאתר שלך לגלות על ידי עוזרי בינה מלאכותית."
+      ],
+      "Your AI visibility journey starts here": [
+        "מסע הנראות שלך בינה מלאכותית מתחיל כאן"
+      ],
+      "Your llms.txt file helps AI assistants understand and reference your site content. Generate it with one click.": [
+        "קובץ llms.txt שלך עוזר לעוזרי בינה מלאכותית להבין ולהתייחס לתוכן האתר שלך. צור אותו בלחיצה אחת."
+      ],
+      "Your llms.txt file is not available yet, so AI crawlers may miss your content.": [
+        "קובץ llms.txt שלך אינו זמין עדיין, כך שסורקי בינה מלאכותית עלולים לפספס את התוכן שלך."
+      ],
+      "llms.txt": [
+        "llms.txt"
+      ],
+      "robots.txt updated with llms.txt reference.": [
+        "robots.txt עודכן עם הפניה llms.txt."
+      ],
+      "there": [
+        "שָׁם"
+      ],
+      " (or use Elementor page settings for page-specific markup)": [
+        "(או השתמש בהגדרות הדף Elementor עבור סימון דף ספציפי)"
+      ],
+      " Link also in your email.": [
+        "קישור גם במייל שלך."
+      ],
+      " · Last ping: %1$d URL(s), HTTP %2$d": [
+        "· פינג אחרון: %1$d URL(s), HTTP %2$d"
+      ],
+      "%1$d (%2$d read / %3$d write)": [
+        "%1$d (%2$d קריאה / %3$d כתיבה)"
+      ],
+      "%1$d characters (consider shortening)": [
+        "%1$d תווים (שקול לקצר)"
+      ],
+      "%1$d characters (recommended: 120-160)": [
+        "%1$d תווים (מומלץ: 120-160)"
+      ],
+      "%1$d characters (recommended: 150-300)": [
+        "%1$d תווים (מומלץ: 150-300)"
+      ],
+      "%1$d characters (recommended: 50-125)": [
+        "%1$d תווים (מומלץ: 50-125)"
+      ],
+      "%1$d characters (recommended: 500-2000)": [
+        "%1$d תווים (מומלץ: 500-2000)"
+      ],
+      "%1$d characters — Optimal": [
+        "%1$d תווים - אופטימלי"
+      ],
+      "%1$d characters ✓": [
+        "%1$d תווים ✓"
+      ],
+      "%1$d image found without media library attachment. Edit ALT text in the WordPress editor.": [
+        "תמונה %1$d נמצאה ללא קובץ מצורף של ספריית מדיה. ערוך טקסט ALT בעורך WordPress."
+      ],
+      "%1$d tools (%2$d read / %3$d write)": [
+        "כלים %1$d (%2$d קריאה / %3$d כתיבה)"
+      ],
+      "%1$d tools from the shared registry. Anonymous callers can reach %2$d in Public content mode and %3$d in Public read mode.": [
+        "כלים %1$d מהרישום המשותף. מתקשרים אנונימיים יכולים להגיע ל-%2$d במצב תוכן ציבורי ול-%3$d במצב קריאה ציבורית."
+      ],
+      "%1$s is active. Page caches that ignore the Vary: Accept header can serve markdown to regular visitors. Exclude this site from full-page caching for negotiated responses, or keep this off and rely on .md URLs.": [
+        "%1$s פעיל. מטמונים של עמודים שמתעלמים מהכותרת Vari: Accept יכולים להעניק סימון למבקרים רגילים. אל תכלול את האתר הזה מאחסון במטמון של עמוד מלא לצורך תשובות למשא ומתן, או השאר את זה כבוי והסתמך על ‎.md URLs."
+      ],
+      "%1$s total visits across %2$d pages": [
+        "%1$s ביקורים בסך הכל על פני %2$d דפים"
+      ],
+      "%1$s visits across %2$d pages": [
+        "%1$s ביקורים על פני %2$d דפים"
+      ],
+      "%1$s visits • %2$d pages": [
+        "%1$s ביקורים • %2$d דפים"
+      ],
+      "%1$s — Click to hide": [
+        "%1$s — לחץ כדי להסתיר"
+      ],
+      "%1$s — Click to show": [
+        "%1$s — לחץ כדי להציג"
+      ],
+      "%d URL scanned — all published pages, recent posts, and products.": [
+        "%d URL נסרק - כל הדפים שפורסמו, הפוסטים האחרונים והמוצרים."
+      ],
+      "%d character": [
+        "תו %d"
+      ],
+      "%d image selected successfully!": [
+        "תמונה %d נבחרה בהצלחה!"
+      ],
+      "%d post": [
+        "פוסט %d"
+      ],
+      "%d product": [
+        "מוצר %d"
+      ],
+      "%d to improve": [
+        "%d לשיפור"
+      ],
+      "%d%% of score": [
+        "%d%% של הציון"
+      ],
+      "%s Analytics": [
+        "%s אנליטיקה"
+      ],
+      "%s Visits": [
+        "%s ביקורים"
+      ],
+      "%s handles JSON-LD": [
+        "%s מטפל ב-JSON-LD"
+      ],
+      "%s%% have image ALT": [
+        "%s%% יש תמונה ALT"
+      ],
+      "%s%% have short descriptions": [
+        "ל-%s%% יש תיאורים קצרים"
+      ],
+      "%s%% missing tags": [
+        "%s%% חסרים תגים"
+      ],
+      "(+1 legacy token)": [
+        "(+1 אסימון מדור קודם)"
+      ],
+      "(or a project's": [
+        "(או של פרויקט"
+      ],
+      "A sampled audit (homepage + a few representative pages) scores your site across 7 domains of agent-readiness standards and shows exactly what to fix — much of it with one click.": [
+        "ביקורת מדוגמת (דף הבית + כמה דפים מייצגים) נותנת ציון לאתר שלך על פני 7 תחומים של סטנדרטים של מוכנות לסוכן ומראה בדיוק מה לתקן - חלק גדול ממנו בלחיצה אחת."
+      ],
+      "AI Integrations": [
+        "שילובי AI"
+      ],
+      "AI SEO Optimizer": [
+        "AI SEO מייעל"
+      ],
+      "AI Visibility Report": [
+        "דוח נראות בינה מלאכותית"
+      ],
+      "AI assistants can connect to this site over the Model Context Protocol.": [
+        "עוזרי בינה מלאכותית יכולים להתחבר לאתר זה באמצעות פרוטוקול ההקשר המודל."
+      ],
+      "AI clients": [
+        "לקוחות AI"
+      ],
+      "AI input": [
+        "קלט AI"
+      ],
+      "AI training": [
+        "אימון בינה מלאכותית"
+      ],
+      "AI → Revenue Funnel": [
+        "AI → משפך הכנסות"
+      ],
+      "Abilities API": [
+        "Abilities API"
+      ],
+      "Access mode": [
+        "מצב גישה"
+      ],
+      "Access tokens": [
+        "אסימוני גישה"
+      ],
+      "Action": [
+        "פְּעוּלָה"
+      ],
+      "Actions": [
+        "פעולות"
+      ],
+      "Active": [
+        "פָּעִיל"
+      ],
+      "Active API Tokens": [
+        "אסימוני API פעילים"
+      ],
+      "Activity log": [
+        "יומן פעילות"
+      ],
+      "Actor": [
+        "שַׂחְקָן"
+      ],
+      "Add": [
+        "לְהוֹסִיף"
+      ],
+      "Add H2 and H3 headings to structure your content for better readability and SEO.": [
+        "הוסף כותרות H2 ו-H3 כדי לבנות את התוכן שלך לקריאות טובה יותר וSEO."
+      ],
+      "Add New Images": [
+        "הוסף תמונות חדשות"
+      ],
+      "Add a product to the WooCommerce cart (write action, opted in)": [
+        "הוסף מוצר לעגלת WooCommerce (פעולת כתיבה, הצטרפות)"
+      ],
+      "Add a short excerpt that describes this page...": [
+        "הוסף קטע קצר המתאר את הדף הזה..."
+      ],
+      "Add descriptive ALT text...": [
+        "הוסף טקסט ALT תיאורי..."
+      ],
+      "Add more tags (3-8 recommended)": [
+        "הוסף תגים נוספים (מומלץ 3-8)"
+      ],
+      "Add products to see readiness insights.": [
+        "הוסף מוצרים כדי לראות תובנות לגבי מוכנות."
+      ],
+      "Add social profile": [
+        "הוסף פרופיל חברתי"
+      ],
+      "Add tag...": [
+        "הוסף תג..."
+      ],
+      "Add the snippet to": [
+        "הוסף את הקטע ל"
+      ],
+      "Add your address to output LocalBusiness schema with a PostalAddress block. Available for all site types.": [
+        "הוסף את הכתובת שלך לפלט סכימת LocalBusiness עם בלוק PostalAddress. זמין עבור כל סוגי האתרים."
+      ],
+      "After text": [
+        "אחרי טקסט"
+      ],
+      "After text response": [
+        "לאחר תגובת טקסט"
+      ],
+      "Agent response": [
+        "תגובת הסוכן"
+      ],
+      "Agent-Ready Score": [
+        "ציון מוכן לסוכן"
+      ],
+      "Agent-Ready Score %1$d out of 100": [
+        "ציון מוכן לסוכן %1$d מתוך 100"
+      ],
+      "Agent-readiness features": [
+        "תכונות מוכנות לסוכן"
+      ],
+      "All (%d)": [
+        "הכל (%d)"
+      ],
+      "All MCP requests are rejected while the server is disabled.": [
+        "כל הבקשות MCP נדחות בזמן שהשרת מושבת."
+      ],
+      "All good": [
+        "הכל טוב"
+      ],
+      "All-Time Bot Visits": [
+        "ביקורי בוטים של כל הזמנים"
+      ],
+      "All-Time Statistics": [
+        "סטטיסטיקות של כל הזמנים"
+      ],
+      "All-Time Total": [
+        "סך הכל כל הזמנים"
+      ],
+      "An error occurred while uploading the image.": [
+        "אירעה שגיאה בעת העלאת התמונה."
+      ],
+      "Analytics tools (scores, bot traffic) are not exposed in Public content mode. They require Public read mode — which makes them readable by anyone — or future OAuth support.": [
+        "כלי אנליטיקה (ציונים, תעבורת בוטים) אינם נחשפים במצב תוכן ציבורי. הם דורשים מצב קריאה ציבורית - מה שהופך אותם לקריאה על ידי כל אחד - או תמיכה עתידית OAuth."
+      ],
+      "Analytics tools in ChatGPT require Public read mode (with its warning) or OAuth support planned for a later release.": [
+        "כלי אנליטיקה ב-ChatGPT דורשים מצב קריאה ציבורית (עם האזהרה שלו) או תמיכה ב-OAuth מתוכננת לגרסה מאוחרת יותר."
+      ],
+      "Analytics unavailable": [
+        "Analytics אינו זמין"
+      ],
+      "Analyzing pages…": [
+        "מנתח דפים..."
+      ],
+      "Anyone can read your published content via MCP (search, markdown, site info). Enables no-auth clients like ChatGPT connectors.": [
+        "כל אחד יכול לקרוא את התוכן שפורסם באמצעות MCP (חיפוש, סימון, מידע על האתר). מאפשר ללקוחות ללא אישור כמו מחברי ChatGPT."
+      ],
+      "Anyone on the internet will be able to read this site's AI analytics — visibility scores, bot traffic, and recommendations — without authentication.": [
+        "כל אחד באינטרנט יוכל לקרוא את ניתוחי הבינה המלאכותית של אתר זה - ציוני נראות, תעבורת בוטים והמלצות - ללא אימות."
+      ],
+      "Anyone on the internet will be able to read this site\\u2019s AI analytics (scores, bot traffic, recommendations).": [
+        "כל אחד באינטרנט יוכל לקרוא את ניתוח AI של האתר הזה (ציונים, תעבורת בוטים, המלצות)."
+      ],
+      "Anyone will be able to read your published content via MCP — the same data search engines already see. Analytics tools stay private, and write tools still require an authenticated read/write token.": [
+        "כל אחד יוכל לקרוא את התוכן שפורסם באמצעות MCP - אותם נתונים שמנועי חיפוש כבר רואים. כלי Analytics נשארים פרטיים, וכלי כתיבה עדיין דורשים אסימון קריאה/כתיבה מאומת."
+      ],
+      "Attach an image that will be displayed with responses from all Large Language Models (ChatGPT, Claude, Gemini, GPT-4, etc.) and included in the llms.txt file.": [
+        "צרף תמונה שתוצג עם תגובות מכל דגמי השפה הגדולה (ChatGPT, Claude, Gemini, GPT-4 וכו') ותכלול בקובץ llms.txt."
+      ],
+      "Attach multiple images that will be displayed with responses from all Large Language Models (ChatGPT, Claude, Gemini, GPT-4, etc.) and included in the llms.txt file.": [
+        "צרף תמונות מרובות שיוצגו עם תגובות מכל דגמי השפות הגדולות (ChatGPT, Claude, Gemini, GPT-4 וכו') ויכללו בקובץ llms.txt."
+      ],
+      "Attention": [
+        "תְשׁוּמַת לֵב"
+      ],
+      "Audit your site against current agent-readiness standards and fix the gaps — discovery files, machine-readable content, WebMCP, and security headers.": [
+        "בדוק את האתר שלך בהתאם לסטנדרטים הנוכחיים של מוכנות סוכן ותקן את הפערים - קובצי גילוי, תוכן קריא במכונה, WebMCP וכותרות אבטחה."
+      ],
+      "Auditing your site…": [
+        "בוחן את האתר שלך..."
+      ],
+      "Auth header:": [
+        "כותרת אישור:"
+      ],
+      "Auth: tokens + legacy, Application Passwords": [
+        "אישור: אסימונים + מדור קודם, סיסמאות יישומים"
+      ],
+      "Auth: tokens, Application Passwords": [
+        "אישור: אסימונים, סיסמאות יישומים"
+      ],
+      "Authentication is required by default. Token secrets are hashed at rest (SHA-256) and shown exactly once. New tokens are read-only unless you choose otherwise, and write tools always require a read/write token regardless of access mode.": [
+        "אימות נדרש כברירת מחדל. סודות האסימונים עוברים גיבוב בזמן מנוחה (SHA-256) ומוצגים פעם אחת בדיוק. אסימונים חדשים הם לקריאה בלבד אלא אם תבחר אחרת, וכלי כתיבה תמיד דורשים אסימון קריאה/כתיבה ללא קשר למצב הגישה."
+      ],
+      "Automated Reporting System": [
+        "מערכת דיווח אוטומטית"
+      ],
+      "Available (WordPress %1$s) — %2$d LLMagnet abilities registered under the": [
+        "זמינות (WordPress %1$s) — יכולות %2$d LLMagnet רשומות תחת"
+      ],
+      "Available on Plus and Enterprise (or trial).": [
+        "זמין ב-Plus וב-Enterprise (או ניסיון)."
+      ],
+      "Available — %d abilities registered": [
+        "זמין - יכולות %d רשומות"
+      ],
+      "Avg Product Visibility": [
+        "נראות ממוצעת של המוצר"
+      ],
+      "Before text": [
+        "לפני טקסט"
+      ],
+      "Before text response": [
+        "לפני תגובת טקסט"
+      ],
+      "Blog / publisher": [
+        "בלוג/מוציא לאור"
+      ],
+      "Bot Name": [
+        "שם הבוט"
+      ],
+      "Bot Product Views": [
+        "תצוגות מוצר של בוט"
+      ],
+      "Bot Views": [
+        "תצוגות בוט"
+      ],
+      "Bot Visits for the Week of %s": [
+        "ביקורי בוט לשבוע של %s"
+      ],
+      "Bot visits to products will appear here.": [
+        "ביקורי בוטים במוצרים יופיעו כאן."
+      ],
+      "Bot visits will appear here once crawlers access your pages.": [
+        "ביקורים בבוט יופיעו כאן ברגע שסורקים ייגשו לדפים שלך."
+      ],
+      "Brand or organization name": [
+        "שם מותג או ארגון"
+      ],
+      "Brief product summary shown in listings...": [
+        "סיכום מוצר קצר המוצג ברשימות..."
+      ],
+      "Business / organization": [
+        "עסק / ארגון"
+      ],
+      "Canonical fill (only without an SEO plugin)": [
+        "מילוי קנוני (רק ללא תוסף SEO)"
+      ],
+      "Categories are managed in the WooCommerce product editor": [
+        "קטגוריות מנוהלות בעורך המוצר WooCommerce"
+      ],
+      "Categories are managed in the WordPress post editor": [
+        "הקטגוריות מנוהלות בעורך הפוסטים WordPress"
+      ],
+      "Change Image": [
+        "שנה תמונה"
+      ],
+      "ChatGPT connects and gets your tools. Revoke anytime from the Access tokens / Connections card below.": [
+        "ChatGPT מתחבר ומקבל את הכלים שלך. בטל בכל עת מכרטיס אסימוני הגישה / חיבורים למטה."
+      ],
+      "ChatGPT custom connectors can't send a Bearer header, so they use OAuth instead. This server now runs its own OAuth 2.1 sign-in, so you can connect privately — no need to make any content public. You stay in control: you approve the connection on a consent screen and can revoke it anytime.": [
+        "ChatGPT מחברים מותאמים אישית לא יכולים לשלוח כותרת נושאת, אז הם משתמשים ב-OAuth במקום זאת. שרת זה מפעיל כעת כניסה משלו OAuth 2.1, כך שתוכל להתחבר באופן פרטי - אין צורך להפוך תוכן לציבורי. אתה נשאר בשליטה: אתה מאשר את החיבור במסך הסכמה ויכול לבטל אותו בכל עת."
+      ],
+      "ChatGPT custom connectors don't support custom headers, so Bearer tokens can't be used. Connectors require OAuth (currently turned off for this server — enable it in settings to connect privately) or no-auth. Deep-research connectors also need search/fetch-style tools — this server ships search_content and get_content_markdown for exactly that. ✔": [
+        "ChatGPT מחברים מותאמים אישית אינם תומכים בכותרות מותאמות אישית, כך שלא ניתן להשתמש באסימוני נושא. מחברים דורשים OAuth (כבוי כרגע עבור שרת זה - אפשר אותו בהגדרות כדי להתחבר באופן פרטי) או ללא אישור. מחברי מחקר עמוק צריכים גם כלים בסגנון חיפוש/אחזור - השרת הזה מספק את search_content ו-get_content_markdown בדיוק בשביל זה. ✔"
+      ],
+      "ChatGPT gets the content and site-info tools (published, public data only).": [
+        "ChatGPT מקבל את כלי התוכן והמידע על האתר (מפורסם, נתונים ציבוריים בלבד)."
+      ],
+      "Choose bot models to show data": [
+        "בחר מודלים של בוטים כדי להציג נתונים"
+      ],
+      "City": [
+        "עִיר"
+      ],
+      "Click": [
+        "נְקִישָׁה"
+      ],
+      "Click the": [
+        "לחץ על"
+      ],
+      "Clients using": [
+        "לקוחות המשתמשים"
+      ],
+      "Close dialog": [
+        "סגור דו-שיח"
+      ],
+      "Coming soon": [
+        "בקרוב"
+      ],
+      "Connect AI assistants to this site over the Model Context Protocol — analytics, content, and llms.txt tools from one endpoint.": [
+        "חבר עוזרי בינה מלאכותית לאתר זה באמצעות פרוטוקול ה-Model Context - ניתוח, תוכן וכלי llms.txt מנקודת קצה אחת."
+      ],
+      "Connect your AI client": [
+        "חבר את לקוח ה-AI שלך"
+      ],
+      "Consider reducing tags (3-8 recommended)": [
+        "שקול להפחית את התגים (מומלץ 3-8)"
+      ],
+      "Content": [
+        "תוֹכֶן"
+      ],
+      "Content negotiation (Accept: text/markdown)": [
+        "משא ומתן על תוכן (קבל: טקסט/סימון)"
+      ],
+      "Content-Signal": [
+        "תוכן-אות"
+      ],
+      "Copied": [
+        "מוּעֲתָק"
+      ],
+      "Copy": [
+        "לְהַעְתִיק"
+      ],
+      "Copy config": [
+        "העתק תצורה"
+      ],
+      "Copy for Elementor": [
+        "העתק עבור Elementor"
+      ],
+      "Copy prompt with token": [
+        "העתק הודעה עם אסימון"
+      ],
+      "Copy setup prompt": [
+        "העתק את הודעת ההגדרה"
+      ],
+      "Copy the schema below (use": [
+        "העתק את הסכימה למטה (השתמש"
+      ],
+      "Copy this prompt and paste it into %1$s. The agent will create the config, connect to this site, and verify the tools — no manual editing needed.": [
+        "העתק הודעה זו והדבק אותה ב-%1$s. הסוכן יצור את התצורה, יתחבר לאתר זה ויאמת את הכלים - אין צורך בעריכה ידנית."
+      ],
+      "Copy with script": [
+        "העתק עם סקריפט"
+      ],
+      "Copy with token": [
+        "העתק עם אסימון"
+      ],
+      "Copy your new token now —": [
+        "העתק את האסימון החדש שלך עכשיו -"
+      ],
+      "Copy-paste configs pre-filled with this site's MCP endpoint.": [
+        "העתק-הדבק תצורות שמולאו מראש עם נקודת הסיום MCP של אתר זה."
+      ],
+      "Could not generate": [
+        "לא ניתן היה ליצור"
+      ],
+      "Could not generate PDF.": [
+        "לא ניתן ליצור את PDF."
+      ],
+      "Could not load MCP status: %s": [
+        "לא ניתן לטעון את סטטוס MCP: %s"
+      ],
+      "Could not publish": [
+        "לא ניתן לפרסם"
+      ],
+      "Country code": [
+        "קוד מדינה"
+      ],
+      "Create a read token below.": [
+        "צור אסימון קריאה למטה."
+      ],
+      "Create a read token in the Access tokens card below.": [
+        "צור אסימון קריאה בכרטיס אסימוני הגישה למטה."
+      ],
+      "Create access token": [
+        "צור אסימון גישה"
+      ],
+      "Create named token": [
+        "צור אסימון בעל שם"
+      ],
+      "Create token": [
+        "צור אסימון"
+      ],
+      "Created": [
+        "נוצר"
+      ],
+      "Cumulative Statistics": [
+        "סטטיסטיקה מצטברת"
+      ],
+      "Current Image": [
+        "תמונה נוכחית"
+      ],
+      "Current Images (%d)": [
+        "תמונות נוכחיות (%d)"
+      ],
+      "Dear Administrator,": [
+        "מנהל יקר,"
+      ],
+      "Delete legacy token": [
+        "מחק אסימון מדור קודם"
+      ],
+      "Delete legacy token?": [
+        "למחוק אסימון מדור קודם?"
+      ],
+      "Detailed findings and one-click fixes are a Pro feature": [
+        "ממצאים מפורטים ותיקונים בלחיצה אחת הם תכונת Pro"
+      ],
+      "Detailed product description with features, benefits, specifications...": [
+        "תיאור מוצר מפורט עם תכונות, יתרונות, מפרטים..."
+      ],
+      "Detected": [
+        "זוהה"
+      ],
+      "Detected — LLMagnet abilities are also reachable through the adapter's endpoint with an Application Password:": [
+        "זוהה - ניתן להגיע ליכולות LLMagnet גם דרך נקודת הקצה של המתאם עם סיסמת יישום:"
+      ],
+      "Directory Status": [
+        "סטטוס ספרייה"
+      ],
+      "Display Position": [
+        "מיקום תצוגה"
+      ],
+      "Download PDF": [
+        "הורד את PDF"
+      ],
+      "Downloaded PDF. Email failed: %s": [
+        "הורדת PDF. דוא\"ל נכשל: %s"
+      ],
+      "Duration": [
+        "מֶשֶׁך"
+      ],
+      "Edit post in WordPress": [
+        "ערוך פוסט ב-WordPress"
+      ],
+      "Edit product in WooCommerce →": [
+        "ערוך מוצר ב-WooCommerce →"
+      ],
+      "Email Preview": [
+        "תצוגה מקדימה של אימייל"
+      ],
+      "Enable MCP server": [
+        "הפעל את שרת MCP"
+      ],
+      "Enable public content": [
+        "אפשר תוכן ציבורי"
+      ],
+      "Enable public content access": [
+        "אפשר גישה לתוכן ציבורי"
+      ],
+      "Enable public content access?": [
+        "לאפשר גישה לתוכן ציבורי?"
+      ],
+      "Enable public read": [
+        "אפשר קריאה ציבורית"
+      ],
+      "Enable public read access?": [
+        "לאפשר גישת קריאה ציבורית?"
+      ],
+      "Enable the server to run the self-test.": [
+        "אפשר לשרת להפעיל את הבדיקה העצמית."
+      ],
+      "Enabled (private)": [
+        "מופעל (פרטי)"
+      ],
+      "Enabled (public content mode)": [
+        "מופעל (מצב תוכן ציבורי)"
+      ],
+      "Enabled (public read mode)": [
+        "מופעל (מצב קריאה ציבורית)"
+      ],
+      "Endpoint": [
+        "נקודת קצה"
+      ],
+      "Endpoint:": [
+        "נקודת קצה:"
+      ],
+      "Enter to send · public WebMCP route": [
+        "הזן כדי לשלוח · מסלול WebMCP ציבורי"
+      ],
+      "Error fetching data": [
+        "שגיאה באחזור נתונים"
+      ],
+      "Error: %s": [
+        "שגיאה: %s"
+      ],
+      "Error: network request failed.": [
+        "שגיאה: בקשת הרשת נכשלה."
+      ],
+      "Everything ships off by default — enable what you want agents to use.": [
+        "הכל נשלח כברירת מחדל - אפשר את מה שאתה רוצה שסוכנים ישתמשו בו."
+      ],
+      "Exposed tools": [
+        "כלים חשופים"
+      ],
+      "Fail": [
+        "לְהִכָּשֵׁל"
+      ],
+      "Failed to create token.": [
+        "יצירת האסימון נכשלה."
+      ],
+      "Failed to load MCP status.": [
+        "טעינת סטטוס MCP נכשלה."
+      ],
+      "Failed to load data": [
+        "טעינת הנתונים נכשלה"
+      ],
+      "Failed to load page details": [
+        "טעינת פרטי העמוד נכשלה"
+      ],
+      "Failed to load product details": [
+        "טעינת פרטי המוצר נכשלה"
+      ],
+      "Failed to load recommendations": [
+        "טעינת ההמלצות נכשלה"
+      ],
+      "Failed to load timeline data.": [
+        "טעינת נתוני ציר הזמן נכשלה."
+      ],
+      "Failed to revoke token.": [
+        "ביטול האסימון נכשל."
+      ],
+      "Failed to save": [
+        "השמירה נכשלה"
+      ],
+      "Failed to save page": [
+        "שמירת הדף נכשלה"
+      ],
+      "Failed to save product": [
+        "שמירת המוצר נכשלה"
+      ],
+      "Failed to update page": [
+        "עדכון הדף נכשל"
+      ],
+      "Failed to update product": [
+        "עדכון המוצר נכשל"
+      ],
+      "Failed to upload image.": [
+        "העלאת התמונה נכשלה."
+      ],
+      "Fair": [
+        "הוֹגֶן"
+      ],
+      "Featured": [
+        "מוּבלָט"
+      ],
+      "Fill OG/canonical tags only when no SEO plugin owns them.": [
+        "מלאו תגיות OG/קנוניות רק כאשר אין הבעלים של תוסף SEO."
+      ],
+      "Fix issues in Products →": [
+        "תקן בעיות במוצרים →"
+      ],
+      "Fix schema": [
+        "תקן סכימה"
+      ],
+      "Free": [
+        "לְשַׁחְרֵר"
+      ],
+      "Freq": [
+        "תדירות"
+      ],
+      "Frequency": [
+        "תֶדֶר"
+      ],
+      "Generate your llms.txt →": [
+        "צור את llms.txt שלך →"
+      ],
+      "Generated JSON-LD (preview)": [
+        "נוצר JSON-LD (תצוגה מקדימה)"
+      ],
+      "Generated Markdown Files": [
+        "נוצרו קבצי Markdown"
+      ],
+      "Good (%d)": [
+        "טוב (%d)"
+      ],
+      "HTTP %1$d — enable WebMCP first; the public routes are off while the toggle is off": [
+        "HTTP %1$d - הפעל תחילה את WebMCP; המסלולים הציבוריים מושבתים בזמן שהמתג כבוי"
+      ],
+      "HTTP %d": [
+        "HTTP %d"
+      ],
+      "HTTP Link headers advertising llms.txt, the agent card, and schemamap.xml.": [
+        "כותרות קישור HTTP המפרסמות את llms.txt, את כרטיס הסוכן ואת schemamap.xml."
+      ],
+      "Handled externally": [
+        "טיפול חיצוני"
+      ],
+      "Heads up — ChatGPT works differently": [
+        "שימו לב - ChatGPT עובד אחרת"
+      ],
+      "Health": [
+        "בְּרִיאוּת"
+      ],
+      "Help search engines and AI understand your site with structured data. Scan what you already have, follow plain-language recommendations, then generate and publish JSON-LD without writing code.": [
+        "עזור למנועי החיפוש ובינה מלאכותית להבין את האתר שלך באמצעות נתונים מובנים. סרוק את מה שכבר יש לך, עקוב אחר המלצות בשפה פשוטה, ואז צור ופרסם JSON-LD מבלי לכתוב קוד."
+      ],
+      "Home": [
+        "בַּיִת"
+      ],
+      "I've saved my token": [
+        "שמרתי את האסימון שלי"
+      ],
+      "Image": [
+        "תְמוּנָה"
+      ],
+      "Image %d": [
+        "תמונה %d"
+      ],
+      "Image Position": [
+        "מיקום תמונה"
+      ],
+      "Image removed successfully!": [
+        "התמונה הוסרה בהצלחה!"
+      ],
+      "Image selected": [
+        "נבחרה תמונה"
+      ],
+      "Image size must be less than 5MB.": [
+        "גודל התמונה חייב להיות פחות מ-5MB."
+      ],
+      "Image uploaded successfully!": [
+        "התמונה הועלתה בהצלחה!"
+      ],
+      "In ChatGPT, open Settings → Connectors (developer mode) → Add custom connector.": [
+        "ב-ChatGPT, פתח את הגדרות → מחברים (מצב מפתח) → הוסף מחבר מותאם אישית."
+      ],
+      "In ChatGPT, open Settings → Connectors (enable Developer mode) → Add custom connector.": [
+        "ב-ChatGPT, פתח את הגדרות → מחברים (הפעל מצב מפתח) → הוסף מחבר מותאם אישית."
+      ],
+      "Include a Product example": [
+        "כלול דוגמה למוצר"
+      ],
+      "IndexNow is already provided by %1$s — LLMagnet defers to avoid double pings.": [
+        "IndexNow כבר מסופק על ידי %1$s — LLMagnet דוחה כדי למנוע פינגים כפולים."
+      ],
+      "Indexed Images": [
+        "תמונות באינדקס"
+      ],
+      "Invalid JSON": [
+        "JSON לא חוקי"
+      ],
+      "Invalid JSON response from server": [
+        "תגובה JSON לא חוקית מהשרת"
+      ],
+      "Invalid post ID": [
+        "מזהה פוסט לא חוקי"
+      ],
+      "Invalid product ID": [
+        "מזהה מוצר לא חוקי"
+      ],
+      "It has full access and is stored in plaintext. Replace it with a managed token: create a named token above, update your clients, then delete the legacy one.": [
+        "יש לו גישה מלאה והוא מאוחסן בטקסט פשוט. החלף אותו באסימון מנוהל: צור אסימון בעל שם למעלה, עדכן את הלקוחות שלך ואז מחק את הקוד הישן."
+      ],
+      "Key file:": [
+        "קובץ מפתח:"
+      ],
+      "LLM Bot Analytics": [
+        "תנועת בוטים LLM"
+      ],
+      "LLM Bot Analytics Report": [
+        "דוח תנועת בוטים LLM"
+      ],
+      "LLM Response Image": [
+        "תמונת תגובה של LLM"
+      ],
+      "LLM Response Image %d": [
+        "תמונת תגובת LLM %d"
+      ],
+      "LLM Response Image (Premium Feature)": [
+        "תמונת תגובה של LLM (תכונת פרימיום)"
+      ],
+      "LLM Response Images (Premium Feature)": [
+        "תמונות תגובה של LLM (תכונת פרימיום)"
+      ],
+      "LLMS.txt Size": [
+        "גודל LLMS.txt"
+      ],
+      "LLMagnet detected that %1$s already outputs structured data. We will not print a second schema block on the live site. Copy the templates below and add or extend schema inside %1$s%2$s — avoid duplicating Organization, WebSite, or Product entities.": [
+        "LLMagnet זיהה ש%1$s כבר מוציא נתונים מובנים. לא נדפיס בלוק סכימה שני באתר החי. העתק את התבניות למטה והוסף או הרחב את הסכימה בתוך %1$s%2$s - הימנע משכפול ישויות ארגון, אתר אינטרנט או מוצר."
+      ],
+      "LLMagnet onboarding": [
+        "LLMagnet הצטרפות"
+      ],
+      "LLMagnet tools are also exposed as standard WordPress Abilities, so any WP-native AI agent can use them.": [
+        "כלי LLMagnet נחשפים גם כיכולות WordPress סטנדרטיות, כך שכל סוכן AI יליד WP יכול להשתמש בהם."
+      ],
+      "Label": [
+        "מַדבֵּקָה"
+      ],
+      "Last run: %s": [
+        "ריצה אחרונה: %s"
+      ],
+      "Last used": [
+        "בשימוש אחרון"
+      ],
+      "Learn more": [
+        "למידע נוסף"
+      ],
+      "Learn more:": [
+        "למידע נוסף:"
+      ],
+      "Legacy token (set via WP-CLI) is active": [
+        "אסימון מדור קודם (מוגדר באמצעות WP-CLI) פעיל"
+      ],
+      "Let your AI set it up for you": [
+        "תן ל-AI שלך להגדיר אותו עבורך"
+      ],
+      "Lets browser agents add products to the cart via WooCommerce’s own Store API. Off by default.": [
+        "מאפשר לסוכני דפדפן להוסיף מוצרים לעגלת הקניות דרך החנות API של WooCommerce. כבוי כברירת מחדל."
+      ],
+      "Link discovery headers": [
+        "כותרות גילוי קישור"
+      ],
+      "Live status of the W3C Web Model Context API in your own browser, and the tools this site registers for agents.": [
+        "סטטוס חי של ה-W3C Web Model Context API בדפדפן משלך, ובכלים שהאתר הזה רושם עבור סוכנים."
+      ],
+      "Loading MCP status…": [
+        "טוען סטטוס MCP..."
+      ],
+      "Loading chart": [
+        "טוען תרשים"
+      ],
+      "Loading table": [
+        "שולחן טעינה"
+      ],
+      "Local business (address & phone)": [
+        "עסק מקומי (כתובת וטלפון)"
+      ],
+      "Location (optional)": [
+        "מיקום (אופציונלי)"
+      ],
+      "Logo": [
+        "סֵמֶל"
+      ],
+      "Logo image URL (optional)": [
+        "תמונת לוגו URL (אופציונלי)"
+      ],
+      "Logo preview": [
+        "תצוגה מקדימה של לוגו"
+      ],
+      "MCP & AI sections": [
+        "MCP ומדורי AI"
+      ],
+      "MCP Adapter Plugin": [
+        "MCP Adapter תוסף"
+      ],
+      "MCP Adapter plugin": [
+        "תוסף MCP Adapter"
+      ],
+      "MCP Server": [
+        "שרת MCP"
+      ],
+      "MCP Tools": [
+        "MCP כלים"
+      ],
+      "MCP connection": [
+        "חיבור MCP"
+      ],
+      "MCP endpoint URL": [
+        "MCP נקודת קצה URL"
+      ],
+      "MCP server is active": [
+        "שרת MCP פעיל"
+      ],
+      "MCP server is disabled": [
+        "שרת MCP מושבת"
+      ],
+      "Manage on the MCP & AI page": [
+        "נהל בדף MCP & AI"
+      ],
+      "Managed User-agent groups for AI crawlers plus the Content-Signal block.": [
+        "קבוצות משתמש-סוכנים מנוהלות עבור סורקי בינה מלאכותית פלוס בלוק Content-Signal."
+      ],
+      "Manual: %s": [
+        "מדריך: %s"
+      ],
+      "Markdown content negotiation": [
+        "Markdown משא ומתן על תוכן"
+      ],
+      "Media library": [
+        "ספריית מדיה"
+      ],
+      "Mentions in the last 30 days": [
+        "אזכורים ב-30 הימים האחרונים"
+      ],
+      "Meta-description fill (an SEO plugin does this better)": [
+        "מילוי מטא-תיאור (תוסף SEO עושה זאת טוב יותר)"
+      ],
+      "Missing ALT text": [
+        "חסר טקסט ALT"
+      ],
+      "Missing schema (%d)": [
+        "סכימה חסרה (%d)"
+      ],
+      "My Website": [
+        "האתר שלי"
+      ],
+      "Needs attention (%d)": [
+        "זקוק לתשומת לב (%d)"
+      ],
+      "New token secret": [
+        "סוד אסימון חדש"
+      ],
+      "No AI Commerce Activity": [
+        "אין פעילות מסחר בינה מלאכותית"
+      ],
+      "No AI-attributed commerce activity in the last 30 days.": [
+        "אין פעילות מסחר המיוחסת לבינה מלאכותית ב-30 הימים האחרונים."
+      ],
+      "No MCP calls yet — connect a client above.": [
+        "אין עדיין שיחות MCP - חבר לקוח למעלה."
+      ],
+      "No Products Found": [
+        "לא נמצאו מוצרים"
+      ],
+      "No Products Viewed": [
+        "לא נצפו מוצרים"
+      ],
+      "No categories assigned": [
+        "לא הוקצו קטגוריות"
+      ],
+      "No headings found": [
+        "לא נמצאו כותרות"
+      ],
+      "No image selected": [
+        "לא נבחרה תמונה"
+      ],
+      "No missing entities detected for this page. Run a fresh scan if you recently updated schema.": [
+        "לא זוהו ישויות חסרות עבור דף זה. הפעל סריקה חדשה אם עדכנת לאחרונה את הסכימה."
+      ],
+      "No page traffic yet.": [
+        "עדיין אין תנועת עמודים."
+      ],
+      "No parameters.": [
+        "אין פרמטרים."
+      ],
+      "No product traffic yet.": [
+        "אין עדיין תעבורת מוצרים."
+      ],
+      "No products were viewed by bots in the last week.": [
+        "לא נצפו מוצרים על ידי בוטים בשבוע האחרון."
+      ],
+      "No recommendations yet. Run a scan to see tailored suggestions.": [
+        "עדיין אין המלצות. הפעל סריקה כדי לראות הצעות מותאמות אישית."
+      ],
+      "No tags (add 3-8 recommended)": [
+        "ללא תגים (מומלץ להוסיף 3-8)"
+      ],
+      "No tags yet. Add tags below.": [
+        "עדיין אין תגים. הוסף תגים למטה."
+      ],
+      "No tokens yet. Create one to connect an AI client.": [
+        "עדיין אין אסימונים. צור אחד כדי לחבר לקוח AI."
+      ],
+      "Not Agent Ready yet": [
+        "הסוכן עדין לא מוכן"
+      ],
+      "Not Generated": [
+        "לא נוצר"
+      ],
+      "Not applicable": [
+        "לא ישים"
+      ],
+      "Not available (requires WP 6.9+, running %s)": [
+        "לא זמין (דורש WP 6.9+, עם %s)"
+      ],
+      "Not available on WordPress %1$s. The Abilities API ships with WordPress 6.9+ — update WordPress to expose LLMagnet tools as native abilities.": [
+        "לא זמין ב-WordPress %1$s. ה-Abilities API נשלח עם WordPress 6.9+ - עדכן את WordPress כדי לחשוף את הכלים LLMagnet כיכולות מקוריות."
+      ],
+      "Not detected": [
+        "לא זוהה"
+      ],
+      "Not detected. The official adapter exposes all WordPress abilities (including LLMagnet's) over a second MCP endpoint.": [
+        "לא זוהה. המתאם הרשמי חושף את כל יכולות WordPress (כולל של LLMagnet) על פני נקודת קצה שנייה של MCP."
+      ],
+      "Not enough visibility history yet. Keep tracking to see trends.": [
+        "עדיין אין מספיק היסטוריית נראות. המשך לעקוב כדי לראות מגמות."
+      ],
+      "OK": [
+        "בְּסֵדֶר"
+      ],
+      "On WordPress 6.9+ with the official MCP Adapter plugin, these tools are also available at": [
+        "ב-WordPress 6.9+ עם התוסף הרשמי MCP Adapter, כלים אלה זמינים גם ב-"
+      ],
+      "Open Claude Desktop's config: Settings → Developer → Edit Config (": [
+        "פתח את התצורה של Claude שולחן העבודה: הגדרות → מפתח → ערוך תצורה ("
+      ],
+      "Open Graph verify-or-fill": [
+        "Open Graph אימות-או-מלא"
+      ],
+      "Open LLMagnet →": [
+        "פתח את LLMagnet →"
+      ],
+      "Open in Elementor": [
+        "פתח בElementor"
+      ],
+      "Open the page in Elementor.": [
+        "פתח את הדף ב-Elementor."
+      ],
+      "Open this page in": [
+        "פתח את הדף הזה ב"
+      ],
+      "Optimal tag count": [
+        "ספירת תגים אופטימלית"
+      ],
+      "Other": [
+        "אַחֵר"
+      ],
+      "PDF downloaded and emailed to you.": [
+        "PDF הורד ונשלח אליך באימייל."
+      ],
+      "PDF downloaded. Email could not be sent (API settings missing).": [
+        "PDF הורד. לא ניתן לשלוח דוא\"ל (חסרות הגדרות API)."
+      ],
+      "Page analytics is available in the premium version.": [
+        "ניתוח עמודים זמין בגרסת הפרימיום."
+      ],
+      "Page schema from Elementor is merged into the single LLMagnet JSON-LD block (site graph + page entities) — not a separate script tag.": [
+        "סכימת עמוד מ-Elementor מתמזגת לבלוק LLMagnet JSON-LD היחיד (גרף אתר + ישויות עמוד) - לא תג סקריפט נפרד."
+      ],
+      "Parameter": [
+        "פָּרָמֶטֶר"
+      ],
+      "Pass": [
+        "לַעֲבוֹר"
+      ],
+      "Paste in Elementor": [
+        "הדבק ב-Elementor"
+      ],
+      "Paste into": [
+        "הדבק לתוך"
+      ],
+      "Paste the endpoint URL:": [
+        "הדבק את נקודת הקצה URL:"
+      ],
+      "Paste the snippet (it uses the mcp-remote shim for Bearer auth).": [
+        "הדבק את קטע הקוד (הוא משתמש ב-mcp-remote shim עבור Bearer Auth)."
+      ],
+      "Phone": [
+        "טֵלֵפוֹן"
+      ],
+      "Ping IndexNow-backed engines when content is published or updated.": [
+        "פינג מנועים מגובי IndexNow כאשר תוכן מתפרסם או מעודכן."
+      ],
+      "Plain permalinks — clients must use the ?rest_route= URL shown below": [
+        "קישורים קבועים רגילים - לקוחות חייבים להשתמש ב-?rest_route= URL המוצג להלן"
+      ],
+      "Please enter a label (e.g. \"Claude Desktop\").": [
+        "אנא הזן תווית (למשל \"Claude Desktop\")."
+      ],
+      "Please find below the comprehensive analytics report for LLM bot visits to your website. This report covers your AI Visibility Score, weekly performance metrics, and cumulative all-time statistics.": [
+        "מצא להלן את דוח הניתוח המקיף עבור ביקורי בוטים של LLM באתר האינטרנט שלך. דוח זה מכסה את ציון הנראות של AI, מדדי ביצועים שבועיים וסטטיסטיקות מצטברות של כל הזמנים."
+      ],
+      "Please select an image file.": [
+        "אנא בחר קובץ תמונה."
+      ],
+      "Plugin Version": [
+        "גרסת הפלאגין"
+      ],
+      "Plus": [
+        "פְּלוּס"
+      ],
+      "Poor": [
+        "יָרוּד"
+      ],
+      "Post": [
+        "שֶׁלְאַחַר"
+      ],
+      "Postal code": [
+        "מיקוד"
+      ],
+      "Posts Available to Export": [
+        "פוסטים זמינים לייצוא"
+      ],
+      "Powered by": [
+        "מופעל על ידי"
+      ],
+      "Premium Feature:": [
+        "תכונת פרימיום:"
+      ],
+      "Premium Product Example": [
+        "דוגמה למוצר פרימיום"
+      ],
+      "Preview": [
+        "תצוגה מקדימה"
+      ],
+      "Preview unavailable for this URL.": [
+        "תצוגה מקדימה לא זמינה עבור URL זה."
+      ],
+      "Previous": [
+        "קוֹדֵם"
+      ],
+      "Private (recommended)": [
+        "פרטי (מומלץ)"
+      ],
+      "Private connection ready — OAuth is on ✔": [
+        "חיבור פרטי מוכן — OAuth פועל ✔"
+      ],
+      "Pro": [
+        "מִקצוֹעָן"
+      ],
+      "Pro feature": [
+        "תכונת פרו"
+      ],
+      "Product Readiness for AI": [
+        "מוכנות למוצר עבור AI"
+      ],
+      "Product analytics is available in the Plus and Enterprise plans.": [
+        "ניתוח מוצר זמין בתוכניות Plus ו-Enterprise."
+      ],
+      "Product image": [
+        "תמונת מוצר"
+      ],
+      "Product of the Week": [
+        "מוצר השבוע"
+      ],
+      "Protocol %s": [
+        "פרוטוקול %s"
+      ],
+      "Public access is on (%1$s) — ChatGPT can connect without authentication.": [
+        "גישה ציבורית מופעלת (%1$s) — ChatGPT יכול להתחבר ללא אימות."
+      ],
+      "Public content": [
+        "תוכן ציבורי"
+      ],
+      "Public read": [
+        "קריאה ציבורית"
+      ],
+      "Publish to website": [
+        "פרסם באתר"
+      ],
+      "Published content also becomes readable anonymously. Write tools still require an authenticated read/write token.": [
+        "תוכן שפורסם הופך לקריאה בעילום שם. כלי כתיבה עדיין דורשים אסימון קריאה/כתיבה מאומת."
+      ],
+      "Purchases": [
+        "רכישות"
+      ],
+      "Re-add the feed <link rel=\"alternate\"> tags if your theme removed them.": [
+        "הוסף מחדש את תגי הפיד <link rel=\"alternate\"> אם העיצוב שלך הסיר אותם."
+      ],
+      "Re-run audit": [
+        "הפעל מחדש את הביקורת"
+      ],
+      "Read": [
+        "לִקְרוֹא"
+      ],
+      "Read the MCP security docs": [
+        "קרא את מסמכי האבטחה MCP"
+      ],
+      "Read tools (%d)": [
+        "כלי קריאה (%d)"
+      ],
+      "Read-write": [
+        "קריאה-כתובה"
+      ],
+      "Recent activity": [
+        "פעילות אחרונה"
+      ],
+      "Recommended: at least 3 social profiles (e.g. LinkedIn, X, Facebook).": [
+        "מומלץ: לפחות 3 פרופילים חברתיים (למשל LinkedIn, X, Facebook)."
+      ],
+      "Refresh": [
+        "לְרַעֲנֵן"
+      ],
+      "Refresh activity": [
+        "רענון פעילות"
+      ],
+      "Refresh recommendations": [
+        "רענן המלצות"
+      ],
+      "Refresh score data": [
+        "רענן נתוני ציון"
+      ],
+      "Region / state": [
+        "אזור / מדינה"
+      ],
+      "Register search/content tools on navigator.modelContext for browser agents on every front-end page.": [
+        "רשום כלי חיפוש/תוכן ב-navigator.modelContext עבור סוכני דפדפן בכל עמוד קצה."
+      ],
+      "Registered tools (%d)": [
+        "כלים רשומים (%d)"
+      ],
+      "Reload Cursor; the server appears under MCP settings.": [
+        "טען מחדש את Cursor; השרת מופיע תחת הגדרות MCP."
+      ],
+      "Remove social profile": [
+        "הסר פרופיל חברתי"
+      ],
+      "Replace %1$s with a token from the Access tokens card below.": [
+        "החלף את %1$s עם אסימון מכרטיס אסימוני הגישה למטה."
+      ],
+      "Required": [
+        "דָרוּשׁ"
+      ],
+      "Requires a token or Application Password for every request.": [
+        "דורש אסימון או סיסמת אפליקציה לכל בקשה."
+      ],
+      "Respectfully,": [
+        "בכבוד,"
+      ],
+      "Restart Claude Desktop.": [
+        "הפעל מחדש את Claude שולחן העבודה."
+      ],
+      "Restore RSS feed links": [
+        "שחזר קישורי הזנת RSS"
+      ],
+      "Result": [
+        "תוֹצָאָה"
+      ],
+      "Retry": [
+        "נסה שוב"
+      ],
+      "Revenue from AI": [
+        "הכנסות מ-AI"
+      ],
+      "Review the notes above. Run a fresh scan if you recently updated schema on this page.": [
+        "עיין בהערות למעלה. הפעל סריקה חדשה אם עדכנת לאחרונה את הסכימה בדף זה."
+      ],
+      "Revoke": [
+        "לְבַטֵל"
+      ],
+      "Revoke token": [
+        "בטל אסימון"
+      ],
+      "Revoke token?": [
+        "לבטל אסימון?"
+      ],
+      "Root Path": [
+        "נתיב שורש"
+      ],
+      "Run a scan to compute score.": [
+        "הפעל סריקה לחישוב ציון."
+      ],
+      "Run a scan to see structured data coverage.": [
+        "הפעל סריקה כדי לראות כיסוי נתונים מובנה."
+      ],
+      "Run audit": [
+        "הפעל ביקורת"
+      ],
+      "Run fresh scan": [
+        "הפעל סריקה חדשה"
+      ],
+      "Run search": [
+        "הפעל חיפוש"
+      ],
+      "Run this in your terminal:": [
+        "הפעל את זה בטרמינל שלך:"
+      ],
+      "Run your first Agent-Ready audit": [
+        "הפעל את הביקורת הראשונה שלך לסוכן מוכן"
+      ],
+      "Running audit…": [
+        "מפעיל ביקורת..."
+      ],
+      "Sampled audit of your site against current agent-readiness standards — discovery files, machine-readable content, security headers, and WebMCP.": [
+        "ביקורת מדגמית של האתר שלך מול תקני הכנה הנוכחיים של סוכן - קובצי גילוי, תוכן קריא במכונה, כותרות אבטחה ו-WebMCP."
+      ],
+      "Save & Generate preview": [
+        "שמור וצור תצוגה מקדימה"
+      ],
+      "Saved.": [
+        "נשמר."
+      ],
+      "Saving…": [
+        "חִסָכוֹן…"
+      ],
+      "Scale: Poor · Fair · Good · Excellent — from the scan (JSON-LD coverage, checks, and issues).": [
+        "קנה מידה: גרוע · הוגן · טוב · מצוין - מהסריקה (JSON-LD כיסוי, בדיקות ובעיות)."
+      ],
+      "Scan": [
+        "לִסְרוֹק"
+      ],
+      "Scan failed": [
+        "הסריקה נכשלה"
+      ],
+      "Scan running in the background — results update as pages are analyzed.": [
+        "סריקה פועלת ברקע - התוצאות מתעדכנות עם ניתוח הדפים."
+      ],
+      "Scanning %1$d/%2$d pages (%3$d%%)": [
+        "סורק דפי %1$d/%2$d (%3$d%%)"
+      ],
+      "Scans and recommendations are available for everyone. Generating and publishing JSON-LD requires Pro, Plus, or Enterprise (trials included).": [
+        "סריקות והמלצות זמינות לכולם. יצירה ופרסום של JSON-LD דורשים Pro, Plus או Enterprise (כלולות נסיונות)."
+      ],
+      "Schema JSON-LD sections": [
+        "Schema JSON-LD קטעים"
+      ],
+      "Schema builder": [
+        "בונה סכמות"
+      ],
+      "Schema found": [
+        "נמצאה סכימה"
+      ],
+      "Schema health score %1$d out of 100": [
+        "ציון בריאות הסכימה %1$d מתוך 100"
+      ],
+      "Schema health score loading": [
+        "טעינת ציון בריאות סכימה"
+      ],
+      "Schema validator": [
+        "מאמת סכמה"
+      ],
+      "Scope": [
+        "תְחוּם"
+      ],
+      "Search": [
+        "לְחַפֵּשׂ"
+      ],
+      "Search your site like an agent would…": [
+        "חפש באתר שלך כמו שסוכן יעשה..."
+      ],
+      "Security headers": [
+        "כותרות אבטחה"
+      ],
+      "Select Company Logo": [
+        "בחר לוגו חברה"
+      ],
+      "Select Images": [
+        "בחר תמונות"
+      ],
+      "Select LLM Response Image": [
+        "בחר תמונת LLM Response"
+      ],
+      "Select LLM Response Images": [
+        "בחר LLM Response Images"
+      ],
+      "Select an image to display with responses from all Large Language Models. This image will be included in the llms.txt file and will work with ChatGPT, Claude, Gemini, GPT-4, and other LLMs.": [
+        "בחר תמונה להצגה עם תגובות מכל דגמי השפות הגדולות. תמונה זו תיכלל בקובץ llms.txt ותעבוד עם ChatGPT, Claude, Gemini, GPT-4 ושאר LLMs."
+      ],
+      "Select from Media Library": [
+        "בחר מספריית המדיה"
+      ],
+      "Select logo": [
+        "בחר לוגו"
+      ],
+      "Selected image": [
+        "תמונה שנבחרה"
+      ],
+      "Self-test request failed.": [
+        "הבקשה לבדיקה עצמית נכשלה."
+      ],
+      "Self-test results": [
+        "תוצאות בדיקה עצמית"
+      ],
+      "Serve agent-card.json, agent-skills, mcp.json, security.txt, and the change-password redirect.": [
+        "הצג את agent-card.json, agent-skills, mcp.json, security.txt ואת ההפניה מחדש לשינוי סיסמה."
+      ],
+      "Serve any page as clean markdown at {permalink}.md.": [
+        "הצג כל דף כסימון נקי בכתובת {permalink}.md."
+      ],
+      "Serve markdown on the normal permalink when an agent sends Accept: text/markdown.": [
+        "הצג סימון בקישור הקבוע הרגיל כאשר סוכן שולח קבל: טקסט/סימון."
+      ],
+      "Set Authentication to \"None\".": [
+        "הגדר את האימות ל\"ללא\"."
+      ],
+      "Set Authentication to \"OAuth\". ChatGPT discovers the sign-in automatically.": [
+        "הגדר את האימות ל-\"OAuth\". ChatGPT מגלה את הכניסה אוטומטית."
+      ],
+      "Short": [
+        "קָצָר"
+      ],
+      "Short description": [
+        "תיאור קצר"
+      ],
+      "Should you require any additional information or have questions regarding this report, please do not hesitate to contact us.": [
+        "אם אתה זקוק למידע נוסף או יש לך שאלות בנוגע לדוח זה, אל תהסס לפנות אלינו."
+      ],
+      "Showing %1$d–%2$d of %3$d": [
+        "מציג %1$d–%2$d מתוך %3$d"
+      ],
+      "Site type": [
+        "סוג אתר"
+      ],
+      "Smoke test with curl:": [
+        "בדיקת עשן עם תלתל:"
+      ],
+      "Smoke-test": [
+        "בדיקת עשן"
+      ],
+      "Social profiles": [
+        "פרופילים חברתיים"
+      ],
+      "State your AI content-usage preferences in robots.txt (requires AI crawler rules).": [
+        "ציין את העדפות השימוש שלך בתוכן בינה מלאכותית ב-robots.txt (דורש כללי סורק בינה מלאכותית)."
+      ],
+      "Status": [
+        "סטָטוּס"
+      ],
+      "Streamable HTTP (stateless)": [
+        "HTTP ניתן להזרמה (ללא מצב)"
+      ],
+      "Street": [
+        "רְחוֹב"
+      ],
+      "Structure health": [
+        "בריאות המבנה"
+      ],
+      "Test connection": [
+        "בדיקת חיבור"
+      ],
+      "The WP-CLI legacy token will stop working immediately. Make sure every client has been switched to a managed token first.": [
+        "אסימון WP-CLI מדור קודם יפסיק לפעול באופן מיידי. תחילה ודא שכל לקוח הוחלף לאסימון מנוהל."
+      ],
+      "The excerpt controls how this page appears in search results and social sharing. Keep it between 120-160 characters.": [
+        "הקטע שולט כיצד דף זה מופיע בתוצאות החיפוש ובשיתוף חברתי. שמור אותו בין 120-160 תווים."
+      ],
+      "The last 50 MCP calls handled by this server.": [
+        "50 הקריאות MCP האחרונות שטופלו על ידי שרת זה."
+      ],
+      "This feature is available for premium users only. Upgrade to attach images to your LLM responses.": [
+        "תכונה זו זמינה למשתמשי פרימיום בלבד. שדרג כדי לצרף תמונות לתגובות LLM שלך."
+      ],
+      "This feature is available for premium users only. Upgrade to attach multiple images to your LLM responses.": [
+        "תכונה זו זמינה למשתמשי פרימיום בלבד. שדרג כדי לצרף תמונות מרובות לתגובות LLM שלך."
+      ],
+      "This is an automated report generated by LLMagnet AI SEO Optimizer.": [
+        "זהו דוח אוטומטי שנוצר על ידי LLMagnet AI SEO Optimizer."
+      ],
+      "This report shows LLM bot visits to your website during the week of %s.": [
+        "דוח זה מציג ביקורים של בוט LLM באתר האינטרנט שלך במהלך השבוע של %s."
+      ],
+      "Time": [
+        "זְמַן"
+      ],
+      "Tip: ChatGPT's general-purpose custom connectors require a paid plan with Developer mode. The consent screen and token issuance are handled entirely by your site.": [
+        "טיפ: המחברים המותאמים אישית לשימוש כללי של ChatGPT דורשים תוכנית בתשלום עם מצב מפתחים. מסך ההסכמה והנפקת האסימון מטופלים במלואם על ידי האתר שלך."
+      ],
+      "Token": [
+        "אֲסִימוֹן"
+      ],
+      "Token created": [
+        "נוצר אסימון"
+      ],
+      "Tokens grant API access to this site's LLMagnet data. Treat them like passwords.": [
+        "אסימונים מעניקים ל-API גישה לנתוני LLMagnet של אתר זה. התייחס אליהם כאל סיסמאות."
+      ],
+      "Tool": [
+        "כְּלִי"
+      ],
+      "Tools": [
+        "כְּלֵי עֲבוֹדָה"
+      ],
+      "Top Pages": [
+        "דפים מובילים"
+      ],
+      "Total": [
+        "סַך הַכֹּל"
+      ],
+      "Transport:": [
+        "תַחְבּוּרָה:"
+      ],
+      "Try WebMCP": [
+        "נסה את WebMCP"
+      ],
+      "Type": [
+        "סוּג"
+      ],
+      "Types": [
+        "סוגים"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "URL Structure": [
+        "URL מבנה"
+      ],
+      "Unknown": [
+        "לֹא יְדוּעַ"
+      ],
+      "Untitled": [
+        "ללא כותרת"
+      ],
+      "Upload Error": [
+        "שגיאת העלאה"
+      ],
+      "Upload New": [
+        "העלה חדש"
+      ],
+      "Upload New Image": [
+        "העלה תמונה חדשה"
+      ],
+      "Upload failed. Please check your connection and try again.": [
+        "ההעלאה נכשלה. אנא בדוק את החיבור שלך ונסה שוב."
+      ],
+      "Upload failed. Please try again.": [
+        "ההעלאה נכשלה. אנא נסה שוב."
+      ],
+      "Uploading...": [
+        "מעלה..."
+      ],
+      "Use this image": [
+        "השתמש בתמונה זו"
+      ],
+      "Use this logo": [
+        "השתמש בלוגו זה"
+      ],
+      "Uses your WordPress site logo when set. You can also paste a URL or pick from the media library.": [
+        "משתמש בלוגו האתר WordPress שלך כאשר מוגדר. אתה יכול גם להדביק URL או לבחור מספריית המדיה."
+      ],
+      "Valid JSON": [
+        "JSON תקף"
+      ],
+      "View": [
+        "נוֹף"
+      ],
+      "View plans": [
+        "צפה בתוכניות"
+      ],
+      "View pricing plans": [
+        "הצג תוכניות תמחור"
+      ],
+      "View products →": [
+        "הצג מוצרים →"
+      ],
+      "View-only on your plan.": [
+        "לצפייה בלבד בתוכנית שלך."
+      ],
+      "Visibility Score Over Time": [
+        "ציון נראות לאורך זמן"
+      ],
+      "Visibility score over time": [
+        "ציון נראות לאורך זמן"
+      ],
+      "Visit": [
+        "לְבַקֵר"
+      ],
+      "Visit Types": [
+        "סוגי ביקורים"
+      ],
+      "Visit Volume": [
+        "בקר בנפח"
+      ],
+      "Vol": [
+        "כרך יד"
+      ],
+      "Volume": [
+        "כֶּרֶך"
+      ],
+      "Warning": [
+        "אַזהָרָה"
+      ],
+      "We analyzed this page and found structured data gaps. Copy the JSON-LD below into your theme, page builder, or SEO plugin.": [
+        "ניתחנו את הדף הזה ומצאנו פערים מובנים בנתונים. העתק את JSON-LD למטה לתוך ערכת הנושא, בונה הדפים או הפלאגין SEO שלך."
+      ],
+      "We couldn't load your analytics (missing API configuration). Please reload the page.": [
+        "לא הצלחנו לטעון את הניתוחים שלך (חסרה תצורת API). בבקשה טען מחדש את הדף."
+      ],
+      "We couldn't load your analytics right now. Please reload the page or try again shortly.": [
+        "לא יכולנו לטעון את הניתוח שלך כרגע. טען מחדש את הדף או נסה שוב בקרוב."
+      ],
+      "We couldn't load your analytics right now. Please try again in a moment.": [
+        "לא יכולנו לטעון את הניתוח שלך כרגע. אנא נסה שוב בעוד רגע."
+      ],
+      "WebMCP add to cart tool": [
+        "WebMCP כלי הוספה לעגלה"
+      ],
+      "WebMCP “Add to cart” tool": [
+        "WebMCP כלי \"הוסף לעגלה\"."
+      ],
+      "Website URL": [
+        "אתר URL"
+      ],
+      "Week of": [
+        "שבוע של"
+      ],
+      "Week of %s": [
+        "שבוע של %s"
+      ],
+      "Weekly Bot Visits": [
+        "ביקורי בוטים שבועיים"
+      ],
+      "Weekly Performance Metrics": [
+        "מדדי ביצועים שבועיים"
+      ],
+      "Weekly Summary": [
+        "סיכום שבועי"
+      ],
+      "Weekly Visits": [
+        "ביקורים שבועיים"
+      ],
+      "Well-known endpoints": [
+        "נקודות קצה ידועות"
+      ],
+      "What we found": [
+        "מה שמצאנו"
+      ],
+      "When off, this content is left out of llms.txt, llms-full.txt and the markdown docs. Changes apply to the export files right away.": [
+        "כאשר כבוי, תוכן זה נותר מחוץ ל-llms.txt, llms-full.txt ומסמכי הסימון. השינויים חלים על קבצי הייצוא מיד."
+      ],
+      "Widget": [
+        "יישומון"
+      ],
+      "WordPress Abilities API": [
+        "WordPress Abilities API"
+      ],
+      "WordPress Version": [
+        "WordPress גרסה"
+      ],
+      "WordPress ecosystem": [
+        "WordPress מערכת אקולוגית"
+      ],
+      "Working…": [
+        "עובד…"
+      ],
+      "Write": [
+        "לִכתוֹב"
+      ],
+      "Write action": [
+        "כתוב פעולה"
+      ],
+      "Write tools (%d)": [
+        "כלי כתיבה (%d)"
+      ],
+      "Write tools always require an authenticated read/write token — no mode changes that.": [
+        "כלי כתיבה תמיד דורשים אסימון קריאה/כתיבה מאומת - שום מצב לא משנה את זה."
+      ],
+      "You can select multiple images from the media library or upload them one by one.": [
+        "אתה יכול לבחור תמונות מרובות מספריית המדיה או להעלות אותן אחת אחת."
+      ],
+      "You\\u2019ll be sent to this site to sign in and approve the connection (pick read-only or read + write).": [
+        "אתה תישלח לאתר זה כדי להיכנס ולאשר את החיבור (בחר לקריאה בלבד או קריאה + כתיבה)."
+      ],
+      "Your access mode is Private, so ChatGPT cannot connect right now. The recommended path is enabling Public content access: anyone can then read your published content via MCP (the same data search engines see) — analytics stay private.": [
+        "מצב הגישה שלך הוא פרטי, אז ChatGPT לא יכול להתחבר כרגע. הנתיב המומלץ הוא הפעלת גישה לתוכן ציבורי: כל אחד יכול לקרוא את התוכן שפורסם באמצעות MCP (אותם נתונים שמנועי חיפוש רואים) - הניתוח נשאר פרטי."
+      ],
+      "Your browser doesn\\u2019t support WebMCP yet — tools are registered for browsers/agents that do.": [
+        "הדפדפן שלך עדיין לא תומך ב-WebMCP - כלים רשומים עבור דפדפנים/סוכנים שכן."
+      ],
+      "Your score and domain breakdown are shown above.": [
+        "הניקוד והדומיין שלך מופיעים למעלה."
+      ],
+      "already outputs JSON-LD on your site. LLMagnet will not add a second block — use": [
+        "כבר מוציא JSON-LD באתר שלך. LLMagnet לא יוסיף בלוק שני - השתמש"
+      ],
+      "and click": [
+        "ולחץ"
+      ],
+      "another SEO plugin": [
+        "תוסף SEO נוסף"
+      ],
+      "auth failed": [
+        "האימות נכשל"
+      ],
+      "destructive": [
+        "הַרסָנִי"
+      ],
+      "e.g. Claude Desktop": [
+        "לְמָשָׁל Claude שולחן עבודה"
+      ],
+      "e.g. IL, US": [
+        "לְמָשָׁל IL, ארה\"ב"
+      ],
+      "for templates and extend schema inside": [
+        "לתבניות ולהרחיב את הסכימה בפנים"
+      ],
+      "gear (bottom-left) →": [
+        "הילוך (תחתון-שמאלי) →"
+      ],
+      "idempotent": [
+        "אימפוטנטי"
+      ],
+      "in the graph (uses a sample product when available).": [
+        "בגרף (משתמש במוצר לדוגמה כאשר זמין)."
+      ],
+      "in your workspace (Copilot agent mode).": [
+        "בסביבת העבודה שלך (מצב סוכן Copilot)."
+      ],
+      "includeSubDomains applies HSTS to every subdomain for a year — make sure all of them serve HTTPS before enabling.": [
+        "includeSubDomains מחיל HSTS על כל תת-דומיין למשך שנה - ודא שכולם משרתים את HTTPS לפני ההפעלה."
+      ],
+      "is available in this browser.": [
+        "זמין בדפדפן זה."
+      ],
+      "llms.txt updated %s": [
+        "llms.txt עודכן %s"
+      ],
+      "namespace.": [
+        "מרחב שמות."
+      ],
+      "nosniff, Referrer-Policy, Permissions-Policy, HSTS, CSP report-only.": [
+        "nosniff, Referrer-Policy, Permissions-Policy, HSTS, CSP דוח בלבד."
+      ],
+      "or Elementor page settings.": [
+        "או הגדרות עמוד Elementor."
+      ],
+      "projected": [
+        "מוּקרָן"
+      ],
+      "public: content modes": [
+        "ציבורי: מצבי תוכן"
+      ],
+      "public: read mode": [
+        "ציבורי: מצב קריאה"
+      ],
+      "robots.txt AI crawler rules": [
+        "robots.txt כללי סורק בינה מלאכותית"
+      ],
+      "scope · stored hashed on the server.": [
+        "scope · מאוחסן hash בשרת."
+      ],
+      "tab →": [
+        "כרטיסייה →"
+      ],
+      "to save your details and refresh the JSON-LD below, then publish when ready. This saves your graph and prints one JSON-LD script in the site HTML (wp_head). Other SEO plugins may also output schema—we don't remove theirs.": [
+        "כדי לשמור את הפרטים שלך ולרענן את ה-JSON-LD למטה, ולאחר מכן לפרסם כשתהיה מוכן. זה שומר את הגרף שלך ומדפיס סקריפט JSON-LD אחד ב-HTML של האתר (wp_head). תוספים אחרים של SEO עשויים גם הם להוציא סכימה - אנחנו לא מסירים את שלהם."
+      ],
+      "to see every finding with evidence and apply automated fixes.": [
+        "לראות כל ממצא עם ראיות ולהחיל תיקונים אוטומטיים."
+      ],
+      "using an Application Password.": [
+        "באמצעות סיסמת אפליקציה."
+      ],
+      "will immediately lose access. This cannot be undone.": [
+        "יאבד גישה מיד. לא ניתן לבטל זאת."
+      ],
+      "you won't be able to see it again.": [
+        "לא תוכל לראות את זה שוב."
+      ],
+      "your AI client": [
+        "לקוח ה-AI שלך"
+      ],
+      "— WebMCP is currently off": [
+        "— WebMCP כבוי כרגע"
+      ],
+      "— all tools, including future write actions.": [
+        "- כל הכלים, כולל פעולות כתיבה עתידיות."
+      ],
+      "— read-only tools (recommended).": [
+        "- כלים לקריאה בלבד (מומלץ)."
+      ],
+      "✓ Optimal tag count": [
+        "✓ ספירת תגים אופטימלית"
+      ]
+    }
+  }
+}

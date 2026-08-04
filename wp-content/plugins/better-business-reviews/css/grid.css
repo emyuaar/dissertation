@@ -1,0 +1,22 @@
+/* grid view */
+.brtpmj_grid_container {
+	display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.brtpmj_grid_container .brtpmj_single_rvw {
+    width: 30%;
+}
+
+@media only screen and (max-width: 767px) {
+    .brtpmj_grid_container .brtpmj_single_rvw {
+        width: 45%;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .brtpmj_grid_container .brtpmj_single_rvw {
+        width: 100%;
+    }
+}

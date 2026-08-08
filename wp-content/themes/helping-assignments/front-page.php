@@ -180,6 +180,56 @@ get_header();
         <?php the_content(); ?>
     </div>
 
+    <?php
+    $homepage_resources = new WP_Query(array(
+        'post_type'           => 'post',
+        'post_status'         => 'publish',
+        'posts_per_page'      => 3,
+        'ignore_sticky_posts' => true,
+        'no_found_rows'       => true,
+    ));
+    ?>
+
+    <?php if ($homepage_resources->have_posts()) : ?>
+        <!-- ================= LATEST RESOURCES ================= -->
+        <section class="ha-home-resources" aria-labelledby="ha-home-resources-title">
+            <div class="container">
+                <div class="ha-home-resources-heading">
+                    <span class="ha-home-resources-kicker">Latest Resources</span>
+                    <h2 id="ha-home-resources-title">Academic Writing Tips From Our Blog</h2>
+                    <p>Read helpful guides on dissertations, assignments, coursework, editing, proofreading, and study support.</p>
+                </div>
+
+                <div class="ha-home-resources-grid">
+                    <?php while ($homepage_resources->have_posts()) : $homepage_resources->the_post(); ?>
+                        <article class="ha-resource-card">
+                            <a class="ha-resource-image" href="<?php the_permalink(); ?>" aria-label="Read <?php echo esc_attr(get_the_title()); ?>">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('large', array('class' => 'ha-resource-image-img')); ?>
+                                <?php else : ?>
+                                    <span class="ha-resource-image-placeholder" aria-hidden="true">Academic writing guide</span>
+                                <?php endif; ?>
+                            </a>
+
+                            <div class="ha-resource-card-body">
+                                <time class="ha-resource-date" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
+                                    <?php echo esc_html(get_the_date('F j, Y')); ?>
+                                </time>
+                                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                <p><?php echo esc_html(wp_trim_words(wp_strip_all_tags(get_the_excerpt()), 24)); ?></p>
+                                <a class="ha-resource-read-more" href="<?php the_permalink(); ?>">
+                                    Read More <span aria-hidden="true">&rarr;</span>
+                                </a>
+                            </div>
+                        </article>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+
+    <?php wp_reset_postdata(); ?>
+
 </main><!-- /.ha-home -->
 
 <?php

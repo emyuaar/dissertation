@@ -1309,6 +1309,198 @@ body.ha-nav-open .ha-mobile-toggle span:nth-child(3) { transform: translateY(-7p
 }
 
 /* ==========================================================
+   HOMEPAGE LATEST RESOURCES
+   ========================================================== */
+
+.ha-home-resources {
+    padding: 92px 0 110px;
+    background:
+        radial-gradient(circle at 0% 15%, rgba(255, 248, 220, 0.7), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f2f6fc 100%);
+}
+
+.ha-home-resources-heading {
+    max-width: 820px;
+    margin: 0 auto 112px;
+    text-align: center;
+}
+
+.ha-home-resources-kicker {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 8px 17px;
+    border-radius: 999px;
+    background: #fff0bf;
+    color: #8a5b00;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.ha-home-resources-heading h2 {
+    max-width: 780px;
+    margin: 17px auto 12px;
+    color: #071e3a;
+    font-size: clamp(2.25rem, 4vw, 3.35rem);
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 1.05;
+}
+
+.ha-home-resources-heading p {
+    color: #557399;
+    font-size: 1rem;
+}
+
+.ha-home-resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1152px;
+    margin: 0 auto;
+}
+
+.ha-resource-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #e4e9f0;
+    border-radius: 27px;
+    background: #ffffff;
+    box-shadow: 0 14px 30px rgba(13, 38, 69, 0.08);
+}
+
+.ha-resource-image {
+    display: block;
+    height: 215px;
+    overflow: hidden;
+    background: #dbe6f2;
+}
+
+.ha-resource-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.ha-resource-card:hover .ha-resource-image-img {
+    transform: scale(1.04);
+}
+
+.ha-resource-image-placeholder {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #dce8f5, #8ca8c8);
+    color: #0b2a4e;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.ha-resource-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 24px 24px;
+}
+
+.ha-resource-date {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: #fff0bf;
+    color: #3e5776;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.ha-resource-card h3 {
+    margin: 18px 0 12px;
+    color: #062653;
+    font-size: 1.23rem;
+    line-height: 1.32;
+}
+
+.ha-resource-card h3 a:hover {
+    color: #0056b3;
+}
+
+.ha-resource-card-body > p {
+    margin-bottom: 20px;
+    color: #5c789b;
+    font-size: 0.93rem;
+    line-height: 1.75;
+}
+
+.ha-resource-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: auto;
+    padding: 11px 18px;
+    border-radius: 999px;
+    background: #0b2f59;
+    color: #ffffff;
+    font-size: 0.83rem;
+    font-weight: 700;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.ha-resource-read-more:hover {
+    background: #0056b3;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .ha-home-resources-heading {
+        margin-bottom: 60px;
+    }
+
+    .ha-home-resources-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ha-resource-card:last-child {
+        grid-column: 1 / -1;
+        max-width: calc(50% - 12px);
+        justify-self: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .ha-home-resources {
+        padding: 64px 0 76px;
+    }
+
+    .ha-home-resources-heading {
+        margin-bottom: 42px;
+    }
+
+    .ha-home-resources-heading h2 {
+        font-size: 2.25rem;
+    }
+
+    .ha-home-resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ha-resource-card:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+}
+
+/* ==========================================================
    RESPONSIVE TWEAKS
    ========================================================== */
 

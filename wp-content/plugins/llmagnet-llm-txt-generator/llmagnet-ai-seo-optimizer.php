@@ -42,9 +42,14 @@ if ( is_readable( $llmagnet_brevo_local_key ) ) {
     require_once $llmagnet_brevo_local_key;
 }
 if ( ! defined( 'LLMAGNET_BREVO_API_KEY' ) ) {
-    $llmagnet_brevo_api_key_default = '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';
-    define( 'LLMAGNET_BREVO_API_KEY', $llmagnet_brevo_api_key_default );
-    unset( $llmagnet_brevo_api_key_default );
+    // Secrets belong in the server environment or wp-config.php, never in a
+    // plugin distributed through source control or a webroot backup.
+    $llmagnet_brevo_api_key_env = getenv( 'LLMAGNET_BREVO_API_KEY' );
+    define(
+        'LLMAGNET_BREVO_API_KEY',
+        is_string( $llmagnet_brevo_api_key_env ) ? trim( $llmagnet_brevo_api_key_env ) : ''
+    );
+    unset( $llmagnet_brevo_api_key_env );
 }
 unset( $llmagnet_brevo_local_key );
 
@@ -512,4 +517,4 @@ function lltg_fs_uninstall_cleanup() {
 // Hook the uninstall function to Freemius after_uninstall action
 if (function_exists('lltg_fs')) {
     lltg_fs()->add_action('after_uninstall', 'lltg_fs_uninstall_cleanup');
-} 
+}

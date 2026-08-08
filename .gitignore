@@ -2,3 +2,12 @@ wp-config.php
 static_backup
 .htaccess
 wp-content/cache/ha-page-cache/
+
+# Never commit deploy-local secrets, dumps, backups, logs, or forensic bundles.
+*.sql
+*.sql.gz
+*.tar.gz
+*.bak*
+*.backup*
+*.log
+wp-content/debug.log

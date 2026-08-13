@@ -136,11 +136,12 @@ add_action('wp_head', function () {
 /**
  * Add the Naver Search Advisor verification tag to public frontend pages.
  *
- * Replace the empty value below with the code supplied by Naver. The tag is
- * intentionally omitted while the code is empty so an invalid verification
- * tag is never rendered.
+ * Keep the verification code below in sync with Naver Search Advisor. The
+ * tag is intentionally omitted while the code is empty so an invalid
+ * verification tag is never rendered.
  */
 if (!defined('HA_NAVER_SITE_VERIFICATION_CODE')) {
+    // Naver Search Advisor verification code for the public website.
     define('HA_NAVER_SITE_VERIFICATION_CODE', '5679d0f509ddf00ed5c711a55bac2ac0437b6abc');
 }
 

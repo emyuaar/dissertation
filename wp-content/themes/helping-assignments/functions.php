@@ -133,6 +133,35 @@ add_action('wp_head', function () {
  * Theme Functions
  */
 
+/**
+ * Add the Naver Search Advisor verification tag to public frontend pages.
+ *
+ * Replace the empty value below with the code supplied by Naver. The tag is
+ * intentionally omitted while the code is empty so an invalid verification
+ * tag is never rendered.
+ */
+if (!defined('HA_NAVER_SITE_VERIFICATION_CODE')) {
+    define('HA_NAVER_SITE_VERIFICATION_CODE', '');
+}
+
+function ha_add_naver_site_verification()
+{
+    if (is_admin()) {
+        return;
+    }
+
+    $verification_code = trim((string) HA_NAVER_SITE_VERIFICATION_CODE);
+    if ($verification_code === '') {
+        return;
+    }
+
+    printf(
+        "    <meta name=\"naver-site-verification\" content=\"%s\" />\n",
+        esc_attr($verification_code)
+    );
+}
+add_action('wp_head', 'ha_add_naver_site_verification', 20);
+
 /* -------------------------------------------------------
  * Elementor basic support
  * ------------------------------------------------------*/

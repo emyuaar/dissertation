@@ -141,7 +141,7 @@ add_action('wp_head', function () {
  * tag is never rendered.
  */
 if (!defined('HA_NAVER_SITE_VERIFICATION_CODE')) {
-    define('HA_NAVER_SITE_VERIFICATION_CODE', '');
+    define('HA_NAVER_SITE_VERIFICATION_CODE', '5679d0f509ddf00ed5c711a55bac2ac0437b6abc');
 }
 
 function ha_add_naver_site_verification()

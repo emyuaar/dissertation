@@ -15,6 +15,8 @@ class Controller_Support {
 	const ITEM_GDPR_DPA = 'gdpr-dpa';
 	
 	const ITEM_MODULE_LOGIN_SECURITY = 'module-login-security';
+	const ITEM_MODULE_LOGIN_SECURITY_PASSKEYS = 'module-login-security-passkeys';
+	const ITEM_MODULE_LOGIN_SECURITY_PASSKEY_REQUIRED = 'module-login-security-passkey-required';
 	const ITEM_MODULE_LOGIN_SECURITY_2FA = 'module-login-security-2fa';
 	const ITEM_MODULE_LOGIN_SECURITY_2FA_APPS = 'module-login-security-2fa-apps';
 	const ITEM_MODULE_LOGIN_SECURITY_CAPTCHA = 'module-login-security-captcha';
@@ -23,6 +25,8 @@ class Controller_Support {
 	const ITEM_MODULE_LOGIN_SECURITY_OPTION_SHORTCODE = 'module-login-security-option-shortcode';
 	const ITEM_MODULE_LOGIN_SECURITY_OPTION_STACK_UI_COLUMNS = 'module-login-security-option-stack-ui-columns';
 	const ITEM_MODULE_LOGIN_SECURITY_2FA_NOTIFICATIONS = 'module-login-security-2fa-notifications';
+	const ITEM_MODULE_LOGIN_SECURITY_PASSKEY_NOTIFICATIONS = 'module-login-security-passkey-notifications';
+	const ITEM_MODULE_LOGIN_SECURITY_PASSKEY_HOSTNAME_WARNING = 'module-login-security-passkey-hostname-warning';
 	
 	public static function supportURLs(): array {
 		$ref = new \ReflectionClass(static::class);
@@ -48,6 +52,9 @@ class Controller_Support {
 		switch ($item) {
 			case self::ITEM_INDEX:
 				return 'https://www.wordfence.com/help/';
+
+			case self::ITEM_MODULE_LOGIN_SECURITY_PASSKEYS:
+				return $base . 'login-security/#module-login-security-passkeys';
 			
 			//These all fall through to the query format
 			
@@ -59,6 +66,7 @@ class Controller_Support {
 			case self::ITEM_GDPR_DPA:
 			
 			case self::ITEM_MODULE_LOGIN_SECURITY:
+			case self::ITEM_MODULE_LOGIN_SECURITY_PASSKEY_REQUIRED:
 			case self::ITEM_MODULE_LOGIN_SECURITY_2FA:
 			case self::ITEM_MODULE_LOGIN_SECURITY_CAPTCHA:
 			case self::ITEM_MODULE_LOGIN_SECURITY_ROLES:
@@ -66,6 +74,8 @@ class Controller_Support {
 			case self::ITEM_MODULE_LOGIN_SECURITY_OPTION_SHORTCODE:
 			case self::ITEM_MODULE_LOGIN_SECURITY_OPTION_STACK_UI_COLUMNS:
 			case self::ITEM_MODULE_LOGIN_SECURITY_2FA_NOTIFICATIONS:
+			case self::ITEM_MODULE_LOGIN_SECURITY_PASSKEY_NOTIFICATIONS:
+			case self::ITEM_MODULE_LOGIN_SECURITY_PASSKEY_HOSTNAME_WARNING:
 				return $base . '?query=' . $item;
 		}
 		

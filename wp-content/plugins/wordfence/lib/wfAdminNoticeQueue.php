@@ -2,15 +2,36 @@
 
 class wfAdminNoticeQueue {
 	const USERS_ALL = 'all';
-	
+	const VERSION_UPGRADE_NOTICE_CATEGORY_STEM = 'versionUpgradeNotice';
+
 	protected static function _notices() {
 		return self::_purgeObsoleteNotices(wfConfig::get_ser('adminNoticeQueue', array()));
 	}
 
 	private static function _purgeObsoleteNotices($notices) {
 		$altered = false;
+		$now = time();
 		foreach ($notices as $id => $notice) {
 			if (!empty($notice['category']) && $notice['category'] === 'php8') {
+				unset($notices[$id]);
+				$altered = true;
+				continue;
+			}
+			if (!empty($notice['category']) && $notice['category'] === self::VERSION_UPGRADE_NOTICE_CATEGORY_STEM . '900') {
+				if (empty($notice['displayOn']) || !is_array($notice['displayOn'])) {
+					$notices[$id]['displayOn'] = array('dashboard', 'plugins', 'wordfence');
+					$altered = true;
+				}
+				if (empty($notice['enqueuedAt'])) {
+					$notices[$id]['enqueuedAt'] = empty($notice['expires']) ? $now : ((int) $notice['expires'] - (14 * DAY_IN_SECONDS));
+					$altered = true;
+				}
+				if (empty($notice['expires'])) {
+					$notices[$id]['expires'] = (int) $notices[$id]['enqueuedAt'] + (14 * DAY_IN_SECONDS);
+					$altered = true;
+				}
+			}
+			if (!empty($notices[$id]['expires']) && is_numeric($notices[$id]['expires']) && (int) $notices[$id]['expires'] <= $now) {
 				unset($notices[$id]);
 				$altered = true;
 			}
@@ -23,7 +44,44 @@ class wfAdminNoticeQueue {
 	protected static function _setNotices($notices) {
 		wfConfig::set_ser('adminNoticeQueue', $notices);
 	}
-	
+
+	/*
+	 * Version upgrade notices.
+	 */
+	public static function queueVersionUpgradeNotice($previous_version) {
+		$previous_version = trim((string) $previous_version);
+		if ($previous_version === '' || version_compare($previous_version, '0.0.0', '<=')) {
+			return;
+		}
+
+		//9.0.0
+		if (version_compare($previous_version, '9.0.0', '<')) {
+			$category = self::VERSION_UPGRADE_NOTICE_CATEGORY_STEM . '900';
+			if (!self::hasNotice($category, false)) {
+				$messageHTML = self::versionUpgradeNoticeMessageHTML($previous_version, '9.0.0');
+				if (!empty($messageHTML)) {
+					$enqueuedAt = time();
+					self::addAdminNotice(wfAdminNotice::SEVERITY_UPDATE, $messageHTML, $category, false, array(
+						'displayOn' => array('dashboard', 'plugins', 'wordfence'),
+						'enqueuedAt' => $enqueuedAt,
+						'expires' => $enqueuedAt + (14 * DAY_IN_SECONDS),
+					));
+				}
+			}
+		}
+	}
+
+	private static function versionUpgradeNoticeMessageHTML($previous_version, $target_version) {
+		if ($target_version === '9.0.0') {
+			$wflsLink = wfUtils::maybeNetworkAdminURL('admin.php?page=WFLS#top#settings');
+			$addPasskeyOnClick = 'wordfenceExt.dismissAdminNoticeAndFollowLink(this); return false;';
+			return '<strong>' . esc_html__('Introducing Passkeys with Wordfence', 'wordfence') . '</strong> ' .
+				esc_html__('Wordfence 9 brings support for passkeys for all users. A passkey is a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN. They can be used for sign-in as a simple and secure alternative to a password and two-factor credentials. Passkeys can be enabled for administrators or any other role on the Login Security settings page.', 'wordfence') .
+				'<br>' . '<a class="wf-btn wf-btn-primary wf-btn-sm wf-no-left wf-add-top" href="' . esc_url($wflsLink) . '" onclick="' . esc_attr($addPasskeyOnClick) . '">' . esc_html__('Manage Login Security Settings', 'wordfence') . '</a>';
+		}
+		return '';
+	}
+
 	/**
 	 * Adds an admin notice to the display queue.
 	 * 
@@ -31,8 +89,9 @@ class wfAdminNoticeQueue {
 	 * @param string $messageHTML
 	 * @param bool|string $category If not false, notices with the same category will be removed prior to adding this one.
 	 * @param bool|array $users If not false, an array of user IDs the notice should show for.
+	 * @param array $options Additional notice metadata.
 	 */
-	public static function addAdminNotice($severity, $messageHTML, $category = false, $users = false) {
+	public static function addAdminNotice($severity, $messageHTML, $category = false, $users = false, $options = array()) {
 		$notices = self::_notices();
 		foreach ($notices as $id => $n) {
 			$usersMatches = false;
@@ -66,8 +125,56 @@ class wfAdminNoticeQueue {
 		if ($users !== false) {
 			$notices[$id]['users'] = $users;
 		}
+
+		foreach (array('displayOn', 'enqueuedAt', 'expires') as $optionKey) {
+			if (isset($options[$optionKey])) {
+				$notices[$id][$optionKey] = $options[$optionKey];
+			}
+		}
 		
 		self::_setNotices($notices);
+	}
+
+	private static function _noticeShouldDisplayOnCurrentPage($notice) {
+		if (empty($notice['displayOn']) || !is_array($notice['displayOn'])) {
+			return true;
+		}
+
+		foreach ($notice['displayOn'] as $location) {
+			if (self::_currentPageMatchesNoticeLocation($location)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	private static function _currentPageMatchesNoticeLocation($location) {
+		global $pagenow;
+
+		if (!is_admin() || (is_multisite() && !is_network_admin())) {
+			return false;
+		}
+
+		$currentPage = isset($pagenow) ? $pagenow : '';
+		if ($currentPage === '' && isset($_SERVER['REQUEST_URI'])) {
+			$requestPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+			$currentPage = $requestPath === false ? '' : basename($requestPath);
+		}
+
+		if ($location === 'dashboard') {
+			return $currentPage === 'index.php';
+		}
+
+		if ($location === 'plugins') {
+			return $currentPage === 'plugins.php';
+		}
+
+		if ($location === 'wordfence') {
+			return wordfence::isWordfenceAdminPage();
+		}
+
+		return false;
 	}
 	
 	/**
@@ -249,6 +356,8 @@ class wfAdminNoticeQueue {
 			else {
 				if ($userSpecificOnly) { continue; }
 			}
+
+			if (!self::_noticeShouldDisplayOnCurrentPage($n)) { continue; }
 			
 			$notice = new wfAdminNotice($nid, $n['severity'], $n['messageHTML']);
 			if ($networkAdmin) {
@@ -269,6 +378,7 @@ class wfAdminNotice {
 	const SEVERITY_CRITICAL = 'critical';
 	const SEVERITY_WARNING = 'warning';
 	const SEVERITY_INFO = 'info';
+	const SEVERITY_UPDATE = 'update';
 	
 	private $_id;
 	private $_severity;
@@ -288,7 +398,16 @@ class wfAdminNotice {
 		else if ($this->_severity == self::SEVERITY_WARNING) {
 			$severityClass = 'notice-warning';
 		}
+		else if ($this->_severity == self::SEVERITY_UPDATE) {
+			$severityClass = 'notice-update';
+		}
 		
-		echo '<div class="wf-admin-notice notice ' . $severityClass . '" data-notice-id="' . esc_attr($this->_id) . '"><p>' . $this->_messageHTML . '</p><p><a class="wf-btn wf-btn-default wf-btn-sm wf-dismiss-link" href="#" onclick="wordfenceExt.dismissAdminNotice(\'' . esc_attr($this->_id) . '\'); return false;" role="button">' . esc_html__('Dismiss', 'wordfence') . '</a></p></div>';
+		$dismissAction = 'wordfenceExt.dismissAdminNotice(\'' . esc_js($this->_id) . '\'); return false;';
+		if ($this->_severity == self::SEVERITY_UPDATE) {
+			echo '<div class="wf-admin-notice notice ' . $severityClass . '" data-notice-id="' . esc_attr($this->_id) . '"><a class="wf-admin-notice-dismiss wf-dismiss-link" href="#" onclick="' . esc_attr($dismissAction) . '" role="button"><span aria-hidden="true">&times;</span><span class="screen-reader-text">' . esc_html__('Dismiss this notice.', 'wordfence') . '</span></a><p class="wf-admin-notice-content">' . $this->_messageHTML . '</p></div>';
+			return;
+		}
+
+		echo '<div class="wf-admin-notice notice ' . $severityClass . '" data-notice-id="' . esc_attr($this->_id) . '"><p>' . $this->_messageHTML . '</p><p><a class="wf-btn wf-btn-default wf-btn-sm wf-dismiss-link" href="#" onclick="' . esc_attr($dismissAction) . '" role="button">' . esc_html__('Dismiss', 'wordfence') . '</a></p></div>';
 	}
 }

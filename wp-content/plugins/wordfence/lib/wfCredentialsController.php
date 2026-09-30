@@ -158,7 +158,7 @@ class wfCredentialsController {
 		}
 		
 		$ipHex = wfDB::binaryValueToSQLHex(wfUtils::inet_pton($ip));
-		$result = $wpdb->get_row($wpdb->prepare("SELECT id FROM {$table_wfLogins} WHERE action = 'loginOK' AND userID = %d AND IP = {$ipHex} LIMIT 0,1", $id), ARRAY_A);
+		$result = $wpdb->get_row($wpdb->prepare("SELECT id FROM {$table_wfLogins} WHERE action IN ('loginOK', 'loginPasskeyOK') AND userID = %d AND IP = {$ipHex} LIMIT 0,1", $id), ARRAY_A);
 		if (is_array($result)) {
 			return true;
 		}

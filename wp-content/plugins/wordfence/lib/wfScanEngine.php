@@ -2004,6 +2004,19 @@ class wfScanEngine {
 			);
 		}
 
+		if (wordfence::hasWordfenceLoginSecurity($allPlugins)) {
+			$key = "wfLoginSecPresent";
+			$added = $this->addIssue(
+				$key,
+				wfIssues::SEVERITY_LOW,
+				$key,
+				$key,
+				__("Wordfence Login Security is currently installed and is not needed when Wordfence is installed", "wordfence"),
+				__("This site has the Wordfence and Wordfence Login Security plugins installed. The main Wordfence plugin already includes the functionality of Wordfence Login Security, so Wordfence Login Security should be uninstalled.", "wordfence"),
+				[]
+			);
+		}
+
 		// Plugin updates needed
 		if (count($this->updateCheck->getPluginUpdates()) > 0) {
 			foreach ($this->updateCheck->getPluginUpdates() as $plugin) {

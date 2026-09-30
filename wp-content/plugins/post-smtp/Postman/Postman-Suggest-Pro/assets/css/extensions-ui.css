@@ -1,0 +1,394 @@
+.post-smtp-container {
+    padding: 25px;
+
+}
+
+.post-smtp-container.bb-1 {
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.post-smtp-heading .post-smtp-h2 {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    color: #000000;
+}
+
+.post-smtp-heading .post-smtp-h2 span {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: center;
+    color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 18px;
+    border-radius: 21px;
+    background: linear-gradient(301.05deg, #8ED2F5 -17.28%, #46519E 92.74%);
+}
+
+.post-smtp-heading .post-smtp-p {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    text-align: left;
+    color: #000000;
+}
+
+.post-smtp-socket-wrapper {
+    border-radius: 5px;
+    border: 1px solid #375CAF;
+    background: #fff;
+    display: inline-block;
+    width: 348px;
+    height: 287px;
+    margin-right: 20px;
+    position: relative;
+}
+
+.post-smtp-socket-wrapper:last-child {
+    margin-right: 0;
+}
+
+.post-smtp-p-20 {
+    padding: 20px;
+}
+
+.post-smtp-fl {
+    float: left;
+}
+
+.post-smtp-fr {
+    float: right;
+}
+
+.post-smtp-clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.post-smtp-socket-wrapper .post-smtp-h2 {
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.post-smtp-socket-wrapper .post-smtp-p {
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #737373;
+}
+
+.post-smtp-bt-1 {
+    border-top: 1px solid #B3B2B5;
+}
+
+.post-smtp-toggle {
+    width: 42px;
+    height: 25px;
+    position: relative;
+    background: #9092B0;
+    border-radius: 50px;
+}
+
+.post-smtp-toggle::after {
+    width: 17px;
+    height: 17px;
+    top: 4px;
+    left: 4px;
+    position: absolute;
+    background: #fff;
+    content: "";
+    border-radius: 13px;
+    display: inline-block;
+}
+
+.post-smtp-deactivated {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #9092B0;
+}
+
+.post-smtp-socket-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+}
+
+.post-smtp-disabled {
+    opacity: 40%;
+}
+
+.post-smtp-popup-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    backdrop-filter: blur(1px);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-smtp-popup {
+    width: 680px;
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #CEEBFA 0%, #BAE3F8 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.post-smtp-popup::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 420px;
+    height: 300px;
+    background: url("../images/popup-background.png") no-repeat top right;
+    background-size: contain;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.post-smtp-popup > * {
+    position: relative;
+    z-index: 1;
+}
+
+.post-smtp-popup .post-smtp-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.post-smtp-popup .post-smtp-logo {
+    text-align: center;
+    margin-left: 0;
+}
+
+.post-smtp-popup .post-smtp-extension-logo {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.post-smtp-popup .post-smtp-popup-feature-icons img.post-smtp-popup-feature-icon {
+    width: 22px;
+    height: 22px;
+    padding: 2px;
+    object-fit: contain;
+    box-sizing: border-box;
+}
+
+.post-smtp-popup .post-smtp-popup-grid {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    max-width: 100%;
+    justify-items: start;
+}
+
+.post-smtp-popup .post-smtp-popup-footer {
+    text-align: center;
+}
+
+.post-smtp-popup .post-smtp-cta {
+    margin-left: 0;
+    min-width: 260px;
+    padding: 14px 0px;
+}
+
+.post-smtp-close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #7B93B2;
+    color: #7B93B2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.2s;
+}
+
+.post-smtp-close-button:hover {
+    background: rgba(123, 147, 178, 0.1);
+    color: #4A5568;
+    border-color: #4A5568;
+}
+
+.post-smtp-logo {
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: -20px;
+}
+
+.post-smtp-popup .post-smtp-h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    color: #214A72;
+    margin: 10px 0 30px;
+}
+
+.post-smtp-popup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 30px;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.post-smtp-popup-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.post-smtp-popup-feature {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #2D4164;
+}
+
+.post-smtp-popup-feature svg {
+    flex-shrink: 0;
+}
+
+.post-smtp-popup-feature-icons {
+    display: flex;
+    margin-left: 5px;
+}
+
+.post-smtp-popup-feature-icons img {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 3px;
+    margin-left: 5px;
+    border: 1px solid #E2E8F0;
+    position: relative;
+}
+
+.post-smtp-popup-feature-icons img:first-child {
+    margin-left: 0;
+    /* Ensures the first icon isn't pushed to the left */
+}
+
+.post-smtp-popup-footer {
+    text-align: left;
+}
+
+.post-smtp-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 84px;
+    padding: 12px 32px;
+    background: #FBB71F;
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+    margin-left: 30px;
+}
+
+.post-smtp-cta:hover {
+    background: #FBB71F;
+    transform: translateY(-2px);
+}
+
+@media only screen and (max-width: 782px) {
+    .post-smtp-popup {
+        width: calc(100% - 40px);
+        max-width: 680px;
+    }
+
+    .post-smtp-popup .post-smtp-popup-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
+
+/**/
+#wpbody-content .post-smtp-clearfix {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 28px;
+}
+
+#wpbody-content .post-smtp-clearfix .post-smtp-socket-wrapper {
+    float: none;
+    margin: 0;
+}
+
+#wpbody-content .post-smtp-clearfix .post-smtp-fr {
+    margin: 0 !important;
+}
+
+.post-smtp-socket-footer .post-smtp-p-20:after {
+    display: none;
+}
+
+.post-smtp-socket-footer .post-smtp-p-20 {
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1360px) {
+    #wpbody-content .post-smtp-clearfix {
+        gap: 30px 2.5%;
+    }
+
+    #wpbody-content .post-smtp-clearfix .post-smtp-socket-wrapper {
+        width: 31.4%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #wpbody-content .post-smtp-clearfix .post-smtp-socket-wrapper {
+        width: 48.4%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #wpbody-content .post-smtp-clearfix .post-smtp-socket-wrapper {
+        width: 100%;
+    }
+}

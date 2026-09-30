@@ -404,7 +404,7 @@ if (!isset($sendingDiagnosticEmail)) {
 				</table>
 			</div>
 		</div>
-		<div class="wf-block wf-legacy<?php echo(wfPersistenceController::shared()->isActive('wf-diagnostics-wordpress-cron-jobs') ? ' wf-active' : '') ?>" data-persistence-key="<?php echo esc_attr('wf-diagnostics-wordpress-cron-jobs') ?>">
+			<div class="wf-block wf-legacy<?php echo(wfPersistenceController::shared()->isActive('wf-diagnostics-wordpress-cron-jobs') ? ' wf-active' : '') ?>" data-persistence-key="<?php echo esc_attr('wf-diagnostics-wordpress-cron-jobs') ?>">
 			<div class="wf-block-header">
 				<div class="wf-block-header-content">
 					<div class="wf-block-title">
@@ -440,11 +440,63 @@ if (!isset($sendingDiagnosticEmail)) {
 					?>
 					</tbody>
 				</table>
+				</div>
 			</div>
-		</div>
+			<div class="wf-block wf-legacy<?php echo(wfPersistenceController::shared()->isActive('wf-diagnostics-wordpress-hooks') ? ' wf-active' : '') ?>" data-persistence-key="<?php echo esc_attr('wf-diagnostics-wordpress-hooks') ?>">
+				<div class="wf-block-header">
+					<div class="wf-block-header-content">
+						<div class="wf-block-title">
+							<strong><?php esc_html_e('WordPress Hooks', 'wordfence') ?></strong>
+							<span class="wf-text-small"><?php esc_html_e('Registered listeners for certain WordPress actions and filters.', 'wordfence') ?></span>
+						</div>
+						<div class="wf-block-header-action">
+							<div class="wf-block-header-action-disclosure wf-legacy" role="checkbox" aria-checked="<?php echo (wfPersistenceController::shared()->isActive('wf-diagnostics-wordpress-hooks') ? 'true' : 'false'); ?>" tabindex="0"></div>
+						</div>
+					</div>
+				</div>
+				<div class="wf-block-content wf-clearfix wf-padding-no-left wf-padding-no-right">
+					<table class="wf-striped-table"<?php echo !empty($inEmail) ? ' border=1' : '' ?>>
+						<tbody class="thead">
+						<tr>
+							<th><?php esc_html_e('Hook', 'wordfence'); ?></th>
+							<th><?php esc_html_e('Priority', 'wordfence'); ?></th>
+							<th><?php esc_html_e('Class', 'wordfence'); ?></th>
+							<th><?php esc_html_e('Function', 'wordfence'); ?></th>
+						</tr>
+						</tbody>
+						<tbody>
+						<?php
+						foreach (wfDiagnostic::getWordPressDiagnosticHooks() as $hookName) {
+							$listeners = wfDiagnostic::getWordPressHookListeners($hookName);
+							if (empty($listeners)) {
+								?>
+								<tr>
+									<td><?php echo esc_html($hookName) ?></td>
+									<td colspan="3"><?php esc_html_e('No listeners registered', 'wordfence'); ?></td>
+								</tr>
+								<?php
+								continue;
+							}
 
-		<?php
-		global $wpdb;
+							foreach ($listeners as $listener) {
+								?>
+								<tr>
+									<td><?php echo esc_html($listener['hook']) ?></td>
+									<td><?php echo esc_html((string) $listener['priority']) ?></td>
+									<td><?php echo $listener['class'] !== '' ? esc_html($listener['class']) : '&mdash;'; ?></td>
+									<td><?php echo $listener['function'] !== '' ? esc_html($listener['function']) : '&mdash;'; ?></td>
+								</tr>
+								<?php
+							}
+						}
+						?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+	
+			<?php
+			global $wpdb;
 		$wfdb = new wfDB();
 		
 		//This must be done this way (rather than SHOW TABLES) because MySQL with InnoDB tables does a full regeneration of all metadata if we don't. That takes a long time with a large table count.

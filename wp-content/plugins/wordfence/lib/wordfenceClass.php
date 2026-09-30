@@ -93,6 +93,7 @@ class wordfence {
 	private static $debugOn = null;
 	private static $runInstallCalled = false;
 	private static $userDat = false;
+	private static $passkeyLoginSuccessUserIDs = array();
 
 	const ATTACK_DATA_BODY_LIMIT=41943040; //40MB
 
@@ -505,6 +506,7 @@ SQL
 
 		$wpdb->query("DELETE FROM $configTable WHERE `name` = 'emailedIssuesList' AND LENGTH(`val`) > 2 * 1024 * 1024");
 		wfConfig::setDefaults(); //If not set
+		wfAdminNoticeQueue::queueVersionUpgradeNotice($previous_version);
 
 		$restOfSite = wfConfig::get('cbl_restOfSiteBlocked', 'notset');
 		if($restOfSite == 'notset'){
@@ -1357,7 +1359,12 @@ END
 		
 		add_action('wfls_xml_rpc_blocked', 'wordfence::checkSecurityNetwork');
 		add_action('wfls_registration_blocked', 'wordfence::checkSecurityNetwork');
-		add_action('wfls_page_footer', 'wordfence::_outputLoginSecurityTour');
+		add_action('wordfence_ls_passkey_login_succeeded', 'wordfence::passkeyLoginSucceeded', 10, 2);
+		add_action('wordfence_ls_passkey_login_failed', 'wordfence::passkeyLoginFailed', 10, 2);
+		add_action('wordfence_ls_passkey_password_auth_blocked', 'wordfence::passkeyPasswordAuthBlocked', 10, 2);
+		add_filter('wordfence_ls_mask_login_errors', function($maskLoginErrors) {
+			return (bool) wfConfig::get('loginSec_maskLoginErrors');
+		});
 		add_action('wfls_settings_set', 'wordfence::queueCentralConfigurationSync', 10, 2);
 
 		if(is_admin()){
@@ -1481,12 +1488,6 @@ END
 			$links = array_merge(array('aWordfencePluginCallout' => '<a href="https://www.wordfence.com/zz12/wordfence-signup/" target="_blank" rel="noopener noreferrer"><strong style="color: #11967A; display: inline;">' . esc_html__('Upgrade To Premium', 'wordfence') . '</strong><span class="screen-reader-text"> (opens in new tab)</span></a>'), $links);
 		} 
 		return $links;
-	}
-	
-	public static function _outputLoginSecurityTour() {
-		if (WORDFENCE_LS_FROM_CORE) {
-			echo wfView::create('tours/login-security', array())->render();
-		}
 	}
 	
 	public static function fixWPMailFromAddress($from_email) {
@@ -2628,13 +2629,14 @@ END
 	}
 
 	public static function loginAction($username){
-		if(sizeof($_POST) < 1){ return; } //only execute if login form is posted
 		if(! $username){ return; }
-		wfConfig::inc('totalLogins');
 		$user = get_user_by('login', $username);
 		$userID = $user ? $user->ID : 0;
+		$passkeyLogin = self::consumePasskeyLoginSuccess($userID);
+		if(sizeof($_POST) < 1 && !$passkeyLogin){ return; } //only execute if login form is posted, except for passkey REST logins
+		wfConfig::inc('totalLogins');
 		$userIsAdmin = wfUtils::isAdmin($userID);
-		self::getLog()->logLogin('loginOK', 0, $username);
+		self::getLog()->logLogin($passkeyLogin ? 'loginPasskeyOK' : 'loginOK', 0, $username);
 		if ($userIsAdmin) {
 			wfConfig::set_ser('lastAdminLogin', array(
 				'userID' => $userID,
@@ -2807,13 +2809,25 @@ END
 		
 		$twoFactorUsers = wfConfig::get_ser('twoFactorUsers', array());
 		$userDat = self::$userDat;
+		$verifiedPasskeyAuthentication = self::isVerifiedPasskeyAuthenticationRequest($username, $passwd);
+		$breachedPasswordUser = is_object($authUser) &&
+			get_class($authUser) == 'WP_User' &&
+			((wfConfig::get('loginSec_breachPasswds') == 'admins' && wfUtils::isAdmin($authUser)) || (wfConfig::get('loginSec_breachPasswds') == 'pubs' && user_can($authUser, 'publish_posts')));
+
+		if (
+			$secEnabled &&
+			$verifiedPasskeyAuthentication &&
+			wfConfig::get('loginSec_breachPasswds_enabled') &&
+			$breachedPasswordUser
+		) {
+			wfCredentialsController::clearCachedCredentialStatus($authUser);
+		}
 		
 		$checkBreachList = $secEnabled &&
 			!wfBlock::isWhitelisted($IP) &&
+			!$verifiedPasskeyAuthentication &&
 			wfConfig::get('loginSec_breachPasswds_enabled') &&
-			is_object($authUser) &&
-			get_class($authUser) == 'WP_User' &&
-			((wfConfig::get('loginSec_breachPasswds') == 'admins' && wfUtils::isAdmin($authUser)) || (wfConfig::get('loginSec_breachPasswds') == 'pubs' && user_can($authUser, 'publish_posts')));
+			$breachedPasswordUser;
 		
 		$usingBreachedPassword = false;
 		if ($checkBreachList) {
@@ -3258,7 +3272,186 @@ END
 			}
 		}
 	}
-	
+
+	/**
+	 * Records failed passkey login attempts from Login Security.
+	 *
+	 * @param WP_Error $error Passkey login failure.
+	 * @param array $context Sanitized passkey login failure context.
+	 * @return void
+	 */
+	public static function passkeyLoginFailed($error, $context) {
+		if (!is_array($context)) {
+			$context = array();
+		}
+
+		$username = '';
+		if (isset($context['username']) && is_string($context['username'])) {
+			$username = $context['username'];
+		}
+		else if (isset($context['user_id'])) {
+			$user = get_user_by('id', (int) $context['user_id']);
+			if ($user) {
+				$username = $user->user_login;
+			}
+		}
+
+		if ($username !== '') {
+			self::getLog()->logLogin('loginFailPasskey', 1, $username);
+		}
+		else if (self::getLog()->getCurrentRequest() !== null) {
+			self::getLog()->getCurrentRequest()->action = 'loginFailPasskey';
+			self::getLog()->getCurrentRequest()->save();
+		}
+	}
+
+	/**
+	 * Records username/password login attempts blocked because passkeys are required.
+	 *
+	 * @param WP_User $user User whose username/password authentication was blocked.
+	 * @param array $context Sanitized passkey password-auth block context.
+	 * @return void
+	 */
+	public static function passkeyPasswordAuthBlocked($user, $context) {
+		if (!is_array($context)) {
+			$context = array();
+		}
+
+		$username = '';
+		if (isset($context['username']) && is_string($context['username'])) {
+			$username = $context['username'];
+		}
+		else if ($user instanceof WP_User) {
+			$username = $user->user_login;
+		}
+
+		if ($username !== '') {
+			self::getLog()->logLogin('loginFailPasskeyRequired', 1, $username);
+		}
+		else if (self::getLog()->getCurrentRequest() !== null) {
+			self::getLog()->getCurrentRequest()->action = 'loginFailPasskeyRequired';
+			self::getLog()->getCurrentRequest()->save();
+		}
+	}
+
+	/**
+	 * Records that the current request successfully authenticated a passkey login.
+	 *
+	 * @param WP_User $user Authenticated user.
+	 * @param array $context Sanitized passkey login success context.
+	 * @return void
+	 */
+	public static function passkeyLoginSucceeded($user, $context) {
+		$userID = 0;
+		if ($user instanceof WP_User) {
+			$userID = (int) $user->ID;
+		}
+		else if (is_array($context) && isset($context['user_id'])) {
+			$userID = (int) $context['user_id'];
+		}
+
+		if ($userID > 0) {
+			self::$passkeyLoginSuccessUserIDs[$userID] = true;
+		}
+	}
+
+	/**
+	 * Returns whether the next successful login log for the user should be attributed to passkeys.
+	 *
+	 * @param int $userID Authenticated user ID.
+	 * @return bool
+	 */
+	private static function consumePasskeyLoginSuccess($userID) {
+		$userID = (int) $userID;
+		if ($userID <= 0 || empty(self::$passkeyLoginSuccessUserIDs[$userID])) {
+			return false;
+		}
+
+		unset(self::$passkeyLoginSuccessUserIDs[$userID]);
+		return true;
+	}
+
+	/**
+	 * Returns whether the provided credentials correspond to the current request's verified passkey login context.
+	 *
+	 * @param string $username Username supplied to the authentication pipeline.
+	 * @param string $passwd Password supplied to the authentication pipeline.
+	 * @return bool
+	 */
+	private static function isVerifiedPasskeyAuthenticationRequest($username, $passwd) {
+		return class_exists('\WordfenceLS\Controller_Passkey') && \WordfenceLS\Controller_Passkey::shared()->is_verified_authentication_request($username, $passwd);
+	}
+
+	/**
+	 * Returns whether the brute-force failure handler should skip writing its own login failure row.
+	 *
+	 * Passkey authentication failures are logged by passkey-specific hooks. During verified passkey authentication,
+	 * the internal username and password are intentionally synthetic and should not be logged as a separate username
+	 * or password failure if another authentication filter rejects the request.
+	 *
+	 * @param WP_User|WP_Error|null $authUser Authentication result.
+	 * @param string $username Username supplied to the authentication pipeline.
+	 * @param string $passwd Password supplied to the authentication pipeline.
+	 * @return bool
+	 */
+	private static function shouldSkipBruteForceFailureLog($authUser, $username, $passwd) {
+		if (!is_wp_error($authUser)) {
+			return false;
+		}
+
+		$errorCode = $authUser->get_error_code();
+		if (is_string($errorCode) && (strpos($errorCode, 'wfls_passkey_') === 0 || strpos($errorCode, 'wfls_xmlrpc_passkey_') === 0)) {
+			return true;
+		}
+
+		return self::isVerifiedPasskeyAuthenticationRequest($username, $passwd);
+	}
+
+	/**
+	 * Returns error codes used when username/password authentication is blocked because passkeys are required.
+	 *
+	 * @return string[]
+	 */
+	private static function passkeyRequiredPasswordAuthErrorCodes() {
+		return array(
+			'wfls_passkey_role_password_auth_disabled',
+			'wfls_passkey_user_password_auth_disabled',
+			'wfls_xmlrpc_passkey_role_password_auth_disabled',
+			'wfls_xmlrpc_passkey_user_password_auth_disabled',
+		);
+	}
+
+	/**
+	 * Returns whether the given error code indicates a passkey-required username/password authentication block.
+	 *
+	 * @param string $errorCode Authentication error code.
+	 * @return bool
+	 */
+	private static function isPasskeyRequiredPasswordAuthErrorCode($errorCode) {
+		return in_array($errorCode, self::passkeyRequiredPasswordAuthErrorCodes(), true);
+	}
+
+	/**
+	 * Returns the generic masked login error message.
+	 *
+	 * @param string $username Username supplied to the authentication pipeline.
+	 * @return string
+	 */
+	private static function maskedLoginErrorMessage($username) {
+		if (class_exists('\WordfenceLS\Controller_Users') && \WordfenceLS\Controller_Users::shared()->any_passkey_active()) {
+			$passkeyRecoveryURL = class_exists('\WordfenceLS\Controller_Support') ? \WordfenceLS\Controller_Support::esc_supportURL(\WordfenceLS\Controller_Support::ITEM_MODULE_LOGIN_SECURITY_PASSKEY_REQUIRED) : wfSupportController::esc_supportURL();
+			return sprintf(
+			/* translators: 1. WordPress username. 2. Password reset URL. 3. Passkey recovery help URL. */
+				wp_kses(__( '<strong>ERROR</strong>: The username or password you entered is incorrect, or the account you were trying to authenticate as requires logging in using a passkey. <a href="%2$s" title="Password Lost and Found">Lost your password</a> or <a href="%3$s" title="Passkey recovery help">need help with a lost passkey</a>?', 'wordfence' ), array('strong'=>array(), 'a'=>array('href'=>array(), 'title'=>array()))), $username, wp_lostpassword_url(), $passkeyRecoveryURL
+			);
+		}
+
+		return sprintf(
+		/* translators: 1. WordPress username. 2. Password reset URL. */
+			wp_kses(__( '<strong>ERROR</strong>: The username or password you entered is incorrect. <a href="%2$s" title="Password Lost and Found">Lost your password</a>?', 'wordfence' ), array('strong'=>array(), 'a'=>array('href'=>array(), 'title'=>array()))), $username, wp_lostpassword_url()
+		);
+	}
+
 	public static function processBruteForceAttempt($authUser, $username, $passwd) {
 		$IP = wfUtils::getIP();
 		$secEnabled = wfConfig::get('loginSecurityEnabled');
@@ -3267,7 +3460,7 @@ END
 			return $authUser;
 		}
 		
-		$failureErrorCodes = array('invalid_username', 'invalid_email', 'incorrect_password', 'twofactor_invalid', 'authentication_failed', 'wfls_twofactor_invalid', 'wfls_twofactor_failed', 'wfls_twofactor_blocked');
+		$failureErrorCodes = array_merge(array('invalid_username', 'invalid_email', 'incorrect_password', 'twofactor_invalid', 'authentication_failed', 'wfls_twofactor_invalid', 'wfls_twofactor_failed', 'wfls_twofactor_blocked'), self::passkeyRequiredPasswordAuthErrorCodes());
 		if (is_wp_error($authUser) && in_array($authUser->get_error_code(), $failureErrorCodes)) {
 			self::checkSecurityNetwork(); //May exit
 		}
@@ -3318,7 +3511,7 @@ END
 				set_transient($tKey, $tries, wfConfig::get('loginSec_countFailMins') * 60);
 			}
 		}
-		if(is_wp_error($authUser)){
+		if(is_wp_error($authUser) && !self::shouldSkipBruteForceFailureLog($authUser, $username, $passwd)){
 			if($authUser->get_error_code() == 'invalid_username' || $authUser->get_error_code() == 'invalid_email'){
 				self::getLog()->logLogin('loginFailInvalidUsername', 1, $username);
 			} else {
@@ -3326,10 +3519,8 @@ END
 			}
 		}
 
-		if(is_wp_error($authUser) && ($authUser->get_error_code() == 'invalid_username' || $authUser->get_error_code() == 'invalid_email' || $authUser->get_error_code() == 'incorrect_password') && wfConfig::get('loginSec_maskLoginErrors')){
-			return new WP_Error( 'incorrect_password', sprintf(
-			/* translators: 1. WordPress username. 2. Password reset URL. */
-				wp_kses(__( '<strong>ERROR</strong>: The username or password you entered is incorrect. <a href="%2$s" title="Password Lost and Found">Lost your password</a>?', 'wordfence' ), array('strong'=>array(), 'a'=>array('href'=>array(), 'title'=>array()))), $username, wp_lostpassword_url() ) );
+		if(is_wp_error($authUser) && ($authUser->get_error_code() == 'invalid_username' || $authUser->get_error_code() == 'invalid_email' || $authUser->get_error_code() == 'incorrect_password' || self::isPasskeyRequiredPasswordAuthErrorCode($authUser->get_error_code())) && wfConfig::get('loginSec_maskLoginErrors')){
+			return new WP_Error('incorrect_password', self::maskedLoginErrorMessage($username));
 		}
 		
 		return $authUser;
@@ -3905,7 +4096,7 @@ END
 		}
 
 		
-		$keys = array(wfOnboardingController::TOUR_DASHBOARD, wfOnboardingController::TOUR_FIREWALL, wfOnboardingController::TOUR_SCAN, wfOnboardingController::TOUR_BLOCKING, wfOnboardingController::TOUR_LIVE_TRAFFIC, wfOnboardingController::TOUR_LOGIN_SECURITY, wfOnboardingController::TOUR_AUDIT_LOG);
+		$keys = array(wfOnboardingController::TOUR_DASHBOARD, wfOnboardingController::TOUR_FIREWALL, wfOnboardingController::TOUR_SCAN, wfOnboardingController::TOUR_BLOCKING, wfOnboardingController::TOUR_LIVE_TRAFFIC, wfOnboardingController::TOUR_AUDIT_LOG);
 		if (in_array($page, $keys)) {
 			if (wfOnboardingController::shouldShowNewTour($page)) {
 				wfConfig::set('needsNewTour_' . $page, 0);
@@ -5765,6 +5956,24 @@ HTML;
 		foreach ($plugins as $plugin) {
 			if ($plugin["Name"] == "Wordfence Assistant")
 				return true;
+		}
+		return false;
+	}
+
+	public static function hasWordfenceLoginSecurity($plugins) {
+		foreach ($plugins as $slug => $plugin) {
+			if ($slug === 'wordfence-login-security' || preg_match('/^wordfence-login-security\//', $slug)) {
+				return true;
+			}
+			if (isset($plugin['slug']) && $plugin['slug'] === 'wordfence-login-security') {
+				return true;
+			}
+			if (isset($plugin['pluginFile']) && preg_match('/(?:^|[\/\\\\])wordfence-login-security[\/\\\\]/', $plugin['pluginFile'])) {
+				return true;
+			}
+			if (isset($plugin['Name']) && $plugin['Name'] === 'Wordfence Login Security') {
+				return true;
+			}
 		}
 		return false;
 	}

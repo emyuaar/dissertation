@@ -179,6 +179,89 @@ class wfDiagnostic
 	{
 		return $this->results;
 	}
+
+	/**
+	 * Returns the WordPress hooks shown in diagnostics.
+	 *
+	 * @return array
+	 */
+	public static function getWordPressDiagnosticHooks() {
+		return array(
+			'authenticate',
+			'wp_authenticate',
+			'wp_login',
+		);
+	}
+
+	public static function getWordPressHookListeners($hookName) {
+		global $wp_filter;
+
+		if (!is_string($hookName) || $hookName === '' || !function_exists('has_filter') || has_filter($hookName) === false) {
+			return array();
+		}
+
+		if (!isset($wp_filter[$hookName]) || !($wp_filter[$hookName] instanceof WP_Hook) || !is_array($wp_filter[$hookName]->callbacks)) {
+			return array();
+		}
+
+		$listeners = array();
+		foreach ($wp_filter[$hookName]->callbacks as $priority => $callbacks) {
+			if (!is_array($callbacks)) {
+				continue;
+			}
+
+			foreach ($callbacks as $callback) {
+				if (!is_array($callback) || !isset($callback['function'])) {
+					continue;
+				}
+
+				$parsed = wfUtils::parseCallable($callback['function']);
+				$className = '';
+				$functionName = '';
+				if (is_array($parsed)) {
+					$className = isset($parsed[wfUtils::CALLABLE_CLASS]) && is_string($parsed[wfUtils::CALLABLE_CLASS]) ? $parsed[wfUtils::CALLABLE_CLASS] : '';
+					if (!empty($parsed[wfUtils::CALLABLE_IS_CLOSURE])) {
+						$functionName = 'Closure';
+					}
+					else {
+						$functionName = isset($parsed[wfUtils::CALLABLE_FUNCTION]) && is_string($parsed[wfUtils::CALLABLE_FUNCTION]) ? $parsed[wfUtils::CALLABLE_FUNCTION] : '';
+					}
+				}
+
+				if ($className === '' && is_array($callback['function']) && isset($callback['function'][0]) && is_object($callback['function'][0])) {
+					$className = get_class($callback['function'][0]);
+				}
+
+				if ($className === '' && is_object($callback['function']) && !($callback['function'] instanceof Closure)) {
+					$className = get_class($callback['function']);
+				}
+
+				if ($functionName === '') {
+					if (is_string($callback['function'])) {
+						$functionName = $callback['function'];
+					}
+					else if (is_array($callback['function']) && isset($callback['function'][1]) && is_string($callback['function'][1])) {
+						$functionName = $callback['function'][1];
+					}
+					else if ($callback['function'] instanceof Closure) {
+						$functionName = 'Closure';
+					}
+					else if (is_object($callback['function']) && method_exists($callback['function'], '__invoke')) {
+						$functionName = '__invoke';
+					}
+				}
+
+				$listeners[] = array(
+					'hook' => $hookName,
+					'priority' => (int) $priority,
+					'class' => $className,
+					'function' => $functionName,
+				);
+			}
+		}
+
+		return $listeners;
+	}
 	
 	public function wfVersion() {
 		return array('test' => true, 'message' => WORDFENCE_VERSION . ' (' . WORDFENCE_BUILD_NUMBER . ')');

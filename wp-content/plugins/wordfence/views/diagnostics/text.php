@@ -358,6 +358,45 @@ echo wfHelperString::plainTextTable($table) . "\n\n";
 
 ?>
 
+## <?php esc_html_e('WordPress Hooks', 'wordfence') ?>: <?php esc_html_e('Registered listeners for certain WordPress actions and filters.', 'wordfence') ?> ##
+
+<?php
+
+$table = array(
+	array(
+		__('Hook', 'wordfence'),
+		__('Priority', 'wordfence'),
+		__('Class', 'wordfence'),
+		__('Function', 'wordfence'),
+	),
+);
+
+foreach (wfDiagnostic::getWordPressDiagnosticHooks() as $hookName) {
+	$listeners = wfDiagnostic::getWordPressHookListeners($hookName);
+	if (empty($listeners)) {
+		$table[] = array(
+			strip_tags($hookName),
+			__('No listeners registered', 'wordfence'),
+			'',
+			'',
+		);
+		continue;
+	}
+
+	foreach ($listeners as $listener) {
+		$table[] = array(
+			strip_tags($listener['hook']),
+			strip_tags((string) $listener['priority']),
+			$listener['class'] !== '' ? strip_tags($listener['class']) : '-',
+			$listener['function'] !== '' ? strip_tags($listener['function']) : '-',
+		);
+	}
+}
+
+echo wfHelperString::plainTextTable($table) . "\n\n";
+
+?>
+
 ## <?php esc_html_e('Database Tables', 'wordfence') ?>: <?php esc_html_e('Database table names, sizes, timestamps, and other metadata.', 'wordfence') ?> ##
 
 <?php
